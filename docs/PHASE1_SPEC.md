@@ -225,8 +225,9 @@ OpenAI-compatible endpoint:
 | google/gemma-4-31B-it | `--tool-call-parser gemma4 --reasoning-parser gemma4` + Gemma 4 tool chat template | Yes (short context) |
 
 **Thinking mode is a study-wide constant.** Both settings run in the capability gate; the one
-chosen must then be fixed across every language, horizon and control. Record the choice here
-once made.
+chosen must then be fixed across every language, horizon and control. **Decided: ON** (first
+gate, 28 Sep 2026: more Tamil/Hinglish episodes solved, fewer unneeded steps, reasoning traces
+needed to locate failures; ~1,400 vs ~400 completion tokens per episode).
 
 **Reading logs:** a key can appear more than once (infra failures followed by a successful
 retry). Analyses keep the last scored row per `episode_key`.
