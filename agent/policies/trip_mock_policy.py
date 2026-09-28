@@ -11,14 +11,14 @@ Modes:
   drop_budget    return ignores the joint budget (early, coupled)
   wrong_hotel    hotel ignores the breakfast constraint (mid)
   wrong_pickup   cab pickup at departure instead of arrival time (carried)
-  swap_seats     father and mother seat types swapped (late binding)
+  swap_seats     two travellers' seat types swapped (late binding)
   drop_late      mother's meal becomes the first listed meal (late)
 """
 
 import copy
 
 from env.trip.chain import chain, plan_from_answer
-from env.trip.solver import RELATION_TO_ID, arrival_time, return_flight
+from env.trip.solver import RELATION_TO_ID, arrival_time, return_flight, rooms
 from env.trip.world import FLIGHTS, MEAL_OPTIONS
 
 MODES = ("solve", "recover", "drop_early", "drop_budget", "wrong_hotel", "wrong_pickup", "swap_seats", "drop_late")
@@ -28,29 +28,60 @@ def _departure(fid):
     return next(f["depart_time"] for f in FLIGHTS if f["flight_id"] == fid)
 
 
+def _early_key(gold):
+    return next(k for k in ("depart_before", "depart_after") if k in gold["constraints"]["outbound"])
+
+
+def _hotel_key(gold):
+    return next(k for k in ("max_price_per_night", "breakfast", "amenities", "max_distance_km")
+                if k in gold["constraints"]["hotel"])
+
+
+def _seat_pair(gold):
+    t = gold["constraints"]["travellers"]
+    return next((a, b) for a, b in (("father", "mother"), ("self", "father"), ("self", "mother"))
+                if t[a]["seat"] != t[b]["seat"])
+
+
 def faulty_plan(gold: dict, mode: str) -> dict:
     cons, plan = gold["constraints"], plan_from_answer(gold["answer"])
     plan = copy.deepcopy(plan)
     if mode == "drop_early":
-        plan["outbound"] = gold["decoys"]["outbound.depart_before"]
+        plan["outbound"] = gold["decoys"][f"outbound.{_early_key(gold)}"]
         plan["return"] = return_flight(cons, plan["outbound"])
         plan["cab"]["pickup_time"] = arrival_time(plan["outbound"])
     elif mode == "drop_budget":
         plan["return"] = gold["decoys"]["return.budget"]
     elif mode == "wrong_hotel":
-        from env.trip.solver import rooms
-        plan["hotel_id"] = gold["decoys"]["hotel.breakfast"]
+        plan["hotel_id"] = gold["decoys"][f"hotel.{_hotel_key(gold)}"]
         plan["rooms"] = rooms(cons, plan["hotel_id"])
         plan["cab"]["drop_hotel"] = plan["hotel_id"]
     elif mode == "wrong_pickup":
         plan["cab"]["pickup_time"] = _departure(plan["outbound"])
     elif mode == "swap_seats":
-        f, m = RELATION_TO_ID["father"], RELATION_TO_ID["mother"]
+        a, b = (RELATION_TO_ID[x] for x in _seat_pair(gold))
         t = plan["travellers"]
-        t[f]["seat"], t[m]["seat"] = t[m]["seat"], t[f]["seat"]
+        t[a]["seat"], t[b]["seat"] = t[b]["seat"], t[a]["seat"]
     elif mode == "drop_late":
         plan["travellers"][RELATION_TO_ID["mother"]]["meal"] = MEAL_OPTIONS[0]["meal"]
     return plan
+
+
+def expected_failures(gold: dict, mode: str) -> tuple[str, set]:
+    """(constraint class, failed constraint names) each fault must produce."""
+    if mode == "drop_early":
+        return "early", {f"outbound.{_early_key(gold)}", "outbound.objective"}
+    if mode == "drop_budget":
+        return "early", {"return.budget", "return.objective"}
+    if mode == "wrong_hotel":
+        return "mid", {f"hotel.{_hotel_key(gold)}", "hotel.objective"}
+    if mode == "wrong_pickup":
+        return "carried", {"cab.pickup_time"}
+    if mode == "swap_seats":
+        return "late", {f"seat.{leg}.{rel}" for leg in ("outbound", "return") for rel in _seat_pair(gold)}
+    if mode == "drop_late":
+        return "late", {"meal.mother"}
+    raise ValueError(mode)
 
 
 class TripMockPolicy:

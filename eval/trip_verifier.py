@@ -21,7 +21,8 @@ is not counted twice.
 
 from collections import defaultdict
 
-from env.trip.solver import RELATION_TO_ID, hotel, outbound_flight, return_flight, ticket_slot
+from env.trip.solver import (HOTEL_FILTERS, RELATION_TO_ID, SLOT_FILTERS, hotel, hotel_ok, outbound_flight,
+                              return_flight, slot_ok, ticket_slot)
 from env.trip.world import FLIGHTS, HOTELS, MEAL_OPTIONS, room_options, seat_map
 
 _MEAL_BY_CODE = {m["meal_code"]: m["meal"] for m in MEAL_OPTIONS}
@@ -113,9 +114,9 @@ def verify_trip(traj, gold: dict, sold_out: set) -> dict:
         hc = cons["hotel"]
         h = next((x for x in HOTELS if x["hotel_id"] == a["hotel_id"]), None)
         s_h = _first_step_using(steps, a["hotel_id"])
-        put("hotel.max_distance_km", "mid", h["distance_to_hawa_mahal_km"] <= hc["max_distance_km"], s_h)
-        put("hotel.amenities", "mid", set(hc["amenities"]) <= set(h["amenities"]), s_h)
-        put("hotel.breakfast", "mid", h["breakfast"] == hc["breakfast"], s_h)
+        for k in HOTEL_FILTERS:
+            if k in hc:
+                put(f"hotel.{k}", "mid", hotel_ok(h, {k: hc[k]}), s_h)
         put("hotel.objective", "mid", h["hotel_id"] == hotel(cons), s_h)
         types = {r["room_id"]: r["room_type"] for r in room_options(h["hotel_id"])}
         booked_types = sorted(types.get(r["room_id"]) for r in a["rooms"])
@@ -142,9 +143,12 @@ def verify_trip(traj, gold: dict, sold_out: set) -> dict:
         slot = a["ticket_slot_id"]
         s_slot = _first_step_using(steps, slot)
         start = slot.split("-")[-1]
+        start = f"{start[:2]}:{start[2:]}"
         put("tickets.attraction_date", "mid", slot.split("-")[1] == tc["attraction_id"].split("-")[-1]
             and slot.split("-")[2] == tc["date"][5:7] + tc["date"][8:], s_slot)
-        put("tickets.slot_after", "mid", start > tc["slot_after"].replace(":", ""), s_slot)
+        for k in SLOT_FILTERS:
+            if k in tc:
+                put(f"tickets.{k}", "mid", slot_ok({"start_time": start}, {k: tc[k]}), s_slot)
         put("tickets.objective", "mid", slot == ticket_slot(cons), s_slot)
 
         pax = {p["traveller_id"]: p for p in a["passengers"]}

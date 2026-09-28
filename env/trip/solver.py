@@ -12,11 +12,14 @@ _PICK = {
     "earliest_departure": lambda rows: min(rows, key=lambda f: f["depart_time"]),
     "latest_departure": lambda rows: max(rows, key=lambda f: f["depart_time"]),
     "max_rating": lambda rows: max(rows, key=lambda h: h["rating"]),
+    "min_nightly_price": lambda rows: min(rows, key=lambda h: h["price_from_per_night"]),
     "earliest": lambda rows: min(rows, key=lambda s: s["start_time"]),
+    "latest": lambda rows: max(rows, key=lambda s: s["start_time"]),
 }
 
 FLIGHT_FILTERS = ("depart_after", "depart_before", "nonstop")
-HOTEL_FILTERS = ("max_distance_km", "amenities", "breakfast")
+HOTEL_FILTERS = ("max_distance_km", "amenities", "breakfast", "max_price_per_night")
+SLOT_FILTERS = ("slot_after", "slot_before")
 RELATION_TO_ID = {t["relation"]: t["traveller_id"] for t in TRAVELLERS}
 
 
@@ -61,19 +64,28 @@ def return_flight(cons, outbound_id, sold_out=frozenset(), drop=None):
     return _choose(rows, c["objective"], "flight_id", drop)
 
 
+def hotel_ok(h, c, drop=None):
+    return ((drop == "max_distance_km" or "max_distance_km" not in c or h["distance_to_hawa_mahal_km"] <= c["max_distance_km"])
+            and (drop == "amenities" or set(c.get("amenities", [])) <= set(h["amenities"]))
+            and (drop == "breakfast" or "breakfast" not in c or h["breakfast"] == c["breakfast"])
+            and (drop == "max_price_per_night" or "max_price_per_night" not in c
+                 or h["price_from_per_night"] <= c["max_price_per_night"]))
+
+
 def hotel(cons, drop=None):
     c = cons["hotel"]
-    rows = [h for h in HOTELS if h["city"] == c["city"]
-            and (drop == "max_distance_km" or h["distance_to_hawa_mahal_km"] <= c["max_distance_km"])
-            and (drop == "amenities" or set(c["amenities"]) <= set(h["amenities"]))
-            and (drop == "breakfast" or h["breakfast"] == c["breakfast"])]
+    rows = [h for h in HOTELS if h["city"] == c["city"] and hotel_ok(h, c, drop)]
     return _choose(rows, c["objective"], "hotel_id", drop)
+
+
+def slot_ok(s, c, drop=None):
+    return ((drop == "slot_after" or "slot_after" not in c or s["start_time"] > c["slot_after"])
+            and (drop == "slot_before" or "slot_before" not in c or s["start_time"] < c["slot_before"]))
 
 
 def ticket_slot(cons, drop=None):
     c = cons["tickets"]
-    rows = [s for s in ticket_slots(c["attraction_id"], c["date"])
-            if drop == "slot_after" or s["start_time"] > c["slot_after"]]
+    rows = [s for s in ticket_slots(c["attraction_id"], c["date"]) if slot_ok(s, c, drop)]
     return _choose(rows, c["objective"], "slot_id", drop)
 
 
@@ -113,8 +125,8 @@ def decoys(cons) -> dict:
         d[f"return.{k}"] = return_flight(cons, out, drop=k)
     if "flight_budget_total" in cons:
         d["return.budget"] = return_flight(cons, out, drop="budget")
-    for k in list(HOTEL_FILTERS) + ["objective"]:
+    for k in [k for k in HOTEL_FILTERS if k in cons["hotel"]] + ["objective"]:
         d[f"hotel.{k}"] = hotel(cons, drop=k)
-    for k in ("slot_after", "objective"):
+    for k in [k for k in SLOT_FILTERS if k in cons["tickets"]] + ["objective"]:
         d[f"tickets.{k}"] = ticket_slot(cons, drop=k)
     return d

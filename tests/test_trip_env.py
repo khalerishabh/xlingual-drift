@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from agent.policies.trip_mock_policy import TripMockPolicy
+from agent.policies.trip_mock_policy import TripMockPolicy, expected_failures
 from agent.react_loop import run_episode
 from env.inject import FailureInjector
 from env.tools.travel_tools import ToolError
@@ -95,7 +95,7 @@ def test_template_languages_present_and_script_clean(tid):
     t = template(tid)
     assert {"en", "zh", "hi", "ta", "hinglish"} <= set(t["requests"])
     expected = {"zh": "CJK", "hi": "DEVANAGARI", "ta": "TAMIL"}
-    allowed = set("₹，。、：（）")
+    allowed = set("₹，。、：（）·")
     for lang, script in expected.items():
         foreign = {c for c in t["requests"][lang]
                    if ord(c) > 0x7F and c not in allowed and script not in unicodedata.name(c, "")}
@@ -110,20 +110,13 @@ def test_mock_solve_succeeds(tid, h):
     assert r["success"] and r["binding_swaps"] == 0 and r["fact_displacements"] == 0
 
 
-FAULTS = {
-    "drop_early": ("early", {"outbound.depart_before", "outbound.objective"}),
-    "drop_budget": ("early", {"return.budget", "return.objective"}),
-    "wrong_hotel": ("mid", {"hotel.breakfast", "hotel.objective"}),
-    "wrong_pickup": ("carried", {"cab.pickup_time"}),
-    "swap_seats": ("late", {"seat.outbound.mother", "seat.return.mother", "seat.outbound.father", "seat.return.father"}),
-    "drop_late": ("late", {"meal.mother"}),
-}
+FAULTS = ("drop_early", "drop_budget", "wrong_hotel", "wrong_pickup", "swap_seats", "drop_late")
 
 
 @pytest.mark.parametrize("mode", FAULTS)
 @pytest.mark.parametrize("tid,h", ALL)
 def test_each_fault_is_caught_only_in_its_class(tid, h, mode):
-    klass, expected = FAULTS[mode]
+    klass, expected = expected_failures(gold(tid, h), mode)
     r = episode(tid, h, mode)
     assert not r["success"] and failed(r) == expected
     assert {r["constraint_class"][k] for k in failed(r)} == {klass}

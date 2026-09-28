@@ -40,8 +40,8 @@ another tool can produce (env/trip/levels.py):
 
 | h | Adds |
 |---|---|
-| 11 | English names and inline filters; seat maps, meal options, rooms, cab quotes, ticket slots, travellers, checkout |
-| 17 | city codes, separate filter steps (2 flights, 1 hotel), attraction id |
+| 14 | English names; every search followed by a filter step (2 flights, 1 hotel); seat maps, meal options, rooms, cab quotes, ticket slots, travellers, checkout |
+| 17 | city codes, attraction id |
 | 24 | fare rules, and holds for both flights, rooms, cab and tickets; checkout needs every token |
 | 28 | hotel location code for the cab, travel documents, payment method, price token |
 
@@ -120,6 +120,31 @@ over all horizons is at least 0.7. The amendment was made after seeing
 English-only data and before any other language was run, so it cannot
 have been tuned toward a language difference.
 
+## Changes after trip gate v1 (29 Sep 2026)
+
+Decided from the gate v1 failure analysis, before the main run:
+
+1. **Presentation confound removed.** The shortest level (then h11) took
+   inline filters, so each flight list appeared once, already filtered; at
+   every other level it appeared twice (search, then filter). Arrival times
+   copied from the neighbouring row clustered at h11 (en 3/3, hinglish 2/3,
+   zh 1/3), so the level changed how information was shown, not only how
+   far back it was. Every level now searches and then filters; the
+   shortest level is **h14**.
+2. **Tamil adult-ticket wording.** பெரியவர் டிக்கெட் was read as "student"
+   at h24/h28. Now: சாதாரண பெரியவர்களுக்கான (அடல்ட்) டிக்கெட்.
+3. **Four more templates** (trip_002-005: Bengaluru, Hyderabad, Mumbai,
+   Kolkata to Jaipur) with the same traps: a joint flight budget that rules
+   out the objective-best return (the dominant language-sensitive failure in
+   gate v1), a nightly hotel budget that rules out the top-rated hotel,
+   near-identical flight ids beside the answer, per-traveller seats, meals
+   and ticket categories that listing order gets wrong, a decoy per
+   constraint. Slot objectives now include "last slot before T"; hotel
+   constraints include a nightly budget.
+
+Main run v1: 5 templates x 4 horizons x 5 languages x 5 seeds = 500
+episodes (`configs/trip_main_v1.yaml`).
+
 ## Measures that answer the research questions
 
 - RQ1: success and late survival by language x horizon; the interaction.
@@ -132,8 +157,8 @@ have been tuned toward a language difference.
 
 ## Known limits
 
-- One world (Jaipur) so far; templates 2+ reuse it with different
-  constraints. A second world is needed before the main runs.
-- At h11 and h17 there are no holds, so rooms and tickets are committed at
+- One destination (Jaipur) with five origin cities; a second destination
+  would test generality further.
+- At h14 and h17 there are no holds, so rooms and tickets are committed at
   checkout; their commit step is reported, not assumed.
 - No lenient interface yet (RQ2 control).

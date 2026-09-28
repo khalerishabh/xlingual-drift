@@ -1,0 +1,360 @@
+{
+  "task_id": "trip_004_h24",
+  "template_id": "trip_004",
+  "domain": "trip",
+  "horizon": 24,
+  "constraints": {
+    "passengers": 3,
+    "outbound": {
+      "origin": "BOM",
+      "destination": "JAI",
+      "date": "2026-12-04",
+      "depart_after": "08:00",
+      "objective": "earliest_departure",
+      "nonstop": true
+    },
+    "return": {
+      "origin": "JAI",
+      "destination": "BOM",
+      "date": "2026-12-06",
+      "depart_before": "20:00",
+      "objective": "latest_departure",
+      "nonstop": true
+    },
+    "flight_budget_total": 33000,
+    "hotel": {
+      "city": "JAI",
+      "check_in": "2026-12-04",
+      "check_out": "2026-12-06",
+      "max_distance_km": 6,
+      "max_price_per_night": 6000,
+      "objective": "max_rating"
+    },
+    "rooms": [
+      {
+        "room_type": "double",
+        "occupants": [
+          "mother",
+          "father"
+        ]
+      },
+      {
+        "room_type": "single",
+        "occupants": [
+          "self"
+        ]
+      }
+    ],
+    "cab": {
+      "vehicle_type": "tempo_traveller",
+      "date": "2026-12-04",
+      "pickup": "outbound_arrival",
+      "drop": "hotel"
+    },
+    "tickets": {
+      "attraction_id": "A-JAI-04",
+      "attraction_name": "Jantar Mantar",
+      "date": "2026-12-05",
+      "slot_before": "14:00",
+      "objective": "latest"
+    },
+    "travellers": {
+      "father": {
+        "seat": "window",
+        "meal": "vegetarian",
+        "ticket": "senior"
+      },
+      "mother": {
+        "seat": "aisle",
+        "meal": "lacto_vegetarian",
+        "ticket": "senior"
+      },
+      "self": {
+        "seat": "middle",
+        "meal": "diabetic",
+        "ticket": "adult"
+      }
+    }
+  },
+  "answer": {
+    "outbound_flight_id": "6E5015",
+    "return_flight_id": "SG506",
+    "hotel_id": "H-JAI-121",
+    "rooms": [
+      [
+        "R-121-3",
+        [
+          "T-02",
+          "T-03"
+        ]
+      ],
+      [
+        "R-121-1",
+        [
+          "T-01"
+        ]
+      ]
+    ],
+    "ticket_slot_id": "S-04-1205-1300",
+    "cab": {
+      "vehicle_type": "tempo_traveller",
+      "date": "2026-12-04",
+      "pickup_time": "11:05",
+      "drop_hotel": "H-JAI-121",
+      "pickup_location": "JAI"
+    },
+    "travellers": {
+      "T-03": {
+        "seat": "window",
+        "meal": "vegetarian",
+        "ticket": "senior"
+      },
+      "T-02": {
+        "seat": "aisle",
+        "meal": "lacto_vegetarian",
+        "ticket": "senior"
+      },
+      "T-01": {
+        "seat": "middle",
+        "meal": "diabetic",
+        "ticket": "adult"
+      }
+    }
+  },
+  "decoys": {
+    "outbound.depart_after": "6E5051",
+    "outbound.nonstop": "AI5050",
+    "outbound.objective": "SG505",
+    "return.depart_before": "IX516",
+    "return.nonstop": "AI5051",
+    "return.objective": "QP1506",
+    "return.budget": "6E5016",
+    "hotel.max_distance_km": "H-JAI-118",
+    "hotel.max_price_per_night": "H-JAI-150",
+    "hotel.objective": "H-JAI-104",
+    "tickets.slot_before": "S-04-1205-1730",
+    "tickets.objective": "S-04-1205-0800"
+  },
+  "recovery_fallback": {
+    "outbound": "SG505"
+  },
+  "terminal_state": {
+    "status": "confirmed",
+    "confirmation_id": "TRIP-25839",
+    "total_price_inr": 52510
+  },
+  "gold_steps": [
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Mumbai"
+      }
+    },
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Jaipur"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "BOM",
+        "destination": "JAI",
+        "date": "2026-12-04"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_after": "08:00",
+        "nonstop_only": true
+      }
+    },
+    {
+      "tool": "get_fare_rules",
+      "args": {
+        "flight_id": "6E5015"
+      }
+    },
+    {
+      "tool": "hold_flight",
+      "args": {
+        "flight_id": "6E5015",
+        "fare_class": "R-SAVER",
+        "passengers": 3
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "6E5015"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "6E5015"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "JAI",
+        "destination": "BOM",
+        "date": "2026-12-06"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_before": "20:00",
+        "nonstop_only": true
+      }
+    },
+    {
+      "tool": "get_fare_rules",
+      "args": {
+        "flight_id": "SG506"
+      }
+    },
+    {
+      "tool": "hold_flight",
+      "args": {
+        "flight_id": "SG506",
+        "fare_class": "Q-SAVER",
+        "passengers": 3
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "SG506"
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "args": {
+        "city": "JAI",
+        "check_in": "2026-12-04",
+        "check_out": "2026-12-06"
+      }
+    },
+    {
+      "tool": "filter_hotels",
+      "args": {
+        "max_distance_km": 6
+      }
+    },
+    {
+      "tool": "get_room_options",
+      "args": {
+        "hotel_id": "H-JAI-121",
+        "check_in": "2026-12-04",
+        "check_out": "2026-12-06"
+      }
+    },
+    {
+      "tool": "hold_rooms",
+      "args": {
+        "hotel_id": "H-JAI-121",
+        "room_ids": [
+          "R-121-3",
+          "R-121-1"
+        ]
+      }
+    },
+    {
+      "tool": "get_cab_quotes",
+      "args": {
+        "pickup_location": "JAI",
+        "drop_location": "H-JAI-121",
+        "date": "2026-12-04",
+        "pickup_time": "11:05"
+      }
+    },
+    {
+      "tool": "hold_cab",
+      "args": {
+        "quote_id": "Q-TT-1204-1105-121"
+      }
+    },
+    {
+      "tool": "search_attractions",
+      "args": {
+        "city": "JAI"
+      }
+    },
+    {
+      "tool": "get_ticket_slots",
+      "args": {
+        "attraction_id": "A-JAI-04",
+        "date": "2026-12-05"
+      }
+    },
+    {
+      "tool": "hold_tickets",
+      "args": {
+        "slot_id": "S-04-1205-1300",
+        "count": 3
+      }
+    },
+    {
+      "tool": "get_travellers",
+      "args": {}
+    },
+    {
+      "tool": "confirm_trip",
+      "args": {
+        "outbound_flight_id": "6E5015",
+        "return_flight_id": "SG506",
+        "passengers": [
+          {
+            "traveller_id": "T-01",
+            "outbound_seat_id": "15B",
+            "return_seat_id": "15B",
+            "meal_code": "DBML",
+            "ticket_category": "adult"
+          },
+          {
+            "traveller_id": "T-02",
+            "outbound_seat_id": "14C",
+            "return_seat_id": "14D",
+            "meal_code": "VLML",
+            "ticket_category": "senior"
+          },
+          {
+            "traveller_id": "T-03",
+            "outbound_seat_id": "14F",
+            "return_seat_id": "14F",
+            "meal_code": "VGML",
+            "ticket_category": "senior"
+          }
+        ],
+        "hotel_id": "H-JAI-121",
+        "rooms": [
+          {
+            "room_id": "R-121-3",
+            "traveller_ids": [
+              "T-02",
+              "T-03"
+            ]
+          },
+          {
+            "room_id": "R-121-1",
+            "traveller_ids": [
+              "T-01"
+            ]
+          }
+        ],
+        "cab_quote_id": "Q-TT-1204-1105-121",
+        "ticket_slot_id": "S-04-1205-1300",
+        "outbound_hold_token": "FH-6E5015-R-SAVER-3",
+        "return_hold_token": "FH-SG506-Q-SAVER-3",
+        "hotel_hold_token": "HH-JAI-121-1-3",
+        "cab_hold_token": "CH-TT-1204-1105-121",
+        "ticket_hold_token": "TH-04-1205-1300-3"
+      }
+    }
+  ]
+}

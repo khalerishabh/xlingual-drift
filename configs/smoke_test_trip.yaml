@@ -5,9 +5,13 @@
 run_name: smoke_test_trip
 templates:
   - tasks/trip_templates/trip_001.json
+  - tasks/trip_templates/trip_002.json
+  - tasks/trip_templates/trip_003.json
+  - tasks/trip_templates/trip_004.json
+  - tasks/trip_templates/trip_005.json
 interface_mode: strict
 max_steps: 60
-horizons: [11, 17, 24, 28]
+horizons: [14, 17, 24, 28]
 languages: [en]
 
 cells:

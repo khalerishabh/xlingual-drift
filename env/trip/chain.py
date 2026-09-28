@@ -67,8 +67,13 @@ def chain(cons: dict, plan: dict, horizon: int) -> list[dict]:
             add("get_meal_options", flight_id=fid)
 
     h = cons["hotel"]
-    hfilters = {"max_distance_km": h["max_distance_km"], "required_amenities": list(h["amenities"]),
-                "breakfast": h["breakfast"]}
+    hfilters = {}
+    if "max_distance_km" in h:
+        hfilters["max_distance_km"] = h["max_distance_km"]
+    if h.get("amenities"):
+        hfilters["required_amenities"] = list(h["amenities"])
+    if "breakfast" in h:
+        hfilters["breakfast"] = h["breakfast"]
     hsearch = {"city": city(h["city"]), "check_in": h["check_in"], "check_out": h["check_out"]}
     if lv["separate_filters"]:
         add("search_hotels", **hsearch)

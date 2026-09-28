@@ -1,0 +1,39 @@
+# Trip domain main run v1 (docs/TRIP_SPEC.md). 5 templates x 4 horizons x
+# 5 languages x 5 seeds = 500 episodes. Takes more than one Colab session:
+# rerun the notebook and --resume continues where the last session stopped.
+# Changes since the gate (decided before this run, from gate v1 findings):
+# every horizon presents search results the same way (shortest level is now
+# 14 steps, was 11), and the Tamil adult-ticket phrase is unambiguous.
+
+run_name: trip_main_v1_qwen36_27b_fp8
+
+serving:
+  model: Qwen/Qwen3.6-27B-FP8
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: []
+
+templates:
+  - tasks/trip_templates/trip_001.json
+  - tasks/trip_templates/trip_002.json
+  - tasks/trip_templates/trip_003.json
+  - tasks/trip_templates/trip_004.json
+  - tasks/trip_templates/trip_005.json
+interface_mode: strict
+max_steps: 60
+horizons: [14, 17, 24, 28]
+languages: [en, zh, hi, ta, hinglish]
+
+cells:
+  - name: qwen36_27b_fp8_think
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1, 2, 3, 4, 5]

@@ -1,0 +1,389 @@
+{
+  "task_id": "trip_003_h28",
+  "template_id": "trip_003",
+  "domain": "trip",
+  "horizon": 28,
+  "constraints": {
+    "passengers": 3,
+    "outbound": {
+      "origin": "HYD",
+      "destination": "JAI",
+      "date": "2026-11-20",
+      "depart_after": "07:00",
+      "objective": "min_price",
+      "nonstop": true
+    },
+    "return": {
+      "origin": "JAI",
+      "destination": "HYD",
+      "date": "2026-11-22",
+      "depart_after": "16:00",
+      "objective": "earliest_departure",
+      "nonstop": true
+    },
+    "flight_budget_total": 36000,
+    "hotel": {
+      "city": "JAI",
+      "check_in": "2026-11-20",
+      "check_out": "2026-11-22",
+      "max_distance_km": 3,
+      "max_price_per_night": 3500,
+      "objective": "max_rating"
+    },
+    "rooms": [
+      {
+        "room_type": "suite",
+        "occupants": [
+          "mother",
+          "father"
+        ]
+      },
+      {
+        "room_type": "single",
+        "occupants": [
+          "self"
+        ]
+      }
+    ],
+    "cab": {
+      "vehicle_type": "suv",
+      "date": "2026-11-20",
+      "pickup": "outbound_arrival",
+      "drop": "hotel"
+    },
+    "tickets": {
+      "attraction_id": "A-JAI-03",
+      "attraction_name": "Hawa Mahal",
+      "date": "2026-11-21",
+      "slot_after": "10:00",
+      "objective": "earliest"
+    },
+    "travellers": {
+      "father": {
+        "seat": "aisle",
+        "meal": "diabetic",
+        "ticket": "senior"
+      },
+      "mother": {
+        "seat": "middle",
+        "meal": "jain",
+        "ticket": "senior"
+      },
+      "self": {
+        "seat": "window",
+        "meal": "jain",
+        "ticket": "student"
+      }
+    }
+  },
+  "answer": {
+    "outbound_flight_id": "6E7123",
+    "return_flight_id": "SG721",
+    "hotel_id": "H-JAI-158",
+    "rooms": [
+      [
+        "R-158-5",
+        [
+          "T-02",
+          "T-03"
+        ]
+      ],
+      [
+        "R-158-1",
+        [
+          "T-01"
+        ]
+      ]
+    ],
+    "ticket_slot_id": "S-03-1121-1030",
+    "cab": {
+      "vehicle_type": "suv",
+      "date": "2026-11-20",
+      "pickup_time": "12:05",
+      "drop_hotel": "H-JAI-158",
+      "pickup_location": "JAI"
+    },
+    "travellers": {
+      "T-03": {
+        "seat": "aisle",
+        "meal": "diabetic",
+        "ticket": "senior"
+      },
+      "T-02": {
+        "seat": "middle",
+        "meal": "jain",
+        "ticket": "senior"
+      },
+      "T-01": {
+        "seat": "window",
+        "meal": "jain",
+        "ticket": "student"
+      }
+    }
+  },
+  "decoys": {
+    "outbound.depart_after": "6E7132",
+    "outbound.nonstop": "AI7120",
+    "outbound.objective": "UK712",
+    "return.depart_after": "6E7133",
+    "return.nonstop": "AI7121",
+    "return.objective": "UK713",
+    "return.budget": "6E7124",
+    "hotel.max_distance_km": "H-JAI-133",
+    "hotel.max_price_per_night": "H-JAI-121",
+    "hotel.objective": "H-JAI-112",
+    "tickets.slot_after": "S-03-1121-0800",
+    "tickets.objective": "S-03-1121-1300"
+  },
+  "recovery_fallback": {
+    "outbound": "QP1470"
+  },
+  "terminal_state": {
+    "status": "confirmed",
+    "confirmation_id": "TRIP-26044",
+    "total_price_inr": 52300
+  },
+  "gold_steps": [
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Hyderabad"
+      }
+    },
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Jaipur"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "HYD",
+        "destination": "JAI",
+        "date": "2026-11-20"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_after": "07:00",
+        "nonstop_only": true
+      }
+    },
+    {
+      "tool": "get_fare_rules",
+      "args": {
+        "flight_id": "6E7123"
+      }
+    },
+    {
+      "tool": "hold_flight",
+      "args": {
+        "flight_id": "6E7123",
+        "fare_class": "R-SAVER",
+        "passengers": 3
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "6E7123"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "6E7123"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "JAI",
+        "destination": "HYD",
+        "date": "2026-11-22"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_after": "16:00",
+        "nonstop_only": true
+      }
+    },
+    {
+      "tool": "get_fare_rules",
+      "args": {
+        "flight_id": "SG721"
+      }
+    },
+    {
+      "tool": "hold_flight",
+      "args": {
+        "flight_id": "SG721",
+        "fare_class": "Q-SAVER",
+        "passengers": 3
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "SG721"
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "args": {
+        "city": "JAI",
+        "check_in": "2026-11-20",
+        "check_out": "2026-11-22"
+      }
+    },
+    {
+      "tool": "filter_hotels",
+      "args": {
+        "max_distance_km": 3
+      }
+    },
+    {
+      "tool": "get_room_options",
+      "args": {
+        "hotel_id": "H-JAI-158",
+        "check_in": "2026-11-20",
+        "check_out": "2026-11-22"
+      }
+    },
+    {
+      "tool": "hold_rooms",
+      "args": {
+        "hotel_id": "H-JAI-158",
+        "room_ids": [
+          "R-158-5",
+          "R-158-1"
+        ]
+      }
+    },
+    {
+      "tool": "get_hotel_details",
+      "args": {
+        "hotel_id": "H-JAI-158"
+      }
+    },
+    {
+      "tool": "get_cab_quotes",
+      "args": {
+        "pickup_location": "JAI",
+        "drop_location": "LOC-JAI-158",
+        "date": "2026-11-20",
+        "pickup_time": "12:05"
+      }
+    },
+    {
+      "tool": "hold_cab",
+      "args": {
+        "quote_id": "Q-SUV-1120-1205-158"
+      }
+    },
+    {
+      "tool": "search_attractions",
+      "args": {
+        "city": "JAI"
+      }
+    },
+    {
+      "tool": "get_ticket_slots",
+      "args": {
+        "attraction_id": "A-JAI-03",
+        "date": "2026-11-21"
+      }
+    },
+    {
+      "tool": "hold_tickets",
+      "args": {
+        "slot_id": "S-03-1121-1030",
+        "count": 3
+      }
+    },
+    {
+      "tool": "get_travellers",
+      "args": {}
+    },
+    {
+      "tool": "get_travel_documents",
+      "args": {}
+    },
+    {
+      "tool": "get_payment_methods",
+      "args": {}
+    },
+    {
+      "tool": "price_itinerary",
+      "args": {
+        "outbound_hold_token": "FH-6E7123-R-SAVER-3",
+        "return_hold_token": "FH-SG721-Q-SAVER-3",
+        "hotel_hold_token": "HH-JAI-158-1-5",
+        "cab_hold_token": "CH-SUV-1120-1205-158",
+        "ticket_hold_token": "TH-03-1121-1030-3"
+      }
+    },
+    {
+      "tool": "confirm_trip",
+      "args": {
+        "outbound_flight_id": "6E7123",
+        "return_flight_id": "SG721",
+        "passengers": [
+          {
+            "traveller_id": "T-01",
+            "outbound_seat_id": "14F",
+            "return_seat_id": "14F",
+            "meal_code": "JNML",
+            "ticket_category": "student",
+            "document_id": "DOC-T01-AADHAAR"
+          },
+          {
+            "traveller_id": "T-02",
+            "outbound_seat_id": "15B",
+            "return_seat_id": "15B",
+            "meal_code": "JNML",
+            "ticket_category": "senior",
+            "document_id": "DOC-T02-AADHAAR"
+          },
+          {
+            "traveller_id": "T-03",
+            "outbound_seat_id": "14C",
+            "return_seat_id": "14C",
+            "meal_code": "DBML",
+            "ticket_category": "senior",
+            "document_id": "DOC-T03-PAN"
+          }
+        ],
+        "hotel_id": "H-JAI-158",
+        "rooms": [
+          {
+            "room_id": "R-158-5",
+            "traveller_ids": [
+              "T-02",
+              "T-03"
+            ]
+          },
+          {
+            "room_id": "R-158-1",
+            "traveller_ids": [
+              "T-01"
+            ]
+          }
+        ],
+        "cab_quote_id": "Q-SUV-1120-1205-158",
+        "ticket_slot_id": "S-03-1121-1030",
+        "outbound_hold_token": "FH-6E7123-R-SAVER-3",
+        "return_hold_token": "FH-SG721-Q-SAVER-3",
+        "hotel_hold_token": "HH-JAI-158-1-5",
+        "cab_hold_token": "CH-SUV-1120-1205-158",
+        "ticket_hold_token": "TH-03-1121-1030-3",
+        "price_token": "PT-59095",
+        "payment_id": "PAY-UPI-01"
+      }
+    }
+  ]
+}

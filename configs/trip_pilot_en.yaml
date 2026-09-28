@@ -21,7 +21,7 @@ templates:
   - tasks/trip_templates/trip_001.json
 interface_mode: strict
 max_steps: 60
-horizons: [11, 17, 24, 28]
+horizons: [14, 17, 24, 28]
 languages: [en]
 
 cells:

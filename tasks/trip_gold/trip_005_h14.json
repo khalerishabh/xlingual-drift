@@ -1,41 +1,39 @@
 {
-  "task_id": "trip_001_h11",
-  "template_id": "trip_001",
+  "task_id": "trip_005_h14",
+  "template_id": "trip_005",
   "domain": "trip",
-  "horizon": 11,
+  "horizon": 14,
   "constraints": {
     "passengers": 3,
     "outbound": {
-      "origin": "MAA",
+      "origin": "CCU",
       "destination": "JAI",
-      "date": "2026-10-14",
-      "depart_before": "12:00",
-      "nonstop": true,
-      "objective": "min_price"
+      "date": "2026-12-18",
+      "depart_before": "11:00",
+      "objective": "min_price",
+      "nonstop": true
     },
     "return": {
       "origin": "JAI",
-      "destination": "MAA",
-      "date": "2026-10-16",
-      "depart_after": "18:00",
-      "nonstop": true,
-      "objective": "earliest_departure"
+      "destination": "CCU",
+      "date": "2026-12-20",
+      "depart_after": "15:00",
+      "objective": "earliest_departure",
+      "nonstop": true
     },
-    "flight_budget_total": 30000,
+    "flight_budget_total": 39000,
     "hotel": {
       "city": "JAI",
-      "check_in": "2026-10-14",
-      "check_out": "2026-10-16",
+      "check_in": "2026-12-18",
+      "check_out": "2026-12-20",
       "max_distance_km": 3,
-      "amenities": [
-        "lift"
-      ],
       "breakfast": "veg",
+      "max_price_per_night": 3500,
       "objective": "max_rating"
     },
     "rooms": [
       {
-        "room_type": "double",
+        "room_type": "twin",
         "occupants": [
           "mother",
           "father"
@@ -49,22 +47,22 @@
       }
     ],
     "cab": {
-      "vehicle_type": "suv",
-      "date": "2026-10-14",
+      "vehicle_type": "sedan",
+      "date": "2026-12-18",
       "pickup": "outbound_arrival",
       "drop": "hotel"
     },
     "tickets": {
-      "attraction_id": "A-JAI-02",
-      "attraction_name": "Amber Fort",
-      "date": "2026-10-15",
-      "slot_after": "09:00",
+      "attraction_id": "A-JAI-05",
+      "attraction_name": "Nahargarh Fort",
+      "date": "2026-12-19",
+      "slot_after": "12:00",
       "objective": "earliest"
     },
     "travellers": {
       "father": {
         "seat": "window",
-        "meal": "diabetic",
+        "meal": "lacto_vegetarian",
         "ticket": "senior"
       },
       "mother": {
@@ -73,43 +71,43 @@
         "ticket": "senior"
       },
       "self": {
-        "seat": "middle",
+        "seat": "window",
         "meal": "vegetarian",
-        "ticket": "adult"
+        "ticket": "student"
       }
     }
   },
   "answer": {
-    "outbound_flight_id": "6E621",
-    "return_flight_id": "SG306",
-    "hotel_id": "H-JAI-140",
+    "outbound_flight_id": "6E6121",
+    "return_flight_id": "SG622",
+    "hotel_id": "H-JAI-112",
     "rooms": [
       [
-        "R-140-3",
+        "R-112-2",
         [
           "T-02",
           "T-03"
         ]
       ],
       [
-        "R-140-1",
+        "R-112-1",
         [
           "T-01"
         ]
       ]
     ],
-    "ticket_slot_id": "S-02-1015-1030",
+    "ticket_slot_id": "S-05-1219-1300",
     "cab": {
-      "vehicle_type": "suv",
-      "date": "2026-10-14",
-      "pickup_time": "10:15",
-      "drop_hotel": "H-JAI-140",
+      "vehicle_type": "sedan",
+      "date": "2026-12-18",
+      "pickup_time": "10:45",
+      "drop_hotel": "H-JAI-112",
       "pickup_location": "JAI"
     },
     "travellers": {
       "T-03": {
         "seat": "window",
-        "meal": "diabetic",
+        "meal": "lacto_vegetarian",
         "ticket": "senior"
       },
       "T-02": {
@@ -118,109 +116,121 @@
         "ticket": "senior"
       },
       "T-01": {
-        "seat": "middle",
+        "seat": "window",
         "meal": "vegetarian",
-        "ticket": "adult"
+        "ticket": "student"
       }
     }
   },
   "decoys": {
-    "outbound.depart_before": "6E735",
-    "outbound.nonstop": "AI561",
-    "outbound.objective": "6E612",
-    "return.depart_after": "6E613",
-    "return.nonstop": "AI474",
-    "return.objective": "UK819",
-    "return.budget": "6E622",
-    "hotel.max_distance_km": "H-JAI-118",
-    "hotel.amenities": "H-JAI-104",
-    "hotel.breakfast": "H-JAI-121",
-    "hotel.objective": "H-JAI-112",
-    "tickets.slot_after": "S-02-1015-0800",
-    "tickets.objective": "S-02-1015-1300"
+    "outbound.depart_before": "IX612",
+    "outbound.nonstop": "AI6210",
+    "outbound.objective": "6E6211",
+    "return.depart_after": "6E6212",
+    "return.nonstop": "AI6211",
+    "return.objective": "UK622",
+    "return.budget": "6E6122",
+    "hotel.max_distance_km": "H-JAI-133",
+    "hotel.breakfast": "H-JAI-158",
+    "hotel.max_price_per_night": "H-JAI-104",
+    "hotel.objective": "H-JAI-136",
+    "tickets.slot_after": "S-05-1219-0800",
+    "tickets.objective": "S-05-1219-1530"
   },
   "recovery_fallback": {
-    "outbound": "IX142"
+    "outbound": "SG621"
   },
   "terminal_state": {
     "status": "confirmed",
-    "confirmation_id": "TRIP-24263",
-    "total_price_inr": 46300
+    "confirmation_id": "TRIP-25766",
+    "total_price_inr": 49940
   },
   "gold_steps": [
     {
       "tool": "search_flights",
       "args": {
-        "origin": "Chennai",
+        "origin": "Kolkata",
         "destination": "Jaipur",
-        "date": "2026-10-14",
-        "depart_before": "12:00",
+        "date": "2026-12-18"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_before": "11:00",
         "nonstop_only": true
       }
     },
     {
       "tool": "get_seat_map",
       "args": {
-        "flight_id": "6E621"
+        "flight_id": "6E6121"
       }
     },
     {
       "tool": "get_meal_options",
       "args": {
-        "flight_id": "6E621"
+        "flight_id": "6E6121"
       }
     },
     {
       "tool": "search_flights",
       "args": {
         "origin": "Jaipur",
-        "destination": "Chennai",
-        "date": "2026-10-16",
-        "depart_after": "18:00",
+        "destination": "Kolkata",
+        "date": "2026-12-20"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_after": "15:00",
         "nonstop_only": true
       }
     },
     {
       "tool": "get_seat_map",
       "args": {
-        "flight_id": "SG306"
+        "flight_id": "SG622"
       }
     },
     {
       "tool": "search_hotels",
       "args": {
         "city": "Jaipur",
-        "check_in": "2026-10-14",
-        "check_out": "2026-10-16",
+        "check_in": "2026-12-18",
+        "check_out": "2026-12-20"
+      }
+    },
+    {
+      "tool": "filter_hotels",
+      "args": {
         "max_distance_km": 3,
-        "required_amenities": [
-          "lift"
-        ],
         "breakfast": "veg"
       }
     },
     {
       "tool": "get_room_options",
       "args": {
-        "hotel_id": "H-JAI-140",
-        "check_in": "2026-10-14",
-        "check_out": "2026-10-16"
+        "hotel_id": "H-JAI-112",
+        "check_in": "2026-12-18",
+        "check_out": "2026-12-20"
       }
     },
     {
       "tool": "get_cab_quotes",
       "args": {
         "pickup_location": "JAI",
-        "drop_location": "H-JAI-140",
-        "date": "2026-10-14",
-        "pickup_time": "10:15"
+        "drop_location": "H-JAI-112",
+        "date": "2026-12-18",
+        "pickup_time": "10:45"
       }
     },
     {
       "tool": "get_ticket_slots",
       "args": {
-        "attraction_name": "Amber Fort",
-        "date": "2026-10-15"
+        "attraction_name": "Nahargarh Fort",
+        "date": "2026-12-19"
       }
     },
     {
@@ -230,15 +240,15 @@
     {
       "tool": "confirm_trip",
       "args": {
-        "outbound_flight_id": "6E621",
-        "return_flight_id": "SG306",
+        "outbound_flight_id": "6E6121",
+        "return_flight_id": "SG622",
         "passengers": [
           {
             "traveller_id": "T-01",
-            "outbound_seat_id": "15B",
-            "return_seat_id": "15B",
+            "outbound_seat_id": "14F",
+            "return_seat_id": "14F",
             "meal_code": "VGML",
-            "ticket_category": "adult"
+            "ticket_category": "student"
           },
           {
             "traveller_id": "T-02",
@@ -249,30 +259,30 @@
           },
           {
             "traveller_id": "T-03",
-            "outbound_seat_id": "14F",
-            "return_seat_id": "14F",
-            "meal_code": "DBML",
+            "outbound_seat_id": "15F",
+            "return_seat_id": "15F",
+            "meal_code": "VLML",
             "ticket_category": "senior"
           }
         ],
-        "hotel_id": "H-JAI-140",
+        "hotel_id": "H-JAI-112",
         "rooms": [
           {
-            "room_id": "R-140-3",
+            "room_id": "R-112-2",
             "traveller_ids": [
               "T-02",
               "T-03"
             ]
           },
           {
-            "room_id": "R-140-1",
+            "room_id": "R-112-1",
             "traveller_ids": [
               "T-01"
             ]
           }
         ],
-        "cab_quote_id": "Q-SUV-1014-1015-140",
-        "ticket_slot_id": "S-02-1015-1030"
+        "cab_quote_id": "Q-SD-1218-1045-112",
+        "ticket_slot_id": "S-05-1219-1300"
       }
     }
   ]

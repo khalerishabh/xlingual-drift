@@ -9,7 +9,8 @@ the agent has to compute the answer, and no requested option is the one a
 "take the first row" shortcut would pick.
 """
 
-CITIES = {"MAA": "Chennai", "JAI": "Jaipur", "DEL": "Delhi"}
+CITIES = {"MAA": "Chennai", "JAI": "Jaipur", "DEL": "Delhi", "BLR": "Bengaluru", "HYD": "Hyderabad",
+          "BOM": "Mumbai", "CCU": "Kolkata"}
 
 
 def _f(fid, airline, o, d, date, dep, arr, stops, price, fare, seats=9, baggage=15, refundable=False, via=None):
@@ -38,6 +39,69 @@ FLIGHTS = [
     _f("6E622", "IndiGo", "JAI", "MAA", "2026-10-16", "18:35", "21:20", 0, 5890, "R-SAVER"),
     _f("UK819", "Vistara", "JAI", "MAA", "2026-10-16", "20:15", "23:05", 0, 4990, "V-ECO", baggage=20, refundable=True),
     _f("IX143", "Air India Express", "JAI", "MAA", "2026-10-16", "21:40", "00:25", 0, 4700, "X-VALUE"),
+
+    _f("6E4512", "IndiGo", "BLR", "JAI", "2026-11-06", "06:10", "08:55", 0, 6200, "R-SAVER"),
+    _f("SG411", "SpiceJet", "BLR", "JAI", "2026-11-06", "07:15", "10:00", 0, 6400, "Q-SAVER"),
+    _f("6E4521", "IndiGo", "BLR", "JAI", "2026-11-06", "08:50", "11:35", 0, 6900, "R-SAVER"),
+    _f("AI4510", "Air India", "BLR", "JAI", "2026-11-06", "09:40", "14:20", 1, 5100, "T-ECO", via="DEL", baggage=25),
+    _f("UK401", "Vistara", "BLR", "JAI", "2026-11-06", "11:30", "14:15", 0, 7300, "V-ECO", baggage=20, refundable=True),
+    _f("QP1260", "Akasa Air", "BLR", "JAI", "2026-11-06", "13:05", "15:50", 0, 5800, "S-LITE"),
+    _f("IX410", "Air India Express", "BLR", "JAI", "2026-11-06", "18:20", "21:05", 0, 5600, "X-VALUE"),
+
+    _f("6E4522", "IndiGo", "JAI", "BLR", "2026-11-08", "20:30", "23:15", 0, 7600, "R-SAVER"),
+    _f("IX411", "Air India Express", "JAI", "BLR", "2026-11-08", "12:10", "14:55", 0, 5400, "X-VALUE"),
+    _f("6E4513", "IndiGo", "JAI", "BLR", "2026-11-08", "15:20", "18:05", 0, 5900, "R-SAVER"),
+    _f("QP1261", "Akasa Air", "JAI", "BLR", "2026-11-08", "17:45", "20:30", 0, 6300, "S-LITE"),
+    _f("SG412", "SpiceJet", "JAI", "BLR", "2026-11-08", "19:05", "21:50", 0, 6700, "Q-SAVER"),
+    _f("AI4511", "Air India", "JAI", "BLR", "2026-11-08", "20:50", "02:10", 1, 5200, "T-ECO", via="DEL", baggage=25),
+    _f("UK402", "Vistara", "JAI", "BLR", "2026-11-08", "21:40", "00:25", 0, 6100, "V-ECO", baggage=20, refundable=True),
+
+    _f("6E7132", "IndiGo", "HYD", "JAI", "2026-11-20", "05:55", "08:20", 0, 4300, "R-SAVER"),
+    _f("AI7120", "Air India", "HYD", "JAI", "2026-11-20", "07:50", "12:30", 1, 4100, "T-ECO", via="DEL", baggage=25),
+    _f("UK712", "Vistara", "HYD", "JAI", "2026-11-20", "08:25", "10:50", 0, 6200, "V-ECO", baggage=20, refundable=True),
+    _f("6E7123", "IndiGo", "HYD", "JAI", "2026-11-20", "09:40", "12:05", 0, 4950, "R-SAVER"),
+    _f("SG720", "SpiceJet", "HYD", "JAI", "2026-11-20", "11:15", "13:40", 0, 5300, "Q-SAVER"),
+    _f("QP1470", "Akasa Air", "HYD", "JAI", "2026-11-20", "14:30", "16:55", 0, 5150, "S-LITE"),
+    _f("IX713", "Air India Express", "HYD", "JAI", "2026-11-20", "19:45", "22:10", 0, 5600, "X-VALUE"),
+
+    _f("6E7124", "IndiGo", "JAI", "HYD", "2026-11-22", "16:40", "19:05", 0, 7400, "R-SAVER"),
+    _f("6E7133", "IndiGo", "JAI", "HYD", "2026-11-22", "13:10", "15:35", 0, 5200, "R-SAVER"),
+    _f("AI7121", "Air India", "JAI", "HYD", "2026-11-22", "16:15", "21:00", 1, 4800, "T-ECO", via="DEL", baggage=25),
+    _f("SG721", "SpiceJet", "JAI", "HYD", "2026-11-22", "17:25", "19:50", 0, 6300, "Q-SAVER"),
+    _f("UK713", "Vistara", "JAI", "HYD", "2026-11-22", "18:50", "21:15", 0, 5900, "V-ECO", baggage=20, refundable=True),
+    _f("QP1471", "Akasa Air", "JAI", "HYD", "2026-11-22", "20:10", "22:35", 0, 5500, "S-LITE"),
+    _f("IX714", "Air India Express", "JAI", "HYD", "2026-11-22", "21:05", "23:30", 0, 5000, "X-VALUE"),
+
+    _f("6E5051", "IndiGo", "BOM", "JAI", "2026-12-04", "06:30", "08:15", 0, 5200, "R-SAVER"),
+    _f("AI5050", "Air India", "BOM", "JAI", "2026-12-04", "08:10", "12:40", 1, 3900, "T-ECO", via="DEL", baggage=25),
+    _f("6E5015", "IndiGo", "BOM", "JAI", "2026-12-04", "09:20", "11:05", 0, 5600, "R-SAVER"),
+    _f("SG505", "SpiceJet", "BOM", "JAI", "2026-12-04", "10:45", "12:30", 0, 5100, "Q-SAVER"),
+    _f("UK515", "Vistara", "BOM", "JAI", "2026-12-04", "12:30", "14:15", 0, 6300, "V-ECO", baggage=20, refundable=True),
+    _f("QP1505", "Akasa Air", "BOM", "JAI", "2026-12-04", "16:40", "18:25", 0, 4700, "S-LITE"),
+    _f("IX515", "Air India Express", "BOM", "JAI", "2026-12-04", "20:15", "22:00", 0, 4500, "X-VALUE"),
+
+    _f("6E5016", "IndiGo", "JAI", "BOM", "2026-12-06", "19:35", "21:20", 0, 5900, "R-SAVER"),
+    _f("QP1506", "Akasa Air", "JAI", "BOM", "2026-12-06", "12:20", "14:05", 0, 4600, "S-LITE"),
+    _f("6E5052", "IndiGo", "JAI", "BOM", "2026-12-06", "14:10", "15:55", 0, 4900, "R-SAVER"),
+    _f("SG506", "SpiceJet", "JAI", "BOM", "2026-12-06", "18:05", "19:50", 0, 5300, "Q-SAVER"),
+    _f("AI5051", "Air India", "JAI", "BOM", "2026-12-06", "19:50", "00:40", 1, 4200, "T-ECO", via="DEL", baggage=25),
+    _f("UK516", "Vistara", "JAI", "BOM", "2026-12-06", "20:45", "22:30", 0, 5000, "V-ECO", baggage=20, refundable=True),
+    _f("IX516", "Air India Express", "JAI", "BOM", "2026-12-06", "21:30", "23:15", 0, 4800, "X-VALUE"),
+
+    _f("6E6211", "IndiGo", "CCU", "JAI", "2026-12-18", "05:50", "08:20", 0, 6400, "R-SAVER"),
+    _f("AI6210", "Air India", "CCU", "JAI", "2026-12-18", "06:40", "11:50", 1, 4800, "T-ECO", via="DEL", baggage=25),
+    _f("UK621", "Vistara", "CCU", "JAI", "2026-12-18", "07:05", "09:35", 0, 7200, "V-ECO", baggage=20, refundable=True),
+    _f("6E6121", "IndiGo", "CCU", "JAI", "2026-12-18", "08:15", "10:45", 0, 5700, "R-SAVER"),
+    _f("SG621", "SpiceJet", "CCU", "JAI", "2026-12-18", "09:55", "12:25", 0, 6100, "Q-SAVER"),
+    _f("IX612", "Air India Express", "CCU", "JAI", "2026-12-18", "13:30", "16:00", 0, 5200, "X-VALUE"),
+    _f("QP1612", "Akasa Air", "CCU", "JAI", "2026-12-18", "17:20", "19:50", 0, 5900, "S-LITE"),
+
+    _f("6E6122", "IndiGo", "JAI", "CCU", "2026-12-20", "15:25", "17:55", 0, 7700, "R-SAVER"),
+    _f("6E6212", "IndiGo", "JAI", "CCU", "2026-12-20", "11:40", "14:10", 0, 6000, "R-SAVER"),
+    _f("AI6211", "Air India", "JAI", "CCU", "2026-12-20", "15:10", "20:30", 1, 5100, "T-ECO", via="DEL", baggage=25),
+    _f("SG622", "SpiceJet", "JAI", "CCU", "2026-12-20", "16:50", "19:20", 0, 6800, "Q-SAVER"),
+    _f("UK622", "Vistara", "JAI", "CCU", "2026-12-20", "18:30", "21:00", 0, 6500, "V-ECO", baggage=20, refundable=True),
+    _f("IX613", "Air India Express", "JAI", "CCU", "2026-12-20", "20:45", "23:15", 0, 5900, "X-VALUE"),
 ]
 
 SEAT_TYPE_BY_LETTER = {"A": "window", "B": "middle", "C": "aisle", "D": "aisle", "E": "middle", "F": "window"}
@@ -81,6 +145,8 @@ HOTELS = [
     _h("H-JAI-127", "Nahargarh Stay", "Brahmpuri", 2.9, 4.1, 2400, ["wifi"], "none"),
     _h("H-JAI-133", "Jal Mahal Inn", "Amer Road", 4.1, 4.4, 3300, ["lift", "wifi"], "veg"),
     _h("H-JAI-109", "Bapu Bazaar Lodge", "Bapu Bazaar", 0.4, 3.9, 1900, ["lift"], "veg"),
+    _h("H-JAI-145", "Chandpole Heritage", "Chandpole", 1.5, 4.4, 4200, ["wifi", "ac", "pool"], "veg"),
+    _h("H-JAI-158", "Sindhi Camp Suites", "Sindhi Camp", 2.7, 4.4, 2900, ["lift", "wifi", "parking"], "veg_and_nonveg"),
     _h("H-JAI-150", "Rambagh Grand", "Bhawani Singh Road", 5.6, 4.9, 9800, ["lift", "pool", "spa", "wifi", "ac"], "veg_and_nonveg"),
 ]
 
