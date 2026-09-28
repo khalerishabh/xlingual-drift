@@ -20,11 +20,13 @@ run_name: capability_gate_v2_qwen36_27b_fp8
 # one backbone would create a spurious language effect.
 serving:
   model: Qwen/Qwen3.6-27B-FP8       # official FP8; fits a 40GB or 80GB A100
-  revision: main                     # pin to the commit hash recorded after the first run
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09   # resolved 28 Sep 2026
   tool_call_parser: qwen3_coder
   reasoning_parser: qwen3
   max_model_len: 32768
   min_vram_gb: 38
+  vllm_version: "0.30.0"            # installed exactly; part of the backbone fingerprint
+  extra_args: []                     # extra `vllm serve` flags, e.g. ["--enforce-eager"]
 
 templates:
   - tasks/templates/travel_017.json
