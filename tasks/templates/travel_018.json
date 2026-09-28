@@ -1,0 +1,39 @@
+{
+  "template_id": "travel_018",
+  "domain": "travel",
+  "intent": "Cheapest flight leaving after 17:00 on a given date, with a window seat and a vegetarian meal.",
+  "session_date": "2026-08-21",
+  "city_names": {
+    "origin": "Delhi",
+    "destination": "Bengaluru"
+  },
+  "entities": {
+    "origin": "DEL",
+    "destination": "BLR"
+  },
+  "constraints": {
+    "date": "2026-08-25",
+    "depart_after": "17:00",
+    "objective": "min_price"
+  },
+  "late_constraints": {
+    "seat_type": "window",
+    "meal": "vegetarian"
+  },
+  "requests": {
+    "en": "Book the cheapest flight from Delhi to Bengaluru on 25 August that leaves after 5 pm, with a window seat and a vegetarian meal.",
+    "zh": "\u9884\u8ba28\u670825\u65e5\u4ece\u5fb7\u91cc\u98de\u5f80\u73ed\u52a0\u7f57\u5c14\u3001\u4e0b\u53485\u70b9\u4ee5\u540e\u8d77\u98de\u7684\u6700\u4fbf\u5b9c\u822a\u73ed\uff0c\u8981\u9760\u7a97\u5ea7\u4f4d\u548c\u7d20\u98df\u9910\u3002",
+    "hi": "25 \u0905\u0917\u0938\u094d\u0924 \u0915\u094b \u0926\u093f\u0932\u094d\u0932\u0940 \u0938\u0947 \u092c\u0947\u0902\u0917\u0932\u0941\u0930\u0941 \u0915\u0940 \u0936\u093e\u092e 5 \u092c\u091c\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0935\u093e\u0932\u0940 \u0938\u092c\u0938\u0947 \u0938\u0938\u094d\u0924\u0940 \u092b\u094d\u0932\u093e\u0907\u091f \u092c\u0941\u0915 \u0915\u0930\u094b, \u0916\u093f\u0921\u093c\u0915\u0940 \u0935\u093e\u0932\u0940 \u0938\u0940\u091f \u0914\u0930 \u0936\u093e\u0915\u093e\u0939\u093e\u0930\u0940 \u0916\u093e\u0928\u0947 \u0915\u0947 \u0938\u093e\u0925\u0964",
+    "ta": "\u0b86\u0b95\u0bb8\u0bcd\u0b9f\u0bcd 25 \u0b85\u0ba9\u0bcd\u0bb1\u0bc1 \u0b9f\u0bc6\u0bb2\u0bcd\u0bb2\u0bbf\u0baf\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0baa\u0bc6\u0b99\u0bcd\u0b95\u0bb3\u0bc2\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bbe\u0bb2\u0bc8 5 \u0bae\u0ba3\u0bbf\u0b95\u0bcd\u0b95\u0bc1\u0baa\u0bcd \u0baa\u0bbf\u0bb1\u0b95\u0bc1 \u0baa\u0bc1\u0bb1\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0bae\u0bcd \u0bae\u0bbf\u0b95\u0b95\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0ba8\u0bcd\u0ba4 \u0b95\u0b9f\u0bcd\u0b9f\u0ba3 \u0bb5\u0bbf\u0bae\u0bbe\u0ba9\u0ba4\u0bcd\u0ba4\u0bc8 \u0baa\u0ba4\u0bbf\u0bb5\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, \u0b9c\u0ba9\u0bcd\u0ba9\u0bb2\u0bcd \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b9a\u0bc8\u0bb5 \u0b89\u0ba3\u0bb5\u0bc1\u0bae\u0bcd \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.",
+    "hinglish": "25 August ko Delhi se Bengaluru ki shaam 5 baje ke baad wali sabse sasti flight book karo, window seat aur veg meal ke saath.",
+    "tanglish": "August 25 Delhi la irundhu Bengaluru ku saayangalam 5 manikku apram kelambura cheapest flight book pannunga, window seat um veg saapadum venum."
+  },
+  "verification": {
+    "en": "author",
+    "zh": "pending: translator back-translation + answerability check",
+    "hi": "pending: author",
+    "ta": "pending: author",
+    "hinglish": "pending: author",
+    "tanglish": "pending: author"
+  }
+}

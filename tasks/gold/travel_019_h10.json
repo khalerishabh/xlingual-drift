@@ -1,0 +1,111 @@
+{
+  "task_id": "travel_019_h10",
+  "template_id": "travel_019",
+  "horizon": 10,
+  "entities": {
+    "origin": "DEL",
+    "destination": "MAA"
+  },
+  "constraints": {
+    "date": "2026-08-26",
+    "max_price": 6000,
+    "objective": "earliest_departure"
+  },
+  "late_constraints": {
+    "seat_type": "aisle",
+    "meal": "diabetic"
+  },
+  "terminal_state": {
+    "booking.flight_id": "6E223",
+    "booking.price": 5900,
+    "booking.seat_type": "aisle",
+    "booking.meal": "diabetic"
+  },
+  "recovery_fallback": "SG136",
+  "decoys": {
+    "max_price": "AI439",
+    "objective": "SG136"
+  },
+  "gold_steps": [
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Delhi"
+      },
+      "returns": {
+        "code": "DEL"
+      }
+    },
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Chennai"
+      },
+      "returns": {
+        "code": "MAA"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "DEL",
+        "destination": "MAA",
+        "date": "2026-08-26"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "max_price": 6000
+      }
+    },
+    {
+      "tool": "get_fare_rules",
+      "args": {
+        "flight_id": "6E223"
+      },
+      "returns": {
+        "fare_class": "Y-SAVER"
+      }
+    },
+    {
+      "tool": "get_seat_availability",
+      "args": {
+        "flight_id": "6E223",
+        "fare_class": "Y-SAVER"
+      },
+      "returns": {
+        "hold_token": "H-6E223-Y-SAVER"
+      }
+    },
+    {
+      "tool": "get_user_profile",
+      "args": {},
+      "returns": {
+        "passenger_id": "P001"
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "6E223"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "6E223"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "args": {
+        "flight_id": "6E223",
+        "hold_token": "H-6E223-Y-SAVER",
+        "passenger_id": "P001",
+        "seat_id": "14C",
+        "meal_code": "DBML"
+      }
+    }
+  ]
+}

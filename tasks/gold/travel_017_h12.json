@@ -1,7 +1,7 @@
 {
-  "task_id": "travel_017_h8",
+  "task_id": "travel_017_h12",
   "template_id": "travel_017",
-  "horizon": 8,
+  "horizon": 12,
   "entities": {
     "origin": "MAA",
     "destination": "DEL"
@@ -89,13 +89,41 @@
       }
     },
     {
+      "tool": "get_travel_documents",
+      "args": {
+        "passenger_id": "P001"
+      },
+      "returns": {
+        "passenger_id": "P001",
+        "document_id": "DOC-P001-AADHAAR"
+      }
+    },
+    {
+      "tool": "get_payment_methods",
+      "args": {}
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "6E212"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "6E212"
+      }
+    },
+    {
       "tool": "book_flight",
       "args": {
         "flight_id": "6E212",
         "hold_token": "H-6E212-Y-FLEX",
         "passenger_id": "P001",
-        "seat_type": "aisle",
-        "meal": "jain"
+        "document_id": "DOC-P001-AADHAAR",
+        "payment_id": "PAY-UPI-01",
+        "seat_id": "14C",
+        "meal_code": "JNML"
       }
     }
   ]

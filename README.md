@@ -9,12 +9,15 @@ of that document.
 
 Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read that first.
 
-- **Travel domain, complete:** 7 deterministic tools where the *same request* needs 2, 4, 6
-  or 8 steps depending on which values each tool requires. One template (travel_017) in
-  en / zh / hi / ta / hinglish / tanglish, gold trajectories at all four horizons,
-  strict and lenient interface modes, and failure injection with localised error messages.
-- **Verifier:** success given episode state, per-constraint survival, fact displacement,
-  recovery. No LLM judge anywhere.
+- **Travel domain, complete:** 11 deterministic tools where the *same request* needs 2 to 12
+  steps depending on which values each tool requires. Three templates (travel_017–019) in
+  en / zh / hi / ta / hinglish / tanglish, each with early constraints (applied when the
+  flight is chosen) and late constraints (seat and meal, committed in the final call, so the
+  distance they must be carried grows with horizon). Gold for every template and horizon is
+  built and checked by `python -m tasks.build_gold`. Strict and lenient interface modes, and
+  failure injection with localised error messages.
+- **Verifier:** success given episode state, early and late constraint survival with the step
+  each was used at, fact displacement, recovery. No LLM judge anywhere.
 - **Mock policy:** walks gold with real tool outputs, so the harness runs end to end with
   **no API key and no GPU**. It can also deviate or recover on purpose.
 - **Real-model policy:** `agent/policies/openai_compat_policy.py` talks to any
@@ -22,7 +25,7 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   debugging, or a hosted API. Open-source models are the primary setup; APIs are optional.
 - **Runner:** resumable after a disconnect; endpoint failures are logged but never scored;
   full transcripts (messages, reasoning, token usage) saved per episode.
-- **Tests:** 40 pytest checks covering gold replay, horizon invariance, load-bearing
+- **Tests:** 106 pytest checks covering gold replay, horizon invariance, load-bearing
   constraints, script hygiene, lenient-mode safety, recovery, and the model-policy plumbing.
 - **Stubs:** the four mitigations in `agent/mitigations/` (Section 8.10).
 
@@ -57,20 +60,21 @@ Decided 28 Sep 2026 (Section 15.8 of the project doc):
 python -m venv .venv
 .venv\Scripts\activate            # Windows; on Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-python -m pytest -q                 # expect: 40 passed
+python -m pytest -q                 # expect: 106 passed
 python -m eval.run_grid --config configs/smoke_test.yaml
 ```
 
-The smoke test runs 6 mock cells at each of the 4 horizons (24 episodes): a clean solve, two
-deliberate deviations (lost budget, wrong objective), two recovery runs (not_found with an
-English message, transient with a Chinese message), and one non-recovering run. Every
-`solve` and `recover` line should show `success=True`, and every deviation `success=False`.
+The smoke test runs 7 mock cells on 3 templates at 6 horizons (126 episodes): a clean solve,
+three deliberate deviations (lost early constraint, wrong objective, lost seat and meal), two
+recovery runs (not_found with an English message, transient with a Chinese message), and one
+non-recovering run. Add `--workers 8` to run episodes concurrently. Every `solve` and
+`recover` line should show `success=True`, and every deviation `success=False`.
 
 ## Running a real model
 
 - **On Colab (real runs):** open `notebooks/colab_runner.ipynb` on an 80GB A100 runtime
-  and run top to bottom. It starts vLLM, runs `configs/capability_gate.yaml`, writes raw
-  logs to Drive, and commits a summary. Rerun from the top after a disconnect.
+  and run top to bottom. It starts vLLM, runs `configs/capability_gate_v2.yaml`, writes raw
+  logs to Drive, and prints early vs late constraint survival by language and horizon. Rerun from the top after a disconnect.
 - **On a laptop (debugging only):** with Ollama installed, `ollama pull qwen3:8b`, then
   `python -m eval.run_grid --config configs/local_ollama_debug.yaml`.
 

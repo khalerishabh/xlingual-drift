@@ -1,0 +1,39 @@
+{
+  "template_id": "travel_019",
+  "domain": "travel",
+  "intent": "Earliest flight under a budget on a given date, with an aisle seat and a diabetic meal.",
+  "session_date": "2026-08-21",
+  "city_names": {
+    "origin": "Delhi",
+    "destination": "Chennai"
+  },
+  "entities": {
+    "origin": "DEL",
+    "destination": "MAA"
+  },
+  "constraints": {
+    "date": "2026-08-26",
+    "max_price": 6000,
+    "objective": "earliest_departure"
+  },
+  "late_constraints": {
+    "seat_type": "aisle",
+    "meal": "diabetic"
+  },
+  "requests": {
+    "en": "Book the earliest flight from Delhi to Chennai on 26 August that costs under \u20b96000, with an aisle seat and a diabetic meal.",
+    "zh": "\u9884\u8ba28\u670826\u65e5\u4ece\u5fb7\u91cc\u98de\u5f80\u94a6\u5948\u3001\u4ef7\u683c\u4f4e\u4e8e6000\u5362\u6bd4\u7684\u6700\u65e9\u822a\u73ed\uff0c\u8981\u9760\u8fc7\u9053\u7684\u5ea7\u4f4d\u548c\u7cd6\u5c3f\u75c5\u9910\u3002",
+    "hi": "26 \u0905\u0917\u0938\u094d\u0924 \u0915\u094b \u0926\u093f\u0932\u094d\u0932\u0940 \u0938\u0947 \u091a\u0947\u0928\u094d\u0928\u0908 \u0915\u0940 \u20b96000 \u0938\u0947 \u0915\u092e \u0935\u093e\u0932\u0940 \u0938\u092c\u0938\u0947 \u092a\u0939\u0932\u0940 \u092b\u094d\u0932\u093e\u0907\u091f \u092c\u0941\u0915 \u0915\u0930\u094b, \u0906\u0907\u0932 \u0938\u0940\u091f \u0914\u0930 \u0921\u093e\u092f\u092c\u093f\u091f\u093f\u0915 \u0916\u093e\u0928\u0947 \u0915\u0947 \u0938\u093e\u0925\u0964",
+    "ta": "\u0b86\u0b95\u0bb8\u0bcd\u0b9f\u0bcd 26 \u0b85\u0ba9\u0bcd\u0bb1\u0bc1 \u0b9f\u0bc6\u0bb2\u0bcd\u0bb2\u0bbf\u0baf\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0b9a\u0bc6\u0ba9\u0bcd\u0ba9\u0bc8\u0b95\u0bcd\u0b95\u0bc1 \u20b96000-\u0b95\u0bcd\u0b95\u0bc1\u0b95\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0bb5\u0bbe\u0ba9 \u0b95\u0b9f\u0bcd\u0b9f\u0ba3\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0bae\u0bc1\u0ba4\u0bb2\u0bcd \u0bb5\u0bbf\u0bae\u0bbe\u0ba9\u0ba4\u0bcd\u0ba4\u0bc8 \u0baa\u0ba4\u0bbf\u0bb5\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, \u0ba8\u0b9f\u0bc8\u0baa\u0bbe\u0ba4\u0bc8 \u0baa\u0b95\u0bcd\u0b95 \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0ba8\u0bc0\u0bb0\u0bbf\u0bb4\u0bbf\u0bb5\u0bc1 \u0ba8\u0bcb\u0baf\u0bbe\u0bb3\u0bbf\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bbe\u0ba9 \u0b89\u0ba3\u0bb5\u0bc1\u0bae\u0bcd \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.",
+    "hinglish": "26 August ko Delhi se Chennai ki 6000 se kam wali sabse pehli flight book karo, aisle seat aur diabetic meal ke saath.",
+    "tanglish": "August 26 Delhi la irundhu Chennai ku 6000 kulla irukura first flight book pannunga, aisle seat um diabetic saapadum venum."
+  },
+  "verification": {
+    "en": "author",
+    "zh": "pending: translator back-translation + answerability check",
+    "hi": "pending: author",
+    "ta": "pending: author",
+    "hinglish": "pending: author",
+    "tanglish": "pending: author"
+  }
+}

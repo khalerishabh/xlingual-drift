@@ -1,43 +1,32 @@
 {
-  "task_id": "travel_017_h8",
-  "template_id": "travel_017",
+  "task_id": "travel_019_h8",
+  "template_id": "travel_019",
   "horizon": 8,
   "entities": {
-    "origin": "MAA",
-    "destination": "DEL"
+    "origin": "DEL",
+    "destination": "MAA"
   },
   "constraints": {
-    "date": "2026-08-22",
-    "depart_before": "12:00",
-    "max_price": 8000,
-    "objective": "latest_departure"
+    "date": "2026-08-26",
+    "max_price": 6000,
+    "objective": "earliest_departure"
   },
   "late_constraints": {
     "seat_type": "aisle",
-    "meal": "jain"
+    "meal": "diabetic"
   },
   "terminal_state": {
-    "booking.flight_id": "6E212",
-    "booking.price": 7900,
+    "booking.flight_id": "6E223",
+    "booking.price": 5900,
     "booking.seat_type": "aisle",
-    "booking.meal": "jain"
+    "booking.meal": "diabetic"
   },
-  "recovery_fallback": "AI440",
+  "recovery_fallback": "SG136",
   "decoys": {
-    "depart_before": "AI552",
-    "max_price": "SG118",
-    "objective": "AI440"
+    "max_price": "AI439",
+    "objective": "SG136"
   },
   "gold_steps": [
-    {
-      "tool": "resolve_city",
-      "args": {
-        "name": "Chennai"
-      },
-      "returns": {
-        "code": "MAA"
-      }
-    },
     {
       "tool": "resolve_city",
       "args": {
@@ -48,37 +37,45 @@
       }
     },
     {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Chennai"
+      },
+      "returns": {
+        "code": "MAA"
+      }
+    },
+    {
       "tool": "search_flights",
       "args": {
-        "origin": "MAA",
-        "destination": "DEL",
-        "date": "2026-08-22"
+        "origin": "DEL",
+        "destination": "MAA",
+        "date": "2026-08-26"
       }
     },
     {
       "tool": "filter_flights",
       "args": {
-        "depart_before": "12:00",
-        "max_price": 8000
+        "max_price": 6000
       }
     },
     {
       "tool": "get_fare_rules",
       "args": {
-        "flight_id": "6E212"
+        "flight_id": "6E223"
       },
       "returns": {
-        "fare_class": "Y-FLEX"
+        "fare_class": "Y-SAVER"
       }
     },
     {
       "tool": "get_seat_availability",
       "args": {
-        "flight_id": "6E212",
-        "fare_class": "Y-FLEX"
+        "flight_id": "6E223",
+        "fare_class": "Y-SAVER"
       },
       "returns": {
-        "hold_token": "H-6E212-Y-FLEX"
+        "hold_token": "H-6E223-Y-SAVER"
       }
     },
     {
@@ -91,11 +88,11 @@
     {
       "tool": "book_flight",
       "args": {
-        "flight_id": "6E212",
-        "hold_token": "H-6E212-Y-FLEX",
+        "flight_id": "6E223",
+        "hold_token": "H-6E223-Y-SAVER",
         "passenger_id": "P001",
         "seat_type": "aisle",
-        "meal": "jain"
+        "meal": "diabetic"
       }
     }
   ]

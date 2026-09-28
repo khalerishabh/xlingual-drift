@@ -43,6 +43,7 @@ class FakeClient:
         return item
 
 
+BOOK = {"flight_id": "6E212", "seat_type": "aisle", "meal": "jain"}
 H2_SEARCH = {"origin": "Chennai", "destination": "Delhi", "date": "2026-08-22",
              "depart_before": "12:00", "max_price": 8000}
 
@@ -61,7 +62,7 @@ def episode(p, h=2, lang="en", injector=None):
 def test_scripted_model_solves_h2_and_prompt_has_session_date():
     p, client = policy([
         reply(call("search_flights", H2_SEARCH, "c1"), reasoning="need flights"),
-        reply(call("book_flight", {"flight_id": "6E212"}, "c2")),
+        reply(call("book_flight", BOOK, "c2")),
     ])
     traj, r = episode(p)
     assert r["success"] and r["num_steps_taken"] == 2
@@ -77,7 +78,7 @@ def test_localised_error_reaches_model_unescaped():
     p, client = policy([
         reply(call("search_flights", H2_SEARCH, "c1")),
         reply(call("search_flights", H2_SEARCH, "c2")),
-        reply(call("book_flight", {"flight_id": "6E212"}, "c3")),
+        reply(call("book_flight", BOOK, "c3")),
     ])
     inj = FailureInjector("transient", "zh", at_tool="search_flights")
     traj, r = episode(p, lang="zh", injector=inj)
@@ -90,7 +91,7 @@ def test_localised_error_reaches_model_unescaped():
 def test_only_first_parallel_call_is_kept():
     p, client = policy([
         reply(call("search_flights", H2_SEARCH, "c1"), call("book_flight", {"flight_id": "AI440"}, "c1b")),
-        reply(call("book_flight", {"flight_id": "6E212"}, "c2")),
+        reply(call("book_flight", BOOK, "c2")),
     ])
     traj, r = episode(p)
     assistant = client.requests[1]["messages"][-2]
@@ -102,7 +103,7 @@ def test_malformed_arguments_become_validation_error_and_episode_continues():
     p, client = policy([
         reply(call("search_flights", None, "c1", raw="{origin: Chennai")),
         reply(call("search_flights", H2_SEARCH, "c2")),
-        reply(call("book_flight", {"flight_id": "6E212"}, "c3")),
+        reply(call("book_flight", BOOK, "c3")),
     ])
     traj, r = episode(p)
     assert traj.steps[0]["error"]["error_type"] == "validation"
@@ -130,7 +131,7 @@ def test_client_errors_fail_fast_server_errors_retry():
     assert len(client.requests) == 1
 
     p, client = policy([Status(503), Status(503), reply(call("search_flights", H2_SEARCH, "c1")),
-                        reply(call("book_flight", {"flight_id": "6E212"}, "c2"))], max_retries=2)
+                        reply(call("book_flight", BOOK, "c2"))], max_retries=2)
     assert episode(p)[1]["success"]
 
     p, _ = policy([Status(503)] * 3, max_retries=2)

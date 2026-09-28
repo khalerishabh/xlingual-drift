@@ -1,7 +1,7 @@
 {
   "task_id": "travel_017_h2",
-  "horizon": 2,
   "template_id": "travel_017",
+  "horizon": 2,
   "entities": {
     "origin": "MAA",
     "destination": "DEL"
@@ -12,11 +12,22 @@
     "max_price": 8000,
     "objective": "latest_departure"
   },
+  "late_constraints": {
+    "seat_type": "aisle",
+    "meal": "jain"
+  },
   "terminal_state": {
     "booking.flight_id": "6E212",
-    "booking.price": 7900
+    "booking.price": 7900,
+    "booking.seat_type": "aisle",
+    "booking.meal": "jain"
   },
   "recovery_fallback": "AI440",
+  "decoys": {
+    "depart_before": "AI552",
+    "max_price": "SG118",
+    "objective": "AI440"
+  },
   "gold_steps": [
     {
       "tool": "search_flights",
@@ -31,13 +42,10 @@
     {
       "tool": "book_flight",
       "args": {
-        "flight_id": "6E212"
+        "flight_id": "6E212",
+        "seat_type": "aisle",
+        "meal": "jain"
       }
     }
-  ],
-  "decoys": {
-    "max_price": "SG118",
-    "depart_before": "AI552",
-    "objective": "AI440"
-  }
+  ]
 }

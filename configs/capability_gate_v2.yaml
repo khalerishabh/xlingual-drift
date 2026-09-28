@@ -1,0 +1,31 @@
+# Second gate, after the late-binding redesign (project doc Section 15.11).
+# Thinking is ON (decided from gate v1). 3 templates x 6 horizons x
+# 5 languages x 3 seeds = 270 episodes. Run with --workers 16 on Colab.
+#
+# What to read from it:
+#   - flight_correct by language x horizon: early constraints, applied when
+#     the flight is chosen. Gate v1 showed these flat and at ceiling for
+#     en/zh/hi.
+#   - all_late_survived by language x horizon: seat and meal, committed in
+#     the final call, carried for more steps as the horizon grows. If state
+#     drift exists, this is where the language gap should widen.
+
+run_name: capability_gate_v2_qwen36_27b
+templates:
+  - tasks/templates/travel_017.json
+  - tasks/templates/travel_018.json
+  - tasks/templates/travel_019.json
+interface_mode: strict
+max_steps: 24
+horizons: [2, 4, 6, 8, 10, 12]
+languages: [en, zh, hi, ta, hinglish]
+
+cells:
+  - name: qwen36_27b_think
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1, 2, 3]

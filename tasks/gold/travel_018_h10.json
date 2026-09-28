@@ -1,0 +1,111 @@
+{
+  "task_id": "travel_018_h10",
+  "template_id": "travel_018",
+  "horizon": 10,
+  "entities": {
+    "origin": "DEL",
+    "destination": "BLR"
+  },
+  "constraints": {
+    "date": "2026-08-25",
+    "depart_after": "17:00",
+    "objective": "min_price"
+  },
+  "late_constraints": {
+    "seat_type": "window",
+    "meal": "vegetarian"
+  },
+  "terminal_state": {
+    "booking.flight_id": "AI803",
+    "booking.price": 5600,
+    "booking.seat_type": "window",
+    "booking.meal": "vegetarian"
+  },
+  "recovery_fallback": "UK811",
+  "decoys": {
+    "depart_after": "6E501",
+    "objective": "UK811"
+  },
+  "gold_steps": [
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Delhi"
+      },
+      "returns": {
+        "code": "DEL"
+      }
+    },
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Bengaluru"
+      },
+      "returns": {
+        "code": "BLR"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "DEL",
+        "destination": "BLR",
+        "date": "2026-08-25"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_after": "17:00"
+      }
+    },
+    {
+      "tool": "get_fare_rules",
+      "args": {
+        "flight_id": "AI803"
+      },
+      "returns": {
+        "fare_class": "Y-FLEX"
+      }
+    },
+    {
+      "tool": "get_seat_availability",
+      "args": {
+        "flight_id": "AI803",
+        "fare_class": "Y-FLEX"
+      },
+      "returns": {
+        "hold_token": "H-AI803-Y-FLEX"
+      }
+    },
+    {
+      "tool": "get_user_profile",
+      "args": {},
+      "returns": {
+        "passenger_id": "P001"
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "AI803"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "AI803"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "args": {
+        "flight_id": "AI803",
+        "hold_token": "H-AI803-Y-FLEX",
+        "passenger_id": "P001",
+        "seat_id": "14F",
+        "meal_code": "VGML"
+      }
+    }
+  ]
+}

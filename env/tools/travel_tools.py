@@ -4,27 +4,38 @@ Deterministic travel-domain tools (Section 8.1), parameterised by horizon
 
 Interface modes:
   strict   values must be the canonical form the schema asks for
-           (English city name, or 3-letter code).
+           (English city name or 3-letter code; English enum values).
   lenient  spelling/script variants of that same form are accepted via
            env/aliases/city_aliases.json. Lenient never lets a name stand
-           in for a code, so it removes MLCL's language-mismatch failure
-           without removing a step from the chain.
+           in for a code or an id, so it removes MLCL's language-mismatch
+           failure without removing a step from the chain.
 """
 
 import json
 import re
 from pathlib import Path
 
-from env.data.flights import CITIES, FLIGHTS, USER_PROFILE
+from env.data.flights import (CITIES, FLIGHTS, MEAL_OPTIONS, MEALS, PAYMENT_METHODS, SEAT_MAP,
+                              SEAT_TYPES, TRAVEL_DOCUMENTS, USER_PROFILE, seat_map_for)
 from env.tools.horizons import travel_profile
 from env.tools.schemas import travel_tool_schemas
 
 _ALIASES = json.loads(
     (Path(__file__).resolve().parent.parent / "aliases" / "city_aliases.json").read_text(encoding="utf-8")
 )
+
+
+def _invert(table: dict) -> dict:
+    return {alias: canon for canon, aliases in table.items() for alias in aliases}
+
+
 _NAME_TO_CODE = {name: code for code, name in CITIES.items()}
-_NAME_ALIASES = {alias: canon for canon, alist in _ALIASES["names"].items() for alias in alist}
-_CODE_ALIASES = {alias: code for code, alist in _ALIASES["codes"].items() for alias in alist}
+_NAME_ALIASES = _invert(_ALIASES["names"])
+_CODE_ALIASES = _invert(_ALIASES["codes"])
+_SEAT_ALIASES = _invert(_ALIASES["seat_types"])
+_MEAL_ALIASES = _invert(_ALIASES["meals"])
+_SEATS_BY_ID = {s["seat_id"]: s["seat_type"] for s in SEAT_MAP}
+_MEALS_BY_CODE = {m["meal_code"]: m["meal"] for m in MEAL_OPTIONS}
 _DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -67,19 +78,22 @@ class TravelTools:
             raise ToolError("validation", f"ValidationError: unknown flight_id '{flight_id}'")
         return flight
 
+    def _lenient(self, value, aliases: dict):
+        return aliases.get(value) if self.interface_mode == "lenient" else None
+
     def _canonical_name(self, value: str):
-        if value in _NAME_TO_CODE:
-            return value
-        if self.interface_mode == "lenient":
-            return _NAME_ALIASES.get(value)
-        return None
+        return value if value in _NAME_TO_CODE else self._lenient(value, _NAME_ALIASES)
 
     def _canonical_code(self, value: str):
-        if value in CITIES:
+        return value if value in CITIES else self._lenient(value, _CODE_ALIASES)
+
+    def _enum(self, value, allowed, aliases: dict, field: str) -> str:
+        if value in allowed:
             return value
-        if self.interface_mode == "lenient":
-            return _CODE_ALIASES.get(value)
-        return None
+        mapped = self._lenient(value, aliases)
+        if mapped is not None:
+            return mapped
+        raise ToolError("validation", f"ValidationError: '{field}' must be one of {list(allowed)}, got '{value}'")
 
     def _city_to_code(self, value: str, field: str) -> str:
         code = self._canonical_code(value)
@@ -92,13 +106,23 @@ class TravelTools:
             raise ToolError("validation", f"ValidationError: '{field}' must be an English city name, got '{value}'")
         raise ToolError("validation", f"ValidationError: '{field}' must be a city code from resolve_city, got '{value}'")
 
+    @staticmethod
+    def _apply_filters(results, depart_after=None, depart_before=None, max_price=None):
+        if depart_after is not None:
+            results = [f for f in results if f["depart_time"] > depart_after]
+        if depart_before is not None:
+            results = [f for f in results if f["depart_time"] < depart_before]
+        if max_price is not None:
+            results = [f for f in results if f["price"] <= max_price]
+        return results
+
     def resolve_city(self, name: str) -> dict:
         canon = self._canonical_name(name)
         if canon is None:
             raise ToolError("validation", f"UnknownCity: '{name}' is not a recognised city")
         return {"code": _NAME_TO_CODE[canon]}
 
-    def search_flights(self, origin, destination, date, depart_before=None, max_price=None) -> dict:
+    def search_flights(self, origin, destination, date, depart_after=None, depart_before=None, max_price=None) -> dict:
         o = self._city_to_code(origin, "origin")
         d = self._city_to_code(destination, "destination")
         if not _DATE_RE.match(str(date)):
@@ -108,22 +132,13 @@ class TravelTools:
             for f in FLIGHTS
             if f["origin"] == o and f["destination"] == d and f["date"] == date and self._seats(f) > 0
         ]
-        results = self._apply_filters(results, depart_before, max_price)
-        self._last_results = results
-        return {"flights": results}
+        self._last_results = self._apply_filters(results, depart_after, depart_before, max_price)
+        return {"flights": self._last_results}
 
-    @staticmethod
-    def _apply_filters(results, depart_before, max_price):
-        if depart_before is not None:
-            results = [f for f in results if f["depart_time"] < depart_before]
-        if max_price is not None:
-            results = [f for f in results if f["price"] <= max_price]
-        return results
-
-    def filter_flights(self, depart_before=None, max_price=None) -> dict:
+    def filter_flights(self, depart_after=None, depart_before=None, max_price=None) -> dict:
         if self._last_results is None:
             raise ToolError("validation", "ValidationError: call search_flights before filter_flights")
-        self._last_results = self._apply_filters(self._last_results, depart_before, max_price)
+        self._last_results = self._apply_filters(self._last_results, depart_after, depart_before, max_price)
         return {"flights": self._last_results}
 
     def get_fare_rules(self, flight_id) -> dict:
@@ -143,16 +158,48 @@ class TravelTools:
     def get_user_profile(self) -> dict:
         return dict(USER_PROFILE)
 
-    def book_flight(self, flight_id, hold_token=None, passenger_id=None) -> dict:
-        flight = self._flight(flight_id)
-        if self.profile["hold_required"] and self._holds.get(hold_token) != flight_id:
-            raise ToolError("validation", f"ValidationError: hold_token is not valid for flight {flight_id}")
-        if self.profile["passenger_required"] and passenger_id != USER_PROFILE["passenger_id"]:
+    def get_seat_map(self, flight_id) -> dict:
+        return {"flight_id": flight_id, "seats": [dict(s) for s in seat_map_for(self._flight(flight_id))]}
+
+    def get_meal_options(self, flight_id) -> dict:
+        self._flight(flight_id)
+        return {"flight_id": flight_id, "meals": [dict(m) for m in MEAL_OPTIONS]}
+
+    def get_travel_documents(self, passenger_id) -> dict:
+        if passenger_id not in TRAVEL_DOCUMENTS:
             raise ToolError("validation", f"ValidationError: unknown passenger_id '{passenger_id}'")
+        return {"passenger_id": passenger_id, **TRAVEL_DOCUMENTS[passenger_id]}
+
+    def get_payment_methods(self) -> dict:
+        return {"payment_methods": [dict(p) for p in PAYMENT_METHODS]}
+
+    def book_flight(self, flight_id, hold_token=None, passenger_id=None, seat_type=None, meal=None,
+                    seat_id=None, meal_code=None, document_id=None, payment_id=None) -> dict:
+        p = self.profile
+        flight = self._flight(flight_id)
+        if p["hold_required"] and self._holds.get(hold_token) != flight_id:
+            raise ToolError("validation", f"ValidationError: hold_token is not valid for flight {flight_id}")
+        if p["passenger_required"] and passenger_id != USER_PROFILE["passenger_id"]:
+            raise ToolError("validation", f"ValidationError: unknown passenger_id '{passenger_id}'")
+        if p["addon_ids"]:
+            if seat_id not in _SEATS_BY_ID:
+                raise ToolError("validation", f"ValidationError: unknown seat_id '{seat_id}' for {flight_id}")
+            if meal_code not in _MEALS_BY_CODE:
+                raise ToolError("validation", f"ValidationError: unknown meal_code '{meal_code}' for {flight_id}")
+            seat_type, meal = _SEATS_BY_ID[seat_id], _MEALS_BY_CODE[meal_code]
+        else:
+            seat_type = self._enum(seat_type, SEAT_TYPES, _SEAT_ALIASES, "seat_type")
+            meal = self._enum(meal, MEALS, _MEAL_ALIASES, "meal")
+        if p["docs_payment_required"]:
+            if document_id != TRAVEL_DOCUMENTS.get(passenger_id, {}).get("document_id"):
+                raise ToolError("validation", f"ValidationError: document_id is not valid for passenger '{passenger_id}'")
+            if payment_id not in {m["payment_id"] for m in PAYMENT_METHODS}:
+                raise ToolError("validation", f"ValidationError: unknown payment_id '{payment_id}'")
         if self._seats(flight) <= 0:
             raise ToolError("not_found", f"NotFound: flight {flight_id} has 0 seats available")
         self.bookings.append({"flight_id": flight_id, "price": flight["price"]})
-        return {"booking.flight_id": flight_id, "booking.price": flight["price"]}
+        return {"booking.flight_id": flight_id, "booking.price": flight["price"],
+                "booking.seat_type": seat_type, "booking.meal": meal}
 
     def call(self, tool_name: str, args: dict) -> dict:
         schema = self.schemas.get(tool_name)

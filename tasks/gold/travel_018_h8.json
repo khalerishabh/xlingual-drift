@@ -1,43 +1,32 @@
 {
-  "task_id": "travel_017_h8",
-  "template_id": "travel_017",
+  "task_id": "travel_018_h8",
+  "template_id": "travel_018",
   "horizon": 8,
   "entities": {
-    "origin": "MAA",
-    "destination": "DEL"
+    "origin": "DEL",
+    "destination": "BLR"
   },
   "constraints": {
-    "date": "2026-08-22",
-    "depart_before": "12:00",
-    "max_price": 8000,
-    "objective": "latest_departure"
+    "date": "2026-08-25",
+    "depart_after": "17:00",
+    "objective": "min_price"
   },
   "late_constraints": {
-    "seat_type": "aisle",
-    "meal": "jain"
+    "seat_type": "window",
+    "meal": "vegetarian"
   },
   "terminal_state": {
-    "booking.flight_id": "6E212",
-    "booking.price": 7900,
-    "booking.seat_type": "aisle",
-    "booking.meal": "jain"
+    "booking.flight_id": "AI803",
+    "booking.price": 5600,
+    "booking.seat_type": "window",
+    "booking.meal": "vegetarian"
   },
-  "recovery_fallback": "AI440",
+  "recovery_fallback": "UK811",
   "decoys": {
-    "depart_before": "AI552",
-    "max_price": "SG118",
-    "objective": "AI440"
+    "depart_after": "6E501",
+    "objective": "UK811"
   },
   "gold_steps": [
-    {
-      "tool": "resolve_city",
-      "args": {
-        "name": "Chennai"
-      },
-      "returns": {
-        "code": "MAA"
-      }
-    },
     {
       "tool": "resolve_city",
       "args": {
@@ -48,24 +37,32 @@
       }
     },
     {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Bengaluru"
+      },
+      "returns": {
+        "code": "BLR"
+      }
+    },
+    {
       "tool": "search_flights",
       "args": {
-        "origin": "MAA",
-        "destination": "DEL",
-        "date": "2026-08-22"
+        "origin": "DEL",
+        "destination": "BLR",
+        "date": "2026-08-25"
       }
     },
     {
       "tool": "filter_flights",
       "args": {
-        "depart_before": "12:00",
-        "max_price": 8000
+        "depart_after": "17:00"
       }
     },
     {
       "tool": "get_fare_rules",
       "args": {
-        "flight_id": "6E212"
+        "flight_id": "AI803"
       },
       "returns": {
         "fare_class": "Y-FLEX"
@@ -74,11 +71,11 @@
     {
       "tool": "get_seat_availability",
       "args": {
-        "flight_id": "6E212",
+        "flight_id": "AI803",
         "fare_class": "Y-FLEX"
       },
       "returns": {
-        "hold_token": "H-6E212-Y-FLEX"
+        "hold_token": "H-AI803-Y-FLEX"
       }
     },
     {
@@ -91,11 +88,11 @@
     {
       "tool": "book_flight",
       "args": {
-        "flight_id": "6E212",
-        "hold_token": "H-6E212-Y-FLEX",
+        "flight_id": "AI803",
+        "hold_token": "H-AI803-Y-FLEX",
         "passenger_id": "P001",
-        "seat_type": "aisle",
-        "meal": "jain"
+        "seat_type": "window",
+        "meal": "vegetarian"
       }
     }
   ]

@@ -1,12 +1,15 @@
-# No API key, no GPU. Checks the harness end to end at every horizon:
-# gold replays, both deviations are caught, and both recovery paths work.
-# Language is recorded but ignored by the mock policy.
+# No API key, no GPU. Checks the harness end to end on every template and
+# horizon: gold replays, all three deviation types are caught, and both
+# recovery paths work. Language is recorded but ignored by the mock policy.
 
 run_name: smoke_test
-template: tasks/templates/travel_017.json
+templates:
+  - tasks/templates/travel_017.json
+  - tasks/templates/travel_018.json
+  - tasks/templates/travel_019.json
 interface_mode: strict
-max_steps: 20
-horizons: [2, 4, 6, 8]
+max_steps: 24
+horizons: [2, 4, 6, 8, 10, 12]
 languages: [en]
 
 cells:
@@ -14,13 +17,17 @@ cells:
     policy: mock
     mock_mode: solve
     seeds: [1]
-  - name: drop_budget
+  - name: drop_early
     policy: mock
     mock_mode: deviate_drop_constraint
     seeds: [1]
   - name: wrong_objective
     policy: mock
     mock_mode: deviate_wrong_flight
+    seeds: [1]
+  - name: drop_late
+    policy: mock
+    mock_mode: deviate_drop_late
     seeds: [1]
   - name: recover_notfound_en
     policy: mock

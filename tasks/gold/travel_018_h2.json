@@ -1,0 +1,48 @@
+{
+  "task_id": "travel_018_h2",
+  "template_id": "travel_018",
+  "horizon": 2,
+  "entities": {
+    "origin": "DEL",
+    "destination": "BLR"
+  },
+  "constraints": {
+    "date": "2026-08-25",
+    "depart_after": "17:00",
+    "objective": "min_price"
+  },
+  "late_constraints": {
+    "seat_type": "window",
+    "meal": "vegetarian"
+  },
+  "terminal_state": {
+    "booking.flight_id": "AI803",
+    "booking.price": 5600,
+    "booking.seat_type": "window",
+    "booking.meal": "vegetarian"
+  },
+  "recovery_fallback": "UK811",
+  "decoys": {
+    "depart_after": "6E501",
+    "objective": "UK811"
+  },
+  "gold_steps": [
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "Delhi",
+        "destination": "Bengaluru",
+        "date": "2026-08-25",
+        "depart_after": "17:00"
+      }
+    },
+    {
+      "tool": "book_flight",
+      "args": {
+        "flight_id": "AI803",
+        "seat_type": "window",
+        "meal": "vegetarian"
+      }
+    }
+  ]
+}

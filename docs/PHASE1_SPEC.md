@@ -1,7 +1,7 @@
 # Phase 1 Spec: Environment, Tasks, Gold, Injection
 
-Status: **draft, 28 Sep 2026.** Travel domain implemented and tested; real-model policy
-built (40 tests). Shop and
+Status: **draft, 28 Sep 2026.** Travel domain implemented with late-binding constraints and
+horizons 2–12; three templates with script-built gold; real-model policy; 106 tests. Shop and
 records domains specified here, not yet built. Freeze this spec before Phase 3 (language
 authoring); after that, changes to tools or templates invalidate authored text.
 
@@ -15,8 +15,10 @@ Cross-references are to `Project_Detail_Document.md`.
 |---|---|---|
 | High-resource control language | **Chinese (Simplified)** | Enables the DeepPlanning ZH/EN external check on RQ1 (Section 8.12). Verified by translator back-translation plus the answerability check, since the author does not read Chinese |
 | Languages per template | en, zh, hi, ta, hinglish (+ optional tanglish) | Section 8.3 |
-| Horizons | 2, 4, 6, 8 | Section 8.2; extend to 10/12 only if the pilot needs it |
+| Horizons | 2, 4, 6, 8, 10, 12 | Extended after gate v1 showed a ceiling at h8 (project doc 15.10) |
 | Injection targeting | By tool (`at_tool`), not step index | A real model may take extra steps; a tool target hits the same logical point in every language |
+| Thinking mode | ON | Gate v1 (Section 8) |
+| Constraint classes | Early (applied when the flight is chosen) and late (committed in the final call) | Gate v1 showed every constraint was consumed by step ~5, so horizon added length but not constraint distance (project doc 15.10–15.11) |
 
 ---
 
@@ -25,7 +27,7 @@ Cross-references are to `Project_Detail_Document.md`.
 Three things are held constant across horizons for a given template:
 
 1. **The request text.** Byte-identical per language.
-2. **The tool names and descriptions.** The agent sees the same 7 travel tools at every horizon.
+2. **The tool names and descriptions.** The agent sees the same 11 travel tools at every horizon.
 3. **The final decision set.** The candidates visible when the agent chooses are the same at
    every horizon (`test_decision_set_identical_at_every_horizon`). Longer horizons are longer
    chains, not harder choices.
@@ -33,15 +35,25 @@ Three things are held constant across horizons for a given template:
 What changes is **which values each tool requires**. A value that only another tool can
 produce forces that tool into the chain:
 
-| Horizon | Required-value changes | Gold chain (travel_017) |
+| Horizon | Required-value changes | Gold chain |
 |---|---|---|
-| 2 | search accepts city names and inline filters | search_flights → book_flight |
+| 2 | search accepts city names and inline filters; book takes seat type and meal names | search_flights → book_flight |
 | 4 | search requires city **codes** | resolve_city ×2 → search_flights → book_flight |
 | 6 | search loses inline filters; book requires a **hold_token** | resolve ×2 → search → filter_flights → get_seat_availability → book |
 | 8 | availability requires **fare_class**; book requires **passenger_id** | h6 + get_fare_rules + get_user_profile |
+| 10 | book requires a **seat_id** and **meal_code** instead of names | h8 + get_seat_map + get_meal_options |
+| 12 | book also requires a **document_id** and **payment_id** | h10 + get_travel_documents + get_payment_methods |
 
 The agent learns requirements from the schemas, never from error messages, so horizon stays
 separate from recovery (RQ4).
+
+**Early vs late constraints (constraint distance).** Early constraints (time window, budget,
+objective) are applied when the flight is chosen, around step 1–6. Late constraints (seat type,
+meal) are committed only in the final booking call, at step *h*, so the number of steps they
+must be carried grows with horizon (`test_late_constraints_committed_only_in_the_final_call`).
+If state drift exists, late-constraint survival should fall with horizon faster in non-English
+conditions than early-constraint survival does. The early constraints act as a within-episode
+control for comprehension.
 
 **Residual confound, to report as a covariate:** schema text grows slightly with horizon
 (more required parameters). Log schema token count per horizon and include it in the mixed
@@ -51,8 +63,9 @@ model if it varies materially.
 
 - **Strict:** the exact canonical form (English name, or code).
 - **Lenient:** spelling and script variants of *the same form* resolve via
-  `env/aliases/city_aliases.json` (Chennai, चेन्नई, சென்னை, 钦奈 → Chennai).
-- **Lenient never shortens the chain.** A name is never accepted where a code is required
+  `env/aliases/city_aliases.json` (Chennai, चेन्नई, சென்னை, 钦奈 → Chennai; आइल सीट → aisle;
+  ஜெயின் உணவு → jain).
+- **Lenient never shortens the chain.** A name is never accepted where a code or id is required
   (`test_lenient_never_shortens_the_chain`). Otherwise the lenient control would change
   horizon and contaminate RQ2.
 
@@ -81,22 +94,37 @@ model if it varies materially.
    Freeze a template only when every language is `verified`.
 7. **A valid recovery path must exist for every injection point.** Recorded as
    `recovery_fallback` in gold (ToolBench-X discipline, Section 8.6).
+8. **Late constraints must be real choices, never listed first.** The requested seat type and
+   meal must exist among several options and must not be the first one listed, so "took the
+   first option" never looks like survival. Seat listing order is route-dependent for this reason.
+   Found while building travel_018 (window seat, which was listed first).
+9. **Gold is built by script, never by hand.** `python -m tasks.build_gold` derives the answer
+   from the constraints alone, replays the chain, and refuses to write a file that breaks rules
+   1, 2, 7 or 8. `test_gold_files_are_current` fails if a committed gold file is stale.
 
 ---
 
-## 4. Tool inventory (15 tools, 3 domains)
+## 4. Tool inventory (19 tools, 3 domains)
 
 ### Travel: implemented
 
 | Tool | Returns | Required from horizon |
 |---|---|---|
 | resolve_city(name) | code | 4 |
-| search_flights(origin, destination, date, [depart_before, max_price]) | flights (sold-out excluded) | 2 |
-| filter_flights(depart_before, max_price) | flights | 6 |
+| search_flights(origin, destination, date, [depart_after, depart_before, max_price]) | flights (sold-out excluded) | 2 |
+| filter_flights(depart_after, depart_before, max_price) | flights | 6 |
 | get_fare_rules(flight_id) | fare_class | 8 |
 | get_seat_availability(flight_id, [fare_class]) | seats, hold_token | 6 |
 | get_user_profile() *(shared across domains)* | passenger_id (+ address_id, customer_id in other domains) | 8 |
-| book_flight(flight_id, [hold_token], [passenger_id]) | booking (terminal) | 2 |
+| get_seat_map(flight_id) | seats with seat_id and seat_type | 10 |
+| get_meal_options(flight_id) | meals with meal_code | 10 |
+| get_travel_documents(passenger_id) | document_id | 12 |
+| get_payment_methods() | payment_id | 12 |
+| book_flight(flight_id, seat_type+meal or seat_id+meal_code, [hold_token, passenger_id, document_id, payment_id]) | booking with flight, price, seat type, meal (terminal) | 2 |
+
+Templates built: **travel_017** (latest morning flight under ₹8000; aisle seat, Jain meal),
+**travel_018** (cheapest flight after 17:00; window seat, vegetarian meal), **travel_019**
+(earliest flight under ₹6000; aisle seat, diabetic meal).
 
 ### Shop / orders: to build
 
@@ -142,12 +170,16 @@ Build shop first. Records only if the pilot shows two domains are not enough.
   "entities":    {"origin": "MAA", "destination": "DEL"},
   "constraints": {"date": "2026-08-22", "depart_before": "12:00", "max_price": 8000,
                   "objective": "latest_departure"},
-  "terminal_state": {"booking.flight_id": "6E212", "booking.price": 7900},
+  "late_constraints": {"seat_type": "aisle", "meal": "jain"},
+  "terminal_state": {"booking.flight_id": "6E212", "booking.price": 7900,
+                     "booking.seat_type": "aisle", "booking.meal": "jain"},
   "recovery_fallback": "AI440",
-  "decoys": {"max_price": "SG118", "depart_before": "AI552", "objective": "AI440"},
+  "decoys": {"depart_before": "AI552", "max_price": "SG118", "objective": "AI440"},
   "gold_steps": [{"tool": "...", "args": {}, "returns": {}}]
 }
 ```
+
+Generated by `python -m tasks.build_gold` from `tasks/templates/*.json` (rule 9).
 
 - `returns` is optional and only for values later steps depend on. The replay test checks them.
 - One file per (template, horizon). The gate for Phase 2 is that every gold file replays exactly
@@ -159,10 +191,13 @@ Build shop first. Records only if the pilot shows two domains are not enough.
 
 | Field | Meaning |
 |---|---|
-| success | Booked the correct answer **given the episode state** (with not_found injection, the best remaining option) |
-| matches_gold_terminal | Booked exactly the gold answer |
-| constraint_survival | Per constraint: route, date, depart_before, max_price, objective |
-| fact_displacements | Arguments (flight_id, hold_token, fare_class, passenger_id) whose value never appeared in an earlier tool output |
+| success | Correct flight **given the episode state** (with not_found injection, the best remaining option) *and* the requested seat type and meal |
+| flight_correct | Early constraints only: the right flight |
+| matches_gold_terminal | Booked exactly the gold terminal state |
+| early_survival | Per early constraint: route, date, time window, budget, objective |
+| late_survival | Per late constraint: seat_type, meal |
+| early_first_use_step, late_commit_step | Step at which the flight choice was first acted on; step at which seat and meal were committed. Their difference over horizon is the constraint-distance axis |
+| fact_displacements | Arguments (flight_id, hold_token, fare_class, passenger_id, seat_id, meal_code, document_id, payment_id) whose value never appeared in an earlier tool output |
 | first_error_step, extra_steps | Deviation timing; steps beyond gold length |
 | injected, injected_at_step, recovered | recovered = success on an injected episode |
 
@@ -182,11 +217,11 @@ waits for real policies.
 
 **Injection positions** (by tool, per horizon):
 
-| Position | h2 | h4 | h6 | h8 |
-|---|---|---|---|---|
-| early | search_flights | resolve_city | resolve_city | resolve_city |
-| mid | search_flights | search_flights | get_seat_availability | get_seat_availability |
-| late | book_flight | book_flight | book_flight | book_flight |
+| Position | h2 | h4 | h6 | h8 | h10 | h12 |
+|---|---|---|---|---|---|---|
+| early | search_flights | resolve_city | resolve_city | resolve_city | resolve_city | resolve_city |
+| mid | search_flights | search_flights | get_seat_availability | get_seat_availability | get_seat_availability | get_seat_availability |
+| late | book_flight | book_flight | book_flight | book_flight | book_flight | book_flight |
 
 At h2, early and mid collapse, so report position only for h≥4.
 
@@ -238,10 +273,13 @@ retry). Analyses keep the last scored row per `episode_key`.
 
 1. Build the shop domain to the spec above. Resolve the delivery-estimate question (rule 3).
 2. Implement validation as persistent spec drift.
-3. Author the remaining templates. Target: 40 across domains, 20 in travel if records is dropped.
-4. Rishabh to verify hi / ta / hinglish text; zh via translator back-translation.
-5. Log schema token counts per horizon (confound check, Section 2).
-6. Run the capability gate on Colab (Qwen 3.6 27B, all five languages, thinking on/off) and
-   fix the thinking setting.
+3. Author the remaining templates (target 40 across domains), each with early and late
+   constraints. Gate v2 decides whether the late-binding design works before scaling.
+4. Rishabh to verify hi / ta / hinglish text, including the new seat and meal clauses; zh via
+   translator back-translation.
+5. Log schema token counts per horizon (confound check, Section 2). Schema text grows more at
+   h10/h12, so this matters more now.
+6. ~~Run the capability gate and fix the thinking setting~~ done (ON). Run gate v2
+   (`configs/capability_gate_v2.yaml`).
 7. Collect a final user-facing reply after the terminal tool call (needed for RQ5 output
    language fidelity); the loop currently ends at the booking.

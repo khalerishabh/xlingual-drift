@@ -1,34 +1,42 @@
 """
 Scripted policy for testing the harness without a model. It walks the gold
-tool sequence, but fills flight-dependent arguments (flight_id, hold_token,
-fare_class, passenger_id) from what the tools actually returned, so it
-works at every horizon and can change course.
+tool sequence, but fills flight-dependent arguments from what the tools
+actually returned, so it works at every horizon and can change course.
 
 Modes:
   solve                    walk gold; stop at the first error.
   recover                  walk gold; retry transient errors; on not_found,
                            switch to the gold file's recovery_fallback flight
                            and redo the flight-specific steps.
-  deviate_drop_constraint  drop max_price and pursue the gold file's
-                           max_price decoy (state drift on the budget).
-  deviate_wrong_flight     book the gold file's objective decoy: valid on
-                           every hard constraint but not the best option
-                           (at h6+ also a hold mismatch).
+  deviate_drop_constraint  drop the template's first early filter constraint
+                           and book its decoy (early-constraint drift).
+  deviate_wrong_flight     book the objective decoy: valid on every hard
+                           constraint but not the best option.
+  deviate_drop_late        book the right flight with a wrong seat type and
+                           meal (late-constraint drift).
 """
 
-_FLIGHT_KEYS = ("flight_id", "hold_token", "fare_class", "passenger_id")
+from env.data.flights import MEAL_OPTIONS, SEAT_MAP, SEAT_TYPES
+
+_FROM_RESULTS = ("hold_token", "fare_class", "passenger_id", "document_id")
+_MODES = ("solve", "recover", "deviate_drop_constraint", "deviate_wrong_flight", "deviate_drop_late")
 
 
 class MockPolicy:
     def __init__(self, gold: dict, mode: str = "solve"):
-        assert mode in ("solve", "recover", "deviate_drop_constraint", "deviate_wrong_flight")
+        assert mode in _MODES, mode
         self.gold_steps = gold["gold_steps"]
         self.mode = mode
         self.fallback = gold.get("recovery_fallback")
-        self.target = gold["terminal_state"]["booking.flight_id"]
         self.decoys = gold.get("decoys", {})
+        self.target = gold["terminal_state"]["booking.flight_id"]
+        self.dropped = None
         if mode == "deviate_drop_constraint":
-            self.target = self.decoys["max_price"]
+            self.dropped = next(k for k in self.decoys if k != "objective")
+            self.target = self.decoys[self.dropped]
+        late = gold.get("late_constraints", {})
+        self.wrong_seat = next(s for s in SEAT_TYPES if s != late.get("seat_type"))
+        self.wrong_meal = next(m["meal"] for m in MEAL_OPTIONS if m["meal"] != late.get("meal"))
         self._i = 0
         self._last_action = None
 
@@ -63,25 +71,27 @@ class MockPolicy:
 
     def _fill(self, step: dict, observations: list) -> dict:
         args = dict(step["args"])
-        if self.mode == "deviate_drop_constraint":
-            args.pop("max_price", None)
-            if step["tool"] == "filter_flights" and not args:
-                args["depart_before"] = step["args"].get("depart_before", "12:00")
+        if self.dropped:
+            args.pop(self.dropped, None)
 
         latest = {}
         for obs in observations:
             for key, value in obs.get("result", {}).items():
-                if key in _FLIGHT_KEYS:
+                if key in _FROM_RESULTS:
                     latest[key] = value
-
-        for key in _FLIGHT_KEYS:
-            if key not in args:
-                continue
-            if key == "flight_id":
-                args[key] = self.target
-            elif key in latest:
+        if "flight_id" in args:
+            args["flight_id"] = self.target
+        for key in _FROM_RESULTS:
+            if key in args and key in latest:
                 args[key] = latest[key]
 
-        if self.mode == "deviate_wrong_flight" and step["tool"] == "book_flight":
-            args["flight_id"] = self.decoys["objective"]
+        if step["tool"] == "book_flight":
+            if self.mode == "deviate_wrong_flight":
+                args["flight_id"] = self.decoys["objective"]
+            if self.mode == "deviate_drop_late":
+                if "seat_type" in args:
+                    args["seat_type"], args["meal"] = self.wrong_seat, self.wrong_meal
+                else:
+                    args["seat_id"] = next(s["seat_id"] for s in SEAT_MAP if s["seat_type"] == self.wrong_seat)
+                    args["meal_code"] = next(m["meal_code"] for m in MEAL_OPTIONS if m["meal"] == self.wrong_meal)
         return args

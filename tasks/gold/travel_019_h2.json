@@ -1,0 +1,48 @@
+{
+  "task_id": "travel_019_h2",
+  "template_id": "travel_019",
+  "horizon": 2,
+  "entities": {
+    "origin": "DEL",
+    "destination": "MAA"
+  },
+  "constraints": {
+    "date": "2026-08-26",
+    "max_price": 6000,
+    "objective": "earliest_departure"
+  },
+  "late_constraints": {
+    "seat_type": "aisle",
+    "meal": "diabetic"
+  },
+  "terminal_state": {
+    "booking.flight_id": "6E223",
+    "booking.price": 5900,
+    "booking.seat_type": "aisle",
+    "booking.meal": "diabetic"
+  },
+  "recovery_fallback": "SG136",
+  "decoys": {
+    "max_price": "AI439",
+    "objective": "SG136"
+  },
+  "gold_steps": [
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "Delhi",
+        "destination": "Chennai",
+        "date": "2026-08-26",
+        "max_price": 6000
+      }
+    },
+    {
+      "tool": "book_flight",
+      "args": {
+        "flight_id": "6E223",
+        "seat_type": "aisle",
+        "meal": "diabetic"
+      }
+    }
+  ]
+}

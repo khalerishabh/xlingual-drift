@@ -1,18 +1,32 @@
 """
-Deterministic flight database. Same input -> same output, always.
+Deterministic travel database. Same input -> same output, always.
 
-travel_017 asks for the latest morning flight under Rs 8000. The table is
-built so that every constraint changes the answer when it is dropped,
-which is what lets constraint survival be read off the outcome:
+Every non-gold flight row is a decoy for one specific early constraint of
+its template, so a wrong booking points to the constraint that was lost.
+Late constraints (seat type, meal) are forced choices among several
+options, so forgetting them changes the terminal state as well.
 
-  6E212  09:10  7900  gold answer
+travel_017  MAA -> DEL 2026-08-22, latest morning flight under Rs 8000
+  6E212  09:10  7900  answer
   SG118  11:45  8900  answer if max_price is lost
   AI552  14:20  6200  answer if depart_before is lost
-  AI440  06:30  7450  valid but not latest (objective lost); also the
-                      recovery fallback when 6E212 becomes unavailable
-  AI999  08:00  8600  over budget, never the answer
-  6E050  10:30  7700  would be the answer, but sold out, so search never
-                      returns it; guards against leaking sold-out flights
+  AI440  06:30  7450  objective decoy; recovery fallback
+  AI999  08:00  8600  never the answer
+  6E050  10:30  7700  sold out: would be the answer, never returned by search
+
+travel_018  DEL -> BLR 2026-08-25, cheapest flight leaving after 17:00
+  AI803  18:05  5600  answer
+  6E501  07:15  4200  answer if depart_after is lost
+  UK811  20:40  6400  objective decoy; recovery fallback
+  6E905  16:30  4900  boundary decoy for depart_after
+  SG208  21:30  5300  sold out: would be the answer
+
+travel_019  DEL -> MAA 2026-08-26, earliest flight under Rs 6000
+  6E223  08:45  5900  answer
+  AI439  06:10  6800  answer if max_price is lost
+  SG136  13:20  5200  objective decoy; recovery fallback
+  AI541  19:00  4800  never the answer
+  6E077  07:30  5500  sold out: would be the answer
 """
 
 CITIES = {
@@ -21,19 +35,65 @@ CITIES = {
     "BLR": "Bengaluru",
 }
 
+
+def _f(fid, o, d, date, t, price, seats, fare):
+    return {"flight_id": fid, "origin": o, "destination": d, "date": date,
+            "depart_time": t, "price": price, "seats": seats, "fare_class": fare}
+
+
 FLIGHTS = [
-    {"flight_id": "AI440", "origin": "MAA", "destination": "DEL", "date": "2026-08-22",
-     "depart_time": "06:30", "price": 7450, "seats": 3, "fare_class": "Y-SAVER"},
-    {"flight_id": "6E212", "origin": "MAA", "destination": "DEL", "date": "2026-08-22",
-     "depart_time": "09:10", "price": 7900, "seats": 5, "fare_class": "Y-FLEX"},
-    {"flight_id": "SG118", "origin": "MAA", "destination": "DEL", "date": "2026-08-22",
-     "depart_time": "11:45", "price": 8900, "seats": 2, "fare_class": "Y-FLEX"},
-    {"flight_id": "AI552", "origin": "MAA", "destination": "DEL", "date": "2026-08-22",
-     "depart_time": "14:20", "price": 6200, "seats": 8, "fare_class": "Y-SAVER"},
-    {"flight_id": "AI999", "origin": "MAA", "destination": "DEL", "date": "2026-08-22",
-     "depart_time": "08:00", "price": 8600, "seats": 4, "fare_class": "Y-SAVER"},
-    {"flight_id": "6E050", "origin": "MAA", "destination": "DEL", "date": "2026-08-22",
-     "depart_time": "10:30", "price": 7700, "seats": 0, "fare_class": "Y-FLEX"},
+    _f("AI440", "MAA", "DEL", "2026-08-22", "06:30", 7450, 3, "Y-SAVER"),
+    _f("6E212", "MAA", "DEL", "2026-08-22", "09:10", 7900, 5, "Y-FLEX"),
+    _f("SG118", "MAA", "DEL", "2026-08-22", "11:45", 8900, 2, "Y-FLEX"),
+    _f("AI552", "MAA", "DEL", "2026-08-22", "14:20", 6200, 8, "Y-SAVER"),
+    _f("AI999", "MAA", "DEL", "2026-08-22", "08:00", 8600, 4, "Y-SAVER"),
+    _f("6E050", "MAA", "DEL", "2026-08-22", "10:30", 7700, 0, "Y-FLEX"),
+
+    _f("6E501", "DEL", "BLR", "2026-08-25", "07:15", 4200, 6, "Y-SAVER"),
+    _f("6E905", "DEL", "BLR", "2026-08-25", "16:30", 4900, 4, "Y-SAVER"),
+    _f("AI803", "DEL", "BLR", "2026-08-25", "18:05", 5600, 5, "Y-FLEX"),
+    _f("UK811", "DEL", "BLR", "2026-08-25", "20:40", 6400, 3, "Y-FLEX"),
+    _f("SG208", "DEL", "BLR", "2026-08-25", "21:30", 5300, 0, "Y-SAVER"),
+
+    _f("AI439", "DEL", "MAA", "2026-08-26", "06:10", 6800, 4, "Y-FLEX"),
+    _f("6E077", "DEL", "MAA", "2026-08-26", "07:30", 5500, 0, "Y-SAVER"),
+    _f("6E223", "DEL", "MAA", "2026-08-26", "08:45", 5900, 5, "Y-SAVER"),
+    _f("SG136", "DEL", "MAA", "2026-08-26", "13:20", 5200, 6, "Y-FLEX"),
+    _f("AI541", "DEL", "MAA", "2026-08-26", "19:00", 4800, 7, "Y-SAVER"),
 ]
 
+# Same seats on every flight, so a seat id stays valid if the agent has to
+# switch flights during recovery. Listing order depends on the route: the
+# requested seat type is never listed first, so an agent that forgot its
+# preference and takes the first seat lands on a wrong type.
+SEAT_MAP = [
+    {"seat_id": "14A", "seat_type": "window"},
+    {"seat_id": "14F", "seat_type": "window"},
+    {"seat_id": "14B", "seat_type": "middle"},
+    {"seat_id": "14E", "seat_type": "middle"},
+    {"seat_id": "14C", "seat_type": "aisle"},
+    {"seat_id": "14D", "seat_type": "aisle"},
+]
+SEAT_TYPES = ("window", "middle", "aisle")
+AISLE_FIRST_ROUTES = {("DEL", "BLR")}
+
+
+def seat_map_for(flight: dict) -> list[dict]:
+    if (flight["origin"], flight["destination"]) in AISLE_FIRST_ROUTES:
+        return list(reversed(SEAT_MAP))
+    return list(SEAT_MAP)
+
+
+# The standard meal is listed first for the same reason.
+MEAL_OPTIONS = [
+    {"meal_code": "NVML", "meal": "non_vegetarian"},
+    {"meal_code": "VGML", "meal": "vegetarian"},
+    {"meal_code": "JNML", "meal": "jain"},
+    {"meal_code": "DBML", "meal": "diabetic"},
+    {"meal_code": "VLML", "meal": "vegan"},
+]
+MEALS = tuple(m["meal"] for m in MEAL_OPTIONS)
+
 USER_PROFILE = {"passenger_id": "P001", "name": "R. Khale"}
+TRAVEL_DOCUMENTS = {"P001": {"document_id": "DOC-P001-AADHAAR"}}
+PAYMENT_METHODS = [{"payment_id": "PAY-UPI-01", "type": "upi"}]

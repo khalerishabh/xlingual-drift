@@ -1,7 +1,7 @@
 {
-  "task_id": "travel_017_h8",
+  "task_id": "travel_017_h10",
   "template_id": "travel_017",
-  "horizon": 8,
+  "horizon": 10,
   "entities": {
     "origin": "MAA",
     "destination": "DEL"
@@ -89,13 +89,25 @@
       }
     },
     {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "6E212"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "6E212"
+      }
+    },
+    {
       "tool": "book_flight",
       "args": {
         "flight_id": "6E212",
         "hold_token": "H-6E212-Y-FLEX",
         "passenger_id": "P001",
-        "seat_type": "aisle",
-        "meal": "jain"
+        "seat_id": "14C",
+        "meal_code": "JNML"
       }
     }
   ]

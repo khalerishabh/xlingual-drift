@@ -10,6 +10,15 @@ in the stats pipeline once real runs exist.
 from collections import defaultdict
 
 
+def latest_scored(records: list[dict]) -> list[dict]:
+    """Last scored row per episode_key (a key repeats after infra retries)."""
+    by_key = {}
+    for r in records:
+        if not r.get("infra_error"):
+            by_key[r["episode_key"]] = r
+    return list(by_key.values())
+
+
 def summarize(records: list[dict]) -> dict:
     scored = [r for r in records if not r.get("infra_error")]
     clean = [r for r in scored if not r["injected"]]
@@ -22,10 +31,15 @@ def summarize(records: list[dict]) -> dict:
     }
 
 
-def success_table(records: list[dict]) -> dict:
-    """Clean-episode success rate keyed by (cell, language, horizon)."""
+def rate_table(records: list[dict], field: str = "success", only_booked: bool = False) -> dict:
+    """Clean-episode rate of a boolean field keyed by (language, horizon).
+    Episodes with nothing booked count as failures unless only_booked is set,
+    which is the right view for late-constraint survival: an episode that
+    never booked says nothing about whether the seat preference was kept."""
     cells = defaultdict(list)
     for r in records:
+        if only_booked and r.get("booked_flight") is None:
+            continue
         if not r.get("infra_error") and not r["injected"]:
-            cells[(r["cell"], r["language"], r["horizon"])].append(r["success"])
+            cells[(r["language"], r["horizon"])].append(bool(r.get(field)))
     return {k: (sum(v) / len(v), len(v)) for k, v in sorted(cells.items())}
