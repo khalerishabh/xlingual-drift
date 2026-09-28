@@ -1,0 +1,18 @@
+{
+  "template_id": "travel_017",
+  "intent": "Book the cheapest morning flight from origin to destination tomorrow under a budget.",
+  "requests": {
+    "en": "Book the cheapest morning flight from Chennai to Delhi tomorrow, under ₹8000.",
+    "hi": "कल चेन्नई से दिल्ली की सबसे सस्ती सुबह की फ्लाइट बुक करो, ₹8000 के अंदर।",
+    "ta": "நાளை சென்னையிலிருந்து டெல்லிக்கு கાலை நேர மிகக் குறைந்த கட்டண விமાனத்தை ₹8000-க்குள் பதிவு செய்யுங்கள்.",
+    "hinglish": "Kal Chennai se Delhi ki sabse sasti morning flight book karo, budget 8000 ke andar.",
+    "tanglish": "Naalaikku Chennai la irundhu Delhi ku cheapest morning flight book pannunga, 8000 kulla."
+  },
+  "constraints": {
+    "date": "2026-08-22",
+    "depart_before": "12:00",
+    "max_price": 8000,
+    "objective": "min_price"
+  },
+  "_comment": "Draft non-English text -- Rishabh to verify Hindi/Tamil/Hinglish before freezing (Section 8.3)."
+}

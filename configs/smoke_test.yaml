@@ -1,0 +1,38 @@
+# No API key, no GPU needed. Proves the harness (loop -> tools -> verifier
+# -> run log) works end to end before any real model is wired in.
+
+run_name: smoke_test
+task_template: tasks/templates/travel_017.json
+gold_file: tasks/gold/travel_017_h6.json
+interface_mode: strict     # strict | lenient
+max_steps: 20
+
+runs:
+  - policy: mock
+    mock_mode: solve
+    seed: 1
+  - policy: mock
+    mock_mode: deviate_drop_constraint
+    seed: 1
+  - policy: mock
+    mock_mode: deviate_wrong_flight
+    seed: 1
+  # Section 8.6: failure injection + recovery, English error message.
+  - policy: mock
+    mock_mode: recover_notfound
+    seed: 1
+    inject:
+      at_step: 5
+      error_type: not_found
+      message_language: en
+      flight_id: AI440
+  # Same injected failure, localised message -- RQ4's axis: does the
+  # LANGUAGE of the diagnostic matter, independent of task language?
+  - policy: mock
+    mock_mode: recover_notfound
+    seed: 1
+    inject:
+      at_step: 5
+      error_type: not_found
+      message_language: hi
+      flight_id: AI440

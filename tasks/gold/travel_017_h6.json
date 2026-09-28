@@ -1,0 +1,21 @@
+{
+  "task_id": "travel_017_h6",
+  "template_id": "travel_017",
+  "horizon": 6,
+  "constraints": {
+    "date": "2026-08-22",
+    "depart_before": "12:00",
+    "max_price": 8000,
+    "objective": "min_price"
+  },
+  "gold_steps": [
+    {"tool": "resolve_city", "args": {"name": "Chennai"}, "returns": {"code": "MAA"}},
+    {"tool": "resolve_city", "args": {"name": "Delhi"}, "returns": {"code": "DEL"}},
+    {"tool": "search_flights", "args": {"origin": "MAA", "destination": "DEL", "date": "2026-08-22"}},
+    {"tool": "filter_flights", "args": {"depart_before": "12:00", "max_price": 8000}},
+    {"tool": "get_seat_availability", "args": {"flight_id": "AI440"}},
+    {"tool": "book_flight", "args": {"flight_id": "AI440", "passenger_id": "P001"}}
+  ],
+  "terminal_state": {"booking.flight_id": "AI440", "booking.price": 7450},
+  "checks": ["constraint_survival", "fact_displacement", "final_grounding"]
+}

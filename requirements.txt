@@ -1,0 +1,13 @@
+pyyaml>=6.0
+pydantic>=2.6
+jsonschema>=4.21
+
+# API policy (uncomment / pip install as needed once you wire these in)
+# anthropic>=0.40
+# openai>=1.50
+# google-genai>=0.3
+
+# stats (Phase 5+, not needed for the smoke test)
+# statsmodels>=0.14
+# lifelines>=0.28
+# pandas>=2.2

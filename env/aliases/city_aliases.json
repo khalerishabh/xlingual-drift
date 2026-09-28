@@ -1,0 +1,6 @@
+{
+  "_comment": "Lenient-interface alias table (Section 8.4). Strict mode ignores this file entirely and requires the canonical code.",
+  "MAA": ["chennai", "Chennai", "CHENNAI", "चेन्नई", "सेन्नई", "சென்னை"],
+  "DEL": ["delhi", "Delhi", "DELHI", "दिल्ली", "டெல்லி"],
+  "BLR": ["bengaluru", "bangalore", "Bengaluru", "Bangalore", "बेंगलुरु", "பெங்களூரு"]
+}
