@@ -1,18 +1,28 @@
 {
   "template_id": "travel_017",
-  "intent": "Book the cheapest morning flight from origin to destination tomorrow under a budget.",
+  "domain": "travel",
+  "intent": "Book the latest morning flight from origin to destination tomorrow under a budget.",
   "requests": {
-    "en": "Book the cheapest morning flight from Chennai to Delhi tomorrow, under ₹8000.",
-    "hi": "कल चेन्नई से दिल्ली की सबसे सस्ती सुबह की फ्लाइट बुक करो, ₹8000 के अंदर।",
-    "ta": "நાளை சென்னையிலிருந்து டெல்லிக்கு கાலை நேர மிகக் குறைந்த கட்டண விமાனத்தை ₹8000-க்குள் பதிவு செய்யுங்கள்.",
-    "hinglish": "Kal Chennai se Delhi ki sabse sasti morning flight book karo, budget 8000 ke andar.",
-    "tanglish": "Naalaikku Chennai la irundhu Delhi ku cheapest morning flight book pannunga, 8000 kulla."
+    "en": "Book the latest morning flight from Chennai to Delhi tomorrow, under \u20b98000.",
+    "zh": "\u9884\u8ba2\u660e\u5929\u4ece\u94a6\u5948\u98de\u5f80\u5fb7\u91cc\u7684\u6700\u665a\u4e00\u73ed\u4e0a\u5348\u822a\u73ed\uff0c\u4ef7\u683c\u57288000\u5362\u6bd4\u4ee5\u5185\u3002",
+    "hi": "\u0915\u0932 \u091a\u0947\u0928\u094d\u0928\u0908 \u0938\u0947 \u0926\u093f\u0932\u094d\u0932\u0940 \u0915\u0940 \u0938\u0941\u092c\u0939 \u0915\u0940 \u0938\u092c\u0938\u0947 \u0906\u0916\u093f\u0930\u0940 \u092b\u094d\u0932\u093e\u0907\u091f \u092c\u0941\u0915 \u0915\u0930\u094b, \u20b98000 \u0915\u0947 \u0905\u0902\u0926\u0930\u0964",
+    "ta": "\u0ba8\u0bbe\u0bb3\u0bc8 \u0b9a\u0bc6\u0ba9\u0bcd\u0ba9\u0bc8\u0baf\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0b9f\u0bc6\u0bb2\u0bcd\u0bb2\u0bbf\u0b95\u0bcd\u0b95\u0bc1 \u0b95\u0bbe\u0bb2\u0bc8 \u0ba8\u0bc7\u0bb0\u0ba4\u0bcd\u0ba4\u0bbf\u0ba9\u0bcd \u0b95\u0b9f\u0bc8\u0b9a\u0bbf \u0bb5\u0bbf\u0bae\u0bbe\u0ba9\u0ba4\u0bcd\u0ba4\u0bc8 \u20b98000-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0baa\u0ba4\u0bbf\u0bb5\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+    "hinglish": "Kal Chennai se Delhi ki morning ki sabse last flight book karo, budget 8000 ke andar.",
+    "tanglish": "Naalaikku Chennai la irundhu Delhi ku morning la last flight book pannunga, 8000 kulla."
   },
   "constraints": {
     "date": "2026-08-22",
     "depart_before": "12:00",
     "max_price": 8000,
-    "objective": "min_price"
+    "objective": "latest_departure"
   },
-  "_comment": "Draft non-English text -- Rishabh to verify Hindi/Tamil/Hinglish before freezing (Section 8.3)."
+  "session_date": "2026-08-21",
+  "verification": {
+    "en": "author",
+    "zh": "pending: translator back-translation + answerability check",
+    "hi": "pending: author",
+    "ta": "pending: author",
+    "hinglish": "pending: author",
+    "tanglish": "pending: author"
+  }
 }

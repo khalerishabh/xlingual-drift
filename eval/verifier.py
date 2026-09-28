@@ -1,77 +1,93 @@
 """
-Deterministic verifier (Section 8.9's dependent variable, Section 9's
-taxonomy in miniature). Diffs a run's Trajectory against its gold
-trajectory. No LLM judge anywhere in this file -- every check is a plain
-comparison, which is the whole point of the no-human-annotation constraint
-(Section 3.6).
+Deterministic verifier (Sections 8.8 and 9). Every check is a plain
+comparison against the gold file and the flight table; nothing here calls
+a model.
+
+`success` means the booked flight is the correct answer given the state of
+the episode: the cheapest flight that satisfies every constraint among the
+flights still bookable. Without injection that is the gold flight. With a
+not_found injection it is the best remaining flight, which is what makes
+`recovered` a measure of correct recovery rather than of booking anything.
 """
 
-from agent.react_loop import Trajectory
+from env.data.flights import FLIGHTS
+
+_GROUNDED_KEYS = ("flight_id", "hold_token", "fare_class", "passenger_id")
 
 
-def verify(traj: Trajectory, gold: dict) -> dict:
-    """
-    Returns a dict of scored fields, one record's worth of the run log
-    described in Appendix E. Only implements the checks this scaffold's
-    one example task needs; extend per Section 9's full taxonomy in
-    Phase 2.
-    """
-    gold_steps = gold["gold_steps"]
-    gold_terminal = gold["terminal_state"]
+def _flatten(value, out: set):
+    if isinstance(value, dict):
+        for v in value.values():
+            _flatten(v, out)
+    elif isinstance(value, list):
+        for v in value:
+            _flatten(v, out)
+    else:
+        out.add(str(value))
 
-    # -- success: terminal state matches gold exactly ------------------
-    success = traj.terminal_state == gold_terminal
 
-    # -- constraint survival: did the booked flight actually satisfy
-    #    every constraint in the task, not just match gold by luck? -----
-    constraints = gold["constraints"]
-    constraints_survived = None
-    booked = next(
-        (s["result"] for s in traj.steps if s.get("tool") == "book_flight" and "result" in s),
-        None,
-    )
-    if booked is not None:
-        # Re-derive the booked flight's own record to check its fields,
-        # since terminal_state only carries flight_id/price.
-        from env.data.flights import FLIGHTS
-        flight = next((f for f in FLIGHTS if f["flight_id"] == booked["booking.flight_id"]), None)
-        if flight is not None:
-            constraints_survived = (
-                flight["depart_time"] < constraints["depart_before"]
-                and flight["price"] <= constraints["max_price"]
-            )
+_OBJECTIVES = {
+    "min_price": lambda fs: min(fs, key=lambda f: f["price"]),
+    "latest_departure": lambda fs: max(fs, key=lambda f: f["depart_time"]),
+}
 
-    # -- fact displacement: was a value the agent itself retrieved
-    #    earlier (e.g. from get_seat_availability) restated differently
-    #    later (e.g. in the booking args)? -------------------------------
+
+def optimal_flight(gold: dict, sold_out: set, drop: str | None = None):
+    """Correct answer given the episode state. `drop` names one constraint
+    to ignore, used to check that every constraint changes the answer."""
+    c, e = gold["constraints"], gold["entities"]
+    candidates = [
+        f for f in FLIGHTS
+        if f["origin"] == e["origin"] and f["destination"] == e["destination"]
+        and f["date"] == c["date"] and f["seats"] > 0 and f["flight_id"] not in sold_out
+        and (drop == "depart_before" or f["depart_time"] < c["depart_before"])
+        and (drop == "max_price" or f["price"] <= c["max_price"])
+    ]
+    if not candidates:
+        return None
+    if drop == "objective":
+        others = [f for f in candidates if f["flight_id"] != optimal_flight(gold, sold_out)]
+        return others[0]["flight_id"] if others else None
+    return _OBJECTIVES[c["objective"]](candidates)["flight_id"]
+
+
+def verify(traj, gold: dict, sold_out: set) -> dict:
+    c, e = gold["constraints"], gold["entities"]
+    booked_id = traj.terminal_state.get("booking.flight_id")
+    optimal_id = optimal_flight(gold, sold_out)
+
+    survival = None
+    if booked_id is not None:
+        f = next(x for x in FLIGHTS if x["flight_id"] == booked_id)
+        survival = {
+            "route": f["origin"] == e["origin"] and f["destination"] == e["destination"],
+            "date": f["date"] == c["date"],
+            "depart_before": f["depart_time"] < c["depart_before"],
+            "max_price": f["price"] <= c["max_price"],
+            "objective": booked_id == optimal_id,
+        }
+
+    seen = set()
     fact_displacements = 0
-    seen_flight_ids = set()
-    for s in traj.steps:
-        if s.get("tool") == "get_seat_availability" and "result" in s:
-            seen_flight_ids.add(s["result"]["flight_id"])
-        if s.get("tool") == "book_flight" and "args" in s:
-            booked_id = s["args"].get("flight_id")
-            if seen_flight_ids and booked_id not in seen_flight_ids:
+    for step in traj.steps:
+        for key in _GROUNDED_KEYS:
+            if key in step["args"] and str(step["args"][key]) not in seen:
                 fact_displacements += 1
+        if "result" in step:
+            _flatten(step["result"], seen)
 
-    # -- final grounding: does every value in the terminal state trace
-    #    back to some tool output the agent actually received? ----------
-    all_tool_values = set()
-    for s in traj.steps:
-        if "result" in s:
-            all_tool_values.update(str(v) for v in s["result"].values())
-    final_grounding_ok = all(
-        str(v) in all_tool_values for v in traj.terminal_state.values()
-    ) if traj.terminal_state else False
-
+    success = booked_id is not None and booked_id == optimal_id
     return {
         "success": success,
-        "first_error_step": traj.first_error_step,
-        "constraints_survived": constraints_survived,
+        "matches_gold_terminal": traj.terminal_state == gold["terminal_state"],
+        "booked_flight": booked_id,
+        "constraint_survival": survival,
+        "all_constraints_survived": None if survival is None else all(survival.values()),
         "fact_displacements": fact_displacements,
-        "final_grounding_ok": final_grounding_ok,
+        "first_error_step": traj.first_error_step,
         "num_steps_taken": len(traj.steps),
-        "num_steps_gold": len(gold_steps),
-        "injected_error": traj.injected_error,
-        "recovered": traj.recovered_after_injection,
+        "extra_steps": len(traj.steps) - len(gold["gold_steps"]),
+        "injected": traj.injected_error is not None,
+        "injected_at_step": traj.injected_at_step,
+        "recovered": (success if traj.injected_error is not None else None),
     }

@@ -1,6 +1,6 @@
 {
-  "task_id": "travel_017_h6",
-  "horizon": 6,
+  "task_id": "travel_017_h8",
+  "horizon": 8,
   "template_id": "travel_017",
   "entities": {
     "origin": "MAA",
@@ -52,19 +52,37 @@
       }
     },
     {
-      "tool": "get_seat_availability",
+      "tool": "get_fare_rules",
       "args": {
         "flight_id": "6E212"
       },
       "returns": {
-        "hold_token": "H-6E212-STD"
+        "fare_class": "Y-FLEX"
+      }
+    },
+    {
+      "tool": "get_seat_availability",
+      "args": {
+        "flight_id": "6E212",
+        "fare_class": "Y-FLEX"
+      },
+      "returns": {
+        "hold_token": "H-6E212-Y-FLEX"
+      }
+    },
+    {
+      "tool": "get_user_profile",
+      "args": {},
+      "returns": {
+        "passenger_id": "P001"
       }
     },
     {
       "tool": "book_flight",
       "args": {
         "flight_id": "6E212",
-        "hold_token": "H-6E212-STD"
+        "hold_token": "H-6E212-Y-FLEX",
+        "passenger_id": "P001"
       }
     }
   ],

@@ -6,3 +6,4 @@ runs/*.jsonl
 !runs/.gitkeep
 .ipynb_checkpoints/
 *.egg-info/
+.pytest_cache/

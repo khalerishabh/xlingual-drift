@@ -1,67 +1,65 @@
 """
-JSON schemas for the travel-domain tools, in BFCL-style shape (Section 8.1).
-These are what an API/local model actually sees as its function-calling
-interface -- kept in English regardless of task language, as in real systems.
+BFCL-style JSON schemas for the travel tools (Section 8.1), generated per
+horizon. Tool names and descriptions are fixed; only parameters and their
+`required` lists change with the horizon profile. Schemas stay English
+regardless of task language, as in real deployments.
 """
 
-TOOL_SCHEMAS = {
-    "resolve_city": {
-        "name": "resolve_city",
-        "description": "Resolve a city name (any spelling/script) to its canonical 3-letter code.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "name": {"type": "string", "description": "City name as written by the user."}
-            },
-            "required": ["name"],
-        },
-    },
-    "search_flights": {
-        "name": "search_flights",
-        "description": "Search flights between two canonical city codes on a given date.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "origin": {"type": "string", "description": "Canonical origin city code, e.g. MAA."},
-                "destination": {"type": "string", "description": "Canonical destination city code, e.g. DEL."},
-                "date": {"type": "string", "description": "ISO 8601 date, YYYY-MM-DD."},
-            },
-            "required": ["origin", "destination", "date"],
-        },
-    },
-    "filter_flights": {
-        "name": "filter_flights",
-        "description": "Filter the most recent search results by departure time and/or max price.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "depart_before": {"type": "string", "description": "24h HH:MM cutoff, exclusive."},
-                "max_price": {"type": "number", "description": "Maximum price in INR."},
-            },
-            "required": [],
-        },
-    },
-    "get_seat_availability": {
-        "name": "get_seat_availability",
-        "description": "Check remaining seats on a specific flight.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "flight_id": {"type": "string"},
-            },
-            "required": ["flight_id"],
-        },
-    },
-    "book_flight": {
-        "name": "book_flight",
-        "description": "Book a flight for a passenger. Terminal action.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "flight_id": {"type": "string"},
-                "passenger_id": {"type": "string"},
-            },
-            "required": ["flight_id", "passenger_id"],
-        },
-    },
-}
+from env.tools.horizons import travel_profile
+
+
+def _fn(name, description, properties, required):
+    return {
+        "name": name,
+        "description": description,
+        "parameters": {"type": "object", "properties": properties, "required": required},
+    }
+
+
+def travel_tool_schemas(horizon: int) -> list[dict]:
+    p = travel_profile(horizon)
+
+    if p["city_input"] == "name":
+        city_desc = "City name in English, e.g. Chennai."
+    else:
+        city_desc = "Canonical 3-letter city code from resolve_city, e.g. MAA."
+
+    search_props = {
+        "origin": {"type": "string", "description": city_desc},
+        "destination": {"type": "string", "description": city_desc},
+        "date": {"type": "string", "description": "ISO 8601 date, YYYY-MM-DD."},
+    }
+    if p["inline_filters"]:
+        search_props["depart_before"] = {"type": "string", "description": "Optional 24h HH:MM cutoff, exclusive."}
+        search_props["max_price"] = {"type": "number", "description": "Optional maximum price in INR."}
+
+    seat_props = {"flight_id": {"type": "string"}}
+    seat_required = ["flight_id"]
+    if p["fare_class_required"]:
+        seat_props["fare_class"] = {"type": "string", "description": "Fare class from get_fare_rules."}
+        seat_required.append("fare_class")
+
+    book_props = {"flight_id": {"type": "string"}}
+    book_required = ["flight_id"]
+    if p["hold_required"]:
+        book_props["hold_token"] = {"type": "string", "description": "Hold token from get_seat_availability for this flight."}
+        book_required.append("hold_token")
+    if p["passenger_required"]:
+        book_props["passenger_id"] = {"type": "string", "description": "Passenger id from get_user_profile."}
+        book_required.append("passenger_id")
+
+    return [
+        _fn("resolve_city", "Resolve a city name to its canonical 3-letter code.",
+            {"name": {"type": "string", "description": "City name in English, e.g. Chennai."}}, ["name"]),
+        _fn("search_flights", "Search available flights (sold-out flights are not returned).",
+            search_props, ["origin", "destination", "date"]),
+        _fn("filter_flights", "Filter the most recent search results by departure time and/or max price.",
+            {"depart_before": {"type": "string", "description": "24h HH:MM cutoff, exclusive."},
+             "max_price": {"type": "number", "description": "Maximum price in INR."}}, []),
+        _fn("get_fare_rules", "Get the fare class for a flight.",
+            {"flight_id": {"type": "string"}}, ["flight_id"]),
+        _fn("get_seat_availability", "Check seats on a flight and place a temporary hold.",
+            seat_props, seat_required),
+        _fn("get_user_profile", "Get the current user's profile, including passenger id.", {}, []),
+        _fn("book_flight", "Book a flight. Terminal action.", book_props, book_required),
+    ]

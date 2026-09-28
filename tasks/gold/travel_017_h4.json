@@ -1,6 +1,6 @@
 {
-  "task_id": "travel_017_h6",
-  "horizon": 6,
+  "task_id": "travel_017_h4",
+  "horizon": 4,
   "template_id": "travel_017",
   "entities": {
     "origin": "MAA",
@@ -41,30 +41,15 @@
       "args": {
         "origin": "MAA",
         "destination": "DEL",
-        "date": "2026-08-22"
-      }
-    },
-    {
-      "tool": "filter_flights",
-      "args": {
+        "date": "2026-08-22",
         "depart_before": "12:00",
         "max_price": 8000
       }
     },
     {
-      "tool": "get_seat_availability",
-      "args": {
-        "flight_id": "6E212"
-      },
-      "returns": {
-        "hold_token": "H-6E212-STD"
-      }
-    },
-    {
       "tool": "book_flight",
       "args": {
-        "flight_id": "6E212",
-        "hold_token": "H-6E212-STD"
+        "flight_id": "6E212"
       }
     }
   ],

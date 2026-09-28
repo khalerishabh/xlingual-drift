@@ -7,19 +7,23 @@ of that document.
 
 ## What's here right now
 
-This is a **scaffold**, not the finished harness. It has:
+Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read that first.
 
-- A working example task (flight booking, horizon 6) with a real deterministic tool
-  environment, a gold trajectory, and a verifier that can grade a trajectory against it.
-- A `mock` agent policy that follows the gold trajectory (or deliberately deviates), so the
-  whole pipeline runs end-to-end with **no API key and no GPU**, to prove the harness works
-  before any real model is wired in.
-- Stubs for the real agent policies (`agent/policies/api_policy.py`, `local_policy.py`) and
-  for the mitigation methods (`agent/mitigations/`), matching Section 8.10.
-- One CLI entrypoint, `eval/run_grid.py`, used identically on a laptop and in Colab.
+- **Travel domain, complete:** 7 deterministic tools where the *same request* needs 2, 4, 6
+  or 8 steps depending on which values each tool requires. One template (travel_017) in
+  en / zh / hi / ta / hinglish / tanglish, gold trajectories at all four horizons,
+  strict and lenient interface modes, and failure injection with localised error messages.
+- **Verifier:** success given episode state, per-constraint survival, fact displacement,
+  recovery. No LLM judge anywhere.
+- **Mock policy:** walks gold with real tool outputs, so the harness runs end to end with
+  **no API key and no GPU**. It can also deviate or recover on purpose.
+- **Tests:** 33 pytest checks covering gold replay, horizon invariance, load-bearing
+  constraints, script hygiene, lenient-mode safety, and recovery.
+- **Stubs:** `agent/policies/api_policy.py`, `local_policy.py`, and the four mitigations in
+  `agent/mitigations/` (Section 8.10).
 
-Everything else in Appendix D's tree (the other 39 templates, the real error-injection
-catalogue, the stats pipeline) is Phase 1–2 work and comes next.
+Next: the shop domain, the remaining templates, and wiring a real API model
+(spec Section 8).
 
 ## Development workflow
 
@@ -43,30 +47,20 @@ Decided 28 Sep 2026 (Section 15.8 of the project doc):
   Colab, use the Secrets manager (`google.colab.userdata`) instead of pasting keys into
   cells.
 
-## Quickstart (local, no API key needed)
+## Quickstart (no API key needed)
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv
+.venv\Scripts\activate            # Windows; on Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
+python -m pytest -q                 # expect: 33 passed
 python -m eval.run_grid --config configs/smoke_test.yaml
 ```
 
-This runs the one example task through the mock policy five ways — solving it cleanly,
-two deliberate deviations (a dropped budget constraint, a substituted flight), and two
-failure-injection-and-recovery runs (English vs. Hindi error message) — verifies each
-trajectory against gold, and writes a run log to `runs/smoke_test.jsonl`. Expected output:
-
-```
-  [solve] success=True constraints_survived=True fact_displacements=0 injected=False recovered=None
-  [deviate_drop_constraint] success=False constraints_survived=False fact_displacements=0 injected=False recovered=None
-  [deviate_wrong_flight] success=False constraints_survived=True fact_displacements=1 injected=False recovered=None
-  [recover_notfound] success=False constraints_survived=True fact_displacements=0 injected=True recovered=True
-  [recover_notfound] success=False constraints_survived=True fact_displacements=0 injected=True recovered=True
-```
-
-If this passes, the harness (environment → failure injection → agent loop → verifier → run
-log) is working end-to-end — this is the thing to keep passing as you build out the real
-policies and the other 39 templates.
+The smoke test runs 6 mock cells at each of the 4 horizons (24 episodes): a clean solve, two
+deliberate deviations (lost budget, wrong objective), two recovery runs (not_found with an
+English message, transient with a Chinese message), and one non-recovering run. Every
+`solve` and `recover` line should show `success=True`, and every deviation `success=False`.
 
 ## Repository layout
 
@@ -78,16 +72,12 @@ tasks/      task templates (all languages) and gold trajectories
 agent/      the ReAct loop, pluggable policies (mock / api / local), mitigation methods
 eval/       CLI entrypoint, verifier, metrics, stats
 configs/    YAML configs — which model, which languages, which controls, per run
+docs/       PHASE1_SPEC.md — environment, template, gold and injection design
+tests/      pytest suite (python -m pytest -q)
 notebooks/  colab_runner.ipynb — the Colab-side entrypoint
 runs/       raw run logs (gitignored)
 ```
 
-## Next steps (Phase 1, per Section 17 of the project doc)
+## Next steps
 
-1. Design the remaining ~9 tools and their JSON schemas (this scaffold has 4: `resolve_city`,
-   `search_flights`, `filter_flights`, `get_seat_availability`, `book_flight` — 5, covering
-   the travel domain end of Section 8.1's "10-15 tools across 2-3 domains").
-2. Author the other ~39 task templates across all horizons and languages (Appendix A shows
-   the pattern for one).
-3. Wire up `api_policy.py` against a real API model and re-run the smoke test.
-4. Build the lenient-interface alias tables and the oracle-plan mode (Section 8.4).
+See `docs/PHASE1_SPEC.md` Section 8 (open items before freezing).

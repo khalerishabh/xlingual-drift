@@ -1,6 +1,7 @@
 pyyaml>=6.0
 pydantic>=2.6
 jsonschema>=4.21
+pytest>=8.0
 
 # API policy (uncomment / pip install as needed once you wire these in)
 # anthropic>=0.40

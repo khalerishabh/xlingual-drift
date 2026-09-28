@@ -1,0 +1,43 @@
+{
+  "task_id": "travel_017_h2",
+  "horizon": 2,
+  "template_id": "travel_017",
+  "entities": {
+    "origin": "MAA",
+    "destination": "DEL"
+  },
+  "constraints": {
+    "date": "2026-08-22",
+    "depart_before": "12:00",
+    "max_price": 8000,
+    "objective": "latest_departure"
+  },
+  "terminal_state": {
+    "booking.flight_id": "6E212",
+    "booking.price": 7900
+  },
+  "recovery_fallback": "AI440",
+  "gold_steps": [
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "Chennai",
+        "destination": "Delhi",
+        "date": "2026-08-22",
+        "depart_before": "12:00",
+        "max_price": 8000
+      }
+    },
+    {
+      "tool": "book_flight",
+      "args": {
+        "flight_id": "6E212"
+      }
+    }
+  ],
+  "decoys": {
+    "max_price": "SG118",
+    "depart_before": "AI552",
+    "objective": "AI440"
+  }
+}
