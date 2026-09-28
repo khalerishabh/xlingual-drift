@@ -30,9 +30,12 @@ import yaml
 
 from agent.policies.mock_policy import MockPolicy
 from agent.policies.openai_compat_policy import InfraError, OpenAICompatPolicy
+from agent.policies.trip_mock_policy import TripMockPolicy
 from agent.react_loop import run_episode
 from env.inject import FailureInjector
+from env.trip.tools import TripTools
 from eval.metrics import summarize
+from eval.trip_verifier import verify_trip
 from eval.verifier import verify
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -47,7 +50,8 @@ def load_json(rel_path: str) -> dict:
 def build_policy(cell: dict, gold: dict, seed):
     kind = cell["policy"]
     if kind == "mock":
-        return MockPolicy(gold, mode=cell.get("mock_mode", "solve"))
+        mock = TripMockPolicy if gold.get("domain") == "trip" else MockPolicy
+        return mock(gold, mode=cell.get("mock_mode", "solve"))
     if kind == "openai_compat":
         return OpenAICompatPolicy(seed=seed, **{k: cell[k] for k in _POLICY_KEYS if k in cell})
     raise ValueError(f"unknown policy type: {kind}")
@@ -122,10 +126,12 @@ def completed_keys(log_path: Path) -> set:
 
 
 def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, name: str, cell: dict, seed) -> dict:
-    gold = load_json(f"tasks/gold/{template['template_id']}_h{horizon}.json")
+    trip = template.get("domain") == "trip"
+    gold = load_json(f"tasks/{'trip_gold' if trip else 'gold'}/{template['template_id']}_h{horizon}.json")
     policy = build_policy(cell, gold, seed)
     inject = cell.get("inject") or {}
     interface_mode = cfg.get("interface_mode", "strict")
+    tools = TripTools(interface_mode, horizon) if trip else None
     base = {
         "episode_key": f"{template['template_id']}|h{horizon}|{language}|{name}|s{seed}",
         "run_name": cfg["run_name"], "task_id": gold["task_id"], "template_id": template["template_id"],
@@ -140,13 +146,13 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
         traj = run_episode(
             task_id=gold["task_id"], horizon=horizon, request=template["requests"][language],
             policy=policy, interface_mode=interface_mode, max_steps=cfg.get("max_steps", 24),
-            injector=build_injector(cell), context={"session_date": template["session_date"]},
+            injector=build_injector(cell), context={"session_date": template["session_date"]}, tools=tools,
         )
     except InfraError as e:
         return {**base, "infra_error": str(e), "latency_s": round(time.perf_counter() - start, 3)}
     record = {
         **base,
-        **verify(traj, gold, traj.sold_out),
+        **(verify_trip if trip else verify)(traj, gold, traj.sold_out),
         "hit_step_limit": traj.hit_step_limit,
         "final_text": traj.final_text,
         "latency_s": round(time.perf_counter() - start, 3),
@@ -221,8 +227,12 @@ def _print_line(r: dict, i: int, n: int):
         print(f"{head} INFRA_ERROR {r['infra_error'][:80]}")
         return
     inj = f" inject={r['error_type']}/{r['message_language']}" if r["error_type"] else ""
-    print(f"{head}{inj} success={r['success']!s:<5} flight={r['booked_flight']} "
-          f"seat={r['booked_seat_type']} meal={r['booked_meal']} steps={r['num_steps_taken']} recovered={r['recovered']}")
+    if "constraint_ok" in r:
+        failed = [k for k, v in (r["constraint_ok"] or {}).items() if not v]
+        detail = f"failed={','.join(failed) or '-'}" if r["constraint_ok"] else "no booking"
+    else:
+        detail = f"flight={r['booked_flight']} seat={r['booked_seat_type']} meal={r['booked_meal']}"
+    print(f"{head}{inj} success={r['success']!s:<5} {detail} steps={r['num_steps_taken']} recovered={r['recovered']}")
 
 
 if __name__ == "__main__":

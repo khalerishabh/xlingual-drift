@@ -1,0 +1,30 @@
+# No API key, no GPU. Checks the trip harness end to end at every horizon:
+# the gold chain replays, each kind of fault is caught in its own
+# constraint class, and outbound-sold-out recovery works.
+
+run_name: smoke_test_trip
+templates:
+  - tasks/trip_templates/trip_001.json
+interface_mode: strict
+max_steps: 60
+horizons: [11, 17, 24, 28]
+languages: [en]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: drop_early, policy: mock, mock_mode: drop_early, seeds: [1]}
+  - {name: drop_budget, policy: mock, mock_mode: drop_budget, seeds: [1]}
+  - {name: wrong_hotel, policy: mock, mock_mode: wrong_hotel, seeds: [1]}
+  - {name: wrong_pickup, policy: mock, mock_mode: wrong_pickup, seeds: [1]}
+  - {name: swap_seats, policy: mock, mock_mode: swap_seats, seeds: [1]}
+  - {name: drop_late, policy: mock, mock_mode: drop_late, seeds: [1]}
+  - name: recover_notfound_en
+    policy: mock
+    mock_mode: recover
+    seeds: [1]
+    inject: {error_type: not_found, at_tool: get_seat_map, message_language: en}
+  - name: recover_transient_hi
+    policy: mock
+    mock_mode: recover
+    seeds: [1]
+    inject: {error_type: transient, at_tool: get_room_options, message_language: hi}

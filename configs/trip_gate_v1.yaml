@@ -1,0 +1,32 @@
+# Trip domain, step 2 of 2: the gate in all five languages, run only after
+# trip_pilot_en passes its decision rule, with nothing changed in between.
+# 1 template x 4 horizons x 5 languages x 3 seeds = 60 episodes.
+
+run_name: trip_gate_v1_qwen36_27b_fp8
+
+serving:
+  model: Qwen/Qwen3.6-27B-FP8
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: []
+
+templates:
+  - tasks/trip_templates/trip_001.json
+interface_mode: strict
+max_steps: 60
+horizons: [11, 17, 24, 28]
+languages: [en, zh, hi, ta, hinglish]
+
+cells:
+  - name: qwen36_27b_fp8_think
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1, 2, 3]

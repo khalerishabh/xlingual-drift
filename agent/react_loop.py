@@ -29,8 +29,10 @@ class Trajectory:
 
 def run_episode(task_id: str, horizon: int, request: str, policy,
                 interface_mode: str = "strict", max_steps: int = 20,
-                injector: FailureInjector | None = None, context: dict | None = None) -> Trajectory:
-    tools = TravelTools(interface_mode=interface_mode, horizon=horizon)
+                injector: FailureInjector | None = None, context: dict | None = None,
+                tools=None) -> Trajectory:
+    if tools is None:
+        tools = TravelTools(interface_mode=interface_mode, horizon=horizon)
     policy.reset(request=request, tool_schemas=tools.schema_list(), context=context or {})
     traj = Trajectory(task_id=task_id, horizon=horizon)
 

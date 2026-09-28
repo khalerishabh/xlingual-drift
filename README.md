@@ -16,6 +16,13 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   distance they must be carried grows with horizon). Gold for every template and horizon is
   built and checked by `python -m tasks.build_gold`. Strict and lenient interface modes, and
   failure injection with localised error messages.
+- **Trip domain, the long-horizon task (`docs/TRIP_SPEC.md`):** a family trip organiser
+  with 22 tools where one request needs 11, 17, 24 or 28 steps: two flights under a joint
+  budget, a hotel and two rooms, an airport cab timed to the landing, attraction tickets, and
+  seats, meals and ticket categories for three travellers, all confirmed in one checkout.
+  Constraints are scored in four classes (early, mid, carried from tool outputs, late) with
+  the step each was committed at, plus binding swaps between travellers. Gold is built and
+  checked by `python -m tasks.build_trip_gold`. Template trip_001 in en / zh / hi / ta / hinglish.
 - **Verifier:** success given episode state, early and late constraint survival with the step
   each was used at, fact displacement, recovery. No LLM judge anywhere.
 - **Mock policy:** walks gold with real tool outputs, so the harness runs end to end with
@@ -25,12 +32,12 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   debugging, or a hosted API. Open-source models are the primary setup; APIs are optional.
 - **Runner:** resumable after a disconnect; endpoint failures are logged but never scored;
   full transcripts (messages, reasoning, token usage) saved per episode.
-- **Tests:** 112 pytest checks covering gold replay, horizon invariance, load-bearing
+- **Tests:** 162 pytest checks covering gold replay, horizon invariance, load-bearing
   constraints, script hygiene, lenient-mode safety, recovery, and the model-policy plumbing.
 - **Stubs:** the four mitigations in `agent/mitigations/` (Section 8.10).
 
-Next: run the capability gate on Colab (`notebooks/colab_runner.ipynb`), then the shop
-domain and the remaining templates (spec Section 8).
+Next: the English-only difficulty pilot on the trip domain, then the trip gate in all five
+languages (`notebooks/colab_runner.ipynb`); then more trip templates and a second world.
 
 ## Development workflow
 
@@ -60,8 +67,9 @@ Decided 28 Sep 2026 (Section 15.8 of the project doc):
 python -m venv .venv
 .venv\Scripts\activate            # Windows; on Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-python -m pytest -q                 # expect: 112 passed
+python -m pytest -q                 # expect: 162 passed
 python -m eval.run_grid --config configs/smoke_test.yaml
+python -m eval.run_grid --config configs/smoke_test_trip.yaml
 ```
 
 The smoke test runs 7 mock cells on 3 templates at 6 horizons (126 episodes): a clean solve,
@@ -69,6 +77,8 @@ three deliberate deviations (lost early constraint, wrong objective, lost seat a
 recovery runs (not_found with an English message, transient with a Chinese message), and one
 non-recovering run. Add `--workers 8` to run episodes concurrently. Every `solve` and
 `recover` line should show `success=True`, and every deviation `success=False`.
+The trip smoke test (36 episodes) does the same for the trip domain, with one fault per
+constraint class; each failing line names exactly the constraints that fault breaks.
 
 ## Running a real model
 

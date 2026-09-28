@@ -1,0 +1,312 @@
+{
+  "task_id": "trip_001_h17",
+  "template_id": "trip_001",
+  "domain": "trip",
+  "horizon": 17,
+  "constraints": {
+    "passengers": 3,
+    "outbound": {
+      "origin": "MAA",
+      "destination": "JAI",
+      "date": "2026-10-14",
+      "depart_before": "12:00",
+      "nonstop": true,
+      "objective": "min_price"
+    },
+    "return": {
+      "origin": "JAI",
+      "destination": "MAA",
+      "date": "2026-10-16",
+      "depart_after": "18:00",
+      "nonstop": true,
+      "objective": "earliest_departure"
+    },
+    "flight_budget_total": 30000,
+    "hotel": {
+      "city": "JAI",
+      "check_in": "2026-10-14",
+      "check_out": "2026-10-16",
+      "max_distance_km": 3,
+      "amenities": [
+        "lift"
+      ],
+      "breakfast": "veg",
+      "objective": "max_rating"
+    },
+    "rooms": [
+      {
+        "room_type": "double",
+        "occupants": [
+          "mother",
+          "father"
+        ]
+      },
+      {
+        "room_type": "single",
+        "occupants": [
+          "self"
+        ]
+      }
+    ],
+    "cab": {
+      "vehicle_type": "suv",
+      "date": "2026-10-14",
+      "pickup": "outbound_arrival",
+      "drop": "hotel"
+    },
+    "tickets": {
+      "attraction_id": "A-JAI-02",
+      "attraction_name": "Amber Fort",
+      "date": "2026-10-15",
+      "slot_after": "09:00",
+      "objective": "earliest"
+    },
+    "travellers": {
+      "father": {
+        "seat": "window",
+        "meal": "diabetic",
+        "ticket": "senior"
+      },
+      "mother": {
+        "seat": "aisle",
+        "meal": "jain",
+        "ticket": "senior"
+      },
+      "self": {
+        "seat": "middle",
+        "meal": "vegetarian",
+        "ticket": "adult"
+      }
+    }
+  },
+  "answer": {
+    "outbound_flight_id": "6E621",
+    "return_flight_id": "SG306",
+    "hotel_id": "H-JAI-140",
+    "rooms": [
+      [
+        "R-140-3",
+        [
+          "T-02",
+          "T-03"
+        ]
+      ],
+      [
+        "R-140-1",
+        [
+          "T-01"
+        ]
+      ]
+    ],
+    "ticket_slot_id": "S-02-1015-1030",
+    "cab": {
+      "vehicle_type": "suv",
+      "date": "2026-10-14",
+      "pickup_time": "10:15",
+      "drop_hotel": "H-JAI-140",
+      "pickup_location": "JAI"
+    },
+    "travellers": {
+      "T-03": {
+        "seat": "window",
+        "meal": "diabetic",
+        "ticket": "senior"
+      },
+      "T-02": {
+        "seat": "aisle",
+        "meal": "jain",
+        "ticket": "senior"
+      },
+      "T-01": {
+        "seat": "middle",
+        "meal": "vegetarian",
+        "ticket": "adult"
+      }
+    }
+  },
+  "decoys": {
+    "outbound.depart_before": "6E735",
+    "outbound.nonstop": "AI561",
+    "outbound.objective": "6E612",
+    "return.depart_after": "6E613",
+    "return.nonstop": "AI474",
+    "return.objective": "UK819",
+    "return.budget": "6E622",
+    "hotel.max_distance_km": "H-JAI-118",
+    "hotel.amenities": "H-JAI-104",
+    "hotel.breakfast": "H-JAI-121",
+    "hotel.objective": "H-JAI-112",
+    "tickets.slot_after": "S-02-1015-0800",
+    "tickets.objective": "S-02-1015-1300"
+  },
+  "recovery_fallback": {
+    "outbound": "IX142"
+  },
+  "terminal_state": {
+    "status": "confirmed",
+    "confirmation_id": "TRIP-24263",
+    "total_price_inr": 46300
+  },
+  "gold_steps": [
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Chennai"
+      }
+    },
+    {
+      "tool": "resolve_city",
+      "args": {
+        "name": "Jaipur"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "MAA",
+        "destination": "JAI",
+        "date": "2026-10-14"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_before": "12:00",
+        "nonstop_only": true
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "6E621"
+      }
+    },
+    {
+      "tool": "get_meal_options",
+      "args": {
+        "flight_id": "6E621"
+      }
+    },
+    {
+      "tool": "search_flights",
+      "args": {
+        "origin": "JAI",
+        "destination": "MAA",
+        "date": "2026-10-16"
+      }
+    },
+    {
+      "tool": "filter_flights",
+      "args": {
+        "depart_after": "18:00",
+        "nonstop_only": true
+      }
+    },
+    {
+      "tool": "get_seat_map",
+      "args": {
+        "flight_id": "SG306"
+      }
+    },
+    {
+      "tool": "search_hotels",
+      "args": {
+        "city": "JAI",
+        "check_in": "2026-10-14",
+        "check_out": "2026-10-16"
+      }
+    },
+    {
+      "tool": "filter_hotels",
+      "args": {
+        "max_distance_km": 3,
+        "required_amenities": [
+          "lift"
+        ],
+        "breakfast": "veg"
+      }
+    },
+    {
+      "tool": "get_room_options",
+      "args": {
+        "hotel_id": "H-JAI-140",
+        "check_in": "2026-10-14",
+        "check_out": "2026-10-16"
+      }
+    },
+    {
+      "tool": "get_cab_quotes",
+      "args": {
+        "pickup_location": "JAI",
+        "drop_location": "H-JAI-140",
+        "date": "2026-10-14",
+        "pickup_time": "10:15"
+      }
+    },
+    {
+      "tool": "search_attractions",
+      "args": {
+        "city": "JAI"
+      }
+    },
+    {
+      "tool": "get_ticket_slots",
+      "args": {
+        "attraction_id": "A-JAI-02",
+        "date": "2026-10-15"
+      }
+    },
+    {
+      "tool": "get_travellers",
+      "args": {}
+    },
+    {
+      "tool": "confirm_trip",
+      "args": {
+        "outbound_flight_id": "6E621",
+        "return_flight_id": "SG306",
+        "passengers": [
+          {
+            "traveller_id": "T-01",
+            "outbound_seat_id": "15B",
+            "return_seat_id": "15B",
+            "meal_code": "VGML",
+            "ticket_category": "adult"
+          },
+          {
+            "traveller_id": "T-02",
+            "outbound_seat_id": "14C",
+            "return_seat_id": "14D",
+            "meal_code": "JNML",
+            "ticket_category": "senior"
+          },
+          {
+            "traveller_id": "T-03",
+            "outbound_seat_id": "14F",
+            "return_seat_id": "14F",
+            "meal_code": "DBML",
+            "ticket_category": "senior"
+          }
+        ],
+        "hotel_id": "H-JAI-140",
+        "rooms": [
+          {
+            "room_id": "R-140-3",
+            "traveller_ids": [
+              "T-02",
+              "T-03"
+            ]
+          },
+          {
+            "room_id": "R-140-1",
+            "traveller_ids": [
+              "T-01"
+            ]
+          }
+        ],
+        "cab_quote_id": "Q-SUV-1014-1015-140",
+        "ticket_slot_id": "S-02-1015-1030"
+      }
+    }
+  ]
+}
