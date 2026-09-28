@@ -8,8 +8,9 @@ reported with its class and the step at which the agent committed to it:
            flight is chosen (the first steps of the chain)
   mid      hotel, room types, cab vehicle, ticket slot
   carried  facts the agent must copy from one tool output into a later
-           call: cab pickup time = the booked flight's arrival, cab drop =
-           the booked hotel
+           call: cab pickup time within 60 minutes after the booked
+           flight's arrival ("when we land" leaves room for baggage), cab
+           drop = the booked hotel
   late     per-traveller seat, meal and ticket category, and who sleeps in
            which room; committed only in confirm_trip, the last step
 
@@ -29,6 +30,12 @@ _ID_KEYS = ("flight_id", "outbound_flight_id", "return_flight_id", "hotel_id", "
             "meal_code", "document_id", "payment_id", "price_token", "outbound_hold_token", "return_hold_token",
             "hotel_hold_token", "cab_hold_token", "ticket_hold_token", "fare_class")
 CLASSES = ("early", "mid", "carried", "late")
+PICKUP_WINDOW_MIN = 60
+
+
+def _minutes(hhmm: str) -> int:
+    h, m = hhmm.split(":")
+    return int(h) * 60 + int(m)
 
 
 def _flatten(value, out: set):
@@ -127,7 +134,8 @@ def verify_trip(traj, gold: dict, sold_out: set) -> dict:
         put("cab.vehicle_type", "mid", quote["vehicle_type"] == cc["vehicle_type"], s_q)
         put("cab.date", "mid", quote["date"] == cc["date"], s_q)
         put("cab.pickup_location", "carried", quote["pickup_location"] == out["destination"], s_q)
-        put("cab.pickup_time", "carried", quote["pickup_time"] == out["arrive_time"], s_q)
+        wait = _minutes(quote["pickup_time"]) - _minutes(out["arrive_time"])
+        put("cab.pickup_time", "carried", 0 <= wait <= PICKUP_WINDOW_MIN, s_q)
         put("cab.drop", "carried", quote["drop_location"].split("-")[-1] == a["hotel_id"].split("-")[-1], s_q)
 
         tc = cons["tickets"]

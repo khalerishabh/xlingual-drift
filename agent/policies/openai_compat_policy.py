@@ -11,6 +11,11 @@ compared.
 
 Endpoint failures raise InfraError. Those episodes are logged but never
 scored, so a flaky server cannot masquerade as an agent failure.
+
+A completely empty reply (no text, no reasoning, no tool call) is not an
+answer: it is resampled with a different seed, up to EMPTY_RESAMPLES times,
+and counted in usage["empty_responses"]. Only if every resample is empty
+does the episode end unbooked.
 """
 
 import json
@@ -19,6 +24,9 @@ import time
 from pathlib import Path
 
 _PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
+
+
+EMPTY_RESAMPLES = 2
 
 
 class InfraError(RuntimeError):
@@ -68,7 +76,8 @@ class OpenAICompatPolicy:
             {"role": "user", "content": request},
         ]
         self.reasoning = []
-        self.usage = {"prompt_tokens": 0, "completion_tokens": 0, "model_calls": 0}
+        self.usage = {"prompt_tokens": 0, "completion_tokens": 0, "model_calls": 0, "empty_responses": 0}
+        self.finish_reasons = []
         self._consumed = 0
         self._pending_call_id = None
 
@@ -82,6 +91,11 @@ class OpenAICompatPolicy:
         self._consumed = len(observations)
 
         message = self._complete()
+        for attempt in range(1, EMPTY_RESAMPLES + 1):
+            if message.tool_calls or (message.content or "").strip() or _reasoning_of(message):
+                break
+            self.usage["empty_responses"] += 1
+            message = self._complete(seed_offset=1000 * attempt)
         self.reasoning.append(_reasoning_of(message))
         calls = message.tool_calls or []
 
@@ -109,7 +123,7 @@ class OpenAICompatPolicy:
             return {"tool": name, "parse_error": f"ValidationError: arguments for {name} must be a JSON object"}
         return {"tool": name, "args": args}
 
-    def _complete(self):
+    def _complete(self, seed_offset: int = 0):
         kwargs = {
             "model": self.model,
             "messages": self.messages,
@@ -119,7 +133,7 @@ class OpenAICompatPolicy:
             "max_tokens": self.max_tokens,
         }
         if self.seed is not None:
-            kwargs["seed"] = self.seed
+            kwargs["seed"] = self.seed + seed_offset
         if self.extra_body:
             kwargs["extra_body"] = self.extra_body
 
@@ -143,6 +157,7 @@ class OpenAICompatPolicy:
             self.usage["prompt_tokens"] += usage.prompt_tokens or 0
             self.usage["completion_tokens"] += usage.completion_tokens or 0
         self.usage["model_calls"] += 1
+        self.finish_reasons.append(getattr(response.choices[0], "finish_reason", None))
         return response.choices[0].message
 
     def transcript(self) -> dict:
@@ -151,4 +166,5 @@ class OpenAICompatPolicy:
             "messages": self.messages,
             "reasoning": self.reasoning,
             "usage": self.usage,
+            "finish_reasons": self.finish_reasons,
         }

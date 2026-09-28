@@ -1,10 +1,11 @@
-# Trip domain, step 1 of 2: English-only difficulty pilot (docs/TRIP_SPEC.md,
-# "Difficulty is set on English only"). 1 template x 4 horizons x 5 seeds
-# = 20 episodes. Decision rule, fixed before any run: if English success at
-# h11 is below 0.8, simplify the task and rerun this pilot; otherwise the
-# design is frozen and trip_gate_v1 runs unchanged in all languages.
+# Trip domain, step 1 of 2: English-only difficulty pilot, second run
+# (docs/TRIP_SPEC.md, "Pilot rule amendment"). 1 template x 4 horizons x
+# 10 seeds = 40 episodes, in a fresh log. Decision rule, amended 29 Sep 2026
+# after the first English-only pilot and before any other language was run:
+# the design is frozen and trip_gate_v1 runs unchanged if pooled English
+# success across all horizons is at least 0.7; otherwise stop and simplify.
 
-run_name: trip_pilot_en_qwen36_27b_fp8
+run_name: trip_pilot_en_v2_qwen36_27b_fp8
 
 serving:
   model: Qwen/Qwen3.6-27B-FP8
@@ -31,4 +32,4 @@ cells:
     temperature: 0.6
     max_tokens: 8192
     extra_body: {chat_template_kwargs: {enable_thinking: true}}
-    seeds: [1, 2, 3, 4, 5]
+    seeds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

@@ -1,0 +1,33 @@
+{
+  "run_name": "trip_pilot_en_qwen36_27b_fp8",
+  "commit": "cbe022c",
+  "episodes": 20,
+  "infra_errors": 0,
+  "serving": {
+    "model": "Qwen/Qwen3.6-27B-FP8",
+    "revision": "e89b16ebf1988b3d6befa7de50abc2d76f26eb09",
+    "vllm_version": "0.30.0"
+  },
+  "success_as_run": {
+    "h11": 0.4,
+    "h17": 0.6,
+    "h24": 0.8,
+    "h28": 0.2
+  },
+  "success_rescored_pickup_window_60min": {
+    "h11": 0.4,
+    "h17": 1.0,
+    "h24": 1.0,
+    "h28": 0.8,
+    "pooled": 0.8
+  },
+  "failures": {
+    "pickup_after_landing_buffer": 5,
+    "pickup_from_neighbouring_flight_row": 2,
+    "empty_model_reply": 1,
+    "wrong_held_return_booked": 1
+  },
+  "mean_steps": 25.6,
+  "mean_completion_tokens": 14425,
+  "decision": "rule h11>=0.8 failed; gate not run; rule amended (see docs/TRIP_SPEC.md)"
+}

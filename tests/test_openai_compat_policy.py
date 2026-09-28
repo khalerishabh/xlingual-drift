@@ -71,7 +71,7 @@ def test_scripted_model_solves_h2_and_prompt_has_session_date():
     assert tool_msg["role"] == "tool" and tool_msg["tool_call_id"] == "c1"
     assert "6E212" in tool_msg["content"]
     assert p.reasoning[0] == "need flights"
-    assert p.usage == {"prompt_tokens": 20, "completion_tokens": 10, "model_calls": 2}
+    assert p.usage == {"prompt_tokens": 20, "completion_tokens": 10, "model_calls": 2, "empty_responses": 0}
 
 
 def test_localised_error_reaches_model_unescaped():
@@ -116,6 +116,21 @@ def test_text_reply_ends_episode_unbooked():
     traj, r = episode(p)
     assert traj.final_text == "Which airline do you prefer?"
     assert r["success"] is False and r["booked_flight"] is None
+
+
+def test_empty_reply_is_resampled_with_another_seed():
+    p, client = policy([reply(), reply(call("search_flights", H2_SEARCH, "c1")), reply(call("book_flight", BOOK, "c2"))],
+                       seed=7)
+    traj, r = episode(p)
+    assert r["success"] is True
+    assert p.usage["empty_responses"] == 1
+    assert [q["seed"] for q in client.requests] == [7, 1007, 7]
+
+
+def test_persistently_empty_reply_ends_episode_unbooked():
+    p, _ = policy([reply(), reply(), reply()])
+    traj, r = episode(p)
+    assert r["booked_flight"] is None and p.usage["empty_responses"] == 2
 
 
 class Status(Exception):
