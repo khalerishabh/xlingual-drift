@@ -3,10 +3,8 @@ pydantic>=2.6
 jsonschema>=4.21
 pytest>=8.0
 
-# API policy (uncomment / pip install as needed once you wire these in)
-# anthropic>=0.40
-# openai>=1.50
-# google-genai>=0.3
+# OpenAI-compatible client: talks to vLLM, Ollama, or any hosted API
+openai>=1.50
 
 # stats (Phase 5+, not needed for the smoke test)
 # statsmodels>=0.14

@@ -10,24 +10,30 @@ horizons: [2, 4, 6, 8]
 languages: [en]
 
 cells:
-  - policy: mock
+  - name: solve
+    policy: mock
     mock_mode: solve
-    seed: 1
-  - policy: mock
+    seeds: [1]
+  - name: drop_budget
+    policy: mock
     mock_mode: deviate_drop_constraint
-    seed: 1
-  - policy: mock
+    seeds: [1]
+  - name: wrong_objective
+    policy: mock
     mock_mode: deviate_wrong_flight
-    seed: 1
-  - policy: mock
+    seeds: [1]
+  - name: recover_notfound_en
+    policy: mock
     mock_mode: recover
-    seed: 1
+    seeds: [1]
     inject: {error_type: not_found, at_tool: book_flight, message_language: en}
-  - policy: mock
+  - name: recover_transient_zh
+    policy: mock
     mock_mode: recover
-    seed: 1
+    seeds: [1]
     inject: {error_type: transient, at_tool: search_flights, message_language: zh}
-  - policy: mock
+  - name: no_recovery_notfound
+    policy: mock
     mock_mode: solve
-    seed: 1
+    seeds: [1]
     inject: {error_type: not_found, at_tool: book_flight, message_language: en}

@@ -17,13 +17,17 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   recovery. No LLM judge anywhere.
 - **Mock policy:** walks gold with real tool outputs, so the harness runs end to end with
   **no API key and no GPU**. It can also deviate or recover on purpose.
-- **Tests:** 33 pytest checks covering gold replay, horizon invariance, load-bearing
-  constraints, script hygiene, lenient-mode safety, and recovery.
-- **Stubs:** `agent/policies/api_policy.py`, `local_policy.py`, and the four mitigations in
-  `agent/mitigations/` (Section 8.10).
+- **Real-model policy:** `agent/policies/openai_compat_policy.py` talks to any
+  OpenAI-compatible endpoint: vLLM on Colab for real runs, Ollama on a laptop for
+  debugging, or a hosted API. Open-source models are the primary setup; APIs are optional.
+- **Runner:** resumable after a disconnect; endpoint failures are logged but never scored;
+  full transcripts (messages, reasoning, token usage) saved per episode.
+- **Tests:** 40 pytest checks covering gold replay, horizon invariance, load-bearing
+  constraints, script hygiene, lenient-mode safety, recovery, and the model-policy plumbing.
+- **Stubs:** the four mitigations in `agent/mitigations/` (Section 8.10).
 
-Next: the shop domain, the remaining templates, and wiring a real API model
-(spec Section 8).
+Next: run the capability gate on Colab (`notebooks/colab_runner.ipynb`), then the shop
+domain and the remaining templates (spec Section 8).
 
 ## Development workflow
 
@@ -53,7 +57,7 @@ Decided 28 Sep 2026 (Section 15.8 of the project doc):
 python -m venv .venv
 .venv\Scripts\activate            # Windows; on Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-python -m pytest -q                 # expect: 33 passed
+python -m pytest -q                 # expect: 40 passed
 python -m eval.run_grid --config configs/smoke_test.yaml
 ```
 
@@ -61,6 +65,17 @@ The smoke test runs 6 mock cells at each of the 4 horizons (24 episodes): a clea
 deliberate deviations (lost budget, wrong objective), two recovery runs (not_found with an
 English message, transient with a Chinese message), and one non-recovering run. Every
 `solve` and `recover` line should show `success=True`, and every deviation `success=False`.
+
+## Running a real model
+
+- **On Colab (real runs):** open `notebooks/colab_runner.ipynb` on an 80GB A100 runtime
+  and run top to bottom. It starts vLLM, runs `configs/capability_gate.yaml`, writes raw
+  logs to Drive, and commits a summary. Rerun from the top after a disconnect.
+- **On a laptop (debugging only):** with Ollama installed, `ollama pull qwen3:8b`, then
+  `python -m eval.run_grid --config configs/local_ollama_debug.yaml`.
+
+Thinking mode, temperature and seeds are set per cell in the config and must stay fixed
+across every language, horizon and control being compared.
 
 ## Repository layout
 

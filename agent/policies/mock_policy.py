@@ -32,7 +32,7 @@ class MockPolicy:
         self._i = 0
         self._last_action = None
 
-    def reset(self, request: str, tool_schemas: list):
+    def reset(self, request: str, tool_schemas: list, context: dict | None = None):
         self._i = 0
         self._last_action = None
 

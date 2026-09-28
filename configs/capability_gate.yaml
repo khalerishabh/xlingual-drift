@@ -1,0 +1,36 @@
+# First real-model run (Section 8.7 capability gate). Run on Colab with a
+# vLLM server already started by notebooks/colab_runner.ipynb.
+#
+# The gate is the h2 row: a model passes if it solves travel_017 at h2 in
+# English and in every other language. A model that fails h2 in a language
+# leaves no room for a slope to show there. Horizons 4-8 are included
+# because they cost minutes, not because one template can show a trend.
+#
+# Thinking on vs off is a fixed design choice for the whole study. Both are
+# run here so the choice is made from data; whichever is picked must then
+# be held constant across every language, horizon and control.
+
+run_name: capability_gate_qwen36_27b
+template: tasks/templates/travel_017.json
+interface_mode: strict
+max_steps: 20
+horizons: [2, 4, 6, 8]
+languages: [en, zh, hi, ta, hinglish]
+
+cells:
+  - name: qwen36_27b_think
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1, 2, 3]
+  - name: qwen36_27b_nothink
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 4096
+    extra_body: {chat_template_kwargs: {enable_thinking: false}}
+    seeds: [1, 2, 3]

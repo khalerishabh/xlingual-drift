@@ -1,6 +1,7 @@
 # Phase 1 Spec: Environment, Tasks, Gold, Injection
 
-Status: **draft, 28 Sep 2026.** Travel domain implemented and tested (33 tests). Shop and
+Status: **draft, 28 Sep 2026.** Travel domain implemented and tested; real-model policy
+built (40 tests). Shop and
 records domains specified here, not yet built. Freeze this spec before Phase 3 (language
 authoring); after that, changes to tools or templates invalidate authored text.
 
@@ -194,11 +195,52 @@ At h2, early and mid collapse, so report position only for h≥4.
 
 ---
 
-## 8. Open items before freezing
+## 8. Models and the policy interface
+
+**Open-source models are the primary setup; hosted APIs are optional** (decided 28 Sep 2026).
+Reasons: the gap-widening question needs models above the capability gate, not frontier
+models; recent open models already run as multi-step multilingual agents (OmnilingualGAIA2
+ran Gemma 4 31B and Qwen 3.6 27B / 35B-A3B); open weights are reproducible, free on Colab,
+and required for the SFT ablation and any hidden-state probing. A frontier API model on a
+stratified subset remains an optional robustness check.
+
+One policy (`agent/policies/openai_compat_policy.py`) serves every model through an
+OpenAI-compatible endpoint:
+
+| Setting | Behaviour |
+|---|---|
+| System prompt | Versioned file `agent/prompts/system_v1.txt`, English, identical across languages; includes the session date so "tomorrow" is resolvable |
+| Parallel tool calls | Only the first call is executed and kept in history |
+| Unparseable arguments | Recorded as a validation error step; the model sees the error and continues |
+| Text reply without a tool call | Ends the episode (`final_text` logged) |
+| Endpoint failure | `InfraError` after retries; episode logged with `infra_error`, never scored, retried on `--resume` |
+| Tool output encoding | JSON with real script (`ensure_ascii=False`), so localised errors reach the model as text, not escapes |
+| Logged per episode | Full message history, per-turn reasoning, token usage, prompt version |
+
+**Serving (vLLM, verified against the vLLM recipes, Sep 2026):**
+
+| Model | Parsers | Fits 80GB A100 in BF16 |
+|---|---|---|
+| Qwen/Qwen3.6-27B | `--tool-call-parser qwen3_coder --reasoning-parser qwen3` | Yes |
+| google/gemma-4-31B-it | `--tool-call-parser gemma4 --reasoning-parser gemma4` + Gemma 4 tool chat template | Yes (short context) |
+
+**Thinking mode is a study-wide constant.** Both settings run in the capability gate; the one
+chosen must then be fixed across every language, horizon and control. Record the choice here
+once made.
+
+**Reading logs:** a key can appear more than once (infra failures followed by a successful
+retry). Analyses keep the last scored row per `episode_key`.
+
+---
+
+## 9. Open items before freezing
 
 1. Build the shop domain to the spec above. Resolve the delivery-estimate question (rule 3).
 2. Implement validation as persistent spec drift.
 3. Author the remaining templates. Target: 40 across domains, 20 in travel if records is dropped.
 4. Rishabh to verify hi / ta / hinglish text; zh via translator back-translation.
 5. Log schema token counts per horizon (confound check, Section 2).
-6. Wire `api_policy.py` so the capability gate (h2, English) can run on real models.
+6. Run the capability gate on Colab (Qwen 3.6 27B, all five languages, thinking on/off) and
+   fix the thinking setting.
+7. Collect a final user-facing reply after the terminal tool call (needed for RQ5 output
+   language fidelity); the loop currently ends at the booking.

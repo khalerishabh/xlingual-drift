@@ -1,0 +1,19 @@
+# Laptop debugging against Ollama's OpenAI-compatible endpoint. For
+# shaking out the agent loop only; results from here are never reported.
+#   ollama pull qwen3:8b      (or any tool-capable model that fits your GPU)
+#   python -m eval.run_grid --config configs/local_ollama_debug.yaml
+
+run_name: local_ollama_debug
+template: tasks/templates/travel_017.json
+interface_mode: strict
+max_steps: 20
+horizons: [2]
+languages: [en]
+
+cells:
+  - name: ollama_debug
+    policy: openai_compat
+    model: qwen3:8b
+    base_url: http://localhost:11434/v1
+    temperature: 0.6
+    seeds: [1]

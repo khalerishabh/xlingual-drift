@@ -2,8 +2,9 @@
 Minimal ReAct-style execution loop. The behaviour under test lives in the
 policy (what to do next) and the tools; this loop only moves data between
 them. A policy needs `reset(request, tool_schemas)` and
-`next_action(observations)`, which returns {"tool": name, "args": {...}}
-or {"final": True}.
+`next_action(observations)`, which returns {"tool": name, "args": {...}},
+{"tool": name, "parse_error": msg} when the model's call could not be
+parsed, or {"final": True, "text": ...}.
 """
 
 from dataclasses import dataclass, field
@@ -22,22 +23,31 @@ class Trajectory:
     injected_at_step: int | None = None
     first_error_step: int | None = None
     sold_out: set = field(default_factory=set)
+    final_text: str | None = None
+    hit_step_limit: bool = False
 
 
 def run_episode(task_id: str, horizon: int, request: str, policy,
                 interface_mode: str = "strict", max_steps: int = 20,
-                injector: FailureInjector | None = None) -> Trajectory:
+                injector: FailureInjector | None = None, context: dict | None = None) -> Trajectory:
     tools = TravelTools(interface_mode=interface_mode, horizon=horizon)
-    policy.reset(request=request, tool_schemas=tools.schema_list())
+    policy.reset(request=request, tool_schemas=tools.schema_list(), context=context or {})
     traj = Trajectory(task_id=task_id, horizon=horizon)
 
     for _ in range(max_steps):
         action = policy.next_action(traj.steps)
         if action.get("final"):
+            traj.final_text = action.get("text")
             break
 
         tool_name, args = action["tool"], action.get("args", {})
         record = {"tool": tool_name, "args": args}
+        if "parse_error" in action:
+            record["error"] = {"error_type": "validation", "message": action["parse_error"]}
+            if traj.first_error_step is None:
+                traj.first_error_step = len(traj.steps) + 1
+            traj.steps.append(record)
+            continue
         try:
             if injector is not None:
                 injector.maybe_inject(tool_name, args, tools)
@@ -58,6 +68,8 @@ def run_episode(task_id: str, horizon: int, request: str, policy,
         if tool_name == tools.TERMINAL_TOOL and "result" in record:
             traj.terminal_state = dict(record["result"])
             break
+    else:
+        traj.hit_step_limit = True
 
     traj.sold_out = set(tools._sold_out)
     return traj
