@@ -1,0 +1,352 @@
+{
+  "run_name": "capability_gate_v2_qwen36_27b_fp8",
+  "serving": {
+    "model": "Qwen/Qwen3.6-27B-FP8",
+    "revision": "e89b16ebf1988b3d6befa7de50abc2d76f26eb09",
+    "vllm_version": "0.30.0",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "vram_gb": 80,
+    "max_model_len": 32768
+  },
+  "episodes": 270,
+  "infra_errors": 0,
+  "design": "3 templates x h2-12 x 5 languages x 3 seeds, thinking on, strict interface",
+  "tables": {
+    "success": {
+      "en": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "zh": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "hi": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 0.778,
+        "h12": 0.333
+      },
+      "ta": {
+        "h2": 0.667,
+        "h4": 0.667,
+        "h6": 0.778,
+        "h8": 0.667,
+        "h10": 0.667,
+        "h12": 0.667
+      },
+      "hinglish": {
+        "h2": 0.889,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      }
+    },
+    "flight_correct": {
+      "en": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "zh": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "hi": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "ta": {
+        "h2": 0.778,
+        "h4": 0.667,
+        "h6": 0.778,
+        "h8": 0.667,
+        "h10": 0.667,
+        "h12": 0.667
+      },
+      "hinglish": {
+        "h2": 0.889,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      }
+    },
+    "late_all": {
+      "en": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "zh": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "hi": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 0.778,
+        "h12": 0.333
+      },
+      "ta": {
+        "h2": 0.889,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "hinglish": {
+        "h2": 0.889,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      }
+    },
+    "late_booked_only": {
+      "en": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "zh": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "hi": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 0.778,
+        "h12": 0.333
+      },
+      "ta": {
+        "h2": 0.889,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      },
+      "hinglish": {
+        "h2": 1.0,
+        "h4": 1.0,
+        "h6": 1.0,
+        "h8": 1.0,
+        "h10": 1.0,
+        "h12": 1.0
+      }
+    }
+  },
+  "seat_type_by_lang_band": [
+    {
+      "language": "en",
+      "band": "h10-12",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 6
+    },
+    {
+      "language": "en",
+      "band": "h10-12",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "en",
+      "band": "h2-8",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "en",
+      "band": "h2-8",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 24
+    },
+    {
+      "language": "hi",
+      "band": "h10-12",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 6
+    },
+    {
+      "language": "hi",
+      "band": "h10-12",
+      "aisle_template": true,
+      "seat_correct": false,
+      "n": 8
+    },
+    {
+      "language": "hi",
+      "band": "h10-12",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 4
+    },
+    {
+      "language": "hi",
+      "band": "h2-8",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "hi",
+      "band": "h2-8",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 24
+    },
+    {
+      "language": "hinglish",
+      "band": "h10-12",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 6
+    },
+    {
+      "language": "hinglish",
+      "band": "h10-12",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "hinglish",
+      "band": "h2-8",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "hinglish",
+      "band": "h2-8",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 23
+    },
+    {
+      "language": "ta",
+      "band": "h10-12",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 6
+    },
+    {
+      "language": "ta",
+      "band": "h10-12",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "ta",
+      "band": "h2-8",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "ta",
+      "band": "h2-8",
+      "aisle_template": true,
+      "seat_correct": false,
+      "n": 1
+    },
+    {
+      "language": "ta",
+      "band": "h2-8",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 23
+    },
+    {
+      "language": "zh",
+      "band": "h10-12",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 6
+    },
+    {
+      "language": "zh",
+      "band": "h10-12",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "zh",
+      "band": "h2-8",
+      "aisle_template": false,
+      "seat_correct": true,
+      "n": 12
+    },
+    {
+      "language": "zh",
+      "band": "h2-8",
+      "aisle_template": true,
+      "seat_correct": true,
+      "n": 24
+    }
+  ],
+  "mean_completion_tokens": {
+    "en": 1264,
+    "zh": 1328,
+    "ta": 1848,
+    "hi": 1422,
+    "hinglish": 1636
+  },
+  "notes": [
+    "hi: aisle->window at the final book_flight in 8/12 aisle-template episodes at h10-12 (0/48 in other languages); reasoning resolved 14C/14D after get_seat_map, then booked 14A while labelling it aisle. h10+ is also where seat_id replaces the seat_type enum, so distance and ID binding are confounded.",
+    "ta: travel_017 books AI440 in 16/18; the 'last' in the Tamil request is dropped when the model paraphrases it at step 0. Flat across horizons (comprehension, not drift).",
+    "hinglish: 1/90 failure, 'Kal' read as today (same as gate v1)."
+  ]
+}
