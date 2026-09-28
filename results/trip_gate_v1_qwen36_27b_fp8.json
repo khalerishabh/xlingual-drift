@@ -1,0 +1,208 @@
+{
+  "run_name": "trip_gate_v1_qwen36_27b_fp8",
+  "commit": "f0faba1",
+  "episodes": 60,
+  "infra_errors": 0,
+  "empty_responses": 0,
+  "serving": {
+    "model": "Qwen/Qwen3.6-27B-FP8",
+    "revision": "e89b16ebf1988b3d6befa7de50abc2d76f26eb09",
+    "vllm_version": "0.30.0"
+  },
+  "design": "trip_001 x h11/17/24/28 x en/zh/hi/ta/hinglish x 3 seeds, thinking on",
+  "pilot_v2_en": {
+    "episodes": 40,
+    "success": {
+      "h11": 0.5,
+      "h17": 1.0,
+      "h24": 0.8,
+      "h28": 0.9
+    },
+    "pooled": 0.8,
+    "decision": "pass (pooled >= 0.7)"
+  },
+  "success": {
+    "en": [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "zh": [
+      0.67,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "hi": [
+      1.0,
+      0.67,
+      0.67,
+      0.33
+    ],
+    "ta": [
+      0.33,
+      0.33,
+      0.0,
+      0.0
+    ],
+    "hinglish": [
+      0.33,
+      0.33,
+      0.67,
+      1.0
+    ]
+  },
+  "success_overall": {
+    "en": 0.75,
+    "zh": 0.92,
+    "hi": 0.67,
+    "ta": 0.17,
+    "hinglish": 0.58
+  },
+  "class_survival": {
+    "early": {
+      "en": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "zh": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "hi": [
+        1,
+        1,
+        0.67,
+        0.67
+      ],
+      "ta": [
+        0.33,
+        0.33,
+        0.33,
+        0.33
+      ],
+      "hinglish": [
+        0.67,
+        0.33,
+        0.67,
+        1
+      ]
+    },
+    "mid": "1.00 in every cell",
+    "carried": {
+      "en": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "zh": [
+        0.67,
+        1,
+        1,
+        1
+      ],
+      "hi": [
+        1,
+        0.67,
+        1,
+        1
+      ],
+      "ta": [
+        1,
+        0.67,
+        0.67,
+        1
+      ],
+      "hinglish": [
+        0.33,
+        1,
+        1,
+        1
+      ]
+    },
+    "late_booked": {
+      "en": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "zh": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "hi": [
+        1,
+        1,
+        1,
+        0.67
+      ],
+      "ta": [
+        1,
+        1,
+        0.67,
+        0
+      ],
+      "hinglish": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "horizons": [
+    11,
+    17,
+    24,
+    28
+  ],
+  "failure_mechanisms": {
+    "return_objective": {
+      "counts": {
+        "en": 0,
+        "zh": 0,
+        "hi": 2,
+        "ta": 8,
+        "hinglish": 4
+      },
+      "en_pilot_v2": "2/40",
+      "note": "booked IX143 (cheapest non-stop after 18:00) in 10/14; the earliest (6E622) breaks the joint budget and the model switches to cheapest instead of the next earliest (SG306); in some Tamil runs 'earliest' is absent from the step-1 paraphrase. Not horizon-dependent."
+    },
+    "pickup_wrong_row": {
+      "cells": "en h11 3/3, zh h11 1/3, hinglish h11 2/3, plus hi h17, ta h17",
+      "note": "arrival of 6E612 (08:25) attributed to 6E621; concentrated at h11, the one level where the flight list appears once, already filtered: a presentation effect, not distance"
+    },
+    "ta_ticket_self": {
+      "cells": "ta h24 1/3, h28 3/3",
+      "note": "'\u0baa\u0bc6\u0bb0\u0bbf\u0baf\u0bb5\u0bb0\u0bcd \u0b9f\u0bbf\u0b95\u0bcd\u0b95\u0bc6\u0b9f\u0bcd' (intended: adult) booked as student; reasoning shows the model unsure of the word when it re-reads the Tamil request late in the episode. Template wording issue, to fix."
+    },
+    "hi_binding_swap": {
+      "cells": "hi h28 1/3",
+      "note": "self given mother's aisle seat type on both legs"
+    }
+  },
+  "mean_steps": {
+    "en": 26.7,
+    "zh": 24.2,
+    "hi": 23.8,
+    "ta": 25.6,
+    "hinglish": 24.1
+  },
+  "mean_completion_tokens": 13464,
+  "reasoning_latin_share": {
+    "en": 1.0,
+    "hinglish": 1.0,
+    "ta": 0.96,
+    "hi": 0.88,
+    "zh": 0.54
+  }
+}
