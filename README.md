@@ -25,7 +25,7 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   debugging, or a hosted API. Open-source models are the primary setup; APIs are optional.
 - **Runner:** resumable after a disconnect; endpoint failures are logged but never scored;
   full transcripts (messages, reasoning, token usage) saved per episode.
-- **Tests:** 106 pytest checks covering gold replay, horizon invariance, load-bearing
+- **Tests:** 112 pytest checks covering gold replay, horizon invariance, load-bearing
   constraints, script hygiene, lenient-mode safety, recovery, and the model-policy plumbing.
 - **Stubs:** the four mitigations in `agent/mitigations/` (Section 8.10).
 
@@ -60,7 +60,7 @@ Decided 28 Sep 2026 (Section 15.8 of the project doc):
 python -m venv .venv
 .venv\Scripts\activate            # Windows; on Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-python -m pytest -q                 # expect: 106 passed
+python -m pytest -q                 # expect: 112 passed
 python -m eval.run_grid --config configs/smoke_test.yaml
 ```
 
@@ -79,7 +79,10 @@ non-recovering run. Add `--workers 8` to run episodes concurrently. Every `solve
   `python -m eval.run_grid --config configs/local_ollama_debug.yaml`.
 
 Thinking mode, temperature and seeds are set per cell in the config and must stay fixed
-across every language, horizon and control being compared.
+across every language, horizon and control being compared. The model itself is pinned in the
+config's `serving` block (model, weights revision, precision). The notebook serves exactly that,
+stops if the GPU is too small, and the runner refuses to mix episodes from different setups in
+one log. Gate v2 uses the official Qwen3.6-27B-FP8, which fits a 40GB or 80GB A100.
 
 ## Repository layout
 

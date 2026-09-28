@@ -10,7 +10,22 @@
 #     the final call, carried for more steps as the horizon grows. If state
 #     drift exists, this is where the language gap should widen.
 
-run_name: capability_gate_v2_qwen36_27b
+run_name: capability_gate_v2_qwen36_27b_fp8
+
+# The backbone is the model *and* its exact weights and precision. The
+# notebook serves exactly this, and run_grid refuses to add episodes to a
+# log produced under a different model, revision or vLLM version.
+# Precision is part of the backbone because quantization hurts non-Latin
+# scripts most (Marchisio et al., EMNLP 2024), so mixing precisions within
+# one backbone would create a spurious language effect.
+serving:
+  model: Qwen/Qwen3.6-27B-FP8       # official FP8; fits a 40GB or 80GB A100
+  revision: main                     # pin to the commit hash recorded after the first run
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 32768
+  min_vram_gb: 38
+
 templates:
   - tasks/templates/travel_017.json
   - tasks/templates/travel_018.json
@@ -21,9 +36,9 @@ horizons: [2, 4, 6, 8, 10, 12]
 languages: [en, zh, hi, ta, hinglish]
 
 cells:
-  - name: qwen36_27b_think
+  - name: qwen36_27b_fp8_think
     policy: openai_compat
-    model: Qwen/Qwen3.6-27B
+    model: Qwen/Qwen3.6-27B-FP8
     base_url: http://localhost:8000/v1
     temperature: 0.6
     max_tokens: 8192

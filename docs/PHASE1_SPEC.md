@@ -254,10 +254,25 @@ OpenAI-compatible endpoint:
 
 **Serving (vLLM, verified against the vLLM recipes, Sep 2026):**
 
-| Model | Parsers | Fits 80GB A100 in BF16 |
+| Model | Parsers | GPU memory |
 |---|---|---|
-| Qwen/Qwen3.6-27B | `--tool-call-parser qwen3_coder --reasoning-parser qwen3` | Yes |
-| google/gemma-4-31B-it | `--tool-call-parser gemma4 --reasoning-parser gemma4` + Gemma 4 tool chat template | Yes (short context) |
+| Qwen/Qwen3.6-27B-FP8 (official FP8) — **gate v2 backbone** | `--tool-call-parser qwen3_coder --reasoning-parser qwen3` | fits 40GB and 80GB A100 |
+| Qwen/Qwen3.6-27B (BF16) — gate v1 only | same | 80GB only |
+| google/gemma-4-31B-it | `--tool-call-parser gemma4 --reasoning-parser gemma4` + Gemma 4 tool chat template | 80GB (BF16) |
+
+**A backbone is a model plus its exact weights, precision and serving stack.** Every condition a
+backbone is compared on (languages, horizons, controls) must run on the identical backbone. Different
+backbones are fine: the study uses several, and model is a random effect in the analysis. Precision
+matters specifically here: quantization degrades non-Latin-script languages most (Marchisio et al.,
+EMNLP 2024), so mixing BF16 and FP8 episodes of "the same model" would manufacture a language effect.
+
+Enforcement: the run config's `serving` block pins model, revision, parsers and minimum GPU memory; the
+notebook serves exactly that, refuses an undersized GPU, resolves the revision to a commit hash, and writes
+`serving.json`. `run_grid --serving` stamps every episode with it and refuses to resume a log produced
+under a different model, revision or vLLM version (GPU model differences only produce a note).
+Colab's GPU varies by session (L4 24GB, A100 40GB, A100 80GB); choose each backbone's precision so it
+fits every GPU it will run on, and never switch precision mid-study. Gate v1 (BF16) was a design pilot
+and is not pooled with later runs.
 
 **Thinking mode is a study-wide constant.** Both settings run in the capability gate; the one
 chosen must then be fixed across every language, horizon and control. **Decided: ON** (first

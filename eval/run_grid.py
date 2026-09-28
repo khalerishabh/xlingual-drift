@@ -12,6 +12,10 @@ picks up where it stopped. Episodes whose endpoint failed are logged with
 `infra_error` and no score, and are retried on the next --resume.
 --workers runs episodes concurrently; vLLM batches the requests, so this is
 the main speed-up on a single GPU. Each episode is still fully independent.
+--serving points at the serving.json the notebook writes when it starts
+vLLM. Every episode is stamped with it, and a log is never extended with
+episodes from a different model, weights revision or vLLM version: a
+backbone must be identical across every condition it is compared on.
 """
 
 import argparse
@@ -61,6 +65,50 @@ def build_injector(cell: dict):
     )
 
 
+FINGERPRINT_KEYS = ("model", "revision", "vllm_version")
+
+
+class ServingMismatch(RuntimeError):
+    pass
+
+
+def check_cells_match_server(serving: dict, cfg: dict) -> None:
+    pinned = cfg.get("serving", {}).get("model")
+    if pinned and pinned != serving["model"]:
+        raise ServingMismatch(f"config pins {pinned} but the server runs {serving['model']}")
+    for cell in cfg["cells"]:
+        if cell["policy"] == "openai_compat" and cell.get("model") != serving["model"]:
+            raise ServingMismatch(f"cell {cell.get('name')} asks for {cell.get('model')}, server runs {serving['model']}")
+
+
+def check_log_matches_server(log_path: Path, serving: dict | None) -> None:
+    """Refuse to mix backbones in one log. GPU differences only produce a
+    note: the same weights and kernels on another card of the same family
+    do not change the backbone."""
+    if not log_path.exists():
+        return
+    other_gpus = set()
+    for line in log_path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        if rec.get("policy") == "mock":
+            continue
+        prior = rec.get("serving")
+        if prior is None and serving is None:
+            continue
+        if prior is None or serving is None:
+            raise ServingMismatch("log mixes episodes with and without a serving fingerprint")
+        diff = {k: (prior.get(k), serving.get(k)) for k in FINGERPRINT_KEYS if prior.get(k) != serving.get(k)}
+        if diff:
+            raise ServingMismatch(f"{log_path.name} was produced under a different backbone setup: {diff}. "
+                                  f"Use a new --out log or restore the original setup.")
+        if prior.get("gpu_name") != serving.get("gpu_name"):
+            other_gpus.add(prior.get("gpu_name"))
+    if other_gpus:
+        print(f"note: log also has episodes from {sorted(other_gpus)}; this session runs {serving.get('gpu_name')}")
+
+
 def completed_keys(log_path: Path) -> set:
     if not log_path.exists():
         return set()
@@ -73,7 +121,7 @@ def completed_keys(log_path: Path) -> set:
     return done
 
 
-def run_one(cfg: dict, template: dict, horizon: int, language: str, name: str, cell: dict, seed) -> dict:
+def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, name: str, cell: dict, seed) -> dict:
     gold = load_json(f"tasks/gold/{template['template_id']}_h{horizon}.json")
     policy = build_policy(cell, gold, seed)
     inject = cell.get("inject") or {}
@@ -85,6 +133,7 @@ def run_one(cfg: dict, template: dict, horizon: int, language: str, name: str, c
         "policy": cell["policy"], "model": cell.get("model"), "extra_body": cell.get("extra_body"),
         "seed": seed, "error_type": inject.get("error_type"), "inject_at_tool": inject.get("at_tool"),
         "message_language": inject.get("message_language"),
+        "serving": serving if cell["policy"] != "mock" else None,
     }
     start = time.perf_counter()
     try:
@@ -114,13 +163,21 @@ def main():
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--out", help="log path; defaults to runs/<run_name>.jsonl")
     parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--serving", help="serving.json written by the notebook when it started vLLM")
     args = parser.parse_args()
     cfg = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
+    serving = json.loads(Path(args.serving).read_text(encoding="utf-8")) if args.serving else None
+    if serving is None and any(c["policy"] == "openai_compat" for c in cfg["cells"]):
+        print("warning: no --serving given; episodes will carry no backbone fingerprint")
 
     template_paths = cfg.get("templates") or [cfg["template"]]
     templates = [load_json(p) for p in template_paths]
     log_path = Path(args.out) if args.out else REPO_ROOT / "runs" / f"{cfg['run_name']}.jsonl"
     log_path.parent.mkdir(parents=True, exist_ok=True)
+    if serving is not None:
+        check_cells_match_server(serving, cfg)
+    if args.resume:
+        check_log_matches_server(log_path, serving)
     done = completed_keys(log_path) if args.resume else set()
 
     cells = []
@@ -147,10 +204,10 @@ def main():
 
         if args.workers <= 1:
             for job in jobs:
-                write(run_one(cfg, *job))
+                write(run_one(cfg, serving, *job))
         else:
             with ThreadPoolExecutor(max_workers=args.workers) as pool:
-                futures = [pool.submit(run_one, cfg, *job) for job in jobs]
+                futures = [pool.submit(run_one, cfg, serving, *job) for job in jobs]
                 for fut in as_completed(futures):
                     write(fut.result())
 
