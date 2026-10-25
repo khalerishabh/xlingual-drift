@@ -36,8 +36,10 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   constraints, script hygiene, lenient-mode safety, recovery, and the model-policy plumbing.
 - **Stubs:** the four mitigations in `agent/mitigations/` (Section 8.10).
 
-Next: the trip main run (`configs/trip_main_v1.yaml`, 500 episodes) on Colab via
-`notebooks/colab_runner.ipynb`; then the error-injection pilot (RQ4) and a second model.
+Done: trip main run v1 on Qwen3.6-27B (500 episodes; no language x horizon interaction).
+Next: small-model runs, Qwen3.5-4B and 9B with thinking on and off
+(`configs/trip_small_qwen35_4b.yaml`, `configs/trip_small_qwen35_9b.yaml`), chosen by `CONFIG` in the
+notebook; then drift metrics, error injection (RQ4), lenient and oracle-plan controls (RQ2), the ledger (RQ5).
 
 ## Development workflow
 

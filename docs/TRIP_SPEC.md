@@ -145,6 +145,32 @@ Decided from the gate v1 failure analysis, before the main run:
 Main run v1: 5 templates x 4 horizons x 5 languages x 5 seeds = 500
 episodes (`configs/trip_main_v1.yaml`).
 
+## Small-model runs (decided 26 Oct 2026, before any small-model run)
+
+Main run v1 on Qwen3.6-27B (thinking on) showed no language x horizon
+interaction (p = 0.63). That model reasons mostly in English even for Indic
+requests, so it may translate the task once and never hold native-language
+state. Smaller models, and thinking off, are where drift should appear if it
+exists at all.
+
+- **Models:** Qwen3.5-4B and Qwen3.5-9B (same family as the 27B, so size is
+  the main thing that changes), each served once with
+  `--language-model-only`, thinking switched per request.
+- **Cells:** thinking on and thinking off, 3 seeds each, all 5 templates x 4
+  horizons x 5 languages: 600 episodes per model
+  (`configs/trip_small_qwen35_4b.yaml`, `configs/trip_small_qwen35_9b.yaml`).
+- **Fixed settings:** temperature 0.6 and no penalties for every condition
+  (the study-wide setting, not Qwen's per-mode recommendations), so
+  conditions differ only in model and thinking mode; same vLLM (0.30.0),
+  context and step limit as the 27B. Weights revision resolved at first start
+  and pinned by the log guard.
+- **Capability rule:** a model x thinking cell enters the horizon analysis
+  only if its English success at h14 is at least 0.5; cells below that are
+  reported as a floor result, not used for slope claims.
+- **Analysis (same as the main run):** logistic regression success ~
+  language x horizon + template, per cell; then the four constraint classes
+  and the drift metrics, to locate any widening.
+
 ## Measures that answer the research questions
 
 - RQ1: success and late survival by language x horizon; the interaction.

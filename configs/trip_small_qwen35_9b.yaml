@@ -1,0 +1,51 @@
+# Small-model drift test (docs/TRIP_SPEC.md, "Small-model runs"). Same
+# tasks as trip_main_v1; Qwen3.5-9B in two cells, thinking on and off,
+# served once (thinking is a per-request switch). 5 templates x 4 horizons x
+# 5 languages x 3 seeds x 2 cells = 600 episodes.
+# revision: "main" is resolved to a commit hash when the server starts and
+# recorded in serving.json; run_grid then refuses to mix later commits into
+# this log. Copy the hash here after the first session.
+# Sampling is held at the study-wide setting (temperature 0.6, no penalties)
+# rather than Qwen's per-mode recommendations, so conditions differ only in
+# model and thinking mode.
+
+run_name: trip_small_qwen35_9b
+
+serving:
+  model: Qwen/Qwen3.5-9B
+  revision: main
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: ["--language-model-only"]
+
+templates:
+  - tasks/trip_templates/trip_001.json
+  - tasks/trip_templates/trip_002.json
+  - tasks/trip_templates/trip_003.json
+  - tasks/trip_templates/trip_004.json
+  - tasks/trip_templates/trip_005.json
+interface_mode: strict
+max_steps: 60
+horizons: [14, 17, 24, 28]
+languages: [en, zh, hi, ta, hinglish]
+
+cells:
+  - name: qwen35_9b_think
+    policy: openai_compat
+    model: Qwen/Qwen3.5-9B
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1, 2, 3]
+  - name: qwen35_9b_nothink
+    policy: openai_compat
+    model: Qwen/Qwen3.5-9B
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: false}}
+    seeds: [1, 2, 3]
