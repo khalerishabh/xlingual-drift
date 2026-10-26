@@ -42,7 +42,7 @@ from eval.verifier import verify
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 _POLICY_KEYS = ("model", "base_url", "api_key_env", "temperature", "max_tokens", "extra_body",
-                "prompt_version", "max_retries", "api_key_header")
+                "prompt_version", "max_retries", "api_key_header", "timeout_s")
 
 
 def load_json(rel_path: str) -> dict:
@@ -163,7 +163,7 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
         return {**base, "infra_error": str(e), "latency_s": round(time.perf_counter() - start, 3)}
     record = {
         **base,
-        **(LONG_DOMAINS[domain]["module"].verify(traj, template, traj.sold_out) if long_domain
+        **(LONG_DOMAINS[domain]["module"].verify(traj, template, traj.sold_out, final_state=tools.snapshot()) if long_domain
            else (verify_trip if trip else verify)(traj, gold, traj.sold_out)),
         "hit_step_limit": traj.hit_step_limit,
         "final_text": traj.final_text,

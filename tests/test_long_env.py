@@ -104,3 +104,25 @@ def test_requests_script_clean(tid):
         assert not foreign, (lang, foreign)
     for lang in ("en", "hinglish"):
         assert all(ord(c) < 0x7F or c == "₹" for c in t["requests"][lang])
+
+
+@pytest.mark.parametrize("tid", ["shop_01", "pay_01"])
+def test_stopping_before_the_final_step_is_scored_on_state(tid):
+    i = inst(tid)
+    d = DOMAINS[i["domain"]]
+    tools = d["tools"](i, "en", "S1")
+    policy = LongMockPolicy(i)
+    policy.steps = i["gold_steps"][:-1]
+    traj = run_episode(tid, i["horizon"], i["requests"]["en"], policy, max_steps=80, tools=tools)
+    r = d["module"].verify(traj, i, traj.sold_out, final_state=tools.snapshot())
+    assert r["success"] is False and r["completed"] is False
+    assert r["success_state"] is True
+
+
+def test_rescore_reproduces_live_scoring():
+    from eval.rescore_long import rescore
+    i = inst("pay_02")
+    r, traj = episode("pay_02", "swap_tags", "hi")
+    rec = {**r, "domain": "pay", "template_id": "pay_02", "language": "hi", "seam": "S1", "steps": traj.steps}
+    again = rescore(rec)
+    assert again["constraint_ok"] == r["constraint_ok"]

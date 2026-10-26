@@ -53,7 +53,8 @@ class OpenAICompatPolicy:
     def __init__(self, model: str, base_url: str | None = None, api_key_env: str | None = None,
                  temperature: float = 0.0, seed: int | None = None, max_tokens: int = 4096,
                  extra_body: dict | None = None, prompt_version: str = "system_v1",
-                 client=None, max_retries: int = 4, retry_base_s: float = 2.0, api_key_header: str | None = None):
+                 client=None, max_retries: int = 4, retry_base_s: float = 2.0, api_key_header: str | None = None,
+                 timeout_s: float = 600):
         self.model = model
         self.temperature = temperature
         self.seed = seed
@@ -67,7 +68,7 @@ class OpenAICompatPolicy:
             from openai import OpenAI
             api_key = os.environ.get(api_key_env, "") if api_key_env else ""
             headers = {api_key_header: api_key} if api_key_header else None
-            client = OpenAI(base_url=base_url, api_key=api_key or "EMPTY", timeout=180, default_headers=headers)
+            client = OpenAI(base_url=base_url, api_key=api_key or "EMPTY", timeout=timeout_s, default_headers=headers)
         self.client = client
 
     def reset(self, request: str, tool_schemas: list, context: dict | None = None):

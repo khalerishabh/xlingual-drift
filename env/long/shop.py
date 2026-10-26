@@ -418,6 +418,14 @@ class ShopTools(LongTools):
     def get_payment_methods(self):
         return {"payment_methods": [dict(p) for p in PAYMENT_METHODS]}
 
+    def snapshot(self) -> dict:
+        """State at the end of an episode, for scoring when the agent stopped
+        before checkout (e.g. to ask the user to confirm payment)."""
+        lines = [dict(l) for l in self.cart if l["status"] == "ok"]
+        c = next((c for c in self.coupons if c["code"] == self.coupon), None)
+        return {"status": "not_placed", "lines": lines, "exchanges": [dict(e) for e in self.exchanges],
+                "coupon": self.coupon, "discount": (coupon_discount(c, lines) or 0) if c else 0, "payment_id": None}
+
     def checkout(self, payment_id):
         if payment_id not in {p["payment_id"] for p in PAYMENT_METHODS}:
             self.fail("validation", "unknown", what="payment_id", value=payment_id)
@@ -548,12 +556,13 @@ def check_rules(world: dict) -> None:
 # --- verification -----------------------------------------------------------
 
 CLASSES = ("selection", "attribute", "binding", "global")
+COMPLETION_CHECKS = ("payment.upi", "batch.confirmed")
 
 
-def verify(traj, instance: dict, sold_out: set) -> dict:
+def verify(traj, instance: dict, sold_out: set, final_state: dict | None = None) -> dict:
     world = instance["world"]
     steps = traj.steps
-    term = traj.terminal_state or {}
+    term = traj.terminal_state or final_state or {}
     checks, cls, commit, drift, reground, prior = {}, {}, {}, {}, {}, {}
 
     def put(name, klass, ok, step, kind=None, rg=False, evidence=None):
@@ -643,7 +652,7 @@ def verify(traj, instance: dict, sold_out: set) -> dict:
         if d is not None and d > best_d:
             best_c, best_d = c["code"], d
     c_step = max((i for i, s in enumerate(steps, 1) if s["tool"] == "apply_coupon" and "result" in s), default=None)
-    put("coupon.best", "global", placed and term.get("coupon") == best_c, c_step)
+    put("coupon.best", "global", term.get("coupon") == best_c, c_step)
     put("payment.upi", "global", term.get("payment_id") == "PM-UPI-1", traj_len(steps))
     return summarize(traj, instance, checks, cls, commit, drift, reground, placed, prior)
 
@@ -653,12 +662,19 @@ def traj_len(steps):
 
 
 def summarize(traj, instance, checks, cls, commit, drift, reground, placed, prior=None) -> dict:
+    """`success` (pre-registered) needs the final irreversible step (checkout,
+    batch confirmation). `success_state` scores the state the agent built,
+    so an agent that stops to hand the OTP or payment confirmation to the
+    user is not failed for it; `completed` records which one happened."""
     by = {}
     for k, v in checks.items():
         by.setdefault(cls[k], []).append(v)
     ok = placed and all(checks.values())
+    state_ok = all(v for k, v in checks.items() if k not in COMPLETION_CHECKS)
     return {
         "success": ok,
+        "success_state": state_ok,
+        "completed": placed,
         "booked": placed,
         "booked_flight": "placed" if placed else None,
         "constraint_ok": checks, "constraint_class": cls, "constraint_commit_step": commit,

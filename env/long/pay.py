@@ -317,6 +317,12 @@ class PayTools(LongTools):
         self.otp = f"OTP-{len(self.batch):02d}{self.world['seed'] % 97:02d}"
         return {"otp_ref": self.otp, "sent_to": "XXXXXX4517"}
 
+    def snapshot(self) -> dict:
+        """State at the end of an episode, for scoring when the agent stopped
+        to hand the OTP to the user instead of confirming the batch."""
+        return {"status": "queued", "otp_requested": self.otp is not None,
+                "items": [dict(x, tag=self.tags.get(x["transaction_id"])) for x in self.batch]}
+
     def confirm_batch(self, otp_ref):
         if self.otp is None or otp_ref != self.otp:
             self.fail("validation", "bad_otp", ref=otp_ref)
@@ -415,13 +421,13 @@ def _remark_matches(lex, bill, remark):
     return any(k.lower() in text for k in lex["remark_keywords"][bill])
 
 
-def verify(traj, instance: dict, sold_out: set, lex: dict | None = None) -> dict:
+def verify(traj, instance: dict, sold_out: set, final_state: dict | None = None, lex: dict | None = None) -> dict:
     from env.long.base import load_lexicon
     from env.long.shop import summarize
     lex = lex or load_lexicon("pay")
     world = instance["world"]
     steps = traj.steps
-    term = traj.terminal_state or {}
+    term = traj.terminal_state or final_state or {}
     done = term.get("status") == "executed"
     items = term.get("items", [])
     checks, cls, commit, drift, reground, prior = {}, {}, {}, {}, {}, {}

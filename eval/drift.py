@@ -75,13 +75,13 @@ def stage_of(row):
     return "reasoning / comprehension"
 
 
-def episode_table(records):
+def episode_table(records, field="success"):
     out = {}
     for cell in sorted({r["cell"] for r in records}):
         for lang in LANGS:
             rs = [r for r in records if r["cell"] == cell and r["language"] == lang]
             if rs:
-                k = sum(r["success"] for r in rs)
+                k = sum(bool(r.get(field)) for r in rs)
                 out[(cell, lang)] = (k, len(rs), wilson(k, len(rs)))
     return out
 
@@ -152,9 +152,18 @@ def stage_table(rows):
 def report(records):
     rows = constraint_rows(records)
     lines = [f"{len(records)} episodes, {len(rows)} scored constraints"]
-    lines.append("\nEpisode success (k/n, 95% CI)")
-    for (cell, lang), (k, n, ci) in episode_table(records).items():
-        lines.append(f"  {cell:<28} {lang:<9} {k:>3}/{n:<3} [{ci[0]:.2f}, {ci[1]:.2f}]")
+    for field, label in (("success", "Episode success, final step required (pre-registered)"),
+                         ("success_state", "Episode success on the state built (handing the OTP / payment to the user allowed)")):
+        lines.append(f"\n{label} (k/n, 95% CI)")
+        for (cell, lang), (k, n, ci) in episode_table(records, field).items():
+            lines.append(f"  {cell:<28} {lang:<9} {k:>3}/{n:<3} [{ci[0]:.2f}, {ci[1]:.2f}]")
+    lines.append("\nStopped before the final irreversible step (handover), by language")
+    for cell in sorted({r["cell"] for r in records}):
+        for lang in LANGS:
+            rs = [r for r in records if r["cell"] == cell and r["language"] == lang]
+            if rs:
+                h = sum(1 for r in rs if not r.get("completed"))
+                lines.append(f"  {cell:<28} {lang:<9} {h}/{len(rs)}")
     rates = drift_rates(rows)
     lines.append("\nDrift per 100 constraints (entity_swap, neighbour_id, semantic, other, strict state drift)")
     for (cell, lang), r in sorted(rates.items()):
