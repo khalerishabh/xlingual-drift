@@ -23,6 +23,13 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   Constraints are scored in four classes (early, mid, carried from tool outputs, late) with
   the step each was committed at, plus binding swaps between travellers. Gold is built and
   checked by `python -m tasks.build_trip_gold`. Five templates (trip_001-005, five origin cities) in en / zh / hi / ta / hinglish.
+- **Long-horizon domains for the RQ1 final test and RQ3 (`docs/LONG_SPEC.md`):** shop (festive
+  shopping for four people plus an exchange, 36 steps) and pay (month-end bills, transfers, a standing
+  instruction and budget tags, 32 steps), 10 generated instances each in five languages. Built-in
+  entity drift (bindings, near-identical ids and names), semantic drift (confirm labels and remarks next
+  to opaque ids), carried state and a mid-episode disruption that forces re-grounding. Seams S0-S3
+  localise tool outputs and errors for RQ3. `eval/drift.py` types every failed constraint and applies
+  the pre-registered RQ1 decision rule.
 - **Verifier:** success given episode state, early and late constraint survival with the step
   each was used at, fact displacement, recovery. No LLM judge anywhere.
 - **Mock policy:** walks gold with real tool outputs, so the harness runs end to end with
@@ -32,11 +39,14 @@ Phase 1 is in progress. The design spec is **`docs/PHASE1_SPEC.md`**, so read th
   debugging, or a hosted API. Open-source models are the primary setup; APIs are optional.
 - **Runner:** resumable after a disconnect; endpoint failures are logged but never scored;
   full transcripts (messages, reasoning, token usage) saved per episode.
-- **Tests:** 324 pytest checks covering gold replay, horizon invariance, load-bearing
+- **Tests:** 468 pytest checks covering gold replay, horizon invariance, load-bearing
   constraints, script hygiene, lenient-mode safety, recovery, and the model-policy plumbing.
 - **Stubs:** the four mitigations in `agent/mitigations/` (Section 8.10).
 
 Done: trip main run v1 on Qwen3.6-27B (500 episodes; no language x horizon interaction).
+Now: the RQ1 final test on the long-horizon domains (`configs/rq1_long_qwen36_27b_fp8.yaml`, via
+`notebooks/colab_runner.ipynb`), RQ3 seams (`notebooks/rq3_runner.ipynb`), Sarvam-30B
+(`notebooks/sarvam_runner.ipynb`).
 Next: small-model runs, Qwen3.5-4B and 9B with thinking on and off
 (`configs/trip_small_qwen35_4b.yaml`, `configs/trip_small_qwen35_9b.yaml`), chosen by `CONFIG` in the
 notebook; then drift metrics, error injection (RQ4), lenient and oracle-plan controls (RQ2), the ledger (RQ5).
@@ -69,9 +79,10 @@ Decided 28 Sep 2026 (Section 15.8 of the project doc):
 python -m venv .venv
 .venv\Scripts\activate            # Windows; on Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-python -m pytest -q                 # expect: 324 passed
+python -m pytest -q                 # expect: 468 passed
 python -m eval.run_grid --config configs/smoke_test.yaml
 python -m eval.run_grid --config configs/smoke_test_trip.yaml
+python -m eval.run_grid --config configs/smoke_test_long.yaml
 ```
 
 The smoke test runs 7 mock cells on 3 templates at 6 horizons (126 episodes): a clean solve,

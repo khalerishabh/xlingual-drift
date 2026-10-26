@@ -1,0 +1,6194 @@
+{
+ "template_id": "shop_07",
+ "domain": "shop",
+ "seed": 7,
+ "session_date": "2026-11-01",
+ "world": {
+  "seed": 7,
+  "session_date": "2026-11-01",
+  "deadline": "2026-11-06",
+  "order": [
+   "self",
+   "mother",
+   "sister",
+   "father"
+  ],
+  "perturbed": "self",
+  "nani_pair": [
+   "father",
+   "sister"
+  ],
+  "gift_pair": [
+   "sister",
+   "mother"
+  ],
+  "prefs": {
+   "self": {
+    "category": "kurta",
+    "gender": "men",
+    "size": "L",
+    "colour": "blue",
+    "max_price": 2500,
+    "address": "home"
+   },
+   "father": {
+    "category": "shirt",
+    "gender": "men",
+    "size": "XL",
+    "colour": "grey",
+    "max_price": 2200,
+    "address": "nani"
+   },
+   "mother": {
+    "category": "sneakers",
+    "gender": "women",
+    "size": "UK 6",
+    "colour": "green",
+    "max_price": 3500,
+    "address": "home"
+   },
+   "sister": {
+    "category": "kurti",
+    "gender": "women",
+    "size": "S",
+    "colour": "yellow",
+    "max_price": 1500,
+    "address": "nani"
+   }
+  },
+  "products": {
+   "P-64937": {
+    "product_id": "P-64937",
+    "name": "Manyavar kurta",
+    "brand": "Manyavar",
+    "category": "kurta",
+    "gender": "men",
+    "price": 3000,
+    "rating": 4.76,
+    "role": "top",
+    "rel": "self"
+   },
+   "P-28907": {
+    "product_id": "P-28907",
+    "name": "Fabindia kurta",
+    "brand": "Fabindia",
+    "category": "kurta",
+    "gender": "men",
+    "price": 1900,
+    "rating": 4.64,
+    "role": "nocolour",
+    "rel": "self"
+   },
+   "P-25439": {
+    "product_id": "P-25439",
+    "name": "W kurta",
+    "brand": "W",
+    "category": "kurta",
+    "gender": "men",
+    "price": 2300,
+    "rating": 4.46,
+    "role": "late",
+    "rel": "self"
+   },
+   "P-82963": {
+    "product_id": "P-82963",
+    "name": "Bata kurta",
+    "brand": "Bata",
+    "category": "kurta",
+    "gender": "men",
+    "price": 2300,
+    "rating": 4.36,
+    "role": "gold",
+    "rel": "self"
+   },
+   "P-23507": {
+    "product_id": "P-23507",
+    "name": "Peter England kurta",
+    "brand": "Peter England",
+    "category": "kurta",
+    "gender": "men",
+    "price": 2400,
+    "rating": 4.16,
+    "role": "alt",
+    "rel": "self"
+   },
+   "P-89263": {
+    "product_id": "P-89263",
+    "name": "Allen Solly kurta",
+    "brand": "Allen Solly",
+    "category": "kurta",
+    "gender": "men",
+    "price": 2100,
+    "rating": 4.14,
+    "role": "neighbour",
+    "rel": "self"
+   },
+   "P-86231": {
+    "product_id": "P-86231",
+    "name": "Puma kurta",
+    "brand": "Puma",
+    "category": "kurta",
+    "gender": "men",
+    "price": 2200,
+    "rating": 3.94,
+    "role": "filler1",
+    "rel": "self"
+   },
+   "P-81793": {
+    "product_id": "P-81793",
+    "name": "Raymond kurta",
+    "brand": "Raymond",
+    "category": "kurta",
+    "gender": "men",
+    "price": 2900,
+    "rating": 3.7,
+    "role": "filler2",
+    "rel": "self"
+   },
+   "P-31709": {
+    "product_id": "P-31709",
+    "name": "Manyavar shirt",
+    "brand": "Manyavar",
+    "category": "shirt",
+    "gender": "men",
+    "price": 2500,
+    "rating": 4.76,
+    "role": "top",
+    "rel": "father"
+   },
+   "P-50871": {
+    "product_id": "P-50871",
+    "name": "Libas shirt",
+    "brand": "Libas",
+    "category": "shirt",
+    "gender": "men",
+    "price": 2000,
+    "rating": 4.6,
+    "role": "nocolour",
+    "rel": "father"
+   },
+   "P-53476": {
+    "product_id": "P-53476",
+    "name": "W shirt",
+    "brand": "W",
+    "category": "shirt",
+    "gender": "men",
+    "price": 1800,
+    "rating": 4.46,
+    "role": "late",
+    "rel": "father"
+   },
+   "P-68935": {
+    "product_id": "P-68935",
+    "name": "Bata shirt",
+    "brand": "Bata",
+    "category": "shirt",
+    "gender": "men",
+    "price": 1800,
+    "rating": 4.36,
+    "role": "gold",
+    "rel": "father"
+   },
+   "P-32185": {
+    "product_id": "P-32185",
+    "name": "Biba shirt",
+    "brand": "Biba",
+    "category": "shirt",
+    "gender": "men",
+    "price": 1600,
+    "rating": 4.24,
+    "role": "alt",
+    "rel": "father"
+   },
+   "P-68395": {
+    "product_id": "P-68395",
+    "name": "Peter England shirt",
+    "brand": "Peter England",
+    "category": "shirt",
+    "gender": "men",
+    "price": 2000,
+    "rating": 4.06,
+    "role": "neighbour",
+    "rel": "father"
+   },
+   "P-10376": {
+    "product_id": "P-10376",
+    "name": "Puma shirt",
+    "brand": "Puma",
+    "category": "shirt",
+    "gender": "men",
+    "price": 2100,
+    "rating": 3.94,
+    "role": "filler1",
+    "rel": "father"
+   },
+   "P-65074": {
+    "product_id": "P-65074",
+    "name": "Fabindia shirt",
+    "brand": "Fabindia",
+    "category": "shirt",
+    "gender": "men",
+    "price": 2400,
+    "rating": 3.74,
+    "role": "filler2",
+    "rel": "father"
+   },
+   "P-71354": {
+    "product_id": "P-71354",
+    "name": "W sneakers",
+    "brand": "W",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 4000,
+    "rating": 4.8,
+    "role": "top",
+    "rel": "mother"
+   },
+   "P-26405": {
+    "product_id": "P-26405",
+    "name": "Allen Solly sneakers",
+    "brand": "Allen Solly",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 3300,
+    "rating": 4.56,
+    "role": "nocolour",
+    "rel": "mother"
+   },
+   "P-56497": {
+    "product_id": "P-56497",
+    "name": "Peter England sneakers",
+    "brand": "Peter England",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 3300,
+    "rating": 4.54,
+    "role": "late",
+    "rel": "mother"
+   },
+   "P-93728": {
+    "product_id": "P-93728",
+    "name": "Raymond sneakers",
+    "brand": "Raymond",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 3400,
+    "rating": 4.4,
+    "role": "gold",
+    "rel": "mother"
+   },
+   "P-59302": {
+    "product_id": "P-59302",
+    "name": "Puma sneakers",
+    "brand": "Puma",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 3300,
+    "rating": 4.24,
+    "role": "alt",
+    "rel": "mother"
+   },
+   "P-93782": {
+    "product_id": "P-93782",
+    "name": "Bata sneakers",
+    "brand": "Bata",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 2900,
+    "rating": 4.1,
+    "role": "neighbour",
+    "rel": "mother"
+   },
+   "P-73120": {
+    "product_id": "P-73120",
+    "name": "Fabindia sneakers",
+    "brand": "Fabindia",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 3400,
+    "rating": 3.94,
+    "role": "filler1",
+    "rel": "mother"
+   },
+   "P-56920": {
+    "product_id": "P-56920",
+    "name": "Biba sneakers",
+    "brand": "Biba",
+    "category": "sneakers",
+    "gender": "women",
+    "price": 3700,
+    "rating": 3.74,
+    "role": "filler2",
+    "rel": "mother"
+   },
+   "P-64035": {
+    "product_id": "P-64035",
+    "name": "Fabindia kurti",
+    "brand": "Fabindia",
+    "category": "kurti",
+    "gender": "women",
+    "price": 2000,
+    "rating": 4.8,
+    "role": "top",
+    "rel": "sister"
+   },
+   "P-89053": {
+    "product_id": "P-89053",
+    "name": "Puma kurti",
+    "brand": "Puma",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1400,
+    "rating": 4.64,
+    "role": "nocolour",
+    "rel": "sister"
+   },
+   "P-23974": {
+    "product_id": "P-23974",
+    "name": "Raymond kurti",
+    "brand": "Raymond",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1200,
+    "rating": 4.54,
+    "role": "late",
+    "rel": "sister"
+   },
+   "P-50714": {
+    "product_id": "P-50714",
+    "name": "Libas kurti",
+    "brand": "Libas",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1300,
+    "rating": 4.4,
+    "role": "gold",
+    "rel": "sister"
+   },
+   "P-84693": {
+    "product_id": "P-84693",
+    "name": "Bata kurti",
+    "brand": "Bata",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1400,
+    "rating": 4.2,
+    "role": "alt",
+    "rel": "sister"
+   },
+   "P-57014": {
+    "product_id": "P-57014",
+    "name": "Biba kurti",
+    "brand": "Biba",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1300,
+    "rating": 4.06,
+    "role": "neighbour",
+    "rel": "sister"
+   },
+   "P-92748": {
+    "product_id": "P-92748",
+    "name": "Peter England kurti",
+    "brand": "Peter England",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1400,
+    "rating": 3.9,
+    "role": "filler1",
+    "rel": "sister"
+   },
+   "P-93428": {
+    "product_id": "P-93428",
+    "name": "Manyavar kurti",
+    "brand": "Manyavar",
+    "category": "kurti",
+    "gender": "women",
+    "price": 1700,
+    "rating": 3.7,
+    "role": "filler2",
+    "rel": "sister"
+   },
+   "P-78592": {
+    "product_id": "P-78592",
+    "name": "Libas shirt",
+    "brand": "",
+    "category": "shirt",
+    "gender": "men",
+    "price": 1499,
+    "rating": 4.0,
+    "role": "exchange",
+    "rel": "self"
+   },
+   "P-29571": {
+    "product_id": "P-29571",
+    "name": "Biba shirt",
+    "brand": "",
+    "category": "shirt",
+    "gender": "men",
+    "price": 1299,
+    "rating": 3.8,
+    "role": "old",
+    "rel": "self"
+   }
+  },
+  "variants": {
+   "V-42561": {
+    "variant_id": "V-42561",
+    "product_id": "P-64937",
+    "size": "S",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85290": {
+    "variant_id": "V-85290",
+    "product_id": "P-64937",
+    "size": "M",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-74089": {
+    "variant_id": "V-74089",
+    "product_id": "P-64937",
+    "size": "L",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85107": {
+    "variant_id": "V-85107",
+    "product_id": "P-64937",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-87905": {
+    "variant_id": "V-87905",
+    "product_id": "P-64937",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-45381": {
+    "variant_id": "V-45381",
+    "product_id": "P-64937",
+    "size": "S",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-94820": {
+    "variant_id": "V-94820",
+    "product_id": "P-64937",
+    "size": "M",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-97641": {
+    "variant_id": "V-97641",
+    "product_id": "P-64937",
+    "size": "L",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-25347": {
+    "variant_id": "V-25347",
+    "product_id": "P-64937",
+    "size": "XL",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-62153": {
+    "variant_id": "V-62153",
+    "product_id": "P-64937",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-31805": {
+    "variant_id": "V-31805",
+    "product_id": "P-64937",
+    "size": "S",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-57024": {
+    "variant_id": "V-57024",
+    "product_id": "P-64937",
+    "size": "M",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-20876": {
+    "variant_id": "V-20876",
+    "product_id": "P-64937",
+    "size": "L",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-40583": {
+    "variant_id": "V-40583",
+    "product_id": "P-64937",
+    "size": "XL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-46953": {
+    "variant_id": "V-46953",
+    "product_id": "P-64937",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-95847": {
+    "variant_id": "V-95847",
+    "product_id": "P-28907",
+    "size": "S",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-62175": {
+    "variant_id": "V-62175",
+    "product_id": "P-28907",
+    "size": "M",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-23419": {
+    "variant_id": "V-23419",
+    "product_id": "P-28907",
+    "size": "L",
+    "colour": "blue",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-37256": {
+    "variant_id": "V-37256",
+    "product_id": "P-28907",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-13027": {
+    "variant_id": "V-13027",
+    "product_id": "P-28907",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-49071": {
+    "variant_id": "V-49071",
+    "product_id": "P-28907",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-31894": {
+    "variant_id": "V-31894",
+    "product_id": "P-28907",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-62518": {
+    "variant_id": "V-62518",
+    "product_id": "P-28907",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-13798": {
+    "variant_id": "V-13798",
+    "product_id": "P-28907",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-43970": {
+    "variant_id": "V-43970",
+    "product_id": "P-28907",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-35782": {
+    "variant_id": "V-35782",
+    "product_id": "P-28907",
+    "size": "S",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-72845": {
+    "variant_id": "V-72845",
+    "product_id": "P-28907",
+    "size": "M",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-36125": {
+    "variant_id": "V-36125",
+    "product_id": "P-28907",
+    "size": "L",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-21370": {
+    "variant_id": "V-21370",
+    "product_id": "P-28907",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-30821": {
+    "variant_id": "V-30821",
+    "product_id": "P-28907",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-27168": {
+    "variant_id": "V-27168",
+    "product_id": "P-25439",
+    "size": "S",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-41527": {
+    "variant_id": "V-41527",
+    "product_id": "P-25439",
+    "size": "M",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-27180": {
+    "variant_id": "V-27180",
+    "product_id": "P-25439",
+    "size": "L",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-96831": {
+    "variant_id": "V-96831",
+    "product_id": "P-25439",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-76918": {
+    "variant_id": "V-76918",
+    "product_id": "P-25439",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-89764": {
+    "variant_id": "V-89764",
+    "product_id": "P-25439",
+    "size": "S",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-72061": {
+    "variant_id": "V-72061",
+    "product_id": "P-25439",
+    "size": "M",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-79563": {
+    "variant_id": "V-79563",
+    "product_id": "P-25439",
+    "size": "L",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-42570": {
+    "variant_id": "V-42570",
+    "product_id": "P-25439",
+    "size": "XL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-13652": {
+    "variant_id": "V-13652",
+    "product_id": "P-25439",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-90285": {
+    "variant_id": "V-90285",
+    "product_id": "P-25439",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-25941": {
+    "variant_id": "V-25941",
+    "product_id": "P-25439",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-19508": {
+    "variant_id": "V-19508",
+    "product_id": "P-25439",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-49685": {
+    "variant_id": "V-49685",
+    "product_id": "P-25439",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-28740": {
+    "variant_id": "V-28740",
+    "product_id": "P-25439",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-65217": {
+    "variant_id": "V-65217",
+    "product_id": "P-82963",
+    "size": "M",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-12370": {
+    "variant_id": "V-12370",
+    "product_id": "P-82963",
+    "size": "L",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-18426": {
+    "variant_id": "V-18426",
+    "product_id": "P-82963",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-26981": {
+    "variant_id": "V-26981",
+    "product_id": "P-82963",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-74829": {
+    "variant_id": "V-74829",
+    "product_id": "P-82963",
+    "size": "S",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-17540": {
+    "variant_id": "V-17540",
+    "product_id": "P-82963",
+    "size": "M",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-93157": {
+    "variant_id": "V-93157",
+    "product_id": "P-82963",
+    "size": "L",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-89715": {
+    "variant_id": "V-89715",
+    "product_id": "P-82963",
+    "size": "XL",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-25948": {
+    "variant_id": "V-25948",
+    "product_id": "P-82963",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-82491": {
+    "variant_id": "V-82491",
+    "product_id": "P-82963",
+    "size": "S",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-79063": {
+    "variant_id": "V-79063",
+    "product_id": "P-82963",
+    "size": "M",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-50893": {
+    "variant_id": "V-50893",
+    "product_id": "P-82963",
+    "size": "L",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-68417": {
+    "variant_id": "V-68417",
+    "product_id": "P-82963",
+    "size": "XL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-12380": {
+    "variant_id": "V-12380",
+    "product_id": "P-82963",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-96287": {
+    "variant_id": "V-96287",
+    "product_id": "P-23507",
+    "size": "S",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-76412": {
+    "variant_id": "V-76412",
+    "product_id": "P-23507",
+    "size": "M",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-54918": {
+    "variant_id": "V-54918",
+    "product_id": "P-23507",
+    "size": "L",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-27015": {
+    "variant_id": "V-27015",
+    "product_id": "P-23507",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-21073": {
+    "variant_id": "V-21073",
+    "product_id": "P-23507",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-30648": {
+    "variant_id": "V-30648",
+    "product_id": "P-23507",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-81706": {
+    "variant_id": "V-81706",
+    "product_id": "P-23507",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-56738": {
+    "variant_id": "V-56738",
+    "product_id": "P-23507",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-10648": {
+    "variant_id": "V-10648",
+    "product_id": "P-23507",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-86913": {
+    "variant_id": "V-86913",
+    "product_id": "P-23507",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-49275": {
+    "variant_id": "V-49275",
+    "product_id": "P-23507",
+    "size": "S",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-86753": {
+    "variant_id": "V-86753",
+    "product_id": "P-23507",
+    "size": "M",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-94308": {
+    "variant_id": "V-94308",
+    "product_id": "P-23507",
+    "size": "L",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-78649": {
+    "variant_id": "V-78649",
+    "product_id": "P-23507",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-15486": {
+    "variant_id": "V-15486",
+    "product_id": "P-23507",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-12469": {
+    "variant_id": "V-12469",
+    "product_id": "P-89263",
+    "size": "S",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-80149": {
+    "variant_id": "V-80149",
+    "product_id": "P-89263",
+    "size": "M",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-19758": {
+    "variant_id": "V-19758",
+    "product_id": "P-89263",
+    "size": "L",
+    "colour": "blue",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-95187": {
+    "variant_id": "V-95187",
+    "product_id": "P-89263",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-47659": {
+    "variant_id": "V-47659",
+    "product_id": "P-89263",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-53486": {
+    "variant_id": "V-53486",
+    "product_id": "P-89263",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-17950": {
+    "variant_id": "V-17950",
+    "product_id": "P-89263",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-48123": {
+    "variant_id": "V-48123",
+    "product_id": "P-89263",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-47956": {
+    "variant_id": "V-47956",
+    "product_id": "P-89263",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-45213": {
+    "variant_id": "V-45213",
+    "product_id": "P-89263",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-86214": {
+    "variant_id": "V-86214",
+    "product_id": "P-89263",
+    "size": "S",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-27380": {
+    "variant_id": "V-27380",
+    "product_id": "P-89263",
+    "size": "M",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-40327": {
+    "variant_id": "V-40327",
+    "product_id": "P-89263",
+    "size": "L",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-30849": {
+    "variant_id": "V-30849",
+    "product_id": "P-89263",
+    "size": "XL",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-51428": {
+    "variant_id": "V-51428",
+    "product_id": "P-89263",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43189": {
+    "variant_id": "V-43189",
+    "product_id": "P-86231",
+    "size": "S",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-46783": {
+    "variant_id": "V-46783",
+    "product_id": "P-86231",
+    "size": "M",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-29518": {
+    "variant_id": "V-29518",
+    "product_id": "P-86231",
+    "size": "L",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-13802": {
+    "variant_id": "V-13802",
+    "product_id": "P-86231",
+    "size": "XL",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-47513": {
+    "variant_id": "V-47513",
+    "product_id": "P-86231",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-71890": {
+    "variant_id": "V-71890",
+    "product_id": "P-86231",
+    "size": "S",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-43520": {
+    "variant_id": "V-43520",
+    "product_id": "P-86231",
+    "size": "M",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-83049": {
+    "variant_id": "V-83049",
+    "product_id": "P-86231",
+    "size": "L",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-94306": {
+    "variant_id": "V-94306",
+    "product_id": "P-86231",
+    "size": "XL",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-82140": {
+    "variant_id": "V-82140",
+    "product_id": "P-86231",
+    "size": "XXL",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-35219": {
+    "variant_id": "V-35219",
+    "product_id": "P-86231",
+    "size": "S",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-54820": {
+    "variant_id": "V-54820",
+    "product_id": "P-86231",
+    "size": "M",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-58274": {
+    "variant_id": "V-58274",
+    "product_id": "P-86231",
+    "size": "L",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-60179": {
+    "variant_id": "V-60179",
+    "product_id": "P-86231",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-54328": {
+    "variant_id": "V-54328",
+    "product_id": "P-86231",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-68439": {
+    "variant_id": "V-68439",
+    "product_id": "P-81793",
+    "size": "S",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-65731": {
+    "variant_id": "V-65731",
+    "product_id": "P-81793",
+    "size": "M",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-19586": {
+    "variant_id": "V-19586",
+    "product_id": "P-81793",
+    "size": "L",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-84630": {
+    "variant_id": "V-84630",
+    "product_id": "P-81793",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24697": {
+    "variant_id": "V-24697",
+    "product_id": "P-81793",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-35126": {
+    "variant_id": "V-35126",
+    "product_id": "P-81793",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-49520": {
+    "variant_id": "V-49520",
+    "product_id": "P-81793",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-50291": {
+    "variant_id": "V-50291",
+    "product_id": "P-81793",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-75314": {
+    "variant_id": "V-75314",
+    "product_id": "P-81793",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-39725": {
+    "variant_id": "V-39725",
+    "product_id": "P-81793",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-65123": {
+    "variant_id": "V-65123",
+    "product_id": "P-81793",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-35419": {
+    "variant_id": "V-35419",
+    "product_id": "P-81793",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-48657": {
+    "variant_id": "V-48657",
+    "product_id": "P-81793",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-39271": {
+    "variant_id": "V-39271",
+    "product_id": "P-81793",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-87961": {
+    "variant_id": "V-87961",
+    "product_id": "P-81793",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-13270": {
+    "variant_id": "V-13270",
+    "product_id": "P-82963",
+    "size": "S",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-68503": {
+    "variant_id": "V-68503",
+    "product_id": "P-31709",
+    "size": "S",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-72198": {
+    "variant_id": "V-72198",
+    "product_id": "P-31709",
+    "size": "M",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-63054": {
+    "variant_id": "V-63054",
+    "product_id": "P-31709",
+    "size": "L",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-70824": {
+    "variant_id": "V-70824",
+    "product_id": "P-31709",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-45692": {
+    "variant_id": "V-45692",
+    "product_id": "P-31709",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-51482": {
+    "variant_id": "V-51482",
+    "product_id": "P-31709",
+    "size": "S",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-18563": {
+    "variant_id": "V-18563",
+    "product_id": "P-31709",
+    "size": "M",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-71045": {
+    "variant_id": "V-71045",
+    "product_id": "P-31709",
+    "size": "L",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-74680": {
+    "variant_id": "V-74680",
+    "product_id": "P-31709",
+    "size": "XL",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-49756": {
+    "variant_id": "V-49756",
+    "product_id": "P-31709",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-70395": {
+    "variant_id": "V-70395",
+    "product_id": "P-31709",
+    "size": "S",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-95137": {
+    "variant_id": "V-95137",
+    "product_id": "P-31709",
+    "size": "M",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-31062": {
+    "variant_id": "V-31062",
+    "product_id": "P-31709",
+    "size": "L",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-91867": {
+    "variant_id": "V-91867",
+    "product_id": "P-31709",
+    "size": "XL",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-65189": {
+    "variant_id": "V-65189",
+    "product_id": "P-31709",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-91304": {
+    "variant_id": "V-91304",
+    "product_id": "P-50871",
+    "size": "S",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-48506": {
+    "variant_id": "V-48506",
+    "product_id": "P-50871",
+    "size": "M",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-36108": {
+    "variant_id": "V-36108",
+    "product_id": "P-50871",
+    "size": "L",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-42157": {
+    "variant_id": "V-42157",
+    "product_id": "P-50871",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-85796": {
+    "variant_id": "V-85796",
+    "product_id": "P-50871",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-23178": {
+    "variant_id": "V-23178",
+    "product_id": "P-50871",
+    "size": "S",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-68759": {
+    "variant_id": "V-68759",
+    "product_id": "P-50871",
+    "size": "M",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-19845": {
+    "variant_id": "V-19845",
+    "product_id": "P-50871",
+    "size": "L",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-89041": {
+    "variant_id": "V-89041",
+    "product_id": "P-50871",
+    "size": "XL",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-91257": {
+    "variant_id": "V-91257",
+    "product_id": "P-50871",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-58327": {
+    "variant_id": "V-58327",
+    "product_id": "P-50871",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-95412": {
+    "variant_id": "V-95412",
+    "product_id": "P-50871",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-34267": {
+    "variant_id": "V-34267",
+    "product_id": "P-50871",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-74962": {
+    "variant_id": "V-74962",
+    "product_id": "P-50871",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-97035": {
+    "variant_id": "V-97035",
+    "product_id": "P-50871",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-47132": {
+    "variant_id": "V-47132",
+    "product_id": "P-53476",
+    "size": "S",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-50941": {
+    "variant_id": "V-50941",
+    "product_id": "P-53476",
+    "size": "M",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-12387": {
+    "variant_id": "V-12387",
+    "product_id": "P-53476",
+    "size": "L",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-30521": {
+    "variant_id": "V-30521",
+    "product_id": "P-53476",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-85732": {
+    "variant_id": "V-85732",
+    "product_id": "P-53476",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-27036": {
+    "variant_id": "V-27036",
+    "product_id": "P-53476",
+    "size": "S",
+    "colour": "white",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-58607": {
+    "variant_id": "V-58607",
+    "product_id": "P-53476",
+    "size": "M",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-31209": {
+    "variant_id": "V-31209",
+    "product_id": "P-53476",
+    "size": "L",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-89645": {
+    "variant_id": "V-89645",
+    "product_id": "P-53476",
+    "size": "XL",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-39107": {
+    "variant_id": "V-39107",
+    "product_id": "P-53476",
+    "size": "XXL",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-38591": {
+    "variant_id": "V-38591",
+    "product_id": "P-53476",
+    "size": "S",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-57082": {
+    "variant_id": "V-57082",
+    "product_id": "P-53476",
+    "size": "M",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-15386": {
+    "variant_id": "V-15386",
+    "product_id": "P-53476",
+    "size": "L",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-82096": {
+    "variant_id": "V-82096",
+    "product_id": "P-53476",
+    "size": "XL",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-42670": {
+    "variant_id": "V-42670",
+    "product_id": "P-53476",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-62473": {
+    "variant_id": "V-62473",
+    "product_id": "P-68935",
+    "size": "M",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-76105": {
+    "variant_id": "V-76105",
+    "product_id": "P-68935",
+    "size": "L",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-20481": {
+    "variant_id": "V-20481",
+    "product_id": "P-68935",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43059": {
+    "variant_id": "V-43059",
+    "product_id": "P-68935",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-69821": {
+    "variant_id": "V-69821",
+    "product_id": "P-68935",
+    "size": "S",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-58793": {
+    "variant_id": "V-58793",
+    "product_id": "P-68935",
+    "size": "M",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-52968": {
+    "variant_id": "V-52968",
+    "product_id": "P-68935",
+    "size": "L",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-25083": {
+    "variant_id": "V-25083",
+    "product_id": "P-68935",
+    "size": "XL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-86027": {
+    "variant_id": "V-86027",
+    "product_id": "P-68935",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-59248": {
+    "variant_id": "V-59248",
+    "product_id": "P-68935",
+    "size": "S",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-40152": {
+    "variant_id": "V-40152",
+    "product_id": "P-68935",
+    "size": "M",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-50641": {
+    "variant_id": "V-50641",
+    "product_id": "P-68935",
+    "size": "L",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-27304": {
+    "variant_id": "V-27304",
+    "product_id": "P-68935",
+    "size": "XL",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-10342": {
+    "variant_id": "V-10342",
+    "product_id": "P-68935",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-86492": {
+    "variant_id": "V-86492",
+    "product_id": "P-32185",
+    "size": "S",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-30791": {
+    "variant_id": "V-30791",
+    "product_id": "P-32185",
+    "size": "M",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-29570": {
+    "variant_id": "V-29570",
+    "product_id": "P-32185",
+    "size": "L",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-93651": {
+    "variant_id": "V-93651",
+    "product_id": "P-32185",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-83705": {
+    "variant_id": "V-83705",
+    "product_id": "P-32185",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-42571": {
+    "variant_id": "V-42571",
+    "product_id": "P-32185",
+    "size": "S",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-18064": {
+    "variant_id": "V-18064",
+    "product_id": "P-32185",
+    "size": "M",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-23751": {
+    "variant_id": "V-23751",
+    "product_id": "P-32185",
+    "size": "L",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-89702": {
+    "variant_id": "V-89702",
+    "product_id": "P-32185",
+    "size": "XL",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-49356": {
+    "variant_id": "V-49356",
+    "product_id": "P-32185",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-59172": {
+    "variant_id": "V-59172",
+    "product_id": "P-32185",
+    "size": "S",
+    "colour": "black",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-69308": {
+    "variant_id": "V-69308",
+    "product_id": "P-32185",
+    "size": "M",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-15087": {
+    "variant_id": "V-15087",
+    "product_id": "P-32185",
+    "size": "L",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-67154": {
+    "variant_id": "V-67154",
+    "product_id": "P-32185",
+    "size": "XL",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-76509": {
+    "variant_id": "V-76509",
+    "product_id": "P-32185",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-52843": {
+    "variant_id": "V-52843",
+    "product_id": "P-68395",
+    "size": "S",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-10836": {
+    "variant_id": "V-10836",
+    "product_id": "P-68395",
+    "size": "M",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-91608": {
+    "variant_id": "V-91608",
+    "product_id": "P-68395",
+    "size": "L",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-13526": {
+    "variant_id": "V-13526",
+    "product_id": "P-68395",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-28591": {
+    "variant_id": "V-28591",
+    "product_id": "P-68395",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-28140": {
+    "variant_id": "V-28140",
+    "product_id": "P-68395",
+    "size": "S",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-87394": {
+    "variant_id": "V-87394",
+    "product_id": "P-68395",
+    "size": "M",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24039": {
+    "variant_id": "V-24039",
+    "product_id": "P-68395",
+    "size": "L",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-92871": {
+    "variant_id": "V-92871",
+    "product_id": "P-68395",
+    "size": "XL",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-51830": {
+    "variant_id": "V-51830",
+    "product_id": "P-68395",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-58237": {
+    "variant_id": "V-58237",
+    "product_id": "P-68395",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-91038": {
+    "variant_id": "V-91038",
+    "product_id": "P-68395",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-71465": {
+    "variant_id": "V-71465",
+    "product_id": "P-68395",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85306": {
+    "variant_id": "V-85306",
+    "product_id": "P-68395",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-78623": {
+    "variant_id": "V-78623",
+    "product_id": "P-68395",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-74825": {
+    "variant_id": "V-74825",
+    "product_id": "P-10376",
+    "size": "S",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-47189": {
+    "variant_id": "V-47189",
+    "product_id": "P-10376",
+    "size": "M",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-74263": {
+    "variant_id": "V-74263",
+    "product_id": "P-10376",
+    "size": "L",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-61720": {
+    "variant_id": "V-61720",
+    "product_id": "P-10376",
+    "size": "XL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-37016": {
+    "variant_id": "V-37016",
+    "product_id": "P-10376",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-81425": {
+    "variant_id": "V-81425",
+    "product_id": "P-10376",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-70412": {
+    "variant_id": "V-70412",
+    "product_id": "P-10376",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-52816": {
+    "variant_id": "V-52816",
+    "product_id": "P-10376",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-67514": {
+    "variant_id": "V-67514",
+    "product_id": "P-10376",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-35109": {
+    "variant_id": "V-35109",
+    "product_id": "P-10376",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-52803": {
+    "variant_id": "V-52803",
+    "product_id": "P-10376",
+    "size": "S",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43906": {
+    "variant_id": "V-43906",
+    "product_id": "P-10376",
+    "size": "M",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-29786": {
+    "variant_id": "V-29786",
+    "product_id": "P-10376",
+    "size": "L",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-45890": {
+    "variant_id": "V-45890",
+    "product_id": "P-10376",
+    "size": "XL",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-46805": {
+    "variant_id": "V-46805",
+    "product_id": "P-10376",
+    "size": "XXL",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-39157": {
+    "variant_id": "V-39157",
+    "product_id": "P-65074",
+    "size": "S",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-10723": {
+    "variant_id": "V-10723",
+    "product_id": "P-65074",
+    "size": "M",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-97542": {
+    "variant_id": "V-97542",
+    "product_id": "P-65074",
+    "size": "L",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-51027": {
+    "variant_id": "V-51027",
+    "product_id": "P-65074",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-12576": {
+    "variant_id": "V-12576",
+    "product_id": "P-65074",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-60948": {
+    "variant_id": "V-60948",
+    "product_id": "P-65074",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-36189": {
+    "variant_id": "V-36189",
+    "product_id": "P-65074",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-80914": {
+    "variant_id": "V-80914",
+    "product_id": "P-65074",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-54938": {
+    "variant_id": "V-54938",
+    "product_id": "P-65074",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-34091": {
+    "variant_id": "V-34091",
+    "product_id": "P-65074",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-93567": {
+    "variant_id": "V-93567",
+    "product_id": "P-65074",
+    "size": "S",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-62387": {
+    "variant_id": "V-62387",
+    "product_id": "P-65074",
+    "size": "M",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-92387": {
+    "variant_id": "V-92387",
+    "product_id": "P-65074",
+    "size": "L",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-39416": {
+    "variant_id": "V-39416",
+    "product_id": "P-65074",
+    "size": "XL",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-61375": {
+    "variant_id": "V-61375",
+    "product_id": "P-65074",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24081": {
+    "variant_id": "V-24081",
+    "product_id": "P-68935",
+    "size": "S",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-96154": {
+    "variant_id": "V-96154",
+    "product_id": "P-71354",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-40623": {
+    "variant_id": "V-40623",
+    "product_id": "P-71354",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-62754": {
+    "variant_id": "V-62754",
+    "product_id": "P-71354",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-35869": {
+    "variant_id": "V-35869",
+    "product_id": "P-71354",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-82753": {
+    "variant_id": "V-82753",
+    "product_id": "P-71354",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-40693": {
+    "variant_id": "V-40693",
+    "product_id": "P-71354",
+    "size": "UK 6",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-42317": {
+    "variant_id": "V-42317",
+    "product_id": "P-71354",
+    "size": "UK 7",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-71048": {
+    "variant_id": "V-71048",
+    "product_id": "P-71354",
+    "size": "UK 8",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-12694": {
+    "variant_id": "V-12694",
+    "product_id": "P-71354",
+    "size": "UK 9",
+    "colour": "white",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-76928": {
+    "variant_id": "V-76928",
+    "product_id": "P-71354",
+    "size": "UK 10",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-37965": {
+    "variant_id": "V-37965",
+    "product_id": "P-71354",
+    "size": "UK 6",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-54736": {
+    "variant_id": "V-54736",
+    "product_id": "P-71354",
+    "size": "UK 7",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-67041": {
+    "variant_id": "V-67041",
+    "product_id": "P-71354",
+    "size": "UK 8",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-82617": {
+    "variant_id": "V-82617",
+    "product_id": "P-71354",
+    "size": "UK 9",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-62917": {
+    "variant_id": "V-62917",
+    "product_id": "P-71354",
+    "size": "UK 10",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-35206": {
+    "variant_id": "V-35206",
+    "product_id": "P-26405",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-93207": {
+    "variant_id": "V-93207",
+    "product_id": "P-26405",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-63219": {
+    "variant_id": "V-63219",
+    "product_id": "P-26405",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-34895": {
+    "variant_id": "V-34895",
+    "product_id": "P-26405",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-90831": {
+    "variant_id": "V-90831",
+    "product_id": "P-26405",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-97425": {
+    "variant_id": "V-97425",
+    "product_id": "P-26405",
+    "size": "UK 6",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-23186": {
+    "variant_id": "V-23186",
+    "product_id": "P-26405",
+    "size": "UK 7",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-83675": {
+    "variant_id": "V-83675",
+    "product_id": "P-26405",
+    "size": "UK 8",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-65284": {
+    "variant_id": "V-65284",
+    "product_id": "P-26405",
+    "size": "UK 9",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-84230": {
+    "variant_id": "V-84230",
+    "product_id": "P-26405",
+    "size": "UK 10",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-65190": {
+    "variant_id": "V-65190",
+    "product_id": "P-26405",
+    "size": "UK 6",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-60743": {
+    "variant_id": "V-60743",
+    "product_id": "P-26405",
+    "size": "UK 7",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-20869": {
+    "variant_id": "V-20869",
+    "product_id": "P-26405",
+    "size": "UK 8",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-92168": {
+    "variant_id": "V-92168",
+    "product_id": "P-26405",
+    "size": "UK 9",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-25947": {
+    "variant_id": "V-25947",
+    "product_id": "P-26405",
+    "size": "UK 10",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-69084": {
+    "variant_id": "V-69084",
+    "product_id": "P-56497",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-21048": {
+    "variant_id": "V-21048",
+    "product_id": "P-56497",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-43298": {
+    "variant_id": "V-43298",
+    "product_id": "P-56497",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-17936": {
+    "variant_id": "V-17936",
+    "product_id": "P-56497",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-17835": {
+    "variant_id": "V-17835",
+    "product_id": "P-56497",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-57613": {
+    "variant_id": "V-57613",
+    "product_id": "P-56497",
+    "size": "UK 6",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-84293": {
+    "variant_id": "V-84293",
+    "product_id": "P-56497",
+    "size": "UK 7",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-91506": {
+    "variant_id": "V-91506",
+    "product_id": "P-56497",
+    "size": "UK 8",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-59371": {
+    "variant_id": "V-59371",
+    "product_id": "P-56497",
+    "size": "UK 9",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-69148": {
+    "variant_id": "V-69148",
+    "product_id": "P-56497",
+    "size": "UK 10",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-45130": {
+    "variant_id": "V-45130",
+    "product_id": "P-56497",
+    "size": "UK 6",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-28437": {
+    "variant_id": "V-28437",
+    "product_id": "P-56497",
+    "size": "UK 7",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-82571": {
+    "variant_id": "V-82571",
+    "product_id": "P-56497",
+    "size": "UK 8",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-40675": {
+    "variant_id": "V-40675",
+    "product_id": "P-56497",
+    "size": "UK 9",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-60459": {
+    "variant_id": "V-60459",
+    "product_id": "P-56497",
+    "size": "UK 10",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-78293": {
+    "variant_id": "V-78293",
+    "product_id": "P-93728",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-85742": {
+    "variant_id": "V-85742",
+    "product_id": "P-93728",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-74653": {
+    "variant_id": "V-74653",
+    "product_id": "P-93728",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-20713": {
+    "variant_id": "V-20713",
+    "product_id": "P-93728",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-86901": {
+    "variant_id": "V-86901",
+    "product_id": "P-93728",
+    "size": "UK 6",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-65830": {
+    "variant_id": "V-65830",
+    "product_id": "P-93728",
+    "size": "UK 7",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43291": {
+    "variant_id": "V-43291",
+    "product_id": "P-93728",
+    "size": "UK 8",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-20965": {
+    "variant_id": "V-20965",
+    "product_id": "P-93728",
+    "size": "UK 9",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-83056": {
+    "variant_id": "V-83056",
+    "product_id": "P-93728",
+    "size": "UK 10",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-93865": {
+    "variant_id": "V-93865",
+    "product_id": "P-93728",
+    "size": "UK 6",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43710": {
+    "variant_id": "V-43710",
+    "product_id": "P-93728",
+    "size": "UK 7",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-39061": {
+    "variant_id": "V-39061",
+    "product_id": "P-93728",
+    "size": "UK 8",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-56138": {
+    "variant_id": "V-56138",
+    "product_id": "P-93728",
+    "size": "UK 9",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-94762": {
+    "variant_id": "V-94762",
+    "product_id": "P-93728",
+    "size": "UK 10",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-98721": {
+    "variant_id": "V-98721",
+    "product_id": "P-59302",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-71698": {
+    "variant_id": "V-71698",
+    "product_id": "P-59302",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-73086": {
+    "variant_id": "V-73086",
+    "product_id": "P-59302",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-71328": {
+    "variant_id": "V-71328",
+    "product_id": "P-59302",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-20195": {
+    "variant_id": "V-20195",
+    "product_id": "P-59302",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-60473": {
+    "variant_id": "V-60473",
+    "product_id": "P-59302",
+    "size": "UK 6",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-72591": {
+    "variant_id": "V-72591",
+    "product_id": "P-59302",
+    "size": "UK 7",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-39052": {
+    "variant_id": "V-39052",
+    "product_id": "P-59302",
+    "size": "UK 8",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-82531": {
+    "variant_id": "V-82531",
+    "product_id": "P-59302",
+    "size": "UK 9",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24318": {
+    "variant_id": "V-24318",
+    "product_id": "P-59302",
+    "size": "UK 10",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-92706": {
+    "variant_id": "V-92706",
+    "product_id": "P-59302",
+    "size": "UK 6",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-43789": {
+    "variant_id": "V-43789",
+    "product_id": "P-59302",
+    "size": "UK 7",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-41283": {
+    "variant_id": "V-41283",
+    "product_id": "P-59302",
+    "size": "UK 8",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-47935": {
+    "variant_id": "V-47935",
+    "product_id": "P-59302",
+    "size": "UK 9",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-93861": {
+    "variant_id": "V-93861",
+    "product_id": "P-59302",
+    "size": "UK 10",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-47538": {
+    "variant_id": "V-47538",
+    "product_id": "P-93782",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-28097": {
+    "variant_id": "V-28097",
+    "product_id": "P-93782",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-20389": {
+    "variant_id": "V-20389",
+    "product_id": "P-93782",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-97805": {
+    "variant_id": "V-97805",
+    "product_id": "P-93782",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-46930": {
+    "variant_id": "V-46930",
+    "product_id": "P-93782",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-27469": {
+    "variant_id": "V-27469",
+    "product_id": "P-93782",
+    "size": "UK 6",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-14806": {
+    "variant_id": "V-14806",
+    "product_id": "P-93782",
+    "size": "UK 7",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-78134": {
+    "variant_id": "V-78134",
+    "product_id": "P-93782",
+    "size": "UK 8",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-42076": {
+    "variant_id": "V-42076",
+    "product_id": "P-93782",
+    "size": "UK 9",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-80429": {
+    "variant_id": "V-80429",
+    "product_id": "P-93782",
+    "size": "UK 10",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-23457": {
+    "variant_id": "V-23457",
+    "product_id": "P-93782",
+    "size": "UK 6",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-12549": {
+    "variant_id": "V-12549",
+    "product_id": "P-93782",
+    "size": "UK 7",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-93471": {
+    "variant_id": "V-93471",
+    "product_id": "P-93782",
+    "size": "UK 8",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-15920": {
+    "variant_id": "V-15920",
+    "product_id": "P-93782",
+    "size": "UK 9",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-86795": {
+    "variant_id": "V-86795",
+    "product_id": "P-93782",
+    "size": "UK 10",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-70562": {
+    "variant_id": "V-70562",
+    "product_id": "P-73120",
+    "size": "UK 6",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-60953": {
+    "variant_id": "V-60953",
+    "product_id": "P-73120",
+    "size": "UK 7",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-57612": {
+    "variant_id": "V-57612",
+    "product_id": "P-73120",
+    "size": "UK 8",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-67092": {
+    "variant_id": "V-67092",
+    "product_id": "P-73120",
+    "size": "UK 9",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-19078": {
+    "variant_id": "V-19078",
+    "product_id": "P-73120",
+    "size": "UK 10",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-69471": {
+    "variant_id": "V-69471",
+    "product_id": "P-73120",
+    "size": "UK 6",
+    "colour": "black",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-91386": {
+    "variant_id": "V-91386",
+    "product_id": "P-73120",
+    "size": "UK 7",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24816": {
+    "variant_id": "V-24816",
+    "product_id": "P-73120",
+    "size": "UK 8",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-17908": {
+    "variant_id": "V-17908",
+    "product_id": "P-73120",
+    "size": "UK 9",
+    "colour": "black",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-87365": {
+    "variant_id": "V-87365",
+    "product_id": "P-73120",
+    "size": "UK 10",
+    "colour": "black",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85673": {
+    "variant_id": "V-85673",
+    "product_id": "P-73120",
+    "size": "UK 6",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-47639": {
+    "variant_id": "V-47639",
+    "product_id": "P-73120",
+    "size": "UK 7",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-81902": {
+    "variant_id": "V-81902",
+    "product_id": "P-73120",
+    "size": "UK 8",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-71468": {
+    "variant_id": "V-71468",
+    "product_id": "P-73120",
+    "size": "UK 9",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-52461": {
+    "variant_id": "V-52461",
+    "product_id": "P-73120",
+    "size": "UK 10",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-96208": {
+    "variant_id": "V-96208",
+    "product_id": "P-56920",
+    "size": "UK 6",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-54173": {
+    "variant_id": "V-54173",
+    "product_id": "P-56920",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-46273": {
+    "variant_id": "V-46273",
+    "product_id": "P-56920",
+    "size": "UK 8",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-64137": {
+    "variant_id": "V-64137",
+    "product_id": "P-56920",
+    "size": "UK 9",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-25394": {
+    "variant_id": "V-25394",
+    "product_id": "P-56920",
+    "size": "UK 10",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-89604": {
+    "variant_id": "V-89604",
+    "product_id": "P-56920",
+    "size": "UK 6",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-56218": {
+    "variant_id": "V-56218",
+    "product_id": "P-56920",
+    "size": "UK 7",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-82791": {
+    "variant_id": "V-82791",
+    "product_id": "P-56920",
+    "size": "UK 8",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-80369": {
+    "variant_id": "V-80369",
+    "product_id": "P-56920",
+    "size": "UK 9",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-85423": {
+    "variant_id": "V-85423",
+    "product_id": "P-56920",
+    "size": "UK 10",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-53264": {
+    "variant_id": "V-53264",
+    "product_id": "P-56920",
+    "size": "UK 6",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-80312": {
+    "variant_id": "V-80312",
+    "product_id": "P-56920",
+    "size": "UK 7",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-61054": {
+    "variant_id": "V-61054",
+    "product_id": "P-56920",
+    "size": "UK 8",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-87951": {
+    "variant_id": "V-87951",
+    "product_id": "P-56920",
+    "size": "UK 9",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-65210": {
+    "variant_id": "V-65210",
+    "product_id": "P-56920",
+    "size": "UK 10",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-78923": {
+    "variant_id": "V-78923",
+    "product_id": "P-93728",
+    "size": "UK 7",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-13870": {
+    "variant_id": "V-13870",
+    "product_id": "P-64035",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-84321": {
+    "variant_id": "V-84321",
+    "product_id": "P-64035",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-29051": {
+    "variant_id": "V-29051",
+    "product_id": "P-64035",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-74281": {
+    "variant_id": "V-74281",
+    "product_id": "P-64035",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-56379": {
+    "variant_id": "V-56379",
+    "product_id": "P-64035",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-86317": {
+    "variant_id": "V-86317",
+    "product_id": "P-64035",
+    "size": "S",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-60548": {
+    "variant_id": "V-60548",
+    "product_id": "P-64035",
+    "size": "M",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-61903": {
+    "variant_id": "V-61903",
+    "product_id": "P-64035",
+    "size": "L",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-91287": {
+    "variant_id": "V-91287",
+    "product_id": "P-64035",
+    "size": "XL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-15764": {
+    "variant_id": "V-15764",
+    "product_id": "P-64035",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-49803": {
+    "variant_id": "V-49803",
+    "product_id": "P-64035",
+    "size": "S",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-98461": {
+    "variant_id": "V-98461",
+    "product_id": "P-64035",
+    "size": "M",
+    "colour": "blue",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-73489": {
+    "variant_id": "V-73489",
+    "product_id": "P-64035",
+    "size": "L",
+    "colour": "blue",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-48102": {
+    "variant_id": "V-48102",
+    "product_id": "P-64035",
+    "size": "XL",
+    "colour": "blue",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-60541": {
+    "variant_id": "V-60541",
+    "product_id": "P-64035",
+    "size": "XXL",
+    "colour": "blue",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-82593": {
+    "variant_id": "V-82593",
+    "product_id": "P-89053",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-41086": {
+    "variant_id": "V-41086",
+    "product_id": "P-89053",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-41693": {
+    "variant_id": "V-41693",
+    "product_id": "P-89053",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-26750": {
+    "variant_id": "V-26750",
+    "product_id": "P-89053",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-30869": {
+    "variant_id": "V-30869",
+    "product_id": "P-89053",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-63104": {
+    "variant_id": "V-63104",
+    "product_id": "P-89053",
+    "size": "S",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-72384": {
+    "variant_id": "V-72384",
+    "product_id": "P-89053",
+    "size": "M",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-98513": {
+    "variant_id": "V-98513",
+    "product_id": "P-89053",
+    "size": "L",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-87013": {
+    "variant_id": "V-87013",
+    "product_id": "P-89053",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-26451": {
+    "variant_id": "V-26451",
+    "product_id": "P-89053",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-60438": {
+    "variant_id": "V-60438",
+    "product_id": "P-89053",
+    "size": "S",
+    "colour": "white",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-40351": {
+    "variant_id": "V-40351",
+    "product_id": "P-89053",
+    "size": "M",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-18923": {
+    "variant_id": "V-18923",
+    "product_id": "P-89053",
+    "size": "L",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-18639": {
+    "variant_id": "V-18639",
+    "product_id": "P-89053",
+    "size": "XL",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-47823": {
+    "variant_id": "V-47823",
+    "product_id": "P-89053",
+    "size": "XXL",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-92317": {
+    "variant_id": "V-92317",
+    "product_id": "P-23974",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-13876": {
+    "variant_id": "V-13876",
+    "product_id": "P-23974",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-96384": {
+    "variant_id": "V-96384",
+    "product_id": "P-23974",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-25103": {
+    "variant_id": "V-25103",
+    "product_id": "P-23974",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-89761": {
+    "variant_id": "V-89761",
+    "product_id": "P-23974",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-30472": {
+    "variant_id": "V-30472",
+    "product_id": "P-23974",
+    "size": "S",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-92504": {
+    "variant_id": "V-92504",
+    "product_id": "P-23974",
+    "size": "M",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-78259": {
+    "variant_id": "V-78259",
+    "product_id": "P-23974",
+    "size": "L",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-47530": {
+    "variant_id": "V-47530",
+    "product_id": "P-23974",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-24573": {
+    "variant_id": "V-24573",
+    "product_id": "P-23974",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-61594": {
+    "variant_id": "V-61594",
+    "product_id": "P-23974",
+    "size": "S",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-54603": {
+    "variant_id": "V-54603",
+    "product_id": "P-23974",
+    "size": "M",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-26730": {
+    "variant_id": "V-26730",
+    "product_id": "P-23974",
+    "size": "L",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-32876": {
+    "variant_id": "V-32876",
+    "product_id": "P-23974",
+    "size": "XL",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-63954": {
+    "variant_id": "V-63954",
+    "product_id": "P-23974",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-07",
+     "nani": "2026-11-08"
+    }
+   },
+   "V-97862": {
+    "variant_id": "V-97862",
+    "product_id": "P-50714",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-32178": {
+    "variant_id": "V-32178",
+    "product_id": "P-50714",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-57248": {
+    "variant_id": "V-57248",
+    "product_id": "P-50714",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-46815": {
+    "variant_id": "V-46815",
+    "product_id": "P-50714",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24809": {
+    "variant_id": "V-24809",
+    "product_id": "P-50714",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-71428": {
+    "variant_id": "V-71428",
+    "product_id": "P-50714",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-83076": {
+    "variant_id": "V-83076",
+    "product_id": "P-50714",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-71408": {
+    "variant_id": "V-71408",
+    "product_id": "P-50714",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-52180": {
+    "variant_id": "V-52180",
+    "product_id": "P-50714",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-42953": {
+    "variant_id": "V-42953",
+    "product_id": "P-50714",
+    "size": "S",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-61809": {
+    "variant_id": "V-61809",
+    "product_id": "P-50714",
+    "size": "M",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-50678": {
+    "variant_id": "V-50678",
+    "product_id": "P-50714",
+    "size": "L",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-51963": {
+    "variant_id": "V-51963",
+    "product_id": "P-50714",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-58401": {
+    "variant_id": "V-58401",
+    "product_id": "P-50714",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-62851": {
+    "variant_id": "V-62851",
+    "product_id": "P-84693",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-30641": {
+    "variant_id": "V-30641",
+    "product_id": "P-84693",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-93460": {
+    "variant_id": "V-93460",
+    "product_id": "P-84693",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-72836": {
+    "variant_id": "V-72836",
+    "product_id": "P-84693",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-10367": {
+    "variant_id": "V-10367",
+    "product_id": "P-84693",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-19436": {
+    "variant_id": "V-19436",
+    "product_id": "P-84693",
+    "size": "S",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-48763": {
+    "variant_id": "V-48763",
+    "product_id": "P-84693",
+    "size": "M",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-92014": {
+    "variant_id": "V-92014",
+    "product_id": "P-84693",
+    "size": "L",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-17865": {
+    "variant_id": "V-17865",
+    "product_id": "P-84693",
+    "size": "XL",
+    "colour": "green",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-96048": {
+    "variant_id": "V-96048",
+    "product_id": "P-84693",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-79521": {
+    "variant_id": "V-79521",
+    "product_id": "P-84693",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-96570": {
+    "variant_id": "V-96570",
+    "product_id": "P-84693",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-79465": {
+    "variant_id": "V-79465",
+    "product_id": "P-84693",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-24975": {
+    "variant_id": "V-24975",
+    "product_id": "P-84693",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24715": {
+    "variant_id": "V-24715",
+    "product_id": "P-84693",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-74130": {
+    "variant_id": "V-74130",
+    "product_id": "P-57014",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 0,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-24813": {
+    "variant_id": "V-24813",
+    "product_id": "P-57014",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-75946": {
+    "variant_id": "V-75946",
+    "product_id": "P-57014",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-81342": {
+    "variant_id": "V-81342",
+    "product_id": "P-57014",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-27930": {
+    "variant_id": "V-27930",
+    "product_id": "P-57014",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-15470": {
+    "variant_id": "V-15470",
+    "product_id": "P-57014",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-49312": {
+    "variant_id": "V-49312",
+    "product_id": "P-57014",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-21495": {
+    "variant_id": "V-21495",
+    "product_id": "P-57014",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-26085": {
+    "variant_id": "V-26085",
+    "product_id": "P-57014",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-74092": {
+    "variant_id": "V-74092",
+    "product_id": "P-57014",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-81936": {
+    "variant_id": "V-81936",
+    "product_id": "P-57014",
+    "size": "S",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-98502": {
+    "variant_id": "V-98502",
+    "product_id": "P-57014",
+    "size": "M",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-12789": {
+    "variant_id": "V-12789",
+    "product_id": "P-57014",
+    "size": "L",
+    "colour": "white",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43871": {
+    "variant_id": "V-43871",
+    "product_id": "P-57014",
+    "size": "XL",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-28906": {
+    "variant_id": "V-28906",
+    "product_id": "P-57014",
+    "size": "XXL",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-72358": {
+    "variant_id": "V-72358",
+    "product_id": "P-92748",
+    "size": "S",
+    "colour": "red",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-57308": {
+    "variant_id": "V-57308",
+    "product_id": "P-92748",
+    "size": "M",
+    "colour": "red",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-27160": {
+    "variant_id": "V-27160",
+    "product_id": "P-92748",
+    "size": "L",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85634": {
+    "variant_id": "V-85634",
+    "product_id": "P-92748",
+    "size": "XL",
+    "colour": "red",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-51203": {
+    "variant_id": "V-51203",
+    "product_id": "P-92748",
+    "size": "XXL",
+    "colour": "red",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-53749": {
+    "variant_id": "V-53749",
+    "product_id": "P-92748",
+    "size": "S",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-70215": {
+    "variant_id": "V-70215",
+    "product_id": "P-92748",
+    "size": "M",
+    "colour": "green",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-45738": {
+    "variant_id": "V-45738",
+    "product_id": "P-92748",
+    "size": "L",
+    "colour": "green",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85173": {
+    "variant_id": "V-85173",
+    "product_id": "P-92748",
+    "size": "XL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-46907": {
+    "variant_id": "V-46907",
+    "product_id": "P-92748",
+    "size": "XXL",
+    "colour": "green",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-54761": {
+    "variant_id": "V-54761",
+    "product_id": "P-92748",
+    "size": "S",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-63210": {
+    "variant_id": "V-63210",
+    "product_id": "P-92748",
+    "size": "M",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-73106": {
+    "variant_id": "V-73106",
+    "product_id": "P-92748",
+    "size": "L",
+    "colour": "grey",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-36917": {
+    "variant_id": "V-36917",
+    "product_id": "P-92748",
+    "size": "XL",
+    "colour": "grey",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-68394": {
+    "variant_id": "V-68394",
+    "product_id": "P-92748",
+    "size": "XXL",
+    "colour": "grey",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-96358": {
+    "variant_id": "V-96358",
+    "product_id": "P-93428",
+    "size": "S",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-20489": {
+    "variant_id": "V-20489",
+    "product_id": "P-93428",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-71324": {
+    "variant_id": "V-71324",
+    "product_id": "P-93428",
+    "size": "L",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-73506": {
+    "variant_id": "V-73506",
+    "product_id": "P-93428",
+    "size": "XL",
+    "colour": "yellow",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-43756": {
+    "variant_id": "V-43756",
+    "product_id": "P-93428",
+    "size": "XXL",
+    "colour": "yellow",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-12630": {
+    "variant_id": "V-12630",
+    "product_id": "P-93428",
+    "size": "S",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-68709": {
+    "variant_id": "V-68709",
+    "product_id": "P-93428",
+    "size": "M",
+    "colour": "white",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-26910": {
+    "variant_id": "V-26910",
+    "product_id": "P-93428",
+    "size": "L",
+    "colour": "white",
+    "stock": 3,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-85429": {
+    "variant_id": "V-85429",
+    "product_id": "P-93428",
+    "size": "XL",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-93871": {
+    "variant_id": "V-93871",
+    "product_id": "P-93428",
+    "size": "XXL",
+    "colour": "white",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-63125": {
+    "variant_id": "V-63125",
+    "product_id": "P-93428",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-53846": {
+    "variant_id": "V-53846",
+    "product_id": "P-93428",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 12,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-83942": {
+    "variant_id": "V-83942",
+    "product_id": "P-93428",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-05"
+    }
+   },
+   "V-90473": {
+    "variant_id": "V-90473",
+    "product_id": "P-93428",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 8,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-12438": {
+    "variant_id": "V-12438",
+    "product_id": "P-93428",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-79862": {
+    "variant_id": "V-79862",
+    "product_id": "P-50714",
+    "size": "M",
+    "colour": "yellow",
+    "stock": 5,
+    "eta": {
+     "home": "2026-11-04",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43150": {
+    "variant_id": "V-43150",
+    "product_id": "P-78592",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-72359": {
+    "variant_id": "V-72359",
+    "product_id": "P-78592",
+    "size": "M",
+    "colour": "maroon",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-23079": {
+    "variant_id": "V-23079",
+    "product_id": "P-78592",
+    "size": "L",
+    "colour": "maroon",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-29738": {
+    "variant_id": "V-29738",
+    "product_id": "P-78592",
+    "size": "XL",
+    "colour": "maroon",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-92431": {
+    "variant_id": "V-92431",
+    "product_id": "P-78592",
+    "size": "XXL",
+    "colour": "maroon",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-62539": {
+    "variant_id": "V-62539",
+    "product_id": "P-78592",
+    "size": "S",
+    "colour": "white",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-26019": {
+    "variant_id": "V-26019",
+    "product_id": "P-78592",
+    "size": "L",
+    "colour": "white",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-81207": {
+    "variant_id": "V-81207",
+    "product_id": "P-78592",
+    "size": "XL",
+    "colour": "white",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-43962": {
+    "variant_id": "V-43962",
+    "product_id": "P-78592",
+    "size": "XXL",
+    "colour": "white",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-72539": {
+    "variant_id": "V-72539",
+    "product_id": "P-78592",
+    "size": "M",
+    "colour": "white",
+    "stock": 6,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   },
+   "V-13806": {
+    "variant_id": "V-13806",
+    "product_id": "P-29571",
+    "size": "S",
+    "colour": "maroon",
+    "stock": 2,
+    "eta": {
+     "home": "2026-11-05",
+     "nani": "2026-11-06"
+    }
+   }
+  },
+  "listings": {
+   "kurta|men": [
+    "P-25439",
+    "P-81793",
+    "P-89263",
+    "P-82963",
+    "P-23507",
+    "P-28907",
+    "P-86231",
+    "P-64937"
+   ],
+   "shirt|men": [
+    "P-10376",
+    "P-65074",
+    "P-53476",
+    "P-68395",
+    "P-68935",
+    "P-32185",
+    "P-50871",
+    "P-31709"
+   ],
+   "sneakers|women": [
+    "P-56497",
+    "P-26405",
+    "P-59302",
+    "P-93728",
+    "P-93782",
+    "P-71354",
+    "P-73120",
+    "P-56920"
+   ],
+   "kurti|women": [
+    "P-92748",
+    "P-64035",
+    "P-50714",
+    "P-57014",
+    "P-89053",
+    "P-84693",
+    "P-93428",
+    "P-23974"
+   ]
+  },
+  "orders": [
+   {
+    "order_id": "O-439562",
+    "date": "2026-10-24",
+    "lines": [
+     {
+      "order_line_id": "OL-1",
+      "product_id": "P-78592",
+      "variant_id": "V-43150",
+      "category": "shirt",
+      "size": "S",
+      "colour": "maroon",
+      "for_member_id": "M-01"
+     },
+     {
+      "order_line_id": "OL-2",
+      "product_id": "P-00000",
+      "variant_id": "V-00000",
+      "category": "jeans",
+      "size": "32",
+      "colour": "blue",
+      "for_member_id": "M-01"
+     }
+    ]
+   },
+   {
+    "order_id": "O-521374",
+    "date": "2026-09-12",
+    "lines": [
+     {
+      "order_line_id": "OL-1",
+      "product_id": "P-29571",
+      "variant_id": "V-13806",
+      "category": "shirt",
+      "size": "S",
+      "colour": "maroon",
+      "for_member_id": "M-01"
+     }
+    ]
+   }
+  ],
+  "exchange": {
+   "order_id": "O-439562",
+   "order_line_id": "OL-1",
+   "category": "shirt",
+   "new_size": "M",
+   "colour": "maroon",
+   "product_id": "P-78592"
+  },
+  "coupon_seed": 706962,
+  "perturbed_variant": "V-12370"
+ },
+ "requests": {
+  "en": "Diwali shopping for the family. Please buy one item for each of us:\n- Me: kurta, size L, blue, under \u20b92,500.\n- Mummy: sneakers, size UK 6, green, under \u20b93,500.\n- Didi: kurti, size S, yellow, under \u20b91,500.\n- Papa: shirt, size XL, grey, under \u20b92,200.\nFor each person, pick the highest-rated option that fits. Deliver Papa and Didi's items to Nani's house in Pune; everything else comes home. Everything must arrive by 6 November. Gift-wrap the items for Didi and Mummy. If anything goes out of stock, pick the next-best option that still fits that person's size, colour and budget. Also exchange the shirt from my last order for size M, same colour. Use the coupon that gives the biggest discount, and pay by UPI.",
+  "zh": "\u5e2e\u5bb6\u91cc\u4e70\u6392\u706f\u8282\uff08Diwali\uff09\u7684\u4e1c\u897f\u3002\u7ed9\u6211\u4eec\u6bcf\u4e2a\u4eba\u5404\u4e70\u4e00\u4ef6\uff1a\n- \u6211\uff1a\u5e93\u5c14\u5854\u957f\u886b\uff0c\u5c3a\u7801L\uff0c\u84dd\u8272\uff0c2,500\u5362\u6bd4\u4ee5\u5185\u3002\n- \u5988\u5988\uff1a\u8fd0\u52a8\u978b\uff0c\u5c3a\u7801UK 6\uff0c\u7eff\u8272\uff0c3,500\u5362\u6bd4\u4ee5\u5185\u3002\n- \u59d0\u59d0\uff1a\u5e93\u5c14\u8482\u4e0a\u8863\uff0c\u5c3a\u7801S\uff0c\u9ec4\u8272\uff0c1,500\u5362\u6bd4\u4ee5\u5185\u3002\n- \u7238\u7238\uff1a\u886c\u886b\uff0c\u5c3a\u7801XL\uff0c\u7070\u8272\uff0c2,200\u5362\u6bd4\u4ee5\u5185\u3002\n\u6bcf\u4e2a\u4eba\u90fd\u9009\u7b26\u5408\u6761\u4ef6\u3001\u8bc4\u5206\u6700\u9ad8\u7684\u90a3\u4e00\u4ef6\u3002\u7238\u7238\u548c\u59d0\u59d0\u7684\u4e1c\u897f\u5bc4\u5230\u5916\u5a46\u5728\u6d66\u90a3\u7684\u5bb6\uff0c\u5176\u4ed6\u7684\u90fd\u5bc4\u56de\u5bb6\u3002\u6240\u6709\u4e1c\u897f\u6700\u665a\u8981\u572811\u67086\u65e5\u9001\u5230\u3002\u59d0\u59d0\u548c\u5988\u5988\u7684\u4e1c\u897f\u8981\u793c\u54c1\u5305\u88c5\u3002\u5982\u679c\u6709\u4e1c\u897f\u7f3a\u8d27\uff0c\u5c31\u4e3a\u90a3\u4e2a\u4eba\u9009\u4e0b\u4e00\u4e2a\u4ecd\u7136\u7b26\u5408\u5c3a\u7801\u3001\u989c\u8272\u548c\u9884\u7b97\u7684\u6700\u4f73\u9009\u9879\u3002\u53e6\u5916\uff0c\u628a\u6211\u4e0a\u4e00\u7b14\u8ba2\u5355\u91cc\u7684\u886c\u886b\u6362\u6210M\u7801\uff0c\u989c\u8272\u4e0d\u53d8\u3002\u7528\u6298\u6263\u6700\u591a\u7684\u4f18\u60e0\u5238\uff0c\u7528UPI\u4ed8\u6b3e\u3002",
+  "hi": "\u092a\u0930\u093f\u0935\u093e\u0930 \u0915\u0947 \u0932\u093f\u090f \u0926\u093f\u0935\u093e\u0932\u0940 \u0915\u0940 \u0936\u0949\u092a\u093f\u0902\u0917 \u0915\u0930\u0928\u0940 \u0939\u0948\u0964 \u0939\u092e \u0938\u092c\u0915\u0947 \u0932\u093f\u090f \u090f\u0915-\u090f\u0915 \u091a\u0940\u091c\u093c \u0916\u0930\u0940\u0926 \u0926\u094b:\n- \u092e\u0947\u0930\u0947 \u0932\u093f\u090f: \u0915\u0941\u0930\u094d\u0924\u093e, \u0938\u093e\u0907\u091c\u093c L, \u0930\u0902\u0917 \u0928\u0940\u0932\u093e, \u20b92,500 \u0938\u0947 \u0915\u092e\u0964\n- \u092e\u092e\u094d\u092e\u0940: \u0938\u094d\u0928\u0940\u0915\u0930\u094d\u0938, \u0938\u093e\u0907\u091c\u093c UK 6, \u0930\u0902\u0917 \u0939\u0930\u093e, \u20b93,500 \u0938\u0947 \u0915\u092e\u0964\n- \u0926\u0940\u0926\u0940: \u0915\u0941\u0930\u094d\u0924\u0940, \u0938\u093e\u0907\u091c\u093c S, \u0930\u0902\u0917 \u092a\u0940\u0932\u093e, \u20b91,500 \u0938\u0947 \u0915\u092e\u0964\n- \u092a\u093e\u092a\u093e: \u0936\u0930\u094d\u091f, \u0938\u093e\u0907\u091c\u093c XL, \u0930\u0902\u0917 \u0917\u094d\u0930\u0947, \u20b92,200 \u0938\u0947 \u0915\u092e\u0964\n\u0939\u0930 \u0915\u093f\u0938\u0940 \u0915\u0947 \u0932\u093f\u090f \u0907\u0928 \u0936\u0930\u094d\u0924\u094b\u0902 \u092e\u0947\u0902 \u092b\u093f\u091f \u0939\u094b\u0928\u0947 \u0935\u093e\u0932\u093e \u0938\u092c\u0938\u0947 \u0905\u091a\u094d\u091b\u0940 \u0930\u0947\u091f\u093f\u0902\u0917 \u0935\u093e\u0932\u093e \u0935\u093f\u0915\u0932\u094d\u092a \u091a\u0941\u0928\u0928\u093e\u0964 \u092a\u093e\u092a\u093e \u0914\u0930 \u0926\u0940\u0926\u0940 \u0915\u093e \u0938\u093e\u092e\u093e\u0928 \u092a\u0941\u0923\u0947 \u092e\u0947\u0902 \u0928\u093e\u0928\u0940 \u0915\u0947 \u0918\u0930 \u092d\u0947\u091c\u0928\u093e \u0939\u0948; \u092c\u093e\u0915\u0940 \u0938\u092c \u0918\u0930 \u0906\u090f\u0917\u093e\u0964 \u0938\u092c \u0915\u0941\u091b 6 \u0928\u0935\u0902\u092c\u0930 \u0924\u0915 \u092a\u0939\u0941\u0901\u091a \u091c\u093e\u0928\u093e \u091a\u093e\u0939\u093f\u090f\u0964 \u0926\u0940\u0926\u0940 \u0914\u0930 \u092e\u092e\u094d\u092e\u0940 \u0915\u0940 \u091a\u0940\u091c\u093c\u0947\u0902 \u0917\u093f\u092b\u094d\u091f-\u0930\u0948\u092a \u0915\u0930\u0935\u093e \u0926\u0947\u0928\u093e\u0964 \u0905\u0917\u0930 \u0915\u0941\u091b \u0906\u0909\u091f \u0911\u092b \u0938\u094d\u091f\u0949\u0915 \u0939\u094b \u091c\u093e\u090f, \u0924\u094b \u0909\u0938\u0940 \u0907\u0902\u0938\u093e\u0928 \u0915\u0947 \u0938\u093e\u0907\u091c\u093c, \u0930\u0902\u0917 \u0914\u0930 \u092c\u091c\u091f \u092e\u0947\u0902 \u092b\u093f\u091f \u0939\u094b\u0928\u0947 \u0935\u093e\u0932\u093e \u0905\u0917\u0932\u093e \u0938\u092c\u0938\u0947 \u0905\u091a\u094d\u091b\u093e \u0935\u093f\u0915\u0932\u094d\u092a \u0932\u0947 \u0932\u0947\u0928\u093e\u0964 \u0914\u0930 \u092e\u0947\u0930\u0947 \u092a\u093f\u091b\u0932\u0947 \u0911\u0930\u094d\u0921\u0930 \u0935\u093e\u0932\u093e \u0936\u0930\u094d\u091f \u0938\u093e\u0907\u091c\u093c M \u092e\u0947\u0902 \u092c\u0926\u0932 \u0926\u094b, \u0930\u0902\u0917 \u0935\u0939\u0940 \u0930\u0916\u0928\u093e\u0964 \u091c\u094b \u0915\u0942\u092a\u0928 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u091b\u0942\u091f \u0926\u0947 \u0935\u0939\u0940 \u0932\u0917\u093e\u0928\u093e, \u0914\u0930 \u092a\u0947\u092e\u0947\u0902\u091f UPI \u0938\u0947 \u0915\u0930\u0928\u093e\u0964",
+  "ta": "\u0b95\u0bc1\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0ba4\u0bc0\u0baa\u0bbe\u0bb5\u0bb3\u0bbf \u0bb7\u0bbe\u0baa\u0bcd\u0baa\u0bbf\u0b99\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd. \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1\u0bb5\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0b92\u0bb0\u0bc1 \u0baa\u0bca\u0bb0\u0bc1\u0bb3\u0bcd \u0bb5\u0bbe\u0b99\u0bcd\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd:\n- \u0b8e\u0ba9\u0b95\u0bcd\u0b95\u0bc1: \u0b95\u0bc1\u0bb0\u0bcd\u0ba4\u0bbe, \u0b85\u0bb3\u0bb5\u0bc1 L, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd \u0ba8\u0bc0\u0bb2\u0bae\u0bcd, \u20b92,500-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd.\n- \u0b85\u0bae\u0bcd\u0bae\u0bbe: \u0bb8\u0bcd\u0ba9\u0bc0\u0b95\u0bcd\u0b95\u0bb0\u0bcd\u0bb8\u0bcd, \u0b85\u0bb3\u0bb5\u0bc1 UK 6, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd \u0baa\u0b9a\u0bcd\u0b9a\u0bc8, \u20b93,500-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd.\n- \u0b85\u0b95\u0bcd\u0b95\u0bbe: \u0b95\u0bc1\u0bb0\u0bcd\u0ba4\u0bbf, \u0b85\u0bb3\u0bb5\u0bc1 S, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd \u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd, \u20b91,500-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd.\n- \u0b85\u0baa\u0bcd\u0baa\u0bbe: \u0b9a\u0b9f\u0bcd\u0b9f\u0bc8, \u0b85\u0bb3\u0bb5\u0bc1 XL, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd \u0b9a\u0bbe\u0bae\u0bcd\u0baa\u0bb2\u0bcd, \u20b92,200-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd.\n\u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1\u0bb5\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0b87\u0bb5\u0bb1\u0bcd\u0bb1\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0baa\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1\u0bae\u0bcd \u0bb5\u0bbf\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0bae\u0bbf\u0b95 \u0b85\u0ba4\u0bbf\u0b95 \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bc1 \u0baa\u0bc6\u0bb1\u0bcd\u0bb1\u0ba4\u0bc8\u0ba4\u0bcd \u0ba4\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc6\u0b9f\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd. \u0b85\u0baa\u0bcd\u0baa\u0bbe, \u0b85\u0b95\u0bcd\u0b95\u0bbe \u0b87\u0bb0\u0bc1\u0bb5\u0bb0\u0bbf\u0ba9\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0b9f\u0bcd\u0b95\u0bb3\u0bc8 \u0baa\u0bc1\u0ba9\u0bc7\u0bb5\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b85\u0ba9\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd; \u0bae\u0bb1\u0bcd\u0bb1\u0bb5\u0bc8 \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe\u0bae\u0bcd \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bb5\u0bb0\u0b9f\u0bcd\u0b9f\u0bc1\u0bae\u0bcd. \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe\u0bae\u0bcd \u0ba8\u0bb5\u0bae\u0bcd\u0baa\u0bb0\u0bcd 6-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0bb5\u0ba8\u0bcd\u0ba4\u0bc1 \u0b9a\u0bc7\u0bb0 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd. \u0b85\u0b95\u0bcd\u0b95\u0bbe, \u0b85\u0bae\u0bcd\u0bae\u0bbe \u0b87\u0bb0\u0bc1\u0bb5\u0bb0\u0bbf\u0ba9\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0b9f\u0bcd\u0b95\u0bb3\u0bc8 \u0b95\u0bbf\u0b83\u0baa\u0bcd\u0b9f\u0bcd \u0bb0\u0bc7\u0baa\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd. \u0b8f\u0ba4\u0bbe\u0bb5\u0ba4\u0bc1 \u0bb8\u0bcd\u0b9f\u0bbe\u0b95\u0bcd \u0b87\u0bb2\u0bcd\u0bb2\u0bbe\u0bae\u0bb2\u0bcd \u0baa\u0bcb\u0ba9\u0bbe\u0bb2\u0bcd, \u0b85\u0ba8\u0bcd\u0ba4 \u0ba8\u0baa\u0bb0\u0bbf\u0ba9\u0bcd \u0b85\u0bb3\u0bb5\u0bc1, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd, \u0baa\u0b9f\u0bcd\u0b9c\u0bc6\u0b9f\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0baa\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1\u0bae\u0bcd \u0b85\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4 \u0b9a\u0bbf\u0bb1\u0ba8\u0bcd\u0ba4 \u0bb5\u0bbf\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0ba4\u0bcd\u0ba4\u0bc8 \u0b8e\u0b9f\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd. \u0bae\u0bc7\u0bb2\u0bc1\u0bae\u0bcd \u0b8e\u0ba9\u0bcd \u0b95\u0b9f\u0bc8\u0b9a\u0bbf \u0b86\u0bb0\u0bcd\u0b9f\u0bb0\u0bbf\u0bb2\u0bcd \u0bb5\u0bbe\u0b99\u0bcd\u0b95\u0bbf\u0baf \u0b9a\u0b9f\u0bcd\u0b9f\u0bc8-\u0b90 \u0b85\u0ba4\u0bc7 \u0ba8\u0bbf\u0bb1\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0b85\u0bb3\u0bb5\u0bc1 M-\u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd. \u0b85\u0ba4\u0bbf\u0b95 \u0ba4\u0bb3\u0bcd\u0bb3\u0bc1\u0baa\u0b9f\u0bbf \u0ba4\u0bb0\u0bc1\u0bae\u0bcd \u0b95\u0bc2\u0baa\u0bcd\u0baa\u0ba9\u0bc8\u0baa\u0bcd \u0baa\u0baf\u0ba9\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, UPI \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0baa\u0ba3\u0bae\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+  "hinglish": "Family ke liye Diwali shopping karni hai. Hum sabke liye ek-ek cheez le lo:\n- Mere liye: kurta, size L, colour blue, \u20b92,500 se kam.\n- Mummy: sneakers, size UK 6, colour green, \u20b93,500 se kam.\n- Didi: kurti, size S, colour yellow, \u20b91,500 se kam.\n- Papa: shirt, size XL, colour grey, \u20b92,200 se kam.\nHar kisi ke liye in conditions mein fit hone wala sabse high-rated option lena. Papa aur Didi ka saamaan Pune mein Nani ke ghar bhejna hai; baaki sab ghar aayega. Sab kuch 6 November tak pahunch jaana chahiye. Didi aur Mummy ki cheezein gift-wrap karwa dena. Agar kuch out of stock ho jaaye, toh usi insaan ke size, colour aur budget mein fit hone wala next best option le lena. Aur mere last order wala shirt size M mein exchange kar do, colour same rakhna. Jo coupon sabse zyada discount de wahi lagana, aur payment UPI se karna."
+ },
+ "gold_steps": [
+  {
+   "tool": "get_family_profile",
+   "args": {}
+  },
+  {
+   "tool": "search_products",
+   "args": {
+    "category": "kurta",
+    "gender": "men"
+   }
+  },
+  {
+   "tool": "filter_products",
+   "args": {
+    "max_price": 2500
+   }
+  },
+  {
+   "tool": "get_product_variants",
+   "args": {
+    "product_id": "P-82963"
+   }
+  },
+  {
+   "tool": "check_delivery",
+   "args": {
+    "variant_id": "V-12370",
+    "address_id": "ADR-11"
+   }
+  },
+  {
+   "tool": "add_to_cart",
+   "args": {
+    "variant_id": "V-12370",
+    "quantity": 1,
+    "recipient_member_id": "M-01",
+    "address_id": "ADR-11",
+    "confirm_size": "L",
+    "confirm_colour": "blue"
+   }
+  },
+  {
+   "tool": "search_products",
+   "args": {
+    "category": "sneakers",
+    "gender": "women"
+   }
+  },
+  {
+   "tool": "filter_products",
+   "args": {
+    "max_price": 3500
+   }
+  },
+  {
+   "tool": "get_product_variants",
+   "args": {
+    "product_id": "P-93728"
+   }
+  },
+  {
+   "tool": "check_delivery",
+   "args": {
+    "variant_id": "V-78293",
+    "address_id": "ADR-11"
+   }
+  },
+  {
+   "tool": "add_to_cart",
+   "args": {
+    "variant_id": "V-78293",
+    "quantity": 1,
+    "recipient_member_id": "M-03",
+    "address_id": "ADR-11",
+    "confirm_size": "UK 6",
+    "confirm_colour": "green"
+   }
+  },
+  {
+   "tool": "search_products",
+   "args": {
+    "category": "kurti",
+    "gender": "women"
+   }
+  },
+  {
+   "tool": "filter_products",
+   "args": {
+    "max_price": 1500
+   }
+  },
+  {
+   "tool": "get_product_variants",
+   "args": {
+    "product_id": "P-50714"
+   }
+  },
+  {
+   "tool": "check_delivery",
+   "args": {
+    "variant_id": "V-97862",
+    "address_id": "ADR-12"
+   }
+  },
+  {
+   "tool": "add_to_cart",
+   "args": {
+    "variant_id": "V-97862",
+    "quantity": 1,
+    "recipient_member_id": "M-04",
+    "address_id": "ADR-12",
+    "confirm_size": "S",
+    "confirm_colour": "yellow"
+   }
+  },
+  {
+   "tool": "search_products",
+   "args": {
+    "category": "shirt",
+    "gender": "men"
+   }
+  },
+  {
+   "tool": "filter_products",
+   "args": {
+    "max_price": 2200
+   }
+  },
+  {
+   "tool": "get_product_variants",
+   "args": {
+    "product_id": "P-68935"
+   }
+  },
+  {
+   "tool": "check_delivery",
+   "args": {
+    "variant_id": "V-20481",
+    "address_id": "ADR-12"
+   }
+  },
+  {
+   "tool": "add_to_cart",
+   "args": {
+    "variant_id": "V-20481",
+    "quantity": 1,
+    "recipient_member_id": "M-02",
+    "address_id": "ADR-12",
+    "confirm_size": "XL",
+    "confirm_colour": "grey"
+   }
+  },
+  {
+   "tool": "list_orders",
+   "args": {}
+  },
+  {
+   "tool": "get_order",
+   "args": {
+    "order_id": "O-439562"
+   }
+  },
+  {
+   "tool": "get_product_variants",
+   "args": {
+    "product_id": "P-78592"
+   }
+  },
+  {
+   "tool": "request_exchange",
+   "args": {
+    "order_line_id": "OL-1",
+    "order_id": "O-439562",
+    "new_variant_id": "V-72359",
+    "confirm_size": "M"
+   }
+  },
+  {
+   "tool": "view_cart",
+   "args": {}
+  },
+  {
+   "tool": "remove_from_cart",
+   "args": {
+    "line_id": "CL-1"
+   }
+  },
+  {
+   "tool": "get_product_variants",
+   "args": {
+    "product_id": "P-23507"
+   }
+  },
+  {
+   "tool": "check_delivery",
+   "args": {
+    "variant_id": "V-54918",
+    "address_id": "ADR-11"
+   }
+  },
+  {
+   "tool": "add_to_cart",
+   "args": {
+    "variant_id": "V-54918",
+    "quantity": 1,
+    "recipient_member_id": "M-01",
+    "address_id": "ADR-11",
+    "confirm_size": "L",
+    "confirm_colour": "blue"
+   }
+  },
+  {
+   "tool": "set_gift_wrap",
+   "args": {
+    "line_id": "CL-3",
+    "recipient_member_id": "M-04"
+   }
+  },
+  {
+   "tool": "set_gift_wrap",
+   "args": {
+    "line_id": "CL-2",
+    "recipient_member_id": "M-03"
+   }
+  },
+  {
+   "tool": "list_coupons",
+   "args": {}
+  },
+  {
+   "tool": "apply_coupon",
+   "args": {
+    "code": "STYLE15"
+   }
+  },
+  {
+   "tool": "get_payment_methods",
+   "args": {}
+  },
+  {
+   "tool": "checkout",
+   "args": {
+    "payment_id": "PM-UPI-1"
+   }
+  }
+ ],
+ "horizon": 36,
+ "verification": {
+  "en": "author",
+  "zh": "pending: translator back-translation",
+  "hi": "pending: author",
+  "ta": "pending: author",
+  "hinglish": "pending: author"
+ }
+}

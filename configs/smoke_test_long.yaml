@@ -1,0 +1,32 @@
+# No GPU. Checks the long-horizon harness on every instance: the gold
+# chain is solved, and each scripted fault fails exactly where it should.
+
+run_name: smoke_test_long
+templates:
+  - tasks/long/shop_01.json
+  - tasks/long/shop_02.json
+  - tasks/long/shop_03.json
+  - tasks/long/shop_04.json
+  - tasks/long/shop_05.json
+  - tasks/long/shop_06.json
+  - tasks/long/shop_07.json
+  - tasks/long/shop_08.json
+  - tasks/long/shop_09.json
+  - tasks/long/shop_10.json
+  - tasks/long/pay_01.json
+  - tasks/long/pay_02.json
+  - tasks/long/pay_03.json
+  - tasks/long/pay_04.json
+  - tasks/long/pay_05.json
+  - tasks/long/pay_06.json
+  - tasks/long/pay_07.json
+  - tasks/long/pay_08.json
+  - tasks/long/pay_09.json
+  - tasks/long/pay_10.json
+max_steps: 80
+horizons: []
+languages: [en, hi]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: solve_s3, policy: mock, mock_mode: solve, seam: S3, seeds: [1]}

@@ -1,0 +1,449 @@
+{
+ "template_id": "pay_09",
+ "domain": "pay",
+ "seed": 11,
+ "session_date": "2026-10-30",
+ "world": {
+  "seed": 11,
+  "session_date": "2026-10-30",
+  "order": [
+   "broadband",
+   "mobile_father",
+   "mobile_mother",
+   "elec_nani",
+   "elec_home",
+   "gas"
+  ],
+  "full_max": 2500,
+  "floor": 10000,
+  "balances": {
+   "ACC-201": 95000,
+   "ACC-202": 15836
+  },
+  "amounts": {
+   "elec_home": {
+    "amount_due": 3400,
+    "minimum_due": 1360
+   },
+   "elec_nani": {
+    "amount_due": 4850,
+    "minimum_due": 1150,
+    "late_fee": 250
+   },
+   "gas": {
+    "amount_due": 900,
+    "minimum_due": 270
+   },
+   "broadband": {
+    "amount_due": 1800,
+    "minimum_due": 450
+   },
+   "mobile_father": {
+    "amount_due": 900,
+    "minimum_due": 360
+   },
+   "mobile_mother": {
+    "amount_due": 700,
+    "minimum_due": 280
+   }
+  },
+  "late": "elec_nani",
+  "fee": 250,
+  "billers": [
+   {
+    "biller_id": "B-8779",
+    "bill": "elec_old",
+    "category": "electricity",
+    "provider": "Adani Electricity",
+    "consumer_number": "7030245892",
+    "registered_to": "old",
+    "status": "inactive"
+   },
+   {
+    "biller_id": "B-2645",
+    "bill": "mobile_father",
+    "category": "mobile_postpaid",
+    "provider": "Airtel Postpaid",
+    "consumer_number": "9820152758",
+    "registered_to": "Ramesh Sharma",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-2546",
+    "bill": "broadband_old",
+    "category": "broadband",
+    "provider": "Hathway",
+    "consumer_number": "222360791",
+    "registered_to": "old",
+    "status": "inactive"
+   },
+   {
+    "biller_id": "B-7425",
+    "bill": "broadband",
+    "category": "broadband",
+    "provider": "ACT Fibernet",
+    "consumer_number": "497576112",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-6856",
+    "bill": "gas",
+    "category": "gas",
+    "provider": "Mahanagar Gas",
+    "consumer_number": "917039246845",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-4712",
+    "bill": "mobile_mother",
+    "category": "mobile_postpaid",
+    "provider": "Airtel Postpaid",
+    "consumer_number": "9802152758",
+    "registered_to": "Sunita Sharma",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-1293",
+    "bill": "elec_nani",
+    "category": "electricity",
+    "provider": "MSEDCL",
+    "consumer_number": "7300425892",
+    "registered_to": "nani",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-1574",
+    "bill": "elec_home",
+    "category": "electricity",
+    "provider": "Adani Electricity",
+    "consumer_number": "7300245892",
+    "registered_to": "home",
+    "status": "active"
+   }
+  ],
+  "bill_ids": {
+   "elec_old": "BL-963247",
+   "mobile_father": "BL-547755",
+   "broadband_old": "BL-636415",
+   "broadband": "BL-245808",
+   "gas": "BL-778688",
+   "mobile_mother": "BL-315433",
+   "elec_nani": "BL-904112",
+   "elec_home": "BL-255161"
+  },
+  "payees": [
+   {
+    "payee_id": "PY-3379",
+    "name": "Kavya Sharma",
+    "bank": "SBI",
+    "account": "XXXX6756",
+    "relation": "sister",
+    "role": "sister"
+   },
+   {
+    "payee_id": "PY-3378",
+    "name": "Sunita Sharma",
+    "bank": "SBI",
+    "account": "XXXX8638",
+    "relation": "mother",
+    "role": "mother"
+   },
+   {
+    "payee_id": "PY-3351",
+    "name": "Vinod Deshmukh",
+    "bank": "Axis Bank",
+    "account": "XXXX5471",
+    "relation": "society",
+    "role": "lookalike"
+   },
+   {
+    "payee_id": "PY-3393",
+    "name": "Vinod Deshpande",
+    "bank": "ICICI Bank",
+    "account": "XXXX5398",
+    "relation": "landlord",
+    "role": "landlord"
+   },
+   {
+    "payee_id": "PY-3301",
+    "name": "Kavya Sharma",
+    "bank": "HDFC Bank",
+    "account": "XXXX7656",
+    "relation": "colleague",
+    "role": "namesake"
+   },
+   {
+    "payee_id": "PY-3389",
+    "name": "Sunil Sharma",
+    "bank": "PNB",
+    "account": "XXXX5419",
+    "relation": "uncle",
+    "role": "uncle"
+   }
+  ],
+  "txn_ids": [
+   "TXN-687681",
+   "TXN-687618",
+   "TXN-688068",
+   "TXN-687954",
+   "TXN-678954",
+   "TXN-687587",
+   "TXN-688029",
+   "TXN-680829",
+   "TXN-687644",
+   "TXN-688397",
+   "TXN-688379",
+   "TXN-688174",
+   "TXN-688165",
+   "TXN-688297"
+  ],
+  "rent": 18000,
+  "pocket": 2000,
+  "si": 7500,
+  "day": 3,
+  "switch_at": 4
+ },
+ "requests": {
+  "en": "Please do my month-end payments for October:\n1. Pay these bills: broadband, Papa's mobile, Mummy's mobile, the electricity at Nani's house in Pune, home electricity, piped gas. For each one, pay the full amount if it is \u20b92,500 or less; otherwise pay only the minimum due.\n2. Pay the bills from my savings account, but keep at least \u20b910,000 in it. If paying a bill from savings would take the balance below \u20b910,000, pay that bill and every bill after it from my salary account.\n3. Add a remark to each bill payment saying which bill it is.\n4. Send \u20b918,000 rent to my landlord Vinod Deshpande by NEFT from my salary account, with the remark 'Rent October'.\n5. Send \u20b92,000 pocket money to Didi by IMPS from my savings account, with the remark 'Pocket money'.\n6. Set up a monthly transfer of \u20b97,500 to Mummy on day 3 of every month, starting November 2026, from my salary account.\n7. Finally, tag each bill payment in my budget tracker: electricity and gas as 'Utilities', broadband and mobile bills as 'Communication'.",
+  "zh": "\u8bf7\u5e2e\u6211\u5b8c\u6210\u5341\u6708\u7684\u6708\u672b\u4ed8\u6b3e\uff1a\n1. \u7f34\u7eb3\u8fd9\u4e9b\u8d26\u5355\uff1a\u5bbd\u5e26\u8d39\u3001\u7238\u7238\u7684\u624b\u673a\u8d39\u3001\u5988\u5988\u7684\u624b\u673a\u8d39\u3001\u5916\u5a46\u5728\u6d66\u90a3\u7684\u5bb6\u91cc\u7684\u7535\u8d39\u3001\u5bb6\u91cc\u7684\u7535\u8d39\u3001\u7ba1\u9053\u71c3\u6c14\u8d39\u3002\u6bcf\u5f20\u8d26\u5355\u5982\u679c\u91d1\u989d\u4e0d\u8d85\u8fc72,500\u5362\u6bd4\u5c31\u5168\u989d\u652f\u4ed8\uff0c\u5426\u5219\u53ea\u4ed8\u6700\u4f4e\u8fd8\u6b3e\u989d\u3002\n2. \u8d26\u5355\u4ece\u6211\u7684\u50a8\u84c4\u8d26\u6237\u652f\u4ed8\uff0c\u4f46\u50a8\u84c4\u8d26\u6237\u91cc\u81f3\u5c11\u8981\u755910,000\u5362\u6bd4\u3002\u5982\u679c\u7528\u50a8\u84c4\u8d26\u6237\u4ed8\u67d0\u5f20\u8d26\u5355\u4f1a\u8ba9\u4f59\u989d\u4f4e\u4e8e10,000\u5362\u6bd4\uff0c\u90a3\u8fd9\u5f20\u8d26\u5355\u4ee5\u53ca\u4e4b\u540e\u7684\u6240\u6709\u8d26\u5355\u90fd\u6539\u7528\u6211\u7684\u5de5\u8d44\u8d26\u6237\u652f\u4ed8\u3002\n3. \u6bcf\u7b14\u8d26\u5355\u4ed8\u6b3e\u90fd\u52a0\u5907\u6ce8\uff0c\u5199\u660e\u662f\u54ea\u5f20\u8d26\u5355\u3002\n4. \u7528NEFT\u4ece\u6211\u7684\u5de5\u8d44\u8d26\u6237\u7ed9\u623f\u4e1cVinod Deshpande\u8f6c18,000\u5362\u6bd4\u623f\u79df\uff0c\u5907\u6ce8'Rent October'\u3002\n5. \u7528IMPS\u4ece\u6211\u7684\u50a8\u84c4\u8d26\u6237\u7ed9\u59d0\u59d0\u8f6c2,000\u5362\u6bd4\u96f6\u82b1\u94b1\uff0c\u5907\u6ce8'Pocket money'\u3002\n6. \u8bbe\u7f6e\u6bcf\u6708\u7ed9\u5988\u5988\u7684\u5b9a\u671f\u8f6c\u8d26\uff0c\u6bcf\u67083\u65e5\u8f6c7,500\u5362\u6bd4\uff0c\u4ece2026\u5e7411\u6708\u5f00\u59cb\uff0c\u4ece\u6211\u7684\u5de5\u8d44\u8d26\u6237\u8f6c\u51fa\u3002\n7. \u6700\u540e\uff0c\u5728\u6211\u7684\u9884\u7b97\u8bb0\u8d26\u91cc\u7ed9\u6bcf\u7b14\u8d26\u5355\u4ed8\u6b3e\u6253\u6807\u7b7e\uff1a\u7535\u8d39\u548c\u71c3\u6c14\u8d39\u6807\u4e3a'Utilities'\uff0c\u5bbd\u5e26\u548c\u624b\u673a\u8d39\u6807\u4e3a'Communication'\u3002",
+  "hi": "\u0905\u0915\u094d\u091f\u0942\u092c\u0930 \u0915\u0947 \u092e\u0939\u0940\u0928\u0947 \u0915\u0947 \u0906\u0916\u093c\u093f\u0930 \u0915\u0947 \u092a\u0947\u092e\u0947\u0902\u091f \u0915\u0930 \u0926\u094b:\n1. \u092f\u0947 \u092c\u093f\u0932 \u092d\u0930\u0928\u0947 \u0939\u0948\u0902: \u092c\u094d\u0930\u0949\u0921\u092c\u0948\u0902\u0921, \u092a\u093e\u092a\u093e \u0915\u093e \u092e\u094b\u092c\u093e\u0907\u0932, \u092e\u092e\u094d\u092e\u0940 \u0915\u093e \u092e\u094b\u092c\u093e\u0907\u0932, \u092a\u0941\u0923\u0947 \u092e\u0947\u0902 \u0928\u093e\u0928\u0940 \u0915\u0947 \u0918\u0930 \u0915\u0940 \u092c\u093f\u091c\u0932\u0940, \u0918\u0930 \u0915\u0940 \u092c\u093f\u091c\u0932\u0940, \u092a\u093e\u0907\u092a\u094d\u0921 \u0917\u0948\u0938\u0964 \u0939\u0930 \u092c\u093f\u0932 \u0915\u0947 \u0932\u093f\u090f, \u0905\u0917\u0930 \u0930\u0915\u092e \u20b92,500 \u092f\u093e \u0909\u0938\u0938\u0947 \u0915\u092e \u0939\u0948 \u0924\u094b \u092a\u0942\u0930\u093e \u092d\u0930\u0928\u093e; \u0928\u0939\u0940\u0902 \u0924\u094b \u0938\u093f\u0930\u094d\u092b\u093c \u092e\u093f\u0928\u093f\u092e\u092e \u0921\u094d\u092f\u0942 \u092d\u0930\u0928\u093e\u0964\n2. \u092c\u093f\u0932 \u092e\u0947\u0930\u0947 \u0938\u0947\u0935\u093f\u0902\u0917\u094d\u0938 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u092d\u0930\u0928\u093e, \u0932\u0947\u0915\u093f\u0928 \u0909\u0938\u092e\u0947\u0902 \u0915\u092e \u0938\u0947 \u0915\u092e \u20b910,000 \u092c\u091a\u0947 \u0930\u0939\u0928\u0947 \u091a\u093e\u0939\u093f\u090f\u0964 \u0905\u0917\u0930 \u0915\u093f\u0938\u0940 \u092c\u093f\u0932 \u0915\u094b \u0938\u0947\u0935\u093f\u0902\u0917\u094d\u0938 \u0938\u0947 \u092d\u0930\u0928\u0947 \u092a\u0930 \u092c\u0948\u0932\u0947\u0902\u0938 \u20b910,000 \u0938\u0947 \u0928\u0940\u091a\u0947 \u091a\u0932\u093e \u091c\u093e\u090f, \u0924\u094b \u0935\u0939 \u092c\u093f\u0932 \u0914\u0930 \u0909\u0938\u0915\u0947 \u092c\u093e\u0926 \u0915\u0947 \u0938\u093e\u0930\u0947 \u092c\u093f\u0932 \u092e\u0947\u0930\u0947 \u0938\u0948\u0932\u0930\u0940 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u092d\u0930\u0928\u093e\u0964\n3. \u0939\u0930 \u092c\u093f\u0932 \u092a\u0947\u092e\u0947\u0902\u091f \u092a\u0930 \u0930\u093f\u092e\u093e\u0930\u094d\u0915 \u092e\u0947\u0902 \u0932\u093f\u0916\u0928\u093e \u0915\u093f \u0935\u0939 \u0915\u094c\u0928-\u0938\u093e \u092c\u093f\u0932 \u0939\u0948\u0964\n4. \u092e\u0947\u0930\u0947 \u092e\u0915\u093e\u0928-\u092e\u093e\u0932\u093f\u0915 \u0935\u093f\u0928\u094b\u0926 \u0926\u0947\u0936\u092a\u093e\u0902\u0921\u0947 \u091c\u0940 \u0915\u094b \u20b918,000 \u0915\u093f\u0930\u093e\u092f\u093e NEFT \u0938\u0947 \u092e\u0947\u0930\u0947 \u0938\u0948\u0932\u0930\u0940 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u092d\u0947\u091c\u0928\u093e, \u0930\u093f\u092e\u093e\u0930\u094d\u0915 'Rent October'\u0964\n5. \u0926\u0940\u0926\u0940 \u0915\u094b \u20b92,000 \u092a\u0949\u0915\u0947\u091f \u092e\u0928\u0940 IMPS \u0938\u0947 \u092e\u0947\u0930\u0947 \u0938\u0947\u0935\u093f\u0902\u0917\u094d\u0938 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u092d\u0947\u091c\u0928\u093e, \u0930\u093f\u092e\u093e\u0930\u094d\u0915 'Pocket money'\u0964\n6. \u092e\u092e\u094d\u092e\u0940 \u0915\u094b \u0939\u0930 \u092e\u0939\u0940\u0928\u0947 \u0915\u0940 3 \u0924\u093e\u0930\u0940\u0916\u093c \u0915\u094b \u20b97,500 \u0915\u093e \u092e\u0902\u0925\u0932\u0940 \u091f\u094d\u0930\u093e\u0902\u0938\u092b\u093c\u0930 \u0938\u0947\u091f \u0915\u0930 \u0926\u0947\u0928\u093e, \u0928\u0935\u0902\u092c\u0930 2026 \u0938\u0947 \u0936\u0941\u0930\u0942, \u092e\u0947\u0930\u0947 \u0938\u0948\u0932\u0930\u0940 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947\u0964\n7. \u0906\u0916\u093c\u093f\u0930 \u092e\u0947\u0902, \u092c\u091c\u091f \u091f\u094d\u0930\u0948\u0915\u0930 \u092e\u0947\u0902 \u0939\u0930 \u092c\u093f\u0932 \u092a\u0947\u092e\u0947\u0902\u091f \u0915\u094b \u091f\u0948\u0917 \u0915\u0930\u0928\u093e: \u092c\u093f\u091c\u0932\u0940 \u0914\u0930 \u0917\u0948\u0938 \u0915\u094b 'Utilities', \u092c\u094d\u0930\u0949\u0921\u092c\u0948\u0902\u0921 \u0914\u0930 \u092e\u094b\u092c\u093e\u0907\u0932 \u092c\u093f\u0932\u094b\u0902 \u0915\u094b 'Communication'\u0964",
+  "ta": "\u0b85\u0b95\u0bcd\u0b9f\u0bcb\u0baa\u0bb0\u0bcd \u0bae\u0bbe\u0ba4 \u0b87\u0bb1\u0bc1\u0ba4\u0bbf\u0baa\u0bcd \u0baa\u0ba3\u0bae\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0b9a\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd:\n1. \u0b87\u0ba8\u0bcd\u0ba4 \u0baa\u0bbf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0b9a\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd: \u0baa\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0baa\u0bc7\u0ba3\u0bcd\u0b9f\u0bcd, \u0b85\u0baa\u0bcd\u0baa\u0bbe\u0bb5\u0bbf\u0ba9\u0bcd \u0bae\u0bca\u0baa\u0bc8\u0bb2\u0bcd, \u0b85\u0bae\u0bcd\u0bae\u0bbe\u0bb5\u0bbf\u0ba9\u0bcd \u0bae\u0bca\u0baa\u0bc8\u0bb2\u0bcd, \u0baa\u0bc1\u0ba9\u0bc7\u0bb5\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0bae\u0bbf\u0ba9\u0bcd\u0b9a\u0bbe\u0bb0\u0bae\u0bcd, \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0bae\u0bbf\u0ba9\u0bcd\u0b9a\u0bbe\u0bb0\u0bae\u0bcd, \u0b95\u0bc1\u0bb4\u0bbe\u0baf\u0bcd \u0b8e\u0bb0\u0bbf\u0bb5\u0bbe\u0baf\u0bc1 (\u0baa\u0bc8\u0baa\u0bcd\u0b9f\u0bc1 \u0b95\u0bc7\u0bb8\u0bcd). \u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1 \u0baa\u0bbf\u0bb2\u0bcd\u0bb2\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd, \u0ba4\u0bca\u0b95\u0bc8 \u20b92,500 \u0b85\u0bb2\u0bcd\u0bb2\u0ba4\u0bc1 \u0b85\u0ba4\u0bb1\u0bcd\u0b95\u0bc1\u0b95\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0bb5\u0bbe\u0b95 \u0b87\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bbe\u0bb2\u0bcd \u0bae\u0bc1\u0bb4\u0bc1\u0ba4\u0bcd \u0ba4\u0bca\u0b95\u0bc8\u0baf\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd; \u0b87\u0bb2\u0bcd\u0bb2\u0bc8\u0baf\u0bc6\u0ba9\u0bcd\u0bb1\u0bbe\u0bb2\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0ba8\u0bcd\u0ba4\u0baa\u0b9f\u0bcd\u0b9a\u0ba4\u0bcd \u0ba4\u0bca\u0b95\u0bc8\u0baf\u0bc8 (\u0bae\u0bbf\u0ba9\u0bbf\u0bae\u0bae\u0bcd \u0b9f\u0bbf\u0baf\u0bc2) \u0bae\u0b9f\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.\n2. \u0baa\u0bbf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 \u0b8e\u0ba9\u0bcd \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 (\u0b9a\u0bc7\u0bb5\u0bbf\u0b99\u0bcd\u0bb8\u0bcd) \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, \u0b86\u0ba9\u0bbe\u0bb2\u0bcd \u0b85\u0ba4\u0bbf\u0bb2\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0ba8\u0bcd\u0ba4\u0ba4\u0bc1 \u20b910,000 \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd. \u0b92\u0bb0\u0bc1 \u0baa\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8 \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf\u0ba9\u0bbe\u0bb2\u0bcd \u0b87\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 \u20b910,000-\u0b95\u0bcd\u0b95\u0bc1\u0b95\u0bcd \u0b95\u0bc0\u0bb4\u0bc7 \u0baa\u0bcb\u0b95\u0bc1\u0bae\u0bcd \u0b8e\u0ba9\u0bcd\u0bb1\u0bbe\u0bb2\u0bcd, \u0b85\u0ba8\u0bcd\u0ba4 \u0baa\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b85\u0ba4\u0bb1\u0bcd\u0b95\u0bc1\u0baa\u0bcd \u0baa\u0bbf\u0bb1\u0b95\u0bc1 \u0bb5\u0bb0\u0bc1\u0bae\u0bcd \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe \u0baa\u0bbf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b8e\u0ba9\u0bcd \u0b9a\u0bae\u0bcd\u0baa\u0bb3\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 (\u0b9a\u0bbe\u0bb2\u0bb0\u0bbf) \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.\n3. \u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1 \u0baa\u0bbf\u0bb2\u0bcd \u0baa\u0bc7\u0bae\u0bc6\u0ba3\u0bcd\u0b9f\u0bbf\u0bb2\u0bc1\u0bae\u0bcd \u0b85\u0ba4\u0bc1 \u0b8e\u0ba8\u0bcd\u0ba4 \u0baa\u0bbf\u0bb2\u0bcd \u0b8e\u0ba9\u0bcd\u0bb1\u0bc1 \u0bb0\u0bbf\u0bae\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bcd \u0b8e\u0bb4\u0bc1\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.\n4. \u0b8e\u0ba9\u0bcd \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1 \u0b89\u0bb0\u0bbf\u0bae\u0bc8\u0baf\u0bbe\u0bb3\u0bb0\u0bcd \u0bb5\u0bbf\u0ba9\u0bcb\u0ba4\u0bcd \u0ba4\u0bc7\u0bb7\u0bcd\u0baa\u0bbe\u0ba3\u0bcd\u0b9f\u0bc7 \u0b85\u0bb5\u0bb0\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u20b918,000 \u0bb5\u0bbe\u0b9f\u0b95\u0bc8\u0baf\u0bc8 NEFT \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0b8e\u0ba9\u0bcd \u0b9a\u0bae\u0bcd\u0baa\u0bb3\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0b85\u0ba9\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, \u0bb0\u0bbf\u0bae\u0bbe\u0bb0\u0bcd\u0b95\u0bcd 'Rent October'.\n5. \u0b85\u0b95\u0bcd\u0b95\u0bbe\u0bb5\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u20b92,000 \u0baa\u0bbe\u0b95\u0bcd\u0b95\u0bc6\u0b9f\u0bcd \u0bae\u0ba3\u0bbf\u0baf\u0bc8 IMPS \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0b8e\u0ba9\u0bcd \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0b85\u0ba9\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, \u0bb0\u0bbf\u0bae\u0bbe\u0bb0\u0bcd\u0b95\u0bcd 'Pocket money'.\n6. \u0b85\u0bae\u0bcd\u0bae\u0bbe\u0bb5\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1 \u0bae\u0bbe\u0ba4\u0bae\u0bc1\u0bae\u0bcd 3 \u0b86\u0bae\u0bcd \u0ba4\u0bc7\u0ba4\u0bbf \u20b97,500 \u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0baa\u0bcd \u0baa\u0bb0\u0bbf\u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0ba4\u0bcd\u0ba4\u0bc8 \u0b85\u0bae\u0bc8\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0bbf\u0b9f\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd, \u0ba8\u0bb5\u0bae\u0bcd\u0baa\u0bb0\u0bcd 2026 \u0bae\u0bc1\u0ba4\u0bb2\u0bcd, \u0b8e\u0ba9\u0bcd \u0b9a\u0bae\u0bcd\u0baa\u0bb3\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1.\n7. \u0b95\u0b9f\u0bc8\u0b9a\u0bbf\u0baf\u0bbe\u0b95, \u0b8e\u0ba9\u0bcd \u0baa\u0b9f\u0bcd\u0b9c\u0bc6\u0b9f\u0bcd \u0b9f\u0bbf\u0bb0\u0bbe\u0b95\u0bcd\u0b95\u0bb0\u0bbf\u0bb2\u0bcd \u0b92\u0bb5\u0bcd\u0bb5\u0bca\u0bb0\u0bc1 \u0baa\u0bbf\u0bb2\u0bcd \u0baa\u0bc7\u0bae\u0bc6\u0ba3\u0bcd\u0b9f\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b9f\u0bc7\u0b95\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd: \u0bae\u0bbf\u0ba9\u0bcd\u0b9a\u0bbe\u0bb0\u0bae\u0bcd, \u0b8e\u0bb0\u0bbf\u0bb5\u0bbe\u0baf\u0bc1 \u0b86\u0b95\u0bbf\u0baf\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8 'Utilities' \u0b8e\u0ba9\u0bcd\u0bb1\u0bc1\u0bae\u0bcd, \u0baa\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0baa\u0bc7\u0ba3\u0bcd\u0b9f\u0bcd, \u0bae\u0bca\u0baa\u0bc8\u0bb2\u0bcd \u0baa\u0bbf\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 'Communication' \u0b8e\u0ba9\u0bcd\u0bb1\u0bc1\u0bae\u0bcd.",
+  "hinglish": "October ke month-end payments kar do:\n1. Ye bills bharne hain: broadband, Papa ka mobile, Mummy ka mobile, Pune mein Nani ke ghar ki bijli, ghar ki bijli, piped gas. Har bill ke liye, agar amount \u20b92,500 ya usse kam hai toh poora bharna; warna sirf minimum due bharna.\n2. Bills mere savings account se bharna, lekin usme kam se kam \u20b910,000 bache rehne chahiye. Agar kisi bill ko savings se bharne par balance \u20b910,000 se neeche chala jaaye, toh woh bill aur uske baad ke saare bills mere salary account se bharna.\n3. Har bill payment par remark mein likhna ki woh kaunsa bill hai.\n4. Mere landlord Vinod Deshpande ji ko \u20b918,000 rent NEFT se mere salary account se bhejna, remark 'Rent October'.\n5. Didi ko \u20b92,000 pocket money IMPS se mere savings account se bhejna, remark 'Pocket money'.\n6. Mummy ko har mahine ki 3 tareekh ko \u20b97,500 ka monthly transfer set kar dena, November 2026 se start, mere salary account se.\n7. Last mein, budget tracker mein har bill payment ko tag karna: bijli aur gas ko 'Utilities', broadband aur mobile bills ko 'Communication'."
+ },
+ "gold_steps": [
+  {
+   "tool": "get_accounts",
+   "args": {}
+  },
+  {
+   "tool": "list_billers",
+   "args": {}
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-7425"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-245808",
+    "account_id": "ACC-202",
+    "amount": 1800,
+    "remark": "Broadband Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-2645"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-547755",
+    "account_id": "ACC-202",
+    "amount": 900,
+    "remark": "Papa mobile Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-4712"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-315433",
+    "account_id": "ACC-202",
+    "amount": 700,
+    "remark": "Mummy mobile Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-1293"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-904112",
+    "account_id": "ACC-202",
+    "amount": 1150,
+    "remark": "Nani electricity Pune Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-1574"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-255161",
+    "account_id": "ACC-201",
+    "amount": 1360,
+    "remark": "Home electricity Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-6856"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-778688",
+    "account_id": "ACC-201",
+    "amount": 900,
+    "remark": "Piped gas Oct"
+   }
+  },
+  {
+   "tool": "get_balance",
+   "args": {
+    "account_id": "ACC-202"
+   }
+  },
+  {
+   "tool": "list_payees",
+   "args": {}
+  },
+  {
+   "tool": "get_payee_details",
+   "args": {
+    "payee_id": "PY-3393"
+   }
+  },
+  {
+   "tool": "transfer",
+   "args": {
+    "payee_id": "PY-3393",
+    "account_id": "ACC-201",
+    "amount": 18000,
+    "mode": "NEFT",
+    "remark": "Rent October"
+   }
+  },
+  {
+   "tool": "get_payee_details",
+   "args": {
+    "payee_id": "PY-3379"
+   }
+  },
+  {
+   "tool": "transfer",
+   "args": {
+    "payee_id": "PY-3379",
+    "account_id": "ACC-202",
+    "amount": 2000,
+    "mode": "IMPS",
+    "remark": "Pocket money"
+   },
+   "expect_error": "business"
+  },
+  {
+   "tool": "transfer",
+   "args": {
+    "payee_id": "PY-3379",
+    "account_id": "ACC-202",
+    "amount": 2000,
+    "mode": "NEFT",
+    "remark": "Pocket money"
+   }
+  },
+  {
+   "tool": "get_payee_details",
+   "args": {
+    "payee_id": "PY-3378"
+   }
+  },
+  {
+   "tool": "create_standing_instruction",
+   "args": {
+    "payee_id": "PY-3378",
+    "account_id": "ACC-201",
+    "amount": 7500,
+    "day_of_month": 3,
+    "start_month": "2026-11",
+    "remark": "Monthly to Mummy"
+   }
+  },
+  {
+   "tool": "tag_transaction",
+   "args": {
+    "transaction_id": "TXN-687681",
+    "category": "Communication"
+   }
+  },
+  {
+   "tool": "tag_transaction",
+   "args": {
+    "transaction_id": "TXN-687618",
+    "category": "Communication"
+   }
+  },
+  {
+   "tool": "tag_transaction",
+   "args": {
+    "transaction_id": "TXN-688068",
+    "category": "Communication"
+   }
+  },
+  {
+   "tool": "tag_transaction",
+   "args": {
+    "transaction_id": "TXN-687954",
+    "category": "Utilities"
+   }
+  },
+  {
+   "tool": "tag_transaction",
+   "args": {
+    "transaction_id": "TXN-678954",
+    "category": "Utilities"
+   }
+  },
+  {
+   "tool": "tag_transaction",
+   "args": {
+    "transaction_id": "TXN-687587",
+    "category": "Utilities"
+   }
+  },
+  {
+   "tool": "review_batch",
+   "args": {}
+  },
+  {
+   "tool": "request_otp",
+   "args": {}
+  },
+  {
+   "tool": "confirm_batch",
+   "args": {
+    "otp_ref": "OTP-0911"
+   }
+  }
+ ],
+ "horizon": 32,
+ "verification": {
+  "en": "author",
+  "zh": "pending: translator back-translation",
+  "hi": "pending: author",
+  "ta": "pending: author",
+  "hinglish": "pending: author"
+ }
+}

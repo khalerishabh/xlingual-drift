@@ -1,0 +1,54 @@
+# RQ1 final test (docs/LONG_SPEC.md): two long-horizon domains with built-in
+# entity and semantic drift pressure, 30-40 steps per episode. 10 instances
+# per domain x 5 languages x 1 seed = 100 episodes, seam S1 (request in the
+# task language, tool outputs and errors in English). Same backbone as the
+# trip main run. The decision rule is in eval/drift.py (rq1_decision) and
+# was fixed before any run.
+
+run_name: rq1_long_qwen36_27b_fp8
+
+serving:
+  model: Qwen/Qwen3.6-27B-FP8
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: []
+
+templates:
+  - tasks/long/shop_01.json
+  - tasks/long/shop_02.json
+  - tasks/long/shop_03.json
+  - tasks/long/shop_04.json
+  - tasks/long/shop_05.json
+  - tasks/long/shop_06.json
+  - tasks/long/shop_07.json
+  - tasks/long/shop_08.json
+  - tasks/long/shop_09.json
+  - tasks/long/shop_10.json
+  - tasks/long/pay_01.json
+  - tasks/long/pay_02.json
+  - tasks/long/pay_03.json
+  - tasks/long/pay_04.json
+  - tasks/long/pay_05.json
+  - tasks/long/pay_06.json
+  - tasks/long/pay_07.json
+  - tasks/long/pay_08.json
+  - tasks/long/pay_09.json
+  - tasks/long/pay_10.json
+max_steps: 80
+horizons: []
+languages: [en, zh, hi, ta, hinglish]
+seam: S1
+
+cells:
+  - name: qwen36_27b_fp8_think
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1]

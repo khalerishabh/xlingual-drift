@@ -1,0 +1,75 @@
+# RQ3 (docs/LONG_SPEC.md, project doc Section 8.5): where the excess failure
+# happens. The same 20 long-horizon instances in the four non-English
+# languages under three seams:
+#   S1  request in L; tool outputs and errors in English (realistic default)
+#   S2  request and tool outputs in L; errors in English
+#   S3  request, tool outputs and errors in L
+# English episodes from the RQ1 run are the S0 reference. 20 x 4 x 3 = 240
+# episodes. S1 here repeats the RQ1 cell on purpose, so the seam comparison
+# is within one run.
+
+run_name: rq3_seams_qwen36_27b_fp8
+
+serving:
+  model: Qwen/Qwen3.6-27B-FP8
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: []
+
+templates:
+  - tasks/long/shop_01.json
+  - tasks/long/shop_02.json
+  - tasks/long/shop_03.json
+  - tasks/long/shop_04.json
+  - tasks/long/shop_05.json
+  - tasks/long/shop_06.json
+  - tasks/long/shop_07.json
+  - tasks/long/shop_08.json
+  - tasks/long/shop_09.json
+  - tasks/long/shop_10.json
+  - tasks/long/pay_01.json
+  - tasks/long/pay_02.json
+  - tasks/long/pay_03.json
+  - tasks/long/pay_04.json
+  - tasks/long/pay_05.json
+  - tasks/long/pay_06.json
+  - tasks/long/pay_07.json
+  - tasks/long/pay_08.json
+  - tasks/long/pay_09.json
+  - tasks/long/pay_10.json
+max_steps: 80
+horizons: []
+languages: [zh, hi, ta, hinglish]
+
+cells:
+  - name: qwen36_27b_fp8_think_s1
+    seam: S1
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1]
+  - name: qwen36_27b_fp8_think_s2
+    seam: S2
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1]
+  - name: qwen36_27b_fp8_think_s3
+    seam: S3
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1]

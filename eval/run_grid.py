@@ -30,9 +30,11 @@ import yaml
 
 from agent.policies.mock_policy import MockPolicy
 from agent.policies.openai_compat_policy import InfraError, OpenAICompatPolicy
+from agent.policies.long_mock_policy import LongMockPolicy
 from agent.policies.trip_mock_policy import TripMockPolicy
 from agent.react_loop import run_episode
 from env.inject import FailureInjector
+from env.long.registry import DOMAINS as LONG_DOMAINS
 from env.trip.tools import TripTools
 from eval.metrics import summarize
 from eval.trip_verifier import verify_trip
@@ -40,7 +42,7 @@ from eval.verifier import verify
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 _POLICY_KEYS = ("model", "base_url", "api_key_env", "temperature", "max_tokens", "extra_body",
-                "prompt_version", "max_retries")
+                "prompt_version", "max_retries", "api_key_header")
 
 
 def load_json(rel_path: str) -> dict:
@@ -50,6 +52,8 @@ def load_json(rel_path: str) -> dict:
 def build_policy(cell: dict, gold: dict, seed):
     kind = cell["policy"]
     if kind == "mock":
+        if gold.get("domain") in LONG_DOMAINS:
+            return LongMockPolicy(gold, mode=cell.get("mock_mode", "solve"))
         mock = TripMockPolicy if gold.get("domain") == "trip" else MockPolicy
         return mock(gold, mode=cell.get("mock_mode", "solve"))
     if kind == "openai_compat":
@@ -126,17 +130,24 @@ def completed_keys(log_path: Path) -> set:
 
 
 def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, name: str, cell: dict, seed) -> dict:
-    trip = template.get("domain") == "trip"
-    gold = load_json(f"tasks/{'trip_gold' if trip else 'gold'}/{template['template_id']}_h{horizon}.json")
+    domain = template.get("domain")
+    trip, long_domain = domain == "trip", domain in LONG_DOMAINS
+    seam = cell.get("seam", cfg.get("seam", "S1"))
+    if long_domain:
+        gold = template
+        tools = LONG_DOMAINS[domain]["tools"](template, language, seam)
+    else:
+        gold = load_json(f"tasks/{'trip_gold' if trip else 'gold'}/{template['template_id']}_h{horizon}.json")
+        tools = TripTools(cfg.get("interface_mode", "strict"), horizon) if trip else None
     policy = build_policy(cell, gold, seed)
     inject = cell.get("inject") or {}
     interface_mode = cfg.get("interface_mode", "strict")
-    tools = TripTools(interface_mode, horizon) if trip else None
     base = {
         "episode_key": f"{template['template_id']}|h{horizon}|{language}|{name}|s{seed}",
-        "run_name": cfg["run_name"], "task_id": gold["task_id"], "template_id": template["template_id"],
+        "run_name": cfg["run_name"], "task_id": gold.get("task_id", template["template_id"]), "template_id": template["template_id"],
         "horizon": horizon, "language": language, "interface_mode": interface_mode, "cell": name,
         "policy": cell["policy"], "model": cell.get("model"), "extra_body": cell.get("extra_body"),
+        "domain": domain or "travel", "seam": seam if long_domain else None,
         "seed": seed, "error_type": inject.get("error_type"), "inject_at_tool": inject.get("at_tool"),
         "message_language": inject.get("message_language"),
         "serving": serving if cell["policy"] != "mock" else None,
@@ -144,7 +155,7 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
     start = time.perf_counter()
     try:
         traj = run_episode(
-            task_id=gold["task_id"], horizon=horizon, request=template["requests"][language],
+            task_id=gold.get("task_id", template["template_id"]), horizon=horizon, request=template["requests"][language],
             policy=policy, interface_mode=interface_mode, max_steps=cfg.get("max_steps", 24),
             injector=build_injector(cell), context={"session_date": template["session_date"]}, tools=tools,
         )
@@ -152,7 +163,8 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
         return {**base, "infra_error": str(e), "latency_s": round(time.perf_counter() - start, 3)}
     record = {
         **base,
-        **(verify_trip if trip else verify)(traj, gold, traj.sold_out),
+        **(LONG_DOMAINS[domain]["module"].verify(traj, template, traj.sold_out) if long_domain
+           else (verify_trip if trip else verify)(traj, gold, traj.sold_out)),
         "hit_step_limit": traj.hit_step_limit,
         "final_text": traj.final_text,
         "latency_s": round(time.perf_counter() - start, 3),
@@ -192,12 +204,14 @@ def main():
         for seed in cell.get("seeds", [cell.get("seed")]):
             cells.append((name, cell, seed))
 
-    jobs = [
-        (t, h, lang, name, cell, seed)
-        for t, h, lang, (name, cell, seed) in itertools.product(templates, cfg["horizons"], cfg["languages"], cells)
-        if f"{t['template_id']}|h{h}|{lang}|{name}|s{seed}" not in done
-    ]
-    skipped = len(templates) * len(cfg["horizons"]) * len(cfg["languages"]) * len(cells) - len(jobs)
+    def horizons_of(t):
+        return [t["horizon"]] if t.get("domain") in LONG_DOMAINS else cfg["horizons"]
+
+    every = [(t, h, lang, name, cell, seed)
+             for t in templates for h in horizons_of(t)
+             for lang, (name, cell, seed) in itertools.product(cfg["languages"], cells)]
+    jobs = [j for j in every if f"{j[0]['template_id']}|h{j[1]}|{j[2]}|{j[3]}|s{j[5]}" not in done]
+    skipped = len(every) - len(jobs)
 
     records, lock = [], threading.Lock()
     with open(log_path, "a" if args.resume else "w", encoding="utf-8") as log:

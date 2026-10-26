@@ -1,0 +1,55 @@
+# RQ1 final test on Sarvam-30B, an Indic-first open model (Apache 2.0;
+# Mixture-of-Experts, about 2.4B active parameters), self-hosted with SGLang
+# by notebooks/sarvam_runner.ipynb. Same 100 episodes as
+# rq1_long_qwen36_27b_fp8. Temperature 0.6 as everywhere else; Sarvam's own
+# default for reasoning is kept (no chat-template switch is sent), since its
+# template differs from Qwen's.
+# revision "main" is resolved at server start and pinned by the log guard.
+
+run_name: rq1_long_sarvam30b
+
+serving:
+  model: sarvamai/sarvam-30b
+  revision: main
+  engine: sglang
+  tool_call_parser: glm45
+  reasoning_parser: glm45
+  max_model_len: 65536
+  min_vram_gb: 75
+  vllm_version: "sglang"
+  extra_args: []
+
+templates:
+  - tasks/long/shop_01.json
+  - tasks/long/shop_02.json
+  - tasks/long/shop_03.json
+  - tasks/long/shop_04.json
+  - tasks/long/shop_05.json
+  - tasks/long/shop_06.json
+  - tasks/long/shop_07.json
+  - tasks/long/shop_08.json
+  - tasks/long/shop_09.json
+  - tasks/long/shop_10.json
+  - tasks/long/pay_01.json
+  - tasks/long/pay_02.json
+  - tasks/long/pay_03.json
+  - tasks/long/pay_04.json
+  - tasks/long/pay_05.json
+  - tasks/long/pay_06.json
+  - tasks/long/pay_07.json
+  - tasks/long/pay_08.json
+  - tasks/long/pay_09.json
+  - tasks/long/pay_10.json
+max_steps: 80
+horizons: []
+languages: [en, zh, hi, ta, hinglish]
+seam: S1
+
+cells:
+  - name: sarvam30b
+    policy: openai_compat
+    model: sarvamai/sarvam-30b
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 8192
+    seeds: [1]
