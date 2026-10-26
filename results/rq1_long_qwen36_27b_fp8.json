@@ -1,0 +1,54 @@
+{
+  "run_name": "rq1_long_qwen36_27b_fp8",
+  "design": "shop (36 steps) + pay (32 steps), 10 instances each x en/zh/hi/ta/hinglish, seam S1, seed 1, thinking on, max_tokens 16384",
+  "serving": {"model": "Qwen/Qwen3.6-27B-FP8", "revision": "e89b16ebf1988b3d6befa7de50abc2d76f26eb09", "vllm_version": "0.30.0", "max_model_len": 65536},
+  "episodes_planned": 100,
+  "scored": 96,
+  "unscored_runaway_reasoning": ["shop_04 en", "shop_07 en", "shop_08 en", "shop_03 hinglish"],
+  "scoring": "end state via snapshot(); old rows re-scored by replay (eval/rescore_long.py)",
+  "success_final_step": {"en": "9/17", "zh": "15/20", "hi": "8/20", "ta": "9/20", "hinglish": "9/19"},
+  "success_state": {"en": "11/17", "zh": "16/20", "hi": "14/20", "ta": "9/20", "hinglish": "14/19"},
+  "by_domain": {
+    "shop_success": {"en": "3/7", "zh": "8/10", "hi": "6/10", "ta": "4/10", "hinglish": "6/9"},
+    "pay_success_final_step": {"en": "6/10", "zh": "7/10", "hi": "2/10", "ta": "5/10", "hinglish": "3/10"},
+    "pay_success_state": {"en": "8/10", "zh": "8/10", "hi": "8/10", "ta": "5/10", "hinglish": "8/10"},
+    "pay_handover": {"en": 3, "zh": 1, "hi": 8, "ta": 1, "hinglish": 7}
+  },
+  "rq1_decision": {
+    "model": "fail ~ C(language)*distance + C(cclass) + C(domain), logit, SE clustered by episode, global constraints excluded",
+    "n_constraints": 3396,
+    "distance_english": [-1.066, 0.4517],
+    "interactions": {"zh": [-0.33, 0.7925], "hi": [-1.282, 0.3357], "ta": [0.369, 0.7667], "hinglish": [-0.906, 0.4629]},
+    "typed_drift_per_100": {"en": 0.1, "zh": 0.3, "hi": 0.1, "ta": 0.5, "hinglish": 0.3},
+    "verdict": "not positive for any language"
+  },
+  "robustness": {
+    "per_domain_shop": {"zh": [1.069, 0.63], "hi": [-7.63, 0.23], "ta": [2.561, 0.24], "hinglish": [-12.207, 0.0073], "note": "convergence warning"},
+    "per_domain_pay": {"zh": [5.015, 0.18], "hi": [-1.08, 0.80], "ta": [1.095, 0.78], "hinglish": [0.718, 0.85]},
+    "absolute_steps_per_10": {"zh": [-0.135, 0.71], "hi": [-0.328, 0.39], "ta": [0.087, 0.81], "hinglish": [-0.182, 0.60]},
+    "failures_by_distance_third": {"en": ["0/36", "1/240", "5/332"], "zh": ["0/57", "4/245", "2/408"], "hi": ["0/27", "3/244", "3/439"], "ta": ["0/48", "7/227", "12/435"], "hinglish": ["0/36", "7/273", "12/349"]},
+    "paired_mcnemar_state_vs_en_p": {"zh": 0.727, "hi": 0.688, "ta": 0.508, "hinglish": 1.0},
+    "cochran_q": {"success": 0.392, "success_state": 0.265, "complete_instances": 16},
+    "level_model": {"formula": "fail ~ C(language) + C(domain)", "joint_language_p": 0.0177, "hinglish": [1.256, 0.049], "ta": [0.963, 0.076], "zh": [-0.21, 0.76], "hi": [-0.21, 0.74]},
+    "runaway_as_failure": {"en_success": "9/20", "en_state": "11/20", "hinglish_success": "9/20", "hinglish_state": "14/20"}
+  },
+  "failed_constraints": {
+    "total": 87,
+    "stages": {"reasoning_comprehension": 61, "recovery_regrounding": 23, "state_carryover": 3},
+    "shop.item.best": {"en": 3, "zh": 2, "hi": 3, "ta": 7, "hinglish": 6},
+    "shop.item.delivery": {"ta": 3, "hinglish": 6},
+    "pay.transfer.pocket.payee": {"en": 1, "zh": 2, "hi": 1, "ta": 4, "hinglish": 2},
+    "pay.batch.confirmed": {"en": 3, "zh": 1, "hi": 8, "ta": 1, "hinglish": 7}
+  },
+  "regrounding_survival": {"en": "94/96", "zh": "116/120", "hi": "118/120", "ta": "110/120", "hinglish": "100/105"},
+  "findings": [
+    "Shop fallback ranking slip: 12 items (en 3, zh 2, hi 3, ta 4) took the 4.2-rated option after the 4.6 (out of stock) and 4.5 (late) were rejected; the 4.4 answer was never opened in 10 of 12.",
+    "Shop deadline dropped: 9 items took the late 4.5-rated product (hinglish 6 in 2 episodes, ta 3).",
+    "Pay namesake: payee checked before first transfer en 10/10, hi 8, ta 7, hinglish 7, zh 5; unchecked picks wrong 4/13, checked 1/37; after the IMPS limit error 40/45 switched to NEFT, 5 kept IMPS and paid the colleague Kavya Sharma (en 1, zh 1, ta 2, hinglish 1).",
+    "Semantic drift (diagnostic, not scored): pay_01 ta and hinglish swapped the Papa/Mummy mobile remarks (consumer numbers 9820131824 / 9821031824); en, zh, hi correct.",
+    "Runaway reasoning (exploratory): 9/100 replies hit 8192 tokens without a call (en 6, zh 1, hi 1, hinglish 1; all shop); 4 still at 16384. English shop 6/10 vs others 3/40, Fisher p = 0.0009.",
+    "One episode (shop_10 hinglish) ended on a reply with 2 characters of thinking and no content; not resampled by the current harness."
+  ],
+  "reasoning_latin_share": {"en": 1.0, "zh": 0.58, "hi": 0.86, "ta": 0.90, "hinglish": 1.0},
+  "mean_completion_tokens": {"en": 18370, "zh": 15769, "hi": 17718, "ta": 16867, "hinglish": 17177}
+}
