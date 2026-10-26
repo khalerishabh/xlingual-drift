@@ -133,6 +133,21 @@ def test_persistently_empty_reply_ends_episode_unbooked():
     assert r["booked_flight"] is None and p.usage["empty_responses"] == 2
 
 
+def test_reply_cut_off_by_max_tokens_is_infra_not_a_final_answer():
+    cut = reply(reasoning="thinking " * 50)
+    cut.choices[0].finish_reason = "length"
+    p, _ = policy([reply(call("search_flights", H2_SEARCH, "c1")), cut])
+    with pytest.raises(InfraError, match="truncated"):
+        episode(p)
+
+
+def test_old_truncated_records_are_not_counted_as_done():
+    from eval.metrics import is_truncated, latest_scored
+    rec = {"episode_key": "k", "final_text": "", "hit_step_limit": False, "steps": [{"tool": "x", "args": {}, "result": {}}],
+           "transcript": {"finish_reasons": ["tool_calls", "length"]}}
+    assert is_truncated(rec) and latest_scored([rec]) == []
+
+
 class Status(Exception):
     def __init__(self, code):
         super().__init__(f"status {code}")

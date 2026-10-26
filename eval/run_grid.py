@@ -36,7 +36,7 @@ from agent.react_loop import run_episode
 from env.inject import FailureInjector
 from env.long.registry import DOMAINS as LONG_DOMAINS
 from env.trip.tools import TripTools
-from eval.metrics import summarize
+from eval.metrics import is_truncated, summarize
 from eval.trip_verifier import verify_trip
 from eval.verifier import verify
 
@@ -124,7 +124,7 @@ def completed_keys(log_path: Path) -> set:
     for line in log_path.read_text(encoding="utf-8").splitlines():
         if line.strip():
             rec = json.loads(line)
-            if not rec.get("infra_error"):
+            if not rec.get("infra_error") and not is_truncated(rec):
                 done.add(rec["episode_key"])
     return done
 

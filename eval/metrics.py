@@ -10,11 +10,22 @@ in the stats pipeline once real runs exist.
 from collections import defaultdict
 
 
+def is_truncated(r: dict) -> bool:
+    """Scored before the truncation rule existed, but ended on a reply cut off
+    by max_tokens with no tool call: treated like an infra error."""
+    t = r.get("transcript") or {}
+    fr = t.get("finish_reasons") or []
+    last = (r.get("steps") or [{}])[-1]
+    return bool(fr) and fr[-1] == "length" and not r.get("final_text") and r.get("hit_step_limit") is False \
+        and "error" not in last and r.get("completed") is not True
+
+
 def latest_scored(records: list[dict]) -> list[dict]:
-    """Last scored row per episode_key (a key repeats after infra retries)."""
+    """Last scored row per episode_key (a key repeats after infra retries).
+    Truncated episodes count as unscored."""
     by_key = {}
     for r in records:
-        if not r.get("infra_error"):
+        if not r.get("infra_error") and not is_truncated(r):
             by_key[r["episode_key"]] = r
     return list(by_key.values())
 

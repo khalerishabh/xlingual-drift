@@ -42,6 +42,8 @@ templates:
   - tasks/long/pay_09.json
   - tasks/long/pay_10.json
 max_steps: 80
+# max_tokens 16384: at 8192 some long-horizon replies were cut off mid-reasoning (26 Oct 2026);
+# a ceiling only changes episodes that reach it, which are retried, not scored.
 horizons: []
 languages: [zh, hi, ta, hinglish]
 
@@ -52,7 +54,7 @@ cells:
     model: Qwen/Qwen3.6-27B-FP8
     base_url: http://localhost:8000/v1
     temperature: 0.6
-    max_tokens: 8192
+    max_tokens: 16384
     extra_body: {chat_template_kwargs: {enable_thinking: true}}
     seeds: [1]
   - name: qwen36_27b_fp8_think_s2
@@ -61,7 +63,7 @@ cells:
     model: Qwen/Qwen3.6-27B-FP8
     base_url: http://localhost:8000/v1
     temperature: 0.6
-    max_tokens: 8192
+    max_tokens: 16384
     extra_body: {chat_template_kwargs: {enable_thinking: true}}
     seeds: [1]
   - name: qwen36_27b_fp8_think_s3
@@ -70,6 +72,6 @@ cells:
     model: Qwen/Qwen3.6-27B-FP8
     base_url: http://localhost:8000/v1
     temperature: 0.6
-    max_tokens: 8192
+    max_tokens: 16384
     extra_body: {chat_template_kwargs: {enable_thinking: true}}
     seeds: [1]

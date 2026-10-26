@@ -41,6 +41,8 @@ templates:
   - tasks/long/pay_09.json
   - tasks/long/pay_10.json
 max_steps: 80
+# max_tokens 16384: at 8192 some long-horizon replies were cut off mid-reasoning (26 Oct 2026);
+# a ceiling only changes episodes that reach it, which are retried, not scored.
 horizons: []
 languages: [en, zh, hi, ta, hinglish]
 seam: S1
@@ -51,5 +53,5 @@ cells:
     model: sarvamai/sarvam-30b
     base_url: http://localhost:8000/v1
     temperature: 0.6
-    max_tokens: 8192
+    max_tokens: 16384
     seeds: [1]

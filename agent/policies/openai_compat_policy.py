@@ -12,6 +12,10 @@ compared.
 Endpoint failures raise InfraError. Those episodes are logged but never
 scored, so a flaky server cannot masquerade as an agent failure.
 
+A reply cut off by max_tokens before it produced a tool call or an answer
+is an infrastructure limit, not an agent decision: it raises InfraError, so
+the episode is retried on --resume instead of being scored.
+
 A completely empty reply (no text, no reasoning, no tool call) is not an
 answer: it is resampled with a different seed, up to EMPTY_RESAMPLES times,
 and counted in usage["empty_responses"]. Only if every resample is empty
@@ -100,6 +104,8 @@ class OpenAICompatPolicy:
             message = self._complete(seed_offset=1000 * attempt)
         self.reasoning.append(_reasoning_of(message))
         calls = message.tool_calls or []
+        if not calls and self.finish_reasons and self.finish_reasons[-1] == "length":
+            raise InfraError(f"truncated: the reply hit max_tokens={self.max_tokens} before any tool call or answer")
 
         if not calls:
             self.messages.append({"role": "assistant", "content": message.content or ""})
