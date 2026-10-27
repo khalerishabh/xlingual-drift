@@ -1,0 +1,11 @@
+# Experiment 2 backbone, identical to the RQ1 runs.
+
+serving:
+  model: Qwen/Qwen3.6-27B-FP8
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: []

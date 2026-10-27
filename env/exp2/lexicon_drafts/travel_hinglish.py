@@ -1,0 +1,55 @@
+"""Draft hinglish lexicon for the travel domain (LLM draft). Not loaded by the builder until
+Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
+
+VERIFICATION = "draft: LLM, pending Rishabh"
+
+LEX = {
+    "clauses": {
+        "s1.intro": "Hamari Jaipur trip plan kar do: main aur mere mummy-papa 14 October ko Chennai se ja rahe hain aur 16 October ko wapas aayenge.",
+        "s1.outbound": "Jaane ke liye dopahar 12 baje se pehle nikalne wali sabse sasti non-stop flight lo.",
+        "s1.return": "Wapsi mein shaam 6 baje ke baad ki sabse pehli non-stop flight lo.",
+        "s1.budget": "Saare chhe flight tickets mila ke \u20b930,000 ke andar rehne chahiye.",
+        "s1.hotel": "Hawa Mahal se 3 km ke andar, lift wala aur pure veg breakfast dene wala sabse high-rated hotel book karo.",
+        "s1.rooms": "Mummy-papa ke liye ek double room aur mere liye ek single room lo.",
+        "s1.cab": "Jaipur airport pe land karte hi humein pick karne ke liye ek SUV book karo jo hotel tak chhod de.",
+        "s1.tickets": "15 tareekh ko Amber Fort ke tickets subah 9 baje ke baad wale pehle slot ke liye lo - mummy-papa ke liye senior citizen ticket aur mere liye adult ticket.",
+        "s1.submit": "Har flight mein papa ko window seat chahiye, mummy ko aisle seat, aur main middle seat le lunga. Khana: papa ke liye diabetic, mummy ke liye Jain, aur mere liye veg.",
+        "s2.intro": "Hamari Jaipur trip plan kar do: main aur mere mummy-papa 6 November ko Bengaluru se ja rahe hain aur 8 November ko wapas aayenge.",
+        "s2.outbound": "Jaane ke liye subah 10 baje se pehle nikalne wali sabse last non-stop flight lo.",
+        "s2.return": "Wapsi mein raat 9 baje se pehle nikalne wali sabse last non-stop flight lo.",
+        "s2.budget": "Saare chhe flight tickets mila ke \u20b942,000 ke andar rehne chahiye.",
+        "s2.hotel": "Hawa Mahal se 2 km ke andar, lift wala aur jiske rooms \u20b94,000 per night se zyada se start na hon, aisa sabse high-rated hotel book karo.",
+        "s2.rooms": "Mummy-papa ke liye ek twin room aur mere liye ek single room lo.",
+        "s2.cab": "Jaipur airport pe land karte hi humein pick karne ke liye ek sedan book karo jo hotel tak chhod de.",
+        "s2.tickets": "7 tareekh ko City Palace ke tickets shaam 4 baje se pehle wale last slot ke liye lo - mummy-papa ke liye senior citizen ticket aur mere liye adult ticket.",
+        "s2.submit": "Har flight mein mujhe window seat chahiye, aur papa-mummy dono ko aisle seat. Khana: mere aur papa ke liye veg, mummy ke liye diabetic.",
+        "s3.intro": "Hamari Jaipur trip plan kar do: main aur mere mummy-papa 20 November ko Hyderabad se ja rahe hain aur 22 November ko wapas aayenge.",
+        "s3.outbound": "Jaane ke liye subah 7 baje ke baad nikalne wali sabse sasti non-stop flight lo.",
+        "s3.return": "Wapsi mein shaam 4 baje ke baad ki sabse pehli non-stop flight lo.",
+        "s3.budget": "Saare chhe flight tickets mila ke \u20b936,000 ke andar rehne chahiye.",
+        "s3.hotel": "Hawa Mahal se 3 km ke andar, jiske rooms \u20b93,500 per night se zyada se start na hon, aisa sabse high-rated hotel book karo.",
+        "s3.rooms": "Mummy-papa ke liye ek suite aur mere liye ek single room lo.",
+        "s3.cab": "Jaipur airport pe land karte hi humein pick karne ke liye ek SUV book karo jo hotel tak chhod de.",
+        "s3.tickets": "21 tareekh ko Hawa Mahal ke tickets subah 10 baje ke baad wale pehle slot ke liye lo - mummy-papa ke liye senior citizen ticket aur mere liye student ticket.",
+        "s3.submit": "Har flight mein mujhe window seat chahiye, mummy ko middle seat aur papa ko aisle seat. Khana: mere aur mummy ke liye Jain, papa ke liye diabetic.",
+        "s4.intro": "Hamari Jaipur trip plan kar do: main aur mere mummy-papa 4 December ko Mumbai se ja rahe hain aur 6 December ko wapas aayenge.",
+        "s4.outbound": "Jaane ke liye subah 8 baje ke baad nikalne wali sabse pehli non-stop flight lo.",
+        "s4.return": "Wapsi mein raat 8 baje se pehle nikalne wali sabse last non-stop flight lo.",
+        "s4.budget": "Saare chhe flight tickets mila ke \u20b933,000 ke andar rehne chahiye.",
+        "s4.hotel": "Hawa Mahal se 6 km ke andar, jiske rooms \u20b96,000 per night se zyada se start na hon, aisa sabse high-rated hotel book karo.",
+        "s4.rooms": "Mummy-papa ke liye ek double room aur mere liye ek single room lo.",
+        "s4.cab": "Humare paas bahut saamaan hai, toh Jaipur airport pe land karte hi humein pick karne ke liye ek tempo traveller book karo jo hotel tak chhod de.",
+        "s4.tickets": "5 tareekh ko Jantar Mantar ke tickets dopahar 2 baje se pehle wale last slot ke liye lo - mummy-papa ke liye senior citizen ticket aur mere liye adult ticket.",
+        "s4.submit": "Har flight mein papa ko window seat chahiye, mummy ko aisle seat, aur main middle seat le lunga. Khana: mere liye diabetic, mummy ke liye lacto-vegetarian, aur papa ke liye veg.",
+        "s5.intro": "Hamari Jaipur trip plan kar do: main aur mere mummy-papa 18 December ko Kolkata se ja rahe hain aur 20 December ko wapas aayenge.",
+        "s5.outbound": "Jaane ke liye subah 11 baje se pehle nikalne wali sabse sasti non-stop flight lo.",
+        "s5.return": "Wapsi mein dopahar 3 baje ke baad ki sabse pehli non-stop flight lo.",
+        "s5.budget": "Saare chhe flight tickets mila ke \u20b939,000 ke andar rehne chahiye.",
+        "s5.hotel": "Hawa Mahal se 3 km ke andar, pure veg breakfast dene wala aur jiske rooms \u20b93,500 per night se zyada se start na hon, aisa sabse high-rated hotel book karo.",
+        "s5.rooms": "Mummy-papa ke liye ek twin room aur mere liye ek single room lo.",
+        "s5.cab": "Jaipur airport pe land karte hi humein pick karne ke liye ek sedan book karo jo hotel tak chhod de.",
+        "s5.tickets": "19 tareekh ko Nahargarh Fort ke tickets dopahar 12 baje ke baad wale pehle slot ke liye lo - mummy-papa ke liye senior citizen ticket aur mere liye student ticket.",
+        "s5.submit": "Har flight mein papa ko aur mujhe window seat chahiye, aur mummy ko aisle seat. Khana: mere liye veg, mummy ke liye Jain, aur papa ke liye lacto-vegetarian."
+    },
+    "terms": {}
+}

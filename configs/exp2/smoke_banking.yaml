@@ -1,0 +1,31 @@
+# No GPU. Gold chain and every scripted fault on all 15 banking instances; eval/exp2_smoke.py
+# checks that gold succeeds and each fault fails exactly its expected constraints.
+
+run_name: exp2_smoke_banking
+
+templates:
+  - tasks/exp2/banking_s1_short.json
+  - tasks/exp2/banking_s1_medium.json
+  - tasks/exp2/banking_s1_long.json
+  - tasks/exp2/banking_s2_short.json
+  - tasks/exp2/banking_s2_medium.json
+  - tasks/exp2/banking_s2_long.json
+  - tasks/exp2/banking_s3_short.json
+  - tasks/exp2/banking_s3_medium.json
+  - tasks/exp2/banking_s3_long.json
+  - tasks/exp2/banking_s4_short.json
+  - tasks/exp2/banking_s4_medium.json
+  - tasks/exp2/banking_s4_long.json
+  - tasks/exp2/banking_s5_short.json
+  - tasks/exp2/banking_s5_medium.json
+  - tasks/exp2/banking_s5_long.json
+max_steps: 60
+horizons: []
+languages: [en]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: dispute_original, policy: mock, mock_mode: dispute_original, seeds: [1]}
+  - {name: dispute_reason, policy: mock, mock_mode: dispute_reason, seeds: [1]}
+  - {name: anchor_channel, policy: mock, mock_mode: anchor_channel, seeds: [1]}
+  - {name: anchor_branch, policy: mock, mock_mode: anchor_branch, seeds: [1]}

@@ -1,0 +1,3217 @@
+{
+ "template_id": "food_s3_medium",
+ "experiment": "exp2",
+ "domain": "food",
+ "scenario": 3,
+ "format": "medium",
+ "stages": [
+  "restaurant",
+  "dish_self",
+  "dish_papa",
+  "dish_mummy",
+  "offer",
+  "checkout"
+ ],
+ "anchor_stage": "checkout",
+ "session_date": "2026-11-03",
+ "world": {
+  "seed": 303,
+  "scenario": 3,
+  "session_date": "2026-11-03",
+  "cuisine": "indo_chinese",
+  "address_key": "home",
+  "card": "4471",
+  "eta_limit": 35,
+  "restaurants": {
+   "R-7385": {
+    "restaurant_id": "R-7385",
+    "name": "Hakka Street",
+    "cuisine": "indo_chinese",
+    "pure_veg": false,
+    "rating": 4.84,
+    "eta_min": {
+     "home": 20,
+     "office": 29,
+     "nani": 30
+    },
+    "role": "top_nonveg"
+   },
+   "R-5249": {
+    "restaurant_id": "R-5249",
+    "name": "Szechuan Spice",
+    "cuisine": "indo_chinese",
+    "pure_veg": true,
+    "rating": 4.66,
+    "eta_min": {
+     "home": 45,
+     "office": 24,
+     "nani": 28
+    },
+    "role": "slow"
+   },
+   "R-3782": {
+    "restaurant_id": "R-3782",
+    "name": "Red Lantern",
+    "cuisine": "indo_chinese",
+    "pure_veg": true,
+    "rating": 4.54,
+    "eta_min": {
+     "home": 20,
+     "office": 24,
+     "nani": 32
+    },
+    "role": "gold"
+   },
+   "R-3872": {
+    "restaurant_id": "R-3872",
+    "name": "Mainland Bowl",
+    "cuisine": "indo_chinese",
+    "pure_veg": true,
+    "rating": 4.2,
+    "eta_min": {
+     "home": 32,
+     "office": 31,
+     "nani": 30
+    },
+    "role": "lookalike"
+   },
+   "R-6283": {
+    "restaurant_id": "R-6283",
+    "name": "Wok Express Veg",
+    "cuisine": "indo_chinese",
+    "pure_veg": true,
+    "rating": 4.3,
+    "eta_min": {
+     "home": 24,
+     "office": 28,
+     "nani": 22
+    },
+    "role": "alt"
+   },
+   "R-7164": {
+    "restaurant_id": "R-7164",
+    "name": "Chinese Wok House",
+    "cuisine": "indo_chinese",
+    "pure_veg": true,
+    "rating": 4.0,
+    "eta_min": {
+     "home": 22,
+     "office": 31,
+     "nani": 30
+    },
+    "role": "filler1"
+   },
+   "R-7126": {
+    "restaurant_id": "R-7126",
+    "name": "Bamboo Garden",
+    "cuisine": "indo_chinese",
+    "pure_veg": true,
+    "rating": 3.9,
+    "eta_min": {
+     "home": 22,
+     "office": 22,
+     "nani": 24
+    },
+    "role": "filler2"
+   },
+   "R-9125": {
+    "restaurant_id": "R-9125",
+    "name": "Golden Dragon Veg",
+    "cuisine": "indo_chinese",
+    "pure_veg": false,
+    "rating": 3.7,
+    "eta_min": {
+     "home": 23,
+     "office": 28,
+     "nani": 31
+    },
+    "role": "filler3"
+   }
+  },
+  "listing": [
+   "R-7385",
+   "R-5249",
+   "R-7164",
+   "R-6283",
+   "R-3782",
+   "R-3872",
+   "R-9125",
+   "R-7126"
+  ],
+  "menus": {
+   "R-7385": [
+    {
+     "dish_id": "D-6873",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-4168",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-3892",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3718",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-2867",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-3941",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-3496",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-3859",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-3769",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-9675",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-6195",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-4167",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-1678",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-8327",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9657",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-7352",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 30,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4659",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-4572",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-6571",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-6751",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-9376",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-9146",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 30,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1695",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-7369",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    }
+   ],
+   "R-5249": [
+    {
+     "dish_id": "D-2958",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-1258",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-9214",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-4631",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-3568",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-4916",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 50,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-3256",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2563",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-6124",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-2936",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5368",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-1769",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-2963",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3481",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-5678",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-8129",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-4389",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6513",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 60,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1285",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1796",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-6482",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3469",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5476",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 40,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-9738",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    }
+   ],
+   "R-3782": [
+    {
+     "dish_id": "D-6913",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-3274",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-7914",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 60,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-8573",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-4823",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8753",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-3549",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2178",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-1842",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5963",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-8679",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-7314",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-6193",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-7263",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-1592",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 30,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3724",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-4567",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-1637",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 30,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2736",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-3569",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-4163",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-3791",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-8142",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-1453",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    }
+   ],
+   "R-3872": [
+    {
+     "dish_id": "D-4952",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-1243",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-2948",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-1423",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-1853",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-8621",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-5634",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-7512",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-5846",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9452",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-7861",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5217",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-9125",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5823",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-6731",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-4213",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-9531",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 30,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-8713",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-2136",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-8647",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-9816",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6821",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-3279",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5271",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    }
+   ],
+   "R-6283": [
+    {
+     "dish_id": "D-4176",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-8273",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2874",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-7312",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7364",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9736",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-1639",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-8672",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-8974",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7519",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-5786",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-7159",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-2815",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 30,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-9156",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-8342",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-8627",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5768",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-5892",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 30,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5382",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-6541",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-5234",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-2534",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-1245",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-5239",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    }
+   ],
+   "R-7164": [
+    {
+     "dish_id": "D-9561",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-4139",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-3751",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6325",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-7582",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-1867",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-8521",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-3179",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-1436",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-2495",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-3861",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3845",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-7321",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-8952",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 60,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-8345",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-1463",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-1687",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-8173",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-8512",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-5176",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 30,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1365",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-1976",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-1275",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7412",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    }
+   ],
+   "R-7126": [
+    {
+     "dish_id": "D-6918",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-4287",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-2531",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-5471",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-9527",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5316",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-8279",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-2743",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-3642",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-8726",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-2351",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-7965",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-8276",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5482",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-9247",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 40,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6872",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6592",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 60,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5637",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-1685",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-5469",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-3576",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-8216",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-5649",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-3567",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    }
+   ],
+   "R-9125": [
+    {
+     "dish_id": "D-5926",
+     "name": "Royal Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-5279",
+     "name": "Home-style Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8253",
+     "name": "Classic Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-2685",
+     "name": "Home-style Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-6742",
+     "name": "Chef's Special Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-8739",
+     "name": "Wontons",
+     "course": "bread",
+     "type": "wontons",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5721",
+     "name": "House Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-2754",
+     "name": "House Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-4691",
+     "name": "Spring Roll",
+     "course": "bread",
+     "type": "spring_roll",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-8561",
+     "name": "Fried Ice Cream",
+     "course": "dessert",
+     "type": "fried_ice_cream",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-7968",
+     "name": "Mango Pudding",
+     "course": "dessert",
+     "type": "mango_pudding",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7254",
+     "name": "Classic Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-1679",
+     "name": "Royal Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-2853",
+     "name": "House Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-8697",
+     "name": "House Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-9824",
+     "name": "Royal Manchurian",
+     "course": "main",
+     "type": "manchurian",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-6897",
+     "name": "Classic Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5148",
+     "name": "Home-style Soup",
+     "course": "main",
+     "type": "soup",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-5163",
+     "name": "Royal Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-8723",
+     "name": "Date Pancake",
+     "course": "dessert",
+     "type": "date_pancake",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-4629",
+     "name": "Home-style Noodles",
+     "course": "main",
+     "type": "noodles",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-3271",
+     "name": "Honey Noodles",
+     "course": "dessert",
+     "type": "honey_noodles",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-2897",
+     "name": "Momos",
+     "course": "bread",
+     "type": "momos",
+     "price": 60,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-7521",
+     "name": "Classic Fried Rice",
+     "course": "main",
+     "type": "fried_rice",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    }
+   ]
+  },
+  "person_type": {
+   "self": "soup",
+   "papa": "noodles",
+   "mummy": "fried_rice",
+   "didi": "manchurian"
+  },
+  "budgets": {
+   "self": 300,
+   "papa": 400,
+   "mummy": 300,
+   "didi": 350
+  },
+  "bread": "spring_roll",
+  "bread_qty": 4,
+  "slot_time": "21:30",
+  "slots": [
+   {
+    "slot_id": "SL-2100",
+    "start_time": "21:00"
+   },
+   {
+    "slot_id": "SL-2130",
+    "start_time": "21:30"
+   },
+   {
+    "slot_id": "SL-2200",
+    "start_time": "22:00"
+   },
+   {
+    "slot_id": "SL-1930",
+    "start_time": "19:30"
+   },
+   {
+    "slot_id": "SL-2000",
+    "start_time": "20:00"
+   },
+   {
+    "slot_id": "SL-2030",
+    "start_time": "20:30"
+   }
+  ],
+  "offers": [
+   {
+    "code": "FLAT120",
+    "description": "Flat Rs 120 off on orders of Rs 1,200 or more",
+    "kind": "flat",
+    "value": 120,
+    "min_order": 1200,
+    "cap": 120
+   },
+   {
+    "code": "VEG20",
+    "description": "20% off up to Rs 150 on orders of Rs 600 or more",
+    "kind": "pct",
+    "value": 20,
+    "min_order": 600,
+    "cap": 150
+   },
+   {
+    "code": "FEAST15",
+    "description": "15% off up to Rs 300 on orders of Rs 1,500 or more",
+    "kind": "pct",
+    "value": 15,
+    "min_order": 1500,
+    "cap": 300
+   },
+   {
+    "code": "NEWUSER50",
+    "description": "50% off up to Rs 100, first order only",
+    "kind": "pct",
+    "value": 50,
+    "min_order": 0,
+    "cap": 100,
+    "first_order_only": true
+   }
+  ],
+  "total_budget": 1650
+ },
+ "requests": {
+  "en": "Please order dinner for the family tonight on the food delivery app.\nOrder from the highest-rated pure-veg Indo-Chinese restaurant that can deliver to my home in Andheri West within 35 minutes.\nFor me: the highest-rated soup under \u20b9300, spice level spicy.\nFor Papa: the highest-rated noodles under \u20b9400, spice level mild.\nFor Mummy: the highest-rated fried rice under \u20b9300 that can be made Jain, and make it Jain.\nApply the offer that gives the biggest discount.\nDeliver to my home in Andheri West and pay with my HDFC credit card ending 4471."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_saved_addresses",
+   "args": {}
+  },
+  {
+   "tool": "search_restaurants",
+   "args": {
+    "cuisine": "indo_chinese",
+    "address_id": "ADR-31"
+   }
+  },
+  {
+   "tool": "get_menu",
+   "args": {
+    "restaurant_id": "R-3782"
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-3782",
+    "dish_id": "D-3724"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-3782",
+    "dish_id": "D-3724",
+    "quantity": 1,
+    "spice_level": "spicy",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-3782",
+    "dish_id": "D-6193"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-3782",
+    "dish_id": "D-6193",
+    "quantity": 1,
+    "spice_level": "mild",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-3782",
+    "dish_id": "D-8142"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-3782",
+    "dish_id": "D-8142",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": true
+   }
+  },
+  {
+   "tool": "list_offers",
+   "args": {
+    "restaurant_id": "R-3782"
+   }
+  },
+  {
+   "tool": "apply_offer",
+   "args": {
+    "code": "VEG20"
+   }
+  },
+  {
+   "tool": "get_payment_methods",
+   "args": {}
+  },
+  {
+   "tool": "place_order",
+   "args": {
+    "address_id": "ADR-31",
+    "payment_id": "PM-CC-4471"
+   }
+  }
+ ],
+ "horizon": 13
+}

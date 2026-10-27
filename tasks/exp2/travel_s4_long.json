@@ -1,0 +1,244 @@
+{
+ "template_id": "travel_s4_long",
+ "experiment": "exp2",
+ "domain": "travel",
+ "scenario": 4,
+ "format": "long",
+ "stages": [
+  "outbound",
+  "return",
+  "budget",
+  "hotel",
+  "rooms",
+  "cab",
+  "tickets",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-11-24",
+ "world": {
+  "scenario": 4,
+  "source_template": "trip_004",
+  "session_date": "2026-11-24",
+  "constraints": {
+   "passengers": 3,
+   "outbound": {
+    "origin": "BOM",
+    "destination": "JAI",
+    "date": "2026-12-04",
+    "depart_after": "08:00",
+    "objective": "earliest_departure",
+    "nonstop": true
+   },
+   "return": {
+    "origin": "JAI",
+    "destination": "BOM",
+    "date": "2026-12-06",
+    "depart_before": "20:00",
+    "objective": "latest_departure",
+    "nonstop": true
+   },
+   "flight_budget_total": 33000,
+   "hotel": {
+    "city": "JAI",
+    "check_in": "2026-12-04",
+    "check_out": "2026-12-06",
+    "max_distance_km": 6,
+    "max_price_per_night": 6000,
+    "objective": "max_rating"
+   },
+   "rooms": [
+    {
+     "room_type": "double",
+     "occupants": [
+      "mother",
+      "father"
+     ]
+    },
+    {
+     "room_type": "single",
+     "occupants": [
+      "self"
+     ]
+    }
+   ],
+   "cab": {
+    "vehicle_type": "tempo_traveller",
+    "date": "2026-12-04",
+    "pickup": "outbound_arrival",
+    "drop": "hotel"
+   },
+   "tickets": {
+    "attraction_id": "A-JAI-04",
+    "attraction_name": "Jantar Mantar",
+    "date": "2026-12-05",
+    "slot_before": "14:00",
+    "objective": "latest"
+   },
+   "travellers": {
+    "father": {
+     "seat": "window",
+     "meal": "vegetarian",
+     "ticket": "senior"
+    },
+    "mother": {
+     "seat": "aisle",
+     "meal": "lacto_vegetarian",
+     "ticket": "senior"
+    },
+    "self": {
+     "seat": "middle",
+     "meal": "diabetic",
+     "ticket": "adult"
+    }
+   }
+  }
+ },
+ "requests": {
+  "en": "Plan our Jaipur trip: my parents and I are flying from Mumbai on 4 December and coming back on 6 December.\nFor the flight there, take the earliest non-stop flight that leaves after 8 am.\nFor the return, take the latest non-stop flight that leaves before 8 pm.\nKeep all six flight tickets together within \u20b933,000.\nBook the highest-rated hotel within 6 km of Hawa Mahal whose rooms start at no more than \u20b96,000 a night.\nTake a double room for my parents and a single room for me.\nWe have a lot of luggage, so book a tempo traveller to pick us up at Jaipur airport when we land and take us to the hotel.\nOn the 5th, get Jantar Mantar tickets for the last slot before 2 pm - senior-citizen tickets for my parents and an adult ticket for me.\nOn every flight Papa wants a window seat and Mummy an aisle seat, and I'll take a middle seat. Meals: diabetic for me, lacto-vegetarian for Mummy, vegetarian for Papa."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "search_flights",
+   "args": {
+    "origin": "Mumbai",
+    "destination": "Jaipur",
+    "date": "2026-12-04"
+   }
+  },
+  {
+   "tool": "filter_flights",
+   "args": {
+    "depart_after": "08:00",
+    "nonstop_only": true
+   }
+  },
+  {
+   "tool": "get_seat_map",
+   "args": {
+    "flight_id": "6E5015"
+   }
+  },
+  {
+   "tool": "get_meal_options",
+   "args": {
+    "flight_id": "6E5015"
+   }
+  },
+  {
+   "tool": "search_flights",
+   "args": {
+    "origin": "Jaipur",
+    "destination": "Mumbai",
+    "date": "2026-12-06"
+   }
+  },
+  {
+   "tool": "filter_flights",
+   "args": {
+    "depart_before": "20:00",
+    "nonstop_only": true
+   }
+  },
+  {
+   "tool": "get_seat_map",
+   "args": {
+    "flight_id": "SG506"
+   }
+  },
+  {
+   "tool": "search_hotels",
+   "args": {
+    "city": "Jaipur",
+    "check_in": "2026-12-04",
+    "check_out": "2026-12-06"
+   }
+  },
+  {
+   "tool": "filter_hotels",
+   "args": {
+    "max_distance_km": 6
+   }
+  },
+  {
+   "tool": "get_room_options",
+   "args": {
+    "hotel_id": "H-JAI-121",
+    "check_in": "2026-12-04",
+    "check_out": "2026-12-06"
+   }
+  },
+  {
+   "tool": "get_cab_quotes",
+   "args": {
+    "pickup_location": "JAI",
+    "drop_location": "H-JAI-121",
+    "date": "2026-12-04",
+    "pickup_time": "11:05"
+   }
+  },
+  {
+   "tool": "get_ticket_slots",
+   "args": {
+    "attraction_name": "Jantar Mantar",
+    "date": "2026-12-05"
+   }
+  },
+  {
+   "tool": "get_travellers",
+   "args": {}
+  },
+  {
+   "tool": "confirm_booking",
+   "args": {
+    "outbound_flight_id": "6E5015",
+    "passengers": [
+     {
+      "traveller_id": "T-01",
+      "outbound_seat_id": "15B",
+      "meal_code": "DBML",
+      "return_seat_id": "15B",
+      "ticket_category": "adult"
+     },
+     {
+      "traveller_id": "T-02",
+      "outbound_seat_id": "14C",
+      "meal_code": "VLML",
+      "return_seat_id": "14D",
+      "ticket_category": "senior"
+     },
+     {
+      "traveller_id": "T-03",
+      "outbound_seat_id": "14F",
+      "meal_code": "VGML",
+      "return_seat_id": "14F",
+      "ticket_category": "senior"
+     }
+    ],
+    "return_flight_id": "SG506",
+    "hotel_id": "H-JAI-121",
+    "rooms": [
+     {
+      "room_id": "R-121-3",
+      "traveller_ids": [
+       "T-02",
+       "T-03"
+      ]
+     },
+     {
+      "room_id": "R-121-1",
+      "traveller_ids": [
+       "T-01"
+      ]
+     }
+    ],
+    "cab_quote_id": "Q-TT-1204-1105-121",
+    "ticket_slot_id": "S-04-1205-1300"
+   }
+  }
+ ],
+ "horizon": 14
+}

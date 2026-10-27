@@ -1,0 +1,3217 @@
+{
+ "template_id": "food_s2_medium",
+ "experiment": "exp2",
+ "domain": "food",
+ "scenario": 2,
+ "format": "medium",
+ "stages": [
+  "restaurant",
+  "dish_self",
+  "dish_papa",
+  "dish_mummy",
+  "offer",
+  "checkout"
+ ],
+ "anchor_stage": "checkout",
+ "session_date": "2026-11-03",
+ "world": {
+  "seed": 202,
+  "scenario": 2,
+  "session_date": "2026-11-03",
+  "cuisine": "south_indian",
+  "address_key": "office",
+  "card": "4471",
+  "eta_limit": 40,
+  "restaurants": {
+   "R-3781": {
+    "restaurant_id": "R-3781",
+    "name": "Madras Cafe",
+    "cuisine": "south_indian",
+    "pure_veg": false,
+    "rating": 4.84,
+    "eta_min": {
+     "home": 36,
+     "office": 27,
+     "nani": 28
+    },
+    "role": "top_nonveg"
+   },
+   "R-3217": {
+    "restaurant_id": "R-3217",
+    "name": "Mysore Mylari",
+    "cuisine": "south_indian",
+    "pure_veg": true,
+    "rating": 4.7,
+    "eta_min": {
+     "home": 28,
+     "office": 50,
+     "nani": 25
+    },
+    "role": "slow"
+   },
+   "R-9476": {
+    "restaurant_id": "R-9476",
+    "name": "Udupi Krishna Bhavan",
+    "cuisine": "south_indian",
+    "pure_veg": true,
+    "rating": 4.5,
+    "eta_min": {
+     "home": 23,
+     "office": 31,
+     "nani": 24
+    },
+    "role": "gold"
+   },
+   "R-9746": {
+    "restaurant_id": "R-9746",
+    "name": "Sri Sagar",
+    "cuisine": "south_indian",
+    "pure_veg": true,
+    "rating": 4.24,
+    "eta_min": {
+     "home": 26,
+     "office": 33,
+     "nani": 27
+    },
+    "role": "lookalike"
+   },
+   "R-3496": {
+    "restaurant_id": "R-3496",
+    "name": "Annapoorna Tiffins",
+    "cuisine": "south_indian",
+    "pure_veg": true,
+    "rating": 4.26,
+    "eta_min": {
+     "home": 31,
+     "office": 23,
+     "nani": 26
+    },
+    "role": "alt"
+   },
+   "R-6129": {
+    "restaurant_id": "R-6129",
+    "name": "Saravana Bhavan",
+    "cuisine": "south_indian",
+    "pure_veg": true,
+    "rating": 4.04,
+    "eta_min": {
+     "home": 32,
+     "office": 30,
+     "nani": 23
+    },
+    "role": "filler1"
+   },
+   "R-1368": {
+    "restaurant_id": "R-1368",
+    "name": "Ramanayaka Udupi",
+    "cuisine": "south_indian",
+    "pure_veg": true,
+    "rating": 3.94,
+    "eta_min": {
+     "home": 34,
+     "office": 24,
+     "nani": 20
+    },
+    "role": "filler2"
+   },
+   "R-2431": {
+    "restaurant_id": "R-2431",
+    "name": "Ananda Bhavan",
+    "cuisine": "south_indian",
+    "pure_veg": false,
+    "rating": 3.74,
+    "eta_min": {
+     "home": 21,
+     "office": 22,
+     "nani": 35
+    },
+    "role": "filler3"
+   }
+  },
+  "listing": [
+   "R-3217",
+   "R-9476",
+   "R-9746",
+   "R-6129",
+   "R-2431",
+   "R-3496",
+   "R-1368",
+   "R-3781"
+  ],
+  "menus": {
+   "R-3781": [
+    {
+     "dish_id": "D-6327",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-6783",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-9736",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5634",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-7263",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-8635",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9763",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-8925",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-9846",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-7539",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-4265",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-3468",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-9486",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1745",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-4697",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3492",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7169",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-6125",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-1234",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 30,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-8531",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 60,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1475",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5387",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-6534",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-4768",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    }
+   ],
+   "R-3217": [
+    {
+     "dish_id": "D-1624",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-7251",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-1735",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-3196",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-9715",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 30,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-2714",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-5271",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9453",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-2973",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-4158",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5439",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-3978",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-9435",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 220,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-9273",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5493",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1723",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9518",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-1693",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6159",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 60,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6472",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-4983",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 50,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1273",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5841",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6371",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    }
+   ],
+   "R-9476": [
+    {
+     "dish_id": "D-8216",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-8645",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-8346",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-3827",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6728",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-3795",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-3829",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-2814",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5824",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-3615",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3687",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-5436",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 50,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-2415",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7638",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-6927",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3852",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-6782",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-6315",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-3678",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-9543",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-4856",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-7683",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-4376",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3951",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    }
+   ],
+   "R-9746": [
+    {
+     "dish_id": "D-2874",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-5187",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-7289",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 30,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-9182",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5796",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-8951",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-7596",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-9128",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1652",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6281",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-2958",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-2859",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-2598",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-8721",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-4871",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-6278",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-1358",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-3197",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-1769",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-1679",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-9345",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7124",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-5679",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-1873",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 40,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    }
+   ],
+   "R-3496": [
+    {
+     "dish_id": "D-7651",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-9673",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-4215",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-3547",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-8594",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-6925",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-4582",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-9625",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3967",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-8364",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-2567",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5173",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-6982",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6453",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 60,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4358",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-1456",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2657",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-9857",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 60,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-8153",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-8746",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-3685",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-3625",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5137",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-3865",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    }
+   ],
+   "R-6129": [
+    {
+     "dish_id": "D-7893",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-8269",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4163",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-2946",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-6192",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-8637",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9168",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9186",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3794",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-4657",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 280,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-1276",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-7154",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2465",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3487",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 30,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-9246",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-4619",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-9256",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-4275",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-9624",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-4782",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-1267",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-8476",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-2475",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-5749",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    }
+   ],
+   "R-1368": [
+    {
+     "dish_id": "D-1345",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-9843",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6517",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-7461",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-4278",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-8159",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 60,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3168",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-2478",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-5391",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-5684",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-6817",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-9851",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 30,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3597",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-4231",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7248",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-6187",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-3618",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9824",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8719",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-8542",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-5648",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-7428",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-5427",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2318",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    }
+   ],
+   "R-2431": [
+    {
+     "dish_id": "D-9651",
+     "name": "Royal Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-1752",
+     "name": "Rava Laddu",
+     "course": "dessert",
+     "type": "rava_laddu",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-3857",
+     "name": "Kesari",
+     "course": "dessert",
+     "type": "kesari",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-9825",
+     "name": "Royal Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-4613",
+     "name": "Classic Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-4698",
+     "name": "Payasam",
+     "course": "dessert",
+     "type": "payasam",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2876",
+     "name": "House Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-6819",
+     "name": "Mysore Pak",
+     "course": "dessert",
+     "type": "mysore_pak",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-2786",
+     "name": "Classic Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-2839",
+     "name": "Royal Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-4569",
+     "name": "Poori",
+     "course": "bread",
+     "type": "poori",
+     "price": 30,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2536",
+     "name": "Chef's Special Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 260,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-5492",
+     "name": "Home-style Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-7196",
+     "name": "Royal Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-4175",
+     "name": "House Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1749",
+     "name": "Home-style Uttapam",
+     "course": "main",
+     "type": "uttapam",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-5713",
+     "name": "House Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-8963",
+     "name": "Home-style Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6913",
+     "name": "Appam",
+     "course": "bread",
+     "type": "appam",
+     "price": 50,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6413",
+     "name": "House Meals",
+     "course": "main",
+     "type": "meals",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-4715",
+     "name": "Classic Idli",
+     "course": "main",
+     "type": "idli",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5937",
+     "name": "Home-style Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-5731",
+     "name": "Classic Dosa",
+     "course": "main",
+     "type": "dosa",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-1958",
+     "name": "Parotta",
+     "course": "bread",
+     "type": "parotta",
+     "price": 60,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    }
+   ]
+  },
+  "person_type": {
+   "self": "uttapam",
+   "papa": "meals",
+   "mummy": "dosa",
+   "didi": "idli"
+  },
+  "budgets": {
+   "self": 300,
+   "papa": 400,
+   "mummy": 300,
+   "didi": 250
+  },
+  "bread": "parotta",
+  "bread_qty": 4,
+  "slot_time": "20:30",
+  "slots": [
+   {
+    "slot_id": "SL-2100",
+    "start_time": "21:00"
+   },
+   {
+    "slot_id": "SL-2130",
+    "start_time": "21:30"
+   },
+   {
+    "slot_id": "SL-2200",
+    "start_time": "22:00"
+   },
+   {
+    "slot_id": "SL-1930",
+    "start_time": "19:30"
+   },
+   {
+    "slot_id": "SL-2000",
+    "start_time": "20:00"
+   },
+   {
+    "slot_id": "SL-2030",
+    "start_time": "20:30"
+   }
+  ],
+  "offers": [
+   {
+    "code": "FLAT120",
+    "description": "Flat Rs 120 off on orders of Rs 1,200 or more",
+    "kind": "flat",
+    "value": 120,
+    "min_order": 1200,
+    "cap": 120
+   },
+   {
+    "code": "VEG20",
+    "description": "20% off up to Rs 150 on orders of Rs 600 or more",
+    "kind": "pct",
+    "value": 20,
+    "min_order": 600,
+    "cap": 150
+   },
+   {
+    "code": "FEAST15",
+    "description": "15% off up to Rs 300 on orders of Rs 1,500 or more",
+    "kind": "pct",
+    "value": 15,
+    "min_order": 1500,
+    "cap": 300
+   },
+   {
+    "code": "NEWUSER50",
+    "description": "50% off up to Rs 100, first order only",
+    "kind": "pct",
+    "value": 50,
+    "min_order": 0,
+    "cap": 100,
+    "first_order_only": true
+   }
+  ],
+  "total_budget": 1410
+ },
+ "requests": {
+  "en": "Please order dinner for the family tonight on the food delivery app.\nOrder from the highest-rated pure-veg South Indian restaurant that can deliver to my office in Andheri East within 40 minutes.\nFor me: the highest-rated uttapam under \u20b9300, spice level spicy.\nFor Papa: the highest-rated South Indian meals plate under \u20b9400, spice level mild.\nFor Mummy: the highest-rated dosa under \u20b9300 that can be made Jain, and make it Jain.\nApply the offer that gives the biggest discount.\nDeliver to my office in Andheri East and pay with my HDFC credit card ending 4471."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_saved_addresses",
+   "args": {}
+  },
+  {
+   "tool": "search_restaurants",
+   "args": {
+    "cuisine": "south_indian",
+    "address_id": "ADR-13"
+   }
+  },
+  {
+   "tool": "get_menu",
+   "args": {
+    "restaurant_id": "R-9476"
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-9476",
+    "dish_id": "D-3615"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-9476",
+    "dish_id": "D-3615",
+    "quantity": 1,
+    "spice_level": "spicy",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-9476",
+    "dish_id": "D-7683"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-9476",
+    "dish_id": "D-7683",
+    "quantity": 1,
+    "spice_level": "mild",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-9476",
+    "dish_id": "D-3687"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-9476",
+    "dish_id": "D-3687",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": true
+   }
+  },
+  {
+   "tool": "list_offers",
+   "args": {
+    "restaurant_id": "R-9476"
+   }
+  },
+  {
+   "tool": "apply_offer",
+   "args": {
+    "code": "VEG20"
+   }
+  },
+  {
+   "tool": "get_payment_methods",
+   "args": {}
+  },
+  {
+   "tool": "place_order",
+   "args": {
+    "address_id": "ADR-13",
+    "payment_id": "PM-CC-4471"
+   }
+  }
+ ],
+ "horizon": 13
+}

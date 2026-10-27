@@ -1,0 +1,321 @@
+{
+ "template_id": "payment_s4_medium",
+ "experiment": "exp2",
+ "domain": "payment",
+ "scenario": 4,
+ "format": "medium",
+ "stages": [
+  "bill_1",
+  "bill_2",
+  "bill_3",
+  "rent",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-10-30",
+ "world": {
+  "seed": 6,
+  "session_date": "2026-10-30",
+  "order": [
+   "mobile_father",
+   "elec_home",
+   "broadband",
+   "elec_nani",
+   "mobile_mother",
+   "gas"
+  ],
+  "full_max": 1500,
+  "floor": 10000,
+  "balances": {
+   "ACC-201": 95000,
+   "ACC-202": 15477
+  },
+  "amounts": {
+   "elec_home": {
+    "amount_due": 4600,
+    "minimum_due": 1380
+   },
+   "elec_nani": {
+    "amount_due": 2400,
+    "minimum_due": 720
+   },
+   "gas": {
+    "amount_due": 700,
+    "minimum_due": 210
+   },
+   "broadband": {
+    "amount_due": 3400,
+    "minimum_due": 850
+   },
+   "mobile_father": {
+    "amount_due": 3050,
+    "minimum_due": 1160,
+    "late_fee": 150
+   },
+   "mobile_mother": {
+    "amount_due": 3800,
+    "minimum_due": 1520
+   }
+  },
+  "late": "mobile_father",
+  "fee": 150,
+  "billers": [
+   {
+    "biller_id": "B-8309",
+    "bill": "elec_nani",
+    "category": "electricity",
+    "provider": "MSEDCL",
+    "consumer_number": "9456684270",
+    "registered_to": "nani",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-3564",
+    "bill": "broadband",
+    "category": "broadband",
+    "provider": "ACT Fibernet",
+    "consumer_number": "518802373",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-8326",
+    "bill": "elec_old",
+    "category": "electricity",
+    "provider": "Adani Electricity",
+    "consumer_number": "9465864270",
+    "registered_to": "old",
+    "status": "inactive"
+   },
+   {
+    "biller_id": "B-2459",
+    "bill": "elec_home",
+    "category": "electricity",
+    "provider": "Adani Electricity",
+    "consumer_number": "9456864270",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-2415",
+    "bill": "broadband_old",
+    "category": "broadband",
+    "provider": "Hathway",
+    "consumer_number": "948337642",
+    "registered_to": "old",
+    "status": "inactive"
+   },
+   {
+    "biller_id": "B-7226",
+    "bill": "gas",
+    "category": "gas",
+    "provider": "Mahanagar Gas",
+    "consumer_number": "891364257043",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-3919",
+    "bill": "mobile_mother",
+    "category": "mobile_postpaid",
+    "provider": "Airtel Postpaid",
+    "consumer_number": "9821069617",
+    "registered_to": "Sunita Sharma",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-5478",
+    "bill": "mobile_father",
+    "category": "mobile_postpaid",
+    "provider": "Airtel Postpaid",
+    "consumer_number": "9820169617",
+    "registered_to": "Ramesh Sharma",
+    "status": "active"
+   }
+  ],
+  "bill_ids": {
+   "elec_nani": "BL-280562",
+   "broadband": "BL-259386",
+   "elec_old": "BL-159077",
+   "elec_home": "BL-424335",
+   "broadband_old": "BL-864156",
+   "gas": "BL-942851",
+   "mobile_mother": "BL-457291",
+   "mobile_father": "BL-107494"
+  },
+  "payees": [
+   {
+    "payee_id": "PY-3375",
+    "name": "Kavya Sharma",
+    "bank": "HDFC Bank",
+    "account": "XXXX7154",
+    "relation": "colleague",
+    "role": "namesake"
+   },
+   {
+    "payee_id": "PY-3336",
+    "name": "Vinod Deshpande",
+    "bank": "ICICI Bank",
+    "account": "XXXX2234",
+    "relation": "landlord",
+    "role": "landlord"
+   },
+   {
+    "payee_id": "PY-3329",
+    "name": "Sunita Sharma",
+    "bank": "SBI",
+    "account": "XXXX4642",
+    "relation": "mother",
+    "role": "mother"
+   },
+   {
+    "payee_id": "PY-3308",
+    "name": "Sunil Sharma",
+    "bank": "PNB",
+    "account": "XXXX9003",
+    "relation": "uncle",
+    "role": "uncle"
+   },
+   {
+    "payee_id": "PY-3360",
+    "name": "Kavya Sharma",
+    "bank": "SBI",
+    "account": "XXXX1754",
+    "relation": "sister",
+    "role": "sister"
+   },
+   {
+    "payee_id": "PY-3364",
+    "name": "Vinod Deshmukh",
+    "bank": "Axis Bank",
+    "account": "XXXX2025",
+    "relation": "society",
+    "role": "lookalike"
+   }
+  ],
+  "txn_ids": [
+   "TXN-869371",
+   "TXN-896371",
+   "TXN-870332",
+   "TXN-869585",
+   "TXN-869855",
+   "TXN-869547",
+   "TXN-869488",
+   "TXN-896488",
+   "TXN-869622",
+   "TXN-869927",
+   "TXN-869297",
+   "TXN-869521",
+   "TXN-869959",
+   "TXN-869397"
+  ],
+  "rent": 18000,
+  "pocket": 2500,
+  "si": 5000,
+  "day": 7,
+  "switch_at": 4,
+  "scenario": 4,
+  "sched_date": "2026-11-01",
+  "notify": "mummy",
+  "wallet": "WL-PTM-1",
+  "wallet_target": 3000,
+  "wallet_balances": {
+   "WL-AMZ-1": 452,
+   "WL-PTM-1": 296,
+   "WL-PPE-1": 685
+  },
+  "merchant_amount": 1202
+ },
+ "requests": {
+  "en": "Please do my month-end payments on the banking app as one batch. For every bill: pay the full amount due if it is at most \u20b91,500, otherwise pay the minimum due. Pay bills from my savings account, but if a payment would take savings below \u20b910,000, pay that bill and every bill after it from my salary account. Put a remark on each bill saying which bill it is.\nFirst pay the Papa's postpaid mobile bill.\nThen the electricity bill for our home in Andheri.\nThen the broadband bill.\nSend \u20b918,000 rent to my landlord Vinod Deshpande by NEFT from my salary account.\nSchedule the whole batch for 1 November 2026 and send the payment summary to Mummy."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_accounts",
+   "args": {}
+  },
+  {
+   "tool": "list_billers",
+   "args": {}
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-5478"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-107494",
+    "account_id": "ACC-202",
+    "amount": 1160,
+    "remark": "Papa mobile Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-2459"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-424335",
+    "account_id": "ACC-202",
+    "amount": 1380,
+    "remark": "Home electricity Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-3564"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-259386",
+    "account_id": "ACC-202",
+    "amount": 850,
+    "remark": "Broadband Oct"
+   }
+  },
+  {
+   "tool": "list_payees",
+   "args": {}
+  },
+  {
+   "tool": "transfer",
+   "args": {
+    "payee_id": "PY-3336",
+    "account_id": "ACC-201",
+    "amount": 18000,
+    "mode": "NEFT",
+    "remark": "Rent October"
+   }
+  },
+  {
+   "tool": "get_contacts",
+   "args": {}
+  },
+  {
+   "tool": "request_otp",
+   "args": {}
+  },
+  {
+   "tool": "confirm_batch",
+   "args": {
+    "otp_ref": "OTP-0406",
+    "process_date": "2026-11-01",
+    "notify_contact_id": "C-3105"
+   }
+  }
+ ],
+ "horizon": 13
+}

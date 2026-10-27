@@ -1,0 +1,31 @@
+# No GPU. Gold chain and every scripted fault on all 15 food instances; eval/exp2_smoke.py
+# checks that gold succeeds and each fault fails exactly its expected constraints.
+
+run_name: exp2_smoke_food
+
+templates:
+  - tasks/exp2/food_s1_short.json
+  - tasks/exp2/food_s1_medium.json
+  - tasks/exp2/food_s1_long.json
+  - tasks/exp2/food_s2_short.json
+  - tasks/exp2/food_s2_medium.json
+  - tasks/exp2/food_s2_long.json
+  - tasks/exp2/food_s3_short.json
+  - tasks/exp2/food_s3_medium.json
+  - tasks/exp2/food_s3_long.json
+  - tasks/exp2/food_s4_short.json
+  - tasks/exp2/food_s4_medium.json
+  - tasks/exp2/food_s4_long.json
+  - tasks/exp2/food_s5_short.json
+  - tasks/exp2/food_s5_medium.json
+  - tasks/exp2/food_s5_long.json
+max_steps: 60
+horizons: []
+languages: [en]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: lookalike_dish, policy: mock, mock_mode: lookalike_dish, seeds: [1]}
+  - {name: wrong_spice, policy: mock, mock_mode: wrong_spice, seeds: [1]}
+  - {name: anchor_card, policy: mock, mock_mode: anchor_card, seeds: [1]}
+  - {name: anchor_address, policy: mock, mock_mode: anchor_address, seeds: [1]}

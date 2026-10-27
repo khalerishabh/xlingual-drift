@@ -1,0 +1,31 @@
+# No GPU. Gold chain and every scripted fault on all 15 payment instances; eval/exp2_smoke.py
+# checks that gold succeeds and each fault fails exactly its expected constraints.
+
+run_name: exp2_smoke_payment
+
+templates:
+  - tasks/exp2/payment_s1_short.json
+  - tasks/exp2/payment_s1_medium.json
+  - tasks/exp2/payment_s1_long.json
+  - tasks/exp2/payment_s2_short.json
+  - tasks/exp2/payment_s2_medium.json
+  - tasks/exp2/payment_s2_long.json
+  - tasks/exp2/payment_s3_short.json
+  - tasks/exp2/payment_s3_medium.json
+  - tasks/exp2/payment_s3_long.json
+  - tasks/exp2/payment_s4_short.json
+  - tasks/exp2/payment_s4_medium.json
+  - tasks/exp2/payment_s4_long.json
+  - tasks/exp2/payment_s5_short.json
+  - tasks/exp2/payment_s5_medium.json
+  - tasks/exp2/payment_s5_long.json
+max_steps: 60
+horizons: []
+languages: [en]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: swap_remarks, policy: mock, mock_mode: swap_remarks, seeds: [1]}
+  - {name: wrong_amount, policy: mock, mock_mode: wrong_amount, seeds: [1]}
+  - {name: anchor_notify, policy: mock, mock_mode: anchor_notify, seeds: [1]}
+  - {name: anchor_date, policy: mock, mock_mode: anchor_date, seeds: [1]}

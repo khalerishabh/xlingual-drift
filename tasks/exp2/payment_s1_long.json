@@ -1,0 +1,414 @@
+{
+ "template_id": "payment_s1_long",
+ "experiment": "exp2",
+ "domain": "payment",
+ "scenario": 1,
+ "format": "long",
+ "stages": [
+  "bill_1",
+  "bill_2",
+  "bill_3",
+  "bill_4",
+  "bill_5",
+  "bill_6",
+  "rent",
+  "pocket",
+  "wallet",
+  "merchant",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-10-30",
+ "world": {
+  "seed": 2,
+  "session_date": "2026-10-30",
+  "order": [
+   "elec_home",
+   "mobile_mother",
+   "mobile_father",
+   "elec_nani",
+   "broadband",
+   "gas"
+  ],
+  "full_max": 2000,
+  "floor": 8000,
+  "balances": {
+   "ACC-201": 95000,
+   "ACC-202": 12666
+  },
+  "amounts": {
+   "elec_home": {
+    "amount_due": 4600,
+    "minimum_due": 1150
+   },
+   "elec_nani": {
+    "amount_due": 4600,
+    "minimum_due": 1150
+   },
+   "gas": {
+    "amount_due": 4600,
+    "minimum_due": 1840
+   },
+   "broadband": {
+    "amount_due": 1450,
+    "minimum_due": 360,
+    "late_fee": 250
+   },
+   "mobile_father": {
+    "amount_due": 2900,
+    "minimum_due": 1160
+   },
+   "mobile_mother": {
+    "amount_due": 3800,
+    "minimum_due": 1140
+   }
+  },
+  "late": "broadband",
+  "fee": 250,
+  "billers": [
+   {
+    "biller_id": "B-8291",
+    "bill": "mobile_father",
+    "category": "mobile_postpaid",
+    "provider": "Airtel Postpaid",
+    "consumer_number": "9820131824",
+    "registered_to": "Ramesh Sharma",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-4448",
+    "bill": "elec_home",
+    "category": "electricity",
+    "provider": "Adani Electricity",
+    "consumer_number": "4378591503",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-1989",
+    "bill": "elec_nani",
+    "category": "electricity",
+    "provider": "MSEDCL",
+    "consumer_number": "4378951503",
+    "registered_to": "nani",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-3301",
+    "bill": "broadband",
+    "category": "broadband",
+    "provider": "ACT Fibernet",
+    "consumer_number": "620510943",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-1522",
+    "bill": "gas",
+    "category": "gas",
+    "provider": "Mahanagar Gas",
+    "consumer_number": "890367526841",
+    "registered_to": "home",
+    "status": "active"
+   },
+   {
+    "biller_id": "B-7605",
+    "bill": "broadband_old",
+    "category": "broadband",
+    "provider": "Hathway",
+    "consumer_number": "973436509",
+    "registered_to": "old",
+    "status": "inactive"
+   },
+   {
+    "biller_id": "B-7929",
+    "bill": "elec_old",
+    "category": "electricity",
+    "provider": "Adani Electricity",
+    "consumer_number": "4738591503",
+    "registered_to": "old",
+    "status": "inactive"
+   },
+   {
+    "biller_id": "B-9014",
+    "bill": "mobile_mother",
+    "category": "mobile_postpaid",
+    "provider": "Airtel Postpaid",
+    "consumer_number": "9821031824",
+    "registered_to": "Sunita Sharma",
+    "status": "active"
+   }
+  ],
+  "bill_ids": {
+   "mobile_father": "BL-502544",
+   "elec_home": "BL-116483",
+   "elec_nani": "BL-998339",
+   "broadband": "BL-190994",
+   "gas": "BL-137552",
+   "broadband_old": "BL-141124",
+   "elec_old": "BL-188491",
+   "mobile_mother": "BL-832940"
+  },
+  "payees": [
+   {
+    "payee_id": "PY-3338",
+    "name": "Vinod Deshmukh",
+    "bank": "Axis Bank",
+    "account": "XXXX2512",
+    "relation": "society",
+    "role": "lookalike"
+   },
+   {
+    "payee_id": "PY-3312",
+    "name": "Sunil Sharma",
+    "bank": "PNB",
+    "account": "XXXX1624",
+    "relation": "uncle",
+    "role": "uncle"
+   },
+   {
+    "payee_id": "PY-3363",
+    "name": "Sunita Sharma",
+    "bank": "SBI",
+    "account": "XXXX1585",
+    "relation": "mother",
+    "role": "mother"
+   },
+   {
+    "payee_id": "PY-3360",
+    "name": "Kavya Sharma",
+    "bank": "SBI",
+    "account": "XXXX5509",
+    "relation": "sister",
+    "role": "sister"
+   },
+   {
+    "payee_id": "PY-3309",
+    "name": "Vinod Deshpande",
+    "bank": "ICICI Bank",
+    "account": "XXXX1503",
+    "relation": "landlord",
+    "role": "landlord"
+   },
+   {
+    "payee_id": "PY-3303",
+    "name": "Kavya Sharma",
+    "bank": "HDFC Bank",
+    "account": "XXXX6700",
+    "relation": "colleague",
+    "role": "namesake"
+   }
+  ],
+  "txn_ids": [
+   "TXN-710432",
+   "TXN-710423",
+   "TXN-710187",
+   "TXN-710574",
+   "TXN-715074",
+   "TXN-710496",
+   "TXN-709781",
+   "TXN-709871",
+   "TXN-709887",
+   "TXN-710335",
+   "TXN-701335",
+   "TXN-709879",
+   "TXN-710414",
+   "TXN-710399"
+  ],
+  "rent": 25000,
+  "pocket": 1500,
+  "si": 5000,
+  "day": 7,
+  "switch_at": 4,
+  "scenario": 1,
+  "sched_date": "2026-11-01",
+  "notify": "papa",
+  "wallet": "WL-PTM-1",
+  "wallet_target": 2000,
+  "wallet_balances": {
+   "WL-AMZ-1": 424,
+   "WL-PTM-1": 252,
+   "WL-PPE-1": 665
+  },
+  "merchant_amount": 1054
+ },
+ "requests": {
+  "en": "Please do my month-end payments on the banking app as one batch. For every bill: pay the full amount due if it is at most \u20b92,000, otherwise pay the minimum due. Pay bills from my savings account, but if a payment would take savings below \u20b98,000, pay that bill and every bill after it from my salary account. Put a remark on each bill saying which bill it is.\nFirst pay the electricity bill for our home in Andheri.\nThen the Mummy's postpaid mobile bill.\nThen the Papa's postpaid mobile bill.\nThen the electricity bill for Nani's house in Pune.\nThen the broadband bill.\nThen the piped gas bill.\nSend \u20b925,000 rent to my landlord Vinod Deshpande by NEFT from my salary account.\nSend \u20b91,500 pocket money to my sister Kavya by IMPS from my savings account.\nTop up my Paytm wallet from my salary account so that its balance becomes exactly \u20b92,000.\nPay \u20b91,054 by UPI from my savings account to Sharma Kirana Stores in Andheri West.\nSchedule the whole batch for 1 November 2026 and send the payment summary to Papa."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_accounts",
+   "args": {}
+  },
+  {
+   "tool": "list_billers",
+   "args": {}
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-4448"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-116483",
+    "account_id": "ACC-202",
+    "amount": 1150,
+    "remark": "Home electricity Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-9014"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-832940",
+    "account_id": "ACC-202",
+    "amount": 1140,
+    "remark": "Mummy mobile Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-8291"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-502544",
+    "account_id": "ACC-202",
+    "amount": 1160,
+    "remark": "Papa mobile Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-1989"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-998339",
+    "account_id": "ACC-202",
+    "amount": 1150,
+    "remark": "Nani electricity Pune Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-3301"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-190994",
+    "account_id": "ACC-201",
+    "amount": 1450,
+    "remark": "Broadband Oct"
+   }
+  },
+  {
+   "tool": "fetch_bill",
+   "args": {
+    "biller_id": "B-1522"
+   }
+  },
+  {
+   "tool": "pay_bill",
+   "args": {
+    "bill_id": "BL-137552",
+    "account_id": "ACC-201",
+    "amount": 1840,
+    "remark": "Piped gas Oct"
+   }
+  },
+  {
+   "tool": "list_payees",
+   "args": {}
+  },
+  {
+   "tool": "transfer",
+   "args": {
+    "payee_id": "PY-3309",
+    "account_id": "ACC-201",
+    "amount": 25000,
+    "mode": "NEFT",
+    "remark": "Rent October"
+   }
+  },
+  {
+   "tool": "get_payee_details",
+   "args": {
+    "payee_id": "PY-3360"
+   }
+  },
+  {
+   "tool": "transfer",
+   "args": {
+    "payee_id": "PY-3360",
+    "account_id": "ACC-202",
+    "amount": 1500,
+    "mode": "IMPS",
+    "remark": "Pocket money"
+   }
+  },
+  {
+   "tool": "get_wallets",
+   "args": {}
+  },
+  {
+   "tool": "topup_wallet",
+   "args": {
+    "wallet_id": "WL-PTM-1",
+    "account_id": "ACC-201",
+    "amount": 1748
+   }
+  },
+  {
+   "tool": "search_merchants",
+   "args": {
+    "query": "Sharma Kirana"
+   }
+  },
+  {
+   "tool": "pay_merchant",
+   "args": {
+    "vpa": "sharmakirana.andheri@okaxis",
+    "account_id": "ACC-202",
+    "amount": 1054
+   }
+  },
+  {
+   "tool": "get_contacts",
+   "args": {}
+  },
+  {
+   "tool": "request_otp",
+   "args": {}
+  },
+  {
+   "tool": "confirm_batch",
+   "args": {
+    "otp_ref": "OTP-1002",
+    "process_date": "2026-11-01",
+    "notify_contact_id": "C-2116"
+   }
+  }
+ ],
+ "horizon": 25
+}

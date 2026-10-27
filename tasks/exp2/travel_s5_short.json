@@ -1,0 +1,155 @@
+{
+ "template_id": "travel_s5_short",
+ "experiment": "exp2",
+ "domain": "travel",
+ "scenario": 5,
+ "format": "short",
+ "stages": [
+  "outbound",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-12-08",
+ "world": {
+  "scenario": 5,
+  "source_template": "trip_005",
+  "session_date": "2026-12-08",
+  "constraints": {
+   "passengers": 3,
+   "outbound": {
+    "origin": "CCU",
+    "destination": "JAI",
+    "date": "2026-12-18",
+    "depart_before": "11:00",
+    "objective": "min_price",
+    "nonstop": true
+   },
+   "return": {
+    "origin": "JAI",
+    "destination": "CCU",
+    "date": "2026-12-20",
+    "depart_after": "15:00",
+    "objective": "earliest_departure",
+    "nonstop": true
+   },
+   "flight_budget_total": 39000,
+   "hotel": {
+    "city": "JAI",
+    "check_in": "2026-12-18",
+    "check_out": "2026-12-20",
+    "max_distance_km": 3,
+    "breakfast": "veg",
+    "max_price_per_night": 3500,
+    "objective": "max_rating"
+   },
+   "rooms": [
+    {
+     "room_type": "twin",
+     "occupants": [
+      "mother",
+      "father"
+     ]
+    },
+    {
+     "room_type": "single",
+     "occupants": [
+      "self"
+     ]
+    }
+   ],
+   "cab": {
+    "vehicle_type": "sedan",
+    "date": "2026-12-18",
+    "pickup": "outbound_arrival",
+    "drop": "hotel"
+   },
+   "tickets": {
+    "attraction_id": "A-JAI-05",
+    "attraction_name": "Nahargarh Fort",
+    "date": "2026-12-19",
+    "slot_after": "12:00",
+    "objective": "earliest"
+   },
+   "travellers": {
+    "father": {
+     "seat": "window",
+     "meal": "lacto_vegetarian",
+     "ticket": "senior"
+    },
+    "mother": {
+     "seat": "aisle",
+     "meal": "jain",
+     "ticket": "senior"
+    },
+    "self": {
+     "seat": "window",
+     "meal": "vegetarian",
+     "ticket": "student"
+    }
+   }
+  }
+ },
+ "requests": {
+  "en": "Plan our Jaipur trip: my parents and I are flying from Kolkata on 18 December and coming back on 20 December.\nFor the flight there, take the cheapest non-stop flight that leaves before 11 am.\nOn every flight Papa and I want window seats and Mummy wants an aisle seat. Meals: vegetarian for me, Jain for Mummy, lacto-vegetarian for Papa."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "search_flights",
+   "args": {
+    "origin": "Kolkata",
+    "destination": "Jaipur",
+    "date": "2026-12-18"
+   }
+  },
+  {
+   "tool": "filter_flights",
+   "args": {
+    "depart_before": "11:00",
+    "nonstop_only": true
+   }
+  },
+  {
+   "tool": "get_seat_map",
+   "args": {
+    "flight_id": "6E6121"
+   }
+  },
+  {
+   "tool": "get_meal_options",
+   "args": {
+    "flight_id": "6E6121"
+   }
+  },
+  {
+   "tool": "get_travellers",
+   "args": {}
+  },
+  {
+   "tool": "confirm_booking",
+   "args": {
+    "outbound_flight_id": "6E6121",
+    "passengers": [
+     {
+      "traveller_id": "T-01",
+      "outbound_seat_id": "14F",
+      "meal_code": "VGML"
+     },
+     {
+      "traveller_id": "T-02",
+      "outbound_seat_id": "14C",
+      "meal_code": "JNML"
+     },
+     {
+      "traveller_id": "T-03",
+      "outbound_seat_id": "15F",
+      "meal_code": "VLML"
+     }
+    ]
+   }
+  }
+ ],
+ "horizon": 6
+}

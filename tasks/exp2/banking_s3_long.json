@@ -1,0 +1,417 @@
+{
+ "template_id": "banking_s3_long",
+ "experiment": "exp2",
+ "domain": "banking",
+ "scenario": 3,
+ "format": "long",
+ "stages": [
+  "dispute",
+  "card_block",
+  "card_replace",
+  "card_limit",
+  "fd_open",
+  "rd_open",
+  "nominee",
+  "cheque_stop",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-10-30",
+ "world": {
+  "seed": 33,
+  "scenario": 3,
+  "session_date": "2026-10-30",
+  "merchant": "uber",
+  "txns": [
+   {
+    "merchant": "Reliance Digital",
+    "amount": 2499,
+    "date": "2026-10-23",
+    "time": "10:12",
+    "role": "filler",
+    "txn_id": "TX-820399"
+   },
+   {
+    "merchant": "Uber Eats",
+    "amount": 1149,
+    "date": "2026-10-19",
+    "time": "16:22",
+    "role": "lookalike",
+    "txn_id": "TX-653927"
+   },
+   {
+    "merchant": "Uber",
+    "amount": 1149,
+    "date": "2026-10-19",
+    "time": "15:26",
+    "role": "duplicate",
+    "txn_id": "TX-604328"
+   },
+   {
+    "merchant": "Uber",
+    "amount": 1149,
+    "date": "2026-10-19",
+    "time": "15:22",
+    "role": "original",
+    "txn_id": "TX-603428"
+   },
+   {
+    "merchant": "Uber",
+    "amount": 1269,
+    "date": "2026-10-19",
+    "time": "12:22",
+    "role": "other_amount",
+    "txn_id": "TX-395912"
+   },
+   {
+    "merchant": "BookMyShow",
+    "amount": 560,
+    "date": "2026-10-17",
+    "time": "19:40",
+    "role": "filler",
+    "txn_id": "TX-805605"
+   },
+   {
+    "merchant": "Uber",
+    "amount": 1149,
+    "date": "2026-10-13",
+    "time": "15:22",
+    "role": "earlier",
+    "txn_id": "TX-766495"
+   },
+   {
+    "merchant": "Apollo Pharmacy",
+    "amount": 642,
+    "date": "2026-10-10",
+    "time": "08:55",
+    "role": "filler",
+    "txn_id": "TX-174210"
+   }
+  ],
+  "dup_amount": 1149,
+  "dup_date": "2026-10-19",
+  "cards": [
+   {
+    "card_id": "CC-7364",
+    "type": "credit",
+    "network": "Visa",
+    "last4": "7364",
+    "linked_account": null,
+    "role": "lookalike"
+   },
+   {
+    "card_id": "DC-7346",
+    "type": "debit",
+    "network": "RuPay",
+    "last4": "7346",
+    "linked_account": "ACC-302",
+    "role": "salary_debit"
+   },
+   {
+    "card_id": "DC-7364",
+    "type": "debit",
+    "network": "Visa",
+    "last4": "7364",
+    "linked_account": "ACC-301",
+    "role": "lost"
+   }
+  ],
+  "last4": "7364",
+  "other4": "7346",
+  "block_reason": "lost",
+  "replace_to": "office",
+  "limit": 50000,
+  "window": [
+   18,
+   36
+  ],
+  "schemes": [
+   {
+    "tenure_months": 30,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-888",
+    "name": "Regular FD 30M"
+   },
+   {
+    "tenure_months": 24,
+    "rate": 7.8,
+    "premature_withdrawal": false,
+    "role": "no_withdrawal",
+    "scheme_id": "FDS-348",
+    "name": "Non-Callable FD 24M"
+   },
+   {
+    "tenure_months": 36,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-625",
+    "name": "Regular FD 36M"
+   },
+   {
+    "tenure_months": 27,
+    "rate": 7.55,
+    "premature_withdrawal": true,
+    "role": "answer",
+    "scheme_id": "FDS-379",
+    "name": "Regular FD 27M"
+   },
+   {
+    "tenure_months": 9,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-427",
+    "name": "Regular FD 9M"
+   },
+   {
+    "tenure_months": 48,
+    "rate": 6.8,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-106",
+    "name": "Regular FD 48M"
+   },
+   {
+    "tenure_months": 60,
+    "rate": 7.9,
+    "premature_withdrawal": true,
+    "role": "outside_window",
+    "scheme_id": "FDS-462",
+    "name": "Regular FD 60M"
+   },
+   {
+    "tenure_months": 12,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-637",
+    "name": "Regular FD 12M"
+   },
+   {
+    "tenure_months": 18,
+    "rate": 7.3,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-774",
+    "name": "Regular FD 18M"
+   },
+   {
+    "tenure_months": 24,
+    "rate": 7.3,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-411",
+    "name": "Regular FD 24M"
+   },
+   {
+    "tenure_months": 3,
+    "rate": 6.8,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-668",
+    "name": "Regular FD 3M"
+   },
+   {
+    "tenure_months": 6,
+    "rate": 6.5,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-503",
+    "name": "Regular FD 6M"
+   }
+  ],
+  "fd_amount": 150000,
+  "payout": "cumulative",
+  "fd_id": "FD-34305",
+  "deposits": [
+   {
+    "deposit_id": "FD-43305",
+    "type": "FD",
+    "amount": 40000,
+    "opened": "2025-03-14",
+    "nominee": null
+   },
+   {
+    "deposit_id": "RD-14314",
+    "type": "RD",
+    "amount": 2000,
+    "opened": "2025-08-01",
+    "nominee": "FM-21"
+   }
+  ],
+  "fd_maturity": "2029-01-30",
+  "rd_amount": 7500,
+  "nominee": "papa",
+  "cheques": [
+   {
+    "cheque_number": "000783",
+    "payee": "Meera Iyer",
+    "amount": 20000,
+    "role": "same_payee"
+   },
+   {
+    "cheque_number": "000785",
+    "payee": "Meena Iyer",
+    "amount": 25000,
+    "role": "lookalike"
+   },
+   {
+    "cheque_number": "000784",
+    "payee": "Meera Iyer",
+    "amount": 25000,
+    "role": "answer"
+   },
+   {
+    "cheque_number": "000786",
+    "payee": "Society Maintenance",
+    "amount": 3500,
+    "role": "filler"
+   }
+  ],
+  "cq_payee": "Meera Iyer",
+  "cq_amount": 25000,
+  "channel": "email",
+  "branch": "malad_west",
+  "branches": [
+   {
+    "branch_id": "BR-1825",
+    "name": "Malad East",
+    "ifsc": "HDFC001825"
+   },
+   {
+    "branch_id": "BR-2518",
+    "name": "Malad West",
+    "ifsc": "HDFC002518"
+   },
+   {
+    "branch_id": "BR-2525",
+    "name": "Malad Station Road",
+    "ifsc": "HDFC002525"
+   }
+  ]
+ },
+ "requests": {
+  "en": "Please take care of a few things on my net banking, queue them all and submit them together at the end.\nOn 19 October I was charged twice by Uber for \u20b91,149 on my savings account. Raise a dispute on the second, duplicate charge.\nI have lost my savings account debit card ending 7364. Block it.\nOrder a replacement for that card, delivered to my office address.\nSet the international online limit on my salary account debit card to \u20b950,000 a day.\nOpen a fixed deposit of \u20b9150,000 from my savings account, in the scheme with the highest interest rate for a tenure between 18 and 36 months that allows premature withdrawal, with cumulative interest payout.\nStart a recurring deposit of \u20b97,500 a month from my salary account that matures in the same month as that fixed deposit.\nAdd Papa as the nominee on the new fixed deposit with a 100% share.\nStop the cheque for \u20b925,000 I issued to Meera Iyer; that payment is cancelled.\nSend the confirmations by email only and attach the requests to my home branch, Malad West."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_accounts",
+   "args": {}
+  },
+  {
+   "tool": "list_transactions",
+   "args": {
+    "account_id": "ACC-301"
+   }
+  },
+  {
+   "tool": "raise_dispute",
+   "args": {
+    "txn_id": "TX-604328",
+    "reason": "duplicate"
+   }
+  },
+  {
+   "tool": "list_cards",
+   "args": {}
+  },
+  {
+   "tool": "block_card",
+   "args": {
+    "card_id": "DC-7364",
+    "reason": "lost"
+   }
+  },
+  {
+   "tool": "get_saved_addresses",
+   "args": {}
+  },
+  {
+   "tool": "request_replacement",
+   "args": {
+    "card_id": "DC-7364",
+    "address_id": "ADR-31"
+   }
+  },
+  {
+   "tool": "set_card_limit",
+   "args": {
+    "card_id": "DC-7346",
+    "channel": "international_online",
+    "amount": 50000
+   }
+  },
+  {
+   "tool": "list_fd_schemes",
+   "args": {}
+  },
+  {
+   "tool": "open_fd",
+   "args": {
+    "scheme_id": "FDS-379",
+    "account_id": "ACC-301",
+    "amount": 150000,
+    "payout": "cumulative"
+   }
+  },
+  {
+   "tool": "open_rd",
+   "args": {
+    "account_id": "ACC-302",
+    "monthly_amount": 7500,
+    "tenure_months": 27
+   }
+  },
+  {
+   "tool": "list_family_members",
+   "args": {}
+  },
+  {
+   "tool": "add_nominee",
+   "args": {
+    "deposit_id": "FD-34305",
+    "member_id": "FM-72",
+    "share_percent": 100
+   }
+  },
+  {
+   "tool": "list_issued_cheques",
+   "args": {
+    "account_id": "ACC-301"
+   }
+  },
+  {
+   "tool": "stop_cheque",
+   "args": {
+    "account_id": "ACC-301",
+    "cheque_number": "000784",
+    "reason": "payment_cancelled"
+   }
+  },
+  {
+   "tool": "get_branches",
+   "args": {
+    "city": "Mumbai"
+   }
+  },
+  {
+   "tool": "request_otp",
+   "args": {}
+  },
+  {
+   "tool": "confirm_requests",
+   "args": {
+    "otp_ref": "OTP-0833",
+    "notify_channel": "email",
+    "branch_id": "BR-2518"
+   }
+  }
+ ],
+ "horizon": 18
+}

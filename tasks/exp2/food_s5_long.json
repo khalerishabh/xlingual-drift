@@ -1,0 +1,3266 @@
+{
+ "template_id": "food_s5_long",
+ "experiment": "exp2",
+ "domain": "food",
+ "scenario": 5,
+ "format": "long",
+ "stages": [
+  "restaurant",
+  "dish_self",
+  "dish_papa",
+  "dish_mummy",
+  "dish_didi",
+  "sides",
+  "dessert",
+  "offer",
+  "slot",
+  "checkout"
+ ],
+ "anchor_stage": "checkout",
+ "session_date": "2026-11-03",
+ "world": {
+  "seed": 505,
+  "scenario": 5,
+  "session_date": "2026-11-03",
+  "cuisine": "gujarati",
+  "address_key": "home",
+  "card": "4417",
+  "eta_limit": 35,
+  "restaurants": {
+   "R-3427": {
+    "restaurant_id": "R-3427",
+    "name": "Swati Snacks",
+    "cuisine": "gujarati",
+    "pure_veg": false,
+    "rating": 4.84,
+    "eta_min": {
+     "home": 32,
+     "office": 32,
+     "nani": 28
+    },
+    "role": "top_nonveg"
+   },
+   "R-5463": {
+    "restaurant_id": "R-5463",
+    "name": "Rajwadu Thali",
+    "cuisine": "gujarati",
+    "pure_veg": true,
+    "rating": 4.66,
+    "eta_min": {
+     "home": 55,
+     "office": 21,
+     "nani": 26
+    },
+    "role": "slow"
+   },
+   "R-2698": {
+    "restaurant_id": "R-2698",
+    "name": "Agashiye Kitchen",
+    "cuisine": "gujarati",
+    "pure_veg": true,
+    "rating": 4.54,
+    "eta_min": {
+     "home": 29,
+     "office": 26,
+     "nani": 26
+    },
+    "role": "gold"
+   },
+   "R-6298": {
+    "restaurant_id": "R-6298",
+    "name": "Panchvati Gaurav",
+    "cuisine": "gujarati",
+    "pure_veg": true,
+    "rating": 4.2,
+    "eta_min": {
+     "home": 24,
+     "office": 20,
+     "nani": 22
+    },
+    "role": "lookalike"
+   },
+   "R-6719": {
+    "restaurant_id": "R-6719",
+    "name": "Soam",
+    "cuisine": "gujarati",
+    "pure_veg": true,
+    "rating": 4.26,
+    "eta_min": {
+     "home": 32,
+     "office": 29,
+     "nani": 25
+    },
+    "role": "alt"
+   },
+   "R-5267": {
+    "restaurant_id": "R-5267",
+    "name": "Gopi Dining Hall",
+    "cuisine": "gujarati",
+    "pure_veg": true,
+    "rating": 4.0,
+    "eta_min": {
+     "home": 28,
+     "office": 28,
+     "nani": 29
+    },
+    "role": "filler1"
+   },
+   "R-9827": {
+    "restaurant_id": "R-9827",
+    "name": "Kathiyawadi Rasoi",
+    "cuisine": "gujarati",
+    "pure_veg": true,
+    "rating": 3.9,
+    "eta_min": {
+     "home": 25,
+     "office": 24,
+     "nani": 27
+    },
+    "role": "filler2"
+   },
+   "R-7136": {
+    "restaurant_id": "R-7136",
+    "name": "Shree Thaker Bhojanalay",
+    "cuisine": "gujarati",
+    "pure_veg": false,
+    "rating": 3.74,
+    "eta_min": {
+     "home": 24,
+     "office": 32,
+     "nani": 20
+    },
+    "role": "filler3"
+   }
+  },
+  "listing": [
+   "R-5267",
+   "R-2698",
+   "R-6298",
+   "R-3427",
+   "R-9827",
+   "R-7136",
+   "R-6719",
+   "R-5463"
+  ],
+  "menus": {
+   "R-3427": [
+    {
+     "dish_id": "D-2185",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6912",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-9275",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-1986",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-6254",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-3924",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-1968",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-6952",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-9538",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-9265",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-1689",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 40,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-2695",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-5138",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8453",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 230,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-2965",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5468",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-1379",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-7986",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-2493",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-8592",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-9625",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-1285",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6524",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5641",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    }
+   ],
+   "R-5463": [
+    {
+     "dish_id": "D-2385",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 60,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-8563",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-2915",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-8531",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-3947",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 40,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4169",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-8754",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-4231",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-4561",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-4517",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-9215",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-3815",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-8195",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-5413",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-8496",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-1854",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-3851",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-1679",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-9247",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 210,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-1584",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-3917",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9317",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9137",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 60,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1289",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    }
+   ],
+   "R-2698": [
+    {
+     "dish_id": "D-7156",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-3827",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6517",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-7389",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-9571",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-6581",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 210,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-6945",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-4325",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7364",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-2938",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-1579",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-2756",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9128",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-5879",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-4978",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-7869",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 30,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5432",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-5971",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5639",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7516",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-5192",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 60,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-7346",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-9428",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-4798",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    }
+   ],
+   "R-6298": [
+    {
+     "dish_id": "D-5619",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 210,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-2694",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-8746",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 30,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-8516",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-3912",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-7831",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-4529",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2948",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-2549",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-2396",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-9641",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-6941",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-7813",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-8763",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-7428",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-8739",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-2981",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 50,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-7482",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5341",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-9238",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-5431",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-6439",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5679",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-7548",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 30,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    }
+   ],
+   "R-6719": [
+    {
+     "dish_id": "D-3251",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9617",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-2546",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2865",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-3719",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-6759",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-3219",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3458",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 60,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-7152",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6294",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-6579",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-8645",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5481",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-8947",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2815",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-2153",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-7821",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-8654",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-5387",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 230,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9671",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-8196",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-2563",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-5314",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5418",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    }
+   ],
+   "R-5267": [
+    {
+     "dish_id": "D-9542",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1829",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 50,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1842",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-3764",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-8215",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 210,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-1964",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-6428",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8421",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-4523",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5423",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-7289",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-1645",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 60,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-2681",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-9532",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5683",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-9452",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-9164",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 40,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5189",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9521",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-9823",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-8923",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-6394",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-8679",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-6879",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    }
+   ],
+   "R-9827": [
+    {
+     "dish_id": "D-6534",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-7295",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 210,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-5238",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-1937",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8361",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-6159",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-4251",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-3742",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-2645",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-4826",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 30,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-8193",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 50,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-8431",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-2451",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-6251",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6875",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2817",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7623",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-6124",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5283",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-3586",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-6723",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-4685",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-5419",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-2654",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    }
+   ],
+   "R-7136": [
+    {
+     "dish_id": "D-2394",
+     "name": "House Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-4185",
+     "name": "Royal Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-4271",
+     "name": "Shrikhand",
+     "course": "dessert",
+     "type": "shrikhand",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2798",
+     "name": "Jalebi",
+     "course": "dessert",
+     "type": "jalebi",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-5264",
+     "name": "Home-style Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-2874",
+     "name": "Royal Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-2537",
+     "name": "Puri",
+     "course": "bread",
+     "type": "puri",
+     "price": 40,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4926",
+     "name": "House Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-4296",
+     "name": "Classic Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-2934",
+     "name": "Classic Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-4932",
+     "name": "Mohanthal",
+     "course": "dessert",
+     "type": "mohanthal",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-1563",
+     "name": "Home-style Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-6549",
+     "name": "Thepla",
+     "course": "bread",
+     "type": "thepla",
+     "price": 30,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5793",
+     "name": "House Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-4562",
+     "name": "Phulka",
+     "course": "bread",
+     "type": "phulka",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-8234",
+     "name": "Home-style Dhokla",
+     "course": "main",
+     "type": "dhokla",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-8257",
+     "name": "Home-style Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-6198",
+     "name": "House Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1698",
+     "name": "Classic Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-7281",
+     "name": "Basundi",
+     "course": "dessert",
+     "type": "basundi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-6492",
+     "name": "Chef's Special Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 230,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-2374",
+     "name": "Royal Khichdi",
+     "course": "main",
+     "type": "khichdi",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-3849",
+     "name": "Royal Thali",
+     "course": "main",
+     "type": "thali",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-5973",
+     "name": "Classic Undhiyu",
+     "course": "main",
+     "type": "undhiyu",
+     "price": 220,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    }
+   ]
+  },
+  "person_type": {
+   "self": "khichdi",
+   "papa": "dhokla",
+   "mummy": "undhiyu",
+   "didi": "thali"
+  },
+  "budgets": {
+   "self": 350,
+   "papa": 400,
+   "mummy": 250,
+   "didi": 350
+  },
+  "bread": "phulka",
+  "bread_qty": 4,
+  "slot_time": "20:30",
+  "slots": [
+   {
+    "slot_id": "SL-2100",
+    "start_time": "21:00"
+   },
+   {
+    "slot_id": "SL-2130",
+    "start_time": "21:30"
+   },
+   {
+    "slot_id": "SL-2200",
+    "start_time": "22:00"
+   },
+   {
+    "slot_id": "SL-1930",
+    "start_time": "19:30"
+   },
+   {
+    "slot_id": "SL-2000",
+    "start_time": "20:00"
+   },
+   {
+    "slot_id": "SL-2030",
+    "start_time": "20:30"
+   }
+  ],
+  "offers": [
+   {
+    "code": "FLAT120",
+    "description": "Flat Rs 120 off on orders of Rs 1,200 or more",
+    "kind": "flat",
+    "value": 120,
+    "min_order": 1200,
+    "cap": 120
+   },
+   {
+    "code": "VEG20",
+    "description": "20% off up to Rs 150 on orders of Rs 600 or more",
+    "kind": "pct",
+    "value": 20,
+    "min_order": 600,
+    "cap": 150
+   },
+   {
+    "code": "FEAST15",
+    "description": "15% off up to Rs 300 on orders of Rs 1,500 or more",
+    "kind": "pct",
+    "value": 15,
+    "min_order": 1500,
+    "cap": 300
+   },
+   {
+    "code": "NEWUSER50",
+    "description": "50% off up to Rs 100, first order only",
+    "kind": "pct",
+    "value": 50,
+    "min_order": 0,
+    "cap": 100,
+    "first_order_only": true
+   }
+  ],
+  "total_budget": 1510
+ },
+ "requests": {
+  "en": "Please order dinner for the family tonight on the food delivery app.\nOrder from the highest-rated pure-veg Gujarati restaurant that can deliver to my home in Andheri West within 35 minutes.\nFor me: the highest-rated khichdi under \u20b9350, spice level spicy.\nFor Papa: the highest-rated dhokla plate under \u20b9400, spice level mild.\nFor Mummy: the highest-rated undhiyu under \u20b9250 that can be made Jain, and make it Jain.\nFor Didi: the highest-rated Gujarati thali under \u20b9350, spice level medium.\nAdd 4 phulkas.\nThen add the highest-rated dessert that keeps the whole order within \u20b91,510 before any offer.\nApply the offer that gives the biggest discount.\nSchedule the delivery for the 20:30 slot.\nDeliver to my home in Andheri West and pay with my HDFC credit card ending 4417."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_saved_addresses",
+   "args": {}
+  },
+  {
+   "tool": "search_restaurants",
+   "args": {
+    "cuisine": "gujarati",
+    "address_id": "ADR-31"
+   }
+  },
+  {
+   "tool": "get_menu",
+   "args": {
+    "restaurant_id": "R-2698"
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-7516"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-7516",
+    "quantity": 1,
+    "spice_level": "spicy",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-7346"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-7346",
+    "quantity": 1,
+    "spice_level": "mild",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-4978"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-4978",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": true
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-5971"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-5971",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": false
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-6517",
+    "quantity": 4,
+    "spice_level": "medium",
+    "jain": false
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-2698",
+    "dish_id": "D-5879",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": false
+   }
+  },
+  {
+   "tool": "list_offers",
+   "args": {
+    "restaurant_id": "R-2698"
+   }
+  },
+  {
+   "tool": "apply_offer",
+   "args": {
+    "code": "VEG20"
+   }
+  },
+  {
+   "tool": "get_delivery_slots",
+   "args": {
+    "restaurant_id": "R-2698",
+    "address_id": "ADR-31"
+   }
+  },
+  {
+   "tool": "get_payment_methods",
+   "args": {}
+  },
+  {
+   "tool": "place_order",
+   "args": {
+    "address_id": "ADR-31",
+    "payment_id": "PM-CC-4417",
+    "slot_id": "SL-2030"
+   }
+  }
+ ],
+ "horizon": 18
+}

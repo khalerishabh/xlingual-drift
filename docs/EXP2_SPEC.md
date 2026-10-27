@@ -214,7 +214,7 @@ Freezing follows the same practice as every earlier run: design, decision rules 
 4. **Mock smoke test:** scripted policy injects each fault type; each must be caught only in its own class/stage. This tests the harness, not the model.
 5. **Language authoring:** canonical-term table first, then hi/ta/Hinglish/Tanglish by Rishabh; automatic checks; **freeze**.
 6. **Serving check:** one tool call parsed and reasoning separated before the run starts (built into each notebook).
-7. **Main run:** 5 notebooks, one per domain, each 225 episodes; 375 instances x 3 seeds; task-wise order, resumable across Colab sessions. **Early-stop rule (set now):** after each domain's first 45 episodes, if English accuracy in that domain is below 0.3, stop the domain and report it. Tasks are never simplified in response.
+7. **Main run:** 5 notebooks, one per domain, each 225 episodes; 375 instances x 3 seeds; task-wise order, resumable across Colab sessions. **Early-stop rule (proposed 27 Oct 2026, awaiting approval):** each domain notebook first runs English, seed 1, on all 15 instances (all scenarios and formats; run_grid schedules them first). If their success rate is below 0.3, stop the domain and report it. (The earlier wording, "first 45 episodes", would have covered one scenario only under task-wise order.) Tasks are never simplified in response.
 8. **Verify and derive events:** verifier output + event logs from raw logs; merge the 5 logs (fingerprints checked).
 9. **Analysis, our evaluation:** primary metrics first (as pre-specified), then stage attribution, then secondary metrics.
 10. **Analysis, BabelArena-style evaluation on our tasks:** Pass^1, Pass^3, LC, token ratios, taxonomy mapping (section 6.4).
@@ -229,3 +229,33 @@ Freezing follows the same practice as every earlier run: design, decision rules 
 - External BabelArena run: about 120 tasks x 3 languages x 3 trials = 1,080 episodes (DeepPlanning standard subset), or less with a stratified sample.
 - Colab notebooks: 5 for our tasks + 1 optional for BabelArena.
 - New tools: roughly 8-15 per new domain.
+
+## 10. Build record (27 Oct 2026)
+
+Steps 2-4 done; step 5 drafted. Everything below is in the repo and covered by `tests/test_exp2_env.py`.
+
+### 10.1 Per-domain stage layout
+
+| Domain | Short | Medium | Long | Gold calls (S/M/L) | Anchors (final call) |
+|---|---|---|---|---|---|
+| Travel | outbound, submit | + return, hotel, rooms | + budget (coupled), cab (carried), tickets | 6 / 12 / 14 | per-traveller seat type, meal |
+| Shopping | item_self, checkout | + item_mother, coupon | + item_father, item_sister (coupled pair budget), gift, exchange | 7 / 12 / 24 | payment card, delivery slot |
+| Food Order | restaurant, dish_self, checkout | + dish_papa, dish_mummy, offer | + dish_didi, sides, dessert (coupled total), slot | 7 / 13 / 18 | delivery address, payment card |
+| Payment | bill_1, submit | + bill_2, bill_3, rent | + bill_4-6, pocket, wallet (carried), merchant | 7 / 13 / 25 | processing date, notify contact |
+| Banking | dispute, submit | + card_block, fd_open | + card_replace (carried), card_limit, rd_open (coupled), nominee (carried), cheque_stop | 6 / 10 / 18 | confirmation channel, home branch |
+
+Travel long is 14 calls, below the 17-28 target in section 2, because every travel format uses the shortest trip tool level (English city names, no holds). Moving all three travel formats to the 17-call level adds `resolve_city` and attraction-id lookups (+3 calls each) without changing the request.
+
+### 10.2 Files
+- Environments: `env/exp2/{travel,shopping,food,payment,banking}.py`, shared machinery `env/exp2/core.py`, registry `env/exp2/registry.py`.
+- Instances: `tasks/exp2/<domain>_s<N>_<format>.json` (75), built by `python -m tasks.build_exp2`; `--check` fails on stale files.
+- English lexicons: `env/exp2/lexicon_src/<domain>_en.py`. Drafts for hi, ta, Hinglish, Tanglish: `env/exp2/lexicon_drafts/<domain>_<lang>.py` (LLM drafts, not loaded). After review, move a file to `lexicon_src/`, set its `VERIFICATION`, run `python -m tasks.check_lexicon` and `python -m tasks.build_exp2`, then freeze.
+- Runner: `eval/run_grid.py` (exp2 instances, refuses to start if a configured language has no authored request), mock policy `agent/policies/exp2_mock_policy.py`, prompt `agent/prompts/system_v2.txt`.
+- Configs: `configs/exp2/<domain>_qwen.yaml` (225 episodes each), `configs/exp2/smoke_<domain>.yaml`, `configs/models/qwen36_27b_fp8.yaml`.
+- Notebooks: `notebooks/exp2/exp2_<domain>.ipynb` (phase 1 = English seed 1, early-stop check, phase 2 = full grid).
+- Analysis: `eval/stages.py` (stage attribution, 6.2), `eval/exp2_summary.py` (outcomes, early-stop check), `eval/exp2_smoke.py` (mock smoke check).
+
+### 10.3 Checks passed
+- Gold succeeds on all 75 instances; each domain has 4 scripted faults and each fails exactly its own constraints (300 fault replays), through the real runner as well as in unit tests.
+- Formats are nested: short request lines are a subset of medium, medium of long, in every language.
+- Never-first and lookalike rules asserted by each domain's `check_rules`; coupled constraints are asserted to change the answer.

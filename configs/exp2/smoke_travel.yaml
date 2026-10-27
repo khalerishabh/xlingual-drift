@@ -1,0 +1,31 @@
+# No GPU. Gold chain and every scripted fault on all 15 travel instances; eval/exp2_smoke.py
+# checks that gold succeeds and each fault fails exactly its expected constraints.
+
+run_name: exp2_smoke_travel
+
+templates:
+  - tasks/exp2/travel_s1_short.json
+  - tasks/exp2/travel_s1_medium.json
+  - tasks/exp2/travel_s1_long.json
+  - tasks/exp2/travel_s2_short.json
+  - tasks/exp2/travel_s2_medium.json
+  - tasks/exp2/travel_s2_long.json
+  - tasks/exp2/travel_s3_short.json
+  - tasks/exp2/travel_s3_medium.json
+  - tasks/exp2/travel_s3_long.json
+  - tasks/exp2/travel_s4_short.json
+  - tasks/exp2/travel_s4_medium.json
+  - tasks/exp2/travel_s4_long.json
+  - tasks/exp2/travel_s5_short.json
+  - tasks/exp2/travel_s5_medium.json
+  - tasks/exp2/travel_s5_long.json
+max_steps: 60
+horizons: []
+languages: [en]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: outbound_decoy, policy: mock, mock_mode: outbound_decoy, seeds: [1]}
+  - {name: swap_seats, policy: mock, mock_mode: swap_seats, seeds: [1]}
+  - {name: wrong_meal, policy: mock, mock_mode: wrong_meal, seeds: [1]}
+  - {name: extra_component, policy: mock, mock_mode: extra_component, seeds: [1]}

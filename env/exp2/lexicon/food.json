@@ -1,0 +1,159 @@
+{
+ "intro": {
+  "en": "Please order dinner for the family tonight on the food delivery app."
+ },
+ "clauses": {
+  "restaurant": {
+   "en": "Order from the highest-rated pure-veg {cuisine} restaurant that can deliver to {address} within {eta} minutes."
+  },
+  "dish_self": {
+   "en": "For me: the highest-rated {type_self} under \u20b9{price_self}, spice level {spice_self}."
+  },
+  "dish_papa": {
+   "en": "For Papa: the highest-rated {type_papa} under \u20b9{price_papa}, spice level {spice_papa}."
+  },
+  "dish_mummy": {
+   "en": "For Mummy: the highest-rated {type_mummy} under \u20b9{price_mummy} that can be made Jain, and make it Jain."
+  },
+  "dish_didi": {
+   "en": "For Didi: the highest-rated {type_didi} under \u20b9{price_didi}, spice level {spice_didi}."
+  },
+  "sides": {
+   "en": "Add {bread_qty} {bread}."
+  },
+  "dessert": {
+   "en": "Then add the highest-rated dessert that keeps the whole order within \u20b9{total_budget} before any offer."
+  },
+  "offer": {
+   "en": "Apply the offer that gives the biggest discount."
+  },
+  "slot": {
+   "en": "Schedule the delivery for the {slot_time} slot."
+  },
+  "checkout": {
+   "en": "Deliver to {address} and pay with my HDFC credit card ending {card}."
+  }
+ },
+ "terms": {
+  "cuisine": {
+   "north_indian": {
+    "en": "North Indian"
+   },
+   "south_indian": {
+    "en": "South Indian"
+   },
+   "indo_chinese": {
+    "en": "Indo-Chinese"
+   },
+   "italian": {
+    "en": "Italian"
+   },
+   "gujarati": {
+    "en": "Gujarati"
+   }
+  },
+  "address": {
+   "home": {
+    "en": "my home in Andheri West"
+   },
+   "office": {
+    "en": "my office in Andheri East"
+   },
+   "nani": {
+    "en": "Nani's house in Thane"
+   }
+  },
+  "spice": {
+   "mild": {
+    "en": "mild"
+   },
+   "medium": {
+    "en": "medium"
+   },
+   "spicy": {
+    "en": "spicy"
+   }
+  },
+  "dish": {
+   "paneer": {
+    "en": "paneer curry"
+   },
+   "dal": {
+    "en": "dal"
+   },
+   "biryani": {
+    "en": "veg biryani"
+   },
+   "kofta": {
+    "en": "kofta curry"
+   },
+   "dosa": {
+    "en": "dosa"
+   },
+   "idli": {
+    "en": "idli plate"
+   },
+   "uttapam": {
+    "en": "uttapam"
+   },
+   "meals": {
+    "en": "South Indian meals plate"
+   },
+   "noodles": {
+    "en": "noodles"
+   },
+   "fried_rice": {
+    "en": "fried rice"
+   },
+   "manchurian": {
+    "en": "veg Manchurian"
+   },
+   "soup": {
+    "en": "soup"
+   },
+   "pizza": {
+    "en": "pizza"
+   },
+   "pasta": {
+    "en": "pasta"
+   },
+   "risotto": {
+    "en": "risotto"
+   },
+   "lasagne": {
+    "en": "lasagne"
+   },
+   "thali": {
+    "en": "Gujarati thali"
+   },
+   "khichdi": {
+    "en": "khichdi"
+   },
+   "dhokla": {
+    "en": "dhokla plate"
+   },
+   "undhiyu": {
+    "en": "undhiyu"
+   },
+   "butter_roti": {
+    "en": "butter rotis"
+   },
+   "parotta": {
+    "en": "parottas"
+   },
+   "spring_roll": {
+    "en": "spring rolls"
+   },
+   "garlic_bread": {
+    "en": "portions of garlic bread"
+   },
+   "phulka": {
+    "en": "phulkas"
+   }
+  }
+ },
+ "stage_clause": {},
+ "verification": {
+  "en": "author"
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "template_id": "travel_s3_short",
+ "experiment": "exp2",
+ "domain": "travel",
+ "scenario": 3,
+ "format": "short",
+ "stages": [
+  "outbound",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-11-10",
+ "world": {
+  "scenario": 3,
+  "source_template": "trip_003",
+  "session_date": "2026-11-10",
+  "constraints": {
+   "passengers": 3,
+   "outbound": {
+    "origin": "HYD",
+    "destination": "JAI",
+    "date": "2026-11-20",
+    "depart_after": "07:00",
+    "objective": "min_price",
+    "nonstop": true
+   },
+   "return": {
+    "origin": "JAI",
+    "destination": "HYD",
+    "date": "2026-11-22",
+    "depart_after": "16:00",
+    "objective": "earliest_departure",
+    "nonstop": true
+   },
+   "flight_budget_total": 36000,
+   "hotel": {
+    "city": "JAI",
+    "check_in": "2026-11-20",
+    "check_out": "2026-11-22",
+    "max_distance_km": 3,
+    "max_price_per_night": 3500,
+    "objective": "max_rating"
+   },
+   "rooms": [
+    {
+     "room_type": "suite",
+     "occupants": [
+      "mother",
+      "father"
+     ]
+    },
+    {
+     "room_type": "single",
+     "occupants": [
+      "self"
+     ]
+    }
+   ],
+   "cab": {
+    "vehicle_type": "suv",
+    "date": "2026-11-20",
+    "pickup": "outbound_arrival",
+    "drop": "hotel"
+   },
+   "tickets": {
+    "attraction_id": "A-JAI-03",
+    "attraction_name": "Hawa Mahal",
+    "date": "2026-11-21",
+    "slot_after": "10:00",
+    "objective": "earliest"
+   },
+   "travellers": {
+    "father": {
+     "seat": "aisle",
+     "meal": "diabetic",
+     "ticket": "senior"
+    },
+    "mother": {
+     "seat": "middle",
+     "meal": "jain",
+     "ticket": "senior"
+    },
+    "self": {
+     "seat": "window",
+     "meal": "jain",
+     "ticket": "student"
+    }
+   }
+  }
+ },
+ "requests": {
+  "en": "Plan our Jaipur trip: my parents and I are flying from Hyderabad on 20 November and coming back on 22 November.\nFor the flight there, take the cheapest non-stop flight that leaves after 7 am.\nOn every flight I want a window seat, Mummy a middle seat and Papa an aisle seat. Meals: Jain for me and for Mummy, diabetic for Papa."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "search_flights",
+   "args": {
+    "origin": "Hyderabad",
+    "destination": "Jaipur",
+    "date": "2026-11-20"
+   }
+  },
+  {
+   "tool": "filter_flights",
+   "args": {
+    "depart_after": "07:00",
+    "nonstop_only": true
+   }
+  },
+  {
+   "tool": "get_seat_map",
+   "args": {
+    "flight_id": "6E7123"
+   }
+  },
+  {
+   "tool": "get_meal_options",
+   "args": {
+    "flight_id": "6E7123"
+   }
+  },
+  {
+   "tool": "get_travellers",
+   "args": {}
+  },
+  {
+   "tool": "confirm_booking",
+   "args": {
+    "outbound_flight_id": "6E7123",
+    "passengers": [
+     {
+      "traveller_id": "T-01",
+      "outbound_seat_id": "14F",
+      "meal_code": "JNML"
+     },
+     {
+      "traveller_id": "T-02",
+      "outbound_seat_id": "15B",
+      "meal_code": "JNML"
+     },
+     {
+      "traveller_id": "T-03",
+      "outbound_seat_id": "14C",
+      "meal_code": "DBML"
+     }
+    ]
+   }
+  }
+ ],
+ "horizon": 6
+}

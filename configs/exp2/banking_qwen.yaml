@@ -1,0 +1,46 @@
+# Experiment 2 main run, banking domain (docs/EXP2_SPEC.md): 5 scenarios x 3 formats x
+# 5 languages x 3 seeds = 225 episodes. Qwen only, no pilot. Requests are frozen
+# before this config is run; run_grid refuses to start if a language is missing.
+
+run_name: exp2_banking_qwen36_27b_fp8
+
+serving:
+  model: Qwen/Qwen3.6-27B-FP8
+  revision: e89b16ebf1988b3d6befa7de50abc2d76f26eb09
+  tool_call_parser: qwen3_coder
+  reasoning_parser: qwen3
+  max_model_len: 65536
+  min_vram_gb: 38
+  vllm_version: "0.30.0"
+  extra_args: []
+
+templates:
+  - tasks/exp2/banking_s1_short.json
+  - tasks/exp2/banking_s1_medium.json
+  - tasks/exp2/banking_s1_long.json
+  - tasks/exp2/banking_s2_short.json
+  - tasks/exp2/banking_s2_medium.json
+  - tasks/exp2/banking_s2_long.json
+  - tasks/exp2/banking_s3_short.json
+  - tasks/exp2/banking_s3_medium.json
+  - tasks/exp2/banking_s3_long.json
+  - tasks/exp2/banking_s4_short.json
+  - tasks/exp2/banking_s4_medium.json
+  - tasks/exp2/banking_s4_long.json
+  - tasks/exp2/banking_s5_short.json
+  - tasks/exp2/banking_s5_medium.json
+  - tasks/exp2/banking_s5_long.json
+max_steps: 60
+horizons: []
+languages: [en, hi, ta, hinglish, tanglish]
+
+cells:
+  - name: qwen36_27b_fp8_think
+    policy: openai_compat
+    model: Qwen/Qwen3.6-27B-FP8
+    base_url: http://localhost:8000/v1
+    temperature: 0.6
+    max_tokens: 16384
+    prompt_version: system_v2
+    extra_body: {chat_template_kwargs: {enable_thinking: true}}
+    seeds: [1, 2, 3]

@@ -1,0 +1,333 @@
+{
+ "template_id": "banking_s4_short",
+ "experiment": "exp2",
+ "domain": "banking",
+ "scenario": 4,
+ "format": "short",
+ "stages": [
+  "dispute",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-10-30",
+ "world": {
+  "seed": 44,
+  "scenario": 4,
+  "session_date": "2026-10-30",
+  "merchant": "zomato",
+  "txns": [
+   {
+    "merchant": "Apollo Pharmacy",
+    "amount": 642,
+    "date": "2026-10-26",
+    "time": "10:12",
+    "role": "filler",
+    "txn_id": "TX-130510"
+   },
+   {
+    "merchant": "Zomato Blinkit",
+    "amount": 799,
+    "date": "2026-10-22",
+    "time": "21:49",
+    "role": "lookalike",
+    "txn_id": "TX-335600"
+   },
+   {
+    "merchant": "Zomato",
+    "amount": 799,
+    "date": "2026-10-22",
+    "time": "20:50",
+    "role": "duplicate",
+    "txn_id": "TX-222316"
+   },
+   {
+    "merchant": "Zomato",
+    "amount": 799,
+    "date": "2026-10-22",
+    "time": "20:49",
+    "role": "original",
+    "txn_id": "TX-222361"
+   },
+   {
+    "merchant": "Zomato",
+    "amount": 919,
+    "date": "2026-10-22",
+    "time": "17:49",
+    "role": "other_amount",
+    "txn_id": "TX-109233"
+   },
+   {
+    "merchant": "DMart",
+    "amount": 2187,
+    "date": "2026-10-20",
+    "time": "19:40",
+    "role": "filler",
+    "txn_id": "TX-205046"
+   },
+   {
+    "merchant": "Zomato",
+    "amount": 799,
+    "date": "2026-10-16",
+    "time": "20:49",
+    "role": "earlier",
+    "txn_id": "TX-264301"
+   },
+   {
+    "merchant": "Reliance Digital",
+    "amount": 2499,
+    "date": "2026-10-13",
+    "time": "08:55",
+    "role": "filler",
+    "txn_id": "TX-912067"
+   }
+  ],
+  "dup_amount": 799,
+  "dup_date": "2026-10-22",
+  "cards": [
+   {
+    "card_id": "CC-6091",
+    "type": "credit",
+    "network": "Visa",
+    "last4": "6091",
+    "linked_account": null,
+    "role": "lookalike"
+   },
+   {
+    "card_id": "DC-6019",
+    "type": "debit",
+    "network": "RuPay",
+    "last4": "6019",
+    "linked_account": "ACC-302",
+    "role": "salary_debit"
+   },
+   {
+    "card_id": "DC-6091",
+    "type": "debit",
+    "network": "Visa",
+    "last4": "6091",
+    "linked_account": "ACC-301",
+    "role": "lost"
+   }
+  ],
+  "last4": "6091",
+  "other4": "6019",
+  "block_reason": "stolen",
+  "replace_to": "home",
+  "limit": 50000,
+  "window": [
+   12,
+   30
+  ],
+  "schemes": [
+   {
+    "tenure_months": 12,
+    "rate": 7.3,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-198",
+    "name": "Regular FD 12M"
+   },
+   {
+    "tenure_months": 30,
+    "rate": 7.55,
+    "premature_withdrawal": true,
+    "role": "answer",
+    "scheme_id": "FDS-588",
+    "name": "Regular FD 30M"
+   },
+   {
+    "tenure_months": 60,
+    "rate": 7.9,
+    "premature_withdrawal": true,
+    "role": "outside_window",
+    "scheme_id": "FDS-587",
+    "name": "Regular FD 60M"
+   },
+   {
+    "tenure_months": 21,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-295",
+    "name": "Regular FD 21M"
+   },
+   {
+    "tenure_months": 24,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-293",
+    "name": "Regular FD 24M"
+   },
+   {
+    "tenure_months": 3,
+    "rate": 6.8,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-233",
+    "name": "Regular FD 3M"
+   },
+   {
+    "tenure_months": 9,
+    "rate": 6.8,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-364",
+    "name": "Regular FD 9M"
+   },
+   {
+    "tenure_months": 18,
+    "rate": 7.3,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-865",
+    "name": "Regular FD 18M"
+   },
+   {
+    "tenure_months": 48,
+    "rate": 6.8,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-353",
+    "name": "Regular FD 48M"
+   },
+   {
+    "tenure_months": 18,
+    "rate": 7.8,
+    "premature_withdrawal": false,
+    "role": "no_withdrawal",
+    "scheme_id": "FDS-895",
+    "name": "Non-Callable FD 18M"
+   },
+   {
+    "tenure_months": 36,
+    "rate": 6.5,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-150",
+    "name": "Regular FD 36M"
+   },
+   {
+    "tenure_months": 6,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-144",
+    "name": "Regular FD 6M"
+   }
+  ],
+  "fd_amount": 150000,
+  "payout": "monthly",
+  "fd_id": "FD-14958",
+  "deposits": [
+   {
+    "deposit_id": "FD-14598",
+    "type": "FD",
+    "amount": 40000,
+    "opened": "2025-03-14",
+    "nominee": null
+   },
+   {
+    "deposit_id": "RD-58432",
+    "type": "RD",
+    "amount": 2000,
+    "opened": "2025-08-01",
+    "nominee": "FM-21"
+   }
+  ],
+  "fd_maturity": "2029-04-30",
+  "rd_amount": 7500,
+  "nominee": "mummy",
+  "cheques": [
+   {
+    "cheque_number": "000633",
+    "payee": "Meera Iyer",
+    "amount": 20000,
+    "role": "same_payee"
+   },
+   {
+    "cheque_number": "000635",
+    "payee": "Meena Iyer",
+    "amount": 25000,
+    "role": "lookalike"
+   },
+   {
+    "cheque_number": "000634",
+    "payee": "Meera Iyer",
+    "amount": 25000,
+    "role": "answer"
+   },
+   {
+    "cheque_number": "000636",
+    "payee": "Society Maintenance",
+    "amount": 3500,
+    "role": "filler"
+   }
+  ],
+  "cq_payee": "Meera Iyer",
+  "cq_amount": 25000,
+  "channel": "sms",
+  "branch": "andheri_west",
+  "branches": [
+   {
+    "branch_id": "BR-3929",
+    "name": "Andheri East",
+    "ifsc": "HDFC003929"
+   },
+   {
+    "branch_id": "BR-2939",
+    "name": "Andheri West",
+    "ifsc": "HDFC002939"
+   },
+   {
+    "branch_id": "BR-2929",
+    "name": "Andheri Station Road",
+    "ifsc": "HDFC002929"
+   }
+  ]
+ },
+ "requests": {
+  "en": "Please take care of a few things on my net banking, queue them all and submit them together at the end.\nOn 22 October I was charged twice by Zomato for \u20b9799 on my savings account. Raise a dispute on the second, duplicate charge.\nSend the confirmations by SMS only and attach the requests to my home branch, Andheri West."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_accounts",
+   "args": {}
+  },
+  {
+   "tool": "list_transactions",
+   "args": {
+    "account_id": "ACC-301"
+   }
+  },
+  {
+   "tool": "raise_dispute",
+   "args": {
+    "txn_id": "TX-222316",
+    "reason": "duplicate"
+   }
+  },
+  {
+   "tool": "get_branches",
+   "args": {
+    "city": "Mumbai"
+   }
+  },
+  {
+   "tool": "request_otp",
+   "args": {}
+  },
+  {
+   "tool": "confirm_requests",
+   "args": {
+    "otp_ref": "OTP-0144",
+    "notify_channel": "sms",
+    "branch_id": "BR-2939"
+   }
+  }
+ ],
+ "horizon": 6
+}

@@ -1,0 +1,113 @@
+{
+ "intro": {
+  "en": "Diwali shopping for the family. Everything must arrive by {deadline_day} November, and items come to our home unless I say otherwise."
+ },
+ "clauses": {
+  "item_self": {
+   "en": "For me: the highest-rated {cat_self} in size {size_self} and {colour_self} under \u20b9{price_self}{addr_self}."
+  },
+  "item_father": {
+   "en": "For Papa: the highest-rated {cat_father} in size {size_father} and {colour_father} under \u20b9{price_father}{addr_father}."
+  },
+  "item_mother": {
+   "en": "For Mummy: the highest-rated {cat_mother} in size {size_mother} and {colour_mother} under \u20b9{price_mother}{addr_mother}."
+  },
+  "item_sister": {
+   "en": "For Didi: the highest-rated {cat_sister} in size {size_sister} and {colour_sister} under \u20b9{price_sister}{addr_sister}, as long as Mummy's and Didi's items together stay within \u20b9{pair_budget}."
+  },
+  "gift": {
+   "en": "Gift-wrap the items for {gift_a} and {gift_b}."
+  },
+  "exchange": {
+   "en": "Also exchange the {ex_cat} from my last order for size {ex_size}, same colour."
+  },
+  "coupon": {
+   "en": "Use the coupon that gives the biggest discount."
+  },
+  "checkout": {
+   "en": "Pay with my ICICI credit card ending {card} and choose the {slot} delivery slot."
+  }
+ },
+ "terms": {
+  "category": {
+   "kurta": {
+    "en": "kurta"
+   },
+   "shirt": {
+    "en": "shirt"
+   },
+   "kurti": {
+    "en": "kurti"
+   },
+   "sneakers": {
+    "en": "sneakers"
+   },
+   "jeans": {
+    "en": "jeans"
+   },
+   "saree": {
+    "en": "saree"
+   }
+  },
+  "colour": {
+   "blue": {
+    "en": "blue"
+   },
+   "black": {
+    "en": "black"
+   },
+   "white": {
+    "en": "white"
+   },
+   "red": {
+    "en": "red"
+   },
+   "green": {
+    "en": "green"
+   },
+   "maroon": {
+    "en": "maroon"
+   },
+   "yellow": {
+    "en": "yellow"
+   },
+   "grey": {
+    "en": "grey"
+   }
+  },
+  "deliver_to": {
+   "home": {
+    "en": ""
+   },
+   "nani": {
+    "en": ", delivered to Nani's house in Pune"
+   }
+  },
+  "relation": {
+   "father": {
+    "en": "Papa"
+   },
+   "mother": {
+    "en": "Mummy"
+   },
+   "sister": {
+    "en": "Didi"
+   }
+  },
+  "slot": {
+   "morning": {
+    "en": "morning (9 am - 12 noon)"
+   },
+   "afternoon": {
+    "en": "afternoon (12 noon - 3 pm)"
+   },
+   "evening": {
+    "en": "evening (6 pm - 9 pm)"
+   }
+  }
+ },
+ "stage_clause": {},
+ "verification": {
+  "en": "author"
+ }
+}

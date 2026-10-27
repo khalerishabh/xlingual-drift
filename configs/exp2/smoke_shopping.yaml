@@ -1,0 +1,31 @@
+# No GPU. Gold chain and every scripted fault on all 15 shopping instances; eval/exp2_smoke.py
+# checks that gold succeeds and each fault fails exactly its expected constraints.
+
+run_name: exp2_smoke_shopping
+
+templates:
+  - tasks/exp2/shopping_s1_short.json
+  - tasks/exp2/shopping_s1_medium.json
+  - tasks/exp2/shopping_s1_long.json
+  - tasks/exp2/shopping_s2_short.json
+  - tasks/exp2/shopping_s2_medium.json
+  - tasks/exp2/shopping_s2_long.json
+  - tasks/exp2/shopping_s3_short.json
+  - tasks/exp2/shopping_s3_medium.json
+  - tasks/exp2/shopping_s3_long.json
+  - tasks/exp2/shopping_s4_short.json
+  - tasks/exp2/shopping_s4_medium.json
+  - tasks/exp2/shopping_s4_long.json
+  - tasks/exp2/shopping_s5_short.json
+  - tasks/exp2/shopping_s5_medium.json
+  - tasks/exp2/shopping_s5_long.json
+max_steps: 60
+horizons: []
+languages: [en]
+
+cells:
+  - {name: solve, policy: mock, mock_mode: solve, seeds: [1]}
+  - {name: neighbour_variant, policy: mock, mock_mode: neighbour_variant, seeds: [1]}
+  - {name: swap_address, policy: mock, mock_mode: swap_address, seeds: [1]}
+  - {name: anchor_card, policy: mock, mock_mode: anchor_card, seeds: [1]}
+  - {name: anchor_slot, policy: mock, mock_mode: anchor_slot, seeds: [1]}

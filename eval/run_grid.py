@@ -30,10 +30,12 @@ import yaml
 
 from agent.policies.mock_policy import MockPolicy
 from agent.policies.openai_compat_policy import InfraError, OpenAICompatPolicy
+from agent.policies.exp2_mock_policy import Exp2MockPolicy
 from agent.policies.long_mock_policy import LongMockPolicy
 from agent.policies.trip_mock_policy import TripMockPolicy
 from agent.react_loop import run_episode
 from env.inject import FailureInjector
+from env.exp2.registry import DOMAINS as EXP2_DOMAINS
 from env.long.registry import DOMAINS as LONG_DOMAINS
 from env.trip.tools import TripTools
 from eval.metrics import is_truncated, summarize
@@ -52,6 +54,8 @@ def load_json(rel_path: str) -> dict:
 def build_policy(cell: dict, gold: dict, seed):
     kind = cell["policy"]
     if kind == "mock":
+        if gold.get("experiment") == "exp2":
+            return Exp2MockPolicy(gold, mode=cell.get("mock_mode", "solve"))
         if gold.get("domain") in LONG_DOMAINS:
             return LongMockPolicy(gold, mode=cell.get("mock_mode", "solve"))
         mock = TripMockPolicy if gold.get("domain") == "trip" else MockPolicy
@@ -131,9 +135,13 @@ def completed_keys(log_path: Path) -> set:
 
 def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, name: str, cell: dict, seed) -> dict:
     domain = template.get("domain")
-    trip, long_domain = domain == "trip", domain in LONG_DOMAINS
+    exp2 = template.get("experiment") == "exp2"
+    trip, long_domain = domain == "trip" and not exp2, domain in LONG_DOMAINS and not exp2
     seam = cell.get("seam", cfg.get("seam", "S1"))
-    if long_domain:
+    if exp2:
+        gold = template
+        tools = EXP2_DOMAINS[domain].Tools(template, language)
+    elif long_domain:
         gold = template
         tools = LONG_DOMAINS[domain]["tools"](template, language, seam)
     else:
@@ -148,6 +156,8 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
         "horizon": horizon, "language": language, "interface_mode": interface_mode, "cell": name,
         "policy": cell["policy"], "model": cell.get("model"), "extra_body": cell.get("extra_body"),
         "domain": domain or "travel", "seam": seam if long_domain else None,
+        "experiment": template.get("experiment"), "format": template.get("format"),
+        "scenario": template.get("scenario"),
         "seed": seed, "error_type": inject.get("error_type"), "inject_at_tool": inject.get("at_tool"),
         "message_language": inject.get("message_language"),
         "serving": serving if cell["policy"] != "mock" else None,
@@ -163,8 +173,9 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
         return {**base, "infra_error": str(e), "latency_s": round(time.perf_counter() - start, 3)}
     record = {
         **base,
-        **(LONG_DOMAINS[domain]["module"].verify(traj, template, traj.sold_out, final_state=tools.snapshot()) if long_domain
-           else (verify_trip if trip else verify)(traj, gold, traj.sold_out)),
+        **(EXP2_DOMAINS[domain].verify(traj, template, tools.snapshot()) if exp2
+           else LONG_DOMAINS[domain]["module"].verify(traj, template, traj.sold_out, final_state=tools.snapshot())
+           if long_domain else (verify_trip if trip else verify)(traj, gold, traj.sold_out)),
         "hit_step_limit": traj.hit_step_limit,
         "final_text": traj.final_text,
         "latency_s": round(time.perf_counter() - start, 3),
@@ -205,11 +216,21 @@ def main():
             cells.append((name, cell, seed))
 
     def horizons_of(t):
-        return [t["horizon"]] if t.get("domain") in LONG_DOMAINS else cfg["horizons"]
+        if t.get("experiment") == "exp2" or t.get("domain") in LONG_DOMAINS:
+            return [t["horizon"]]
+        return cfg["horizons"]
+
+    missing = sorted({(t["template_id"], lang) for t in templates for lang in cfg["languages"]
+                      if lang not in t["requests"]})
+    if missing:
+        raise SystemExit(f"{len(missing)} template/language pairs have no authored request, e.g. {missing[:3]}. "
+                         f"Author and freeze them (tasks/build_exp2.py) or drop the language from the config.")
 
     every = [(t, h, lang, name, cell, seed)
              for t in templates for h in horizons_of(t)
              for lang, (name, cell, seed) in itertools.product(cfg["languages"], cells)]
+    if all(t.get("experiment") == "exp2" for t in templates):
+        every.sort(key=lambda j: (j[5], j[2] != "en"))
     jobs = [j for j in every if f"{j[0]['template_id']}|h{j[1]}|{j[2]}|{j[3]}|s{j[5]}" not in done]
     skipped = len(every) - len(jobs)
 

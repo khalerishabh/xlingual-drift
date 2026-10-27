@@ -1,0 +1,244 @@
+{
+ "template_id": "travel_s3_long",
+ "experiment": "exp2",
+ "domain": "travel",
+ "scenario": 3,
+ "format": "long",
+ "stages": [
+  "outbound",
+  "return",
+  "budget",
+  "hotel",
+  "rooms",
+  "cab",
+  "tickets",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-11-10",
+ "world": {
+  "scenario": 3,
+  "source_template": "trip_003",
+  "session_date": "2026-11-10",
+  "constraints": {
+   "passengers": 3,
+   "outbound": {
+    "origin": "HYD",
+    "destination": "JAI",
+    "date": "2026-11-20",
+    "depart_after": "07:00",
+    "objective": "min_price",
+    "nonstop": true
+   },
+   "return": {
+    "origin": "JAI",
+    "destination": "HYD",
+    "date": "2026-11-22",
+    "depart_after": "16:00",
+    "objective": "earliest_departure",
+    "nonstop": true
+   },
+   "flight_budget_total": 36000,
+   "hotel": {
+    "city": "JAI",
+    "check_in": "2026-11-20",
+    "check_out": "2026-11-22",
+    "max_distance_km": 3,
+    "max_price_per_night": 3500,
+    "objective": "max_rating"
+   },
+   "rooms": [
+    {
+     "room_type": "suite",
+     "occupants": [
+      "mother",
+      "father"
+     ]
+    },
+    {
+     "room_type": "single",
+     "occupants": [
+      "self"
+     ]
+    }
+   ],
+   "cab": {
+    "vehicle_type": "suv",
+    "date": "2026-11-20",
+    "pickup": "outbound_arrival",
+    "drop": "hotel"
+   },
+   "tickets": {
+    "attraction_id": "A-JAI-03",
+    "attraction_name": "Hawa Mahal",
+    "date": "2026-11-21",
+    "slot_after": "10:00",
+    "objective": "earliest"
+   },
+   "travellers": {
+    "father": {
+     "seat": "aisle",
+     "meal": "diabetic",
+     "ticket": "senior"
+    },
+    "mother": {
+     "seat": "middle",
+     "meal": "jain",
+     "ticket": "senior"
+    },
+    "self": {
+     "seat": "window",
+     "meal": "jain",
+     "ticket": "student"
+    }
+   }
+  }
+ },
+ "requests": {
+  "en": "Plan our Jaipur trip: my parents and I are flying from Hyderabad on 20 November and coming back on 22 November.\nFor the flight there, take the cheapest non-stop flight that leaves after 7 am.\nFor the return, take the earliest non-stop flight after 4 pm.\nKeep all six flight tickets together within \u20b936,000.\nBook the highest-rated hotel within 3 km of Hawa Mahal whose rooms start at no more than \u20b93,500 a night.\nTake a suite for my parents and a single room for me.\nBook an SUV to pick us up at Jaipur airport when we land and take us to the hotel.\nOn the 21st, get Hawa Mahal tickets for the first slot after 10 am - senior-citizen tickets for my parents and a student ticket for me.\nOn every flight I want a window seat, Mummy a middle seat and Papa an aisle seat. Meals: Jain for me and for Mummy, diabetic for Papa."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "search_flights",
+   "args": {
+    "origin": "Hyderabad",
+    "destination": "Jaipur",
+    "date": "2026-11-20"
+   }
+  },
+  {
+   "tool": "filter_flights",
+   "args": {
+    "depart_after": "07:00",
+    "nonstop_only": true
+   }
+  },
+  {
+   "tool": "get_seat_map",
+   "args": {
+    "flight_id": "6E7123"
+   }
+  },
+  {
+   "tool": "get_meal_options",
+   "args": {
+    "flight_id": "6E7123"
+   }
+  },
+  {
+   "tool": "search_flights",
+   "args": {
+    "origin": "Jaipur",
+    "destination": "Hyderabad",
+    "date": "2026-11-22"
+   }
+  },
+  {
+   "tool": "filter_flights",
+   "args": {
+    "depart_after": "16:00",
+    "nonstop_only": true
+   }
+  },
+  {
+   "tool": "get_seat_map",
+   "args": {
+    "flight_id": "SG721"
+   }
+  },
+  {
+   "tool": "search_hotels",
+   "args": {
+    "city": "Jaipur",
+    "check_in": "2026-11-20",
+    "check_out": "2026-11-22"
+   }
+  },
+  {
+   "tool": "filter_hotels",
+   "args": {
+    "max_distance_km": 3
+   }
+  },
+  {
+   "tool": "get_room_options",
+   "args": {
+    "hotel_id": "H-JAI-158",
+    "check_in": "2026-11-20",
+    "check_out": "2026-11-22"
+   }
+  },
+  {
+   "tool": "get_cab_quotes",
+   "args": {
+    "pickup_location": "JAI",
+    "drop_location": "H-JAI-158",
+    "date": "2026-11-20",
+    "pickup_time": "12:05"
+   }
+  },
+  {
+   "tool": "get_ticket_slots",
+   "args": {
+    "attraction_name": "Hawa Mahal",
+    "date": "2026-11-21"
+   }
+  },
+  {
+   "tool": "get_travellers",
+   "args": {}
+  },
+  {
+   "tool": "confirm_booking",
+   "args": {
+    "outbound_flight_id": "6E7123",
+    "passengers": [
+     {
+      "traveller_id": "T-01",
+      "outbound_seat_id": "14F",
+      "meal_code": "JNML",
+      "return_seat_id": "14F",
+      "ticket_category": "student"
+     },
+     {
+      "traveller_id": "T-02",
+      "outbound_seat_id": "15B",
+      "meal_code": "JNML",
+      "return_seat_id": "15B",
+      "ticket_category": "senior"
+     },
+     {
+      "traveller_id": "T-03",
+      "outbound_seat_id": "14C",
+      "meal_code": "DBML",
+      "return_seat_id": "14C",
+      "ticket_category": "senior"
+     }
+    ],
+    "return_flight_id": "SG721",
+    "hotel_id": "H-JAI-158",
+    "rooms": [
+     {
+      "room_id": "R-158-5",
+      "traveller_ids": [
+       "T-02",
+       "T-03"
+      ]
+     },
+     {
+      "room_id": "R-158-1",
+      "traveller_ids": [
+       "T-01"
+      ]
+     }
+    ],
+    "cab_quote_id": "Q-SUV-1120-1205-158",
+    "ticket_slot_id": "S-03-1121-1030"
+   }
+  }
+ ],
+ "horizon": 14
+}

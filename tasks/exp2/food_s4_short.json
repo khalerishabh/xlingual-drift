@@ -1,0 +1,3168 @@
+{
+ "template_id": "food_s4_short",
+ "experiment": "exp2",
+ "domain": "food",
+ "scenario": 4,
+ "format": "short",
+ "stages": [
+  "restaurant",
+  "dish_self",
+  "checkout"
+ ],
+ "anchor_stage": "checkout",
+ "session_date": "2026-11-03",
+ "world": {
+  "seed": 404,
+  "scenario": 4,
+  "session_date": "2026-11-03",
+  "cuisine": "italian",
+  "address_key": "office",
+  "card": "4417",
+  "eta_limit": 35,
+  "restaurants": {
+   "R-1569": {
+    "restaurant_id": "R-1569",
+    "name": "Trattoria Roma",
+    "cuisine": "italian",
+    "pure_veg": false,
+    "rating": 4.8,
+    "eta_min": {
+     "home": 29,
+     "office": 23,
+     "nani": 21
+    },
+    "role": "top_nonveg"
+   },
+   "R-5278": {
+    "restaurant_id": "R-5278",
+    "name": "Olive Garden Veg",
+    "cuisine": "italian",
+    "pure_veg": true,
+    "rating": 4.66,
+    "eta_min": {
+     "home": 32,
+     "office": 45,
+     "nani": 29
+    },
+    "role": "slow"
+   },
+   "R-7218": {
+    "restaurant_id": "R-7218",
+    "name": "Pizza Bella",
+    "cuisine": "italian",
+    "pure_veg": true,
+    "rating": 4.5,
+    "eta_min": {
+     "home": 26,
+     "office": 21,
+     "nani": 28
+    },
+    "role": "gold"
+   },
+   "R-2718": {
+    "restaurant_id": "R-2718",
+    "name": "La Pinoz Kitchen",
+    "cuisine": "italian",
+    "pure_veg": true,
+    "rating": 4.16,
+    "eta_min": {
+     "home": 31,
+     "office": 24,
+     "nani": 20
+    },
+    "role": "lookalike"
+   },
+   "R-1362": {
+    "restaurant_id": "R-1362",
+    "name": "Casa Verde",
+    "cuisine": "italian",
+    "pure_veg": true,
+    "rating": 4.34,
+    "eta_min": {
+     "home": 27,
+     "office": 20,
+     "nani": 27
+    },
+    "role": "alt"
+   },
+   "R-7548": {
+    "restaurant_id": "R-7548",
+    "name": "Pasta Street",
+    "cuisine": "italian",
+    "pure_veg": true,
+    "rating": 4.0,
+    "eta_min": {
+     "home": 20,
+     "office": 31,
+     "nani": 30
+    },
+    "role": "filler1"
+   },
+   "R-7458": {
+    "restaurant_id": "R-7458",
+    "name": "Little Italy",
+    "cuisine": "italian",
+    "pure_veg": true,
+    "rating": 3.9,
+    "eta_min": {
+     "home": 30,
+     "office": 23,
+     "nani": 26
+    },
+    "role": "filler2"
+   },
+   "R-3972": {
+    "restaurant_id": "R-3972",
+    "name": "Napoli Oven",
+    "cuisine": "italian",
+    "pure_veg": false,
+    "rating": 3.66,
+    "eta_min": {
+     "home": 27,
+     "office": 28,
+     "nani": 21
+    },
+    "role": "filler3"
+   }
+  },
+  "listing": [
+   "R-1569",
+   "R-7218",
+   "R-2718",
+   "R-5278",
+   "R-7548",
+   "R-3972",
+   "R-7458",
+   "R-1362"
+  ],
+  "menus": {
+   "R-1569": [
+    {
+     "dish_id": "D-4825",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-3895",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-4795",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-9763",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-7952",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-4612",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-7153",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-5174",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-8976",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-8395",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-4138",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 50,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6415",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3845",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9736",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-2568",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-9213",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9268",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-5928",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 30,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2763",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2913",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-5684",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 40,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-2176",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-8796",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-8637",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    }
+   ],
+   "R-5278": [
+    {
+     "dish_id": "D-7285",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-8952",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-9231",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-3859",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-2586",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-1795",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 40,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-7483",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-5329",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-5738",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-7825",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5613",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5723",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3475",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 310,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7258",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5392",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-7528",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-5783",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5728",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 40,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6138",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-4157",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7482",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-2486",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-2498",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-2148",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    }
+   ],
+   "R-7218": [
+    {
+     "dish_id": "D-2839",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-5284",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-8437",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-3126",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-4935",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-2389",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-8361",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-7235",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-4591",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-1487",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-8631",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-5914",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-9714",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-4519",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-6973",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9837",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 30,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4875",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9658",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 50,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6793",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-6792",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-9136",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-2651",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 50,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-1396",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-6894",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    }
+   ],
+   "R-2718": [
+    {
+     "dish_id": "D-2438",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-9235",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-8319",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-3751",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-9261",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 40,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-9145",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-3697",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-8593",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-9638",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-2397",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-8145",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-8953",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-2985",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-2379",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-8342",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7462",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-6981",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 40,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5746",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-3792",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-9368",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-2853",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-2835",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5976",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 50,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5287",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    }
+   ],
+   "R-1362": [
+    {
+     "dish_id": "D-4895",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-1534",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-6812",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 40,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4597",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-3496",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5134",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 200,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3197",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 60,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4639",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5347",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-9147",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 310,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-4821",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-7824",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-5716",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-3846",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-7465",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-3945",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-8569",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-5761",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-5869",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-9348",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 40,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-4819",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-3954",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-4358",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-5819",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    }
+   ],
+   "R-7548": [
+    {
+     "dish_id": "D-6841",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-6871",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-3267",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-3264",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-6495",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-3492",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-6781",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1948",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5836",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-4765",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1523",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 40,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-4756",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-6215",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-4936",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-2134",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-5386",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-4619",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 310,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-3218",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-2374",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-6593",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-5961",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 40,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1753",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3942",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 220,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-8753",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    }
+   ],
+   "R-7458": [
+    {
+     "dish_id": "D-2158",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 60,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-1843",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-7485",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2748",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3142",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-4375",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-8693",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 310,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-4183",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1483",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-8157",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6972",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 160,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-9621",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5832",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-7634",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9754",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-6834",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 60,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3612",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-6782",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-7954",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-5374",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-6734",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 190,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-3574",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-6137",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7968",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 30,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    }
+   ],
+   "R-3972": [
+    {
+     "dish_id": "D-6892",
+     "name": "House Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-1765",
+     "name": "Chef's Special Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 310,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-7834",
+     "name": "Focaccia",
+     "course": "bread",
+     "type": "focaccia",
+     "price": 30,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3786",
+     "name": "Home-style Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 140,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-6983",
+     "name": "Royal Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-8641",
+     "name": "Home-style Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-5437",
+     "name": "Panna Cotta",
+     "course": "dessert",
+     "type": "panna_cotta",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-1632",
+     "name": "Bruschetta",
+     "course": "bread",
+     "type": "bruschetta",
+     "price": 60,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6173",
+     "name": "Royal Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 290,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-9563",
+     "name": "Home-style Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6129",
+     "name": "House Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-1825",
+     "name": "Garlic Bread",
+     "course": "bread",
+     "type": "garlic_bread",
+     "price": 40,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6982",
+     "name": "Classic Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1492",
+     "name": "Royal Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-3529",
+     "name": "House Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5461",
+     "name": "Brownie",
+     "course": "dessert",
+     "type": "brownie",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-5673",
+     "name": "Home-style Pasta",
+     "course": "main",
+     "type": "pasta",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5281",
+     "name": "Royal Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-8679",
+     "name": "Classic Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 180,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3592",
+     "name": "Classic Risotto",
+     "course": "main",
+     "type": "risotto",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-5219",
+     "name": "Cheesecake",
+     "course": "dessert",
+     "type": "cheesecake",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-8769",
+     "name": "House Pizza",
+     "course": "main",
+     "type": "pizza",
+     "price": 170,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9516",
+     "name": "Tiramisu",
+     "course": "dessert",
+     "type": "tiramisu",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-6219",
+     "name": "Classic Lasagne",
+     "course": "main",
+     "type": "lasagne",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    }
+   ]
+  },
+  "person_type": {
+   "self": "pizza",
+   "papa": "pasta",
+   "mummy": "risotto",
+   "didi": "lasagne"
+  },
+  "budgets": {
+   "self": 250,
+   "papa": 400,
+   "mummy": 350,
+   "didi": 350
+  },
+  "bread": "garlic_bread",
+  "bread_qty": 6,
+  "slot_time": "20:00",
+  "slots": [
+   {
+    "slot_id": "SL-2100",
+    "start_time": "21:00"
+   },
+   {
+    "slot_id": "SL-2130",
+    "start_time": "21:30"
+   },
+   {
+    "slot_id": "SL-2200",
+    "start_time": "22:00"
+   },
+   {
+    "slot_id": "SL-1930",
+    "start_time": "19:30"
+   },
+   {
+    "slot_id": "SL-2000",
+    "start_time": "20:00"
+   },
+   {
+    "slot_id": "SL-2030",
+    "start_time": "20:30"
+   }
+  ],
+  "offers": [
+   {
+    "code": "FLAT120",
+    "description": "Flat Rs 120 off on orders of Rs 1,200 or more",
+    "kind": "flat",
+    "value": 120,
+    "min_order": 1200,
+    "cap": 120
+   },
+   {
+    "code": "VEG20",
+    "description": "20% off up to Rs 150 on orders of Rs 600 or more",
+    "kind": "pct",
+    "value": 20,
+    "min_order": 600,
+    "cap": 150
+   },
+   {
+    "code": "FEAST15",
+    "description": "15% off up to Rs 300 on orders of Rs 1,500 or more",
+    "kind": "pct",
+    "value": 15,
+    "min_order": 1500,
+    "cap": 300
+   },
+   {
+    "code": "NEWUSER50",
+    "description": "50% off up to Rs 100, first order only",
+    "kind": "pct",
+    "value": 50,
+    "min_order": 0,
+    "cap": 100,
+    "first_order_only": true
+   }
+  ],
+  "total_budget": 1670
+ },
+ "requests": {
+  "en": "Please order dinner for the family tonight on the food delivery app.\nOrder from the highest-rated pure-veg Italian restaurant that can deliver to my office in Andheri East within 35 minutes.\nFor me: the highest-rated pizza under \u20b9250, spice level spicy.\nDeliver to my office in Andheri East and pay with my HDFC credit card ending 4417."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_saved_addresses",
+   "args": {}
+  },
+  {
+   "tool": "search_restaurants",
+   "args": {
+    "cuisine": "italian",
+    "address_id": "ADR-13"
+   }
+  },
+  {
+   "tool": "get_menu",
+   "args": {
+    "restaurant_id": "R-7218"
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-7218",
+    "dish_id": "D-6973"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-7218",
+    "dish_id": "D-6973",
+    "quantity": 1,
+    "spice_level": "spicy",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_payment_methods",
+   "args": {}
+  },
+  {
+   "tool": "place_order",
+   "args": {
+    "address_id": "ADR-13",
+    "payment_id": "PM-CC-4417"
+   }
+  }
+ ],
+ "horizon": 7
+}

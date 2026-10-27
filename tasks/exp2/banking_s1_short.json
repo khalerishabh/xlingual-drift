@@ -1,0 +1,325 @@
+{
+ "template_id": "banking_s1_short",
+ "experiment": "exp2",
+ "domain": "banking",
+ "scenario": 1,
+ "format": "short",
+ "stages": [
+  "dispute",
+  "submit"
+ ],
+ "anchor_stage": "submit",
+ "session_date": "2026-10-30",
+ "world": {
+  "seed": 11,
+  "scenario": 1,
+  "session_date": "2026-10-30",
+  "merchant": "swiggy",
+  "txns": [
+   {
+    "merchant": "Apollo Pharmacy",
+    "amount": 642,
+    "date": "2026-10-28",
+    "time": "10:12",
+    "role": "filler",
+    "txn_id": "TX-760479"
+   },
+   {
+    "merchant": "Swiggy Instamart",
+    "amount": 799,
+    "date": "2026-10-24",
+    "time": "21:34",
+    "role": "lookalike",
+    "txn_id": "TX-743782"
+   },
+   {
+    "merchant": "Swiggy",
+    "amount": 799,
+    "date": "2026-10-24",
+    "time": "20:38",
+    "role": "duplicate",
+    "txn_id": "TX-931496"
+   },
+   {
+    "merchant": "Swiggy",
+    "amount": 799,
+    "date": "2026-10-24",
+    "time": "20:34",
+    "role": "original",
+    "txn_id": "TX-391496"
+   },
+   {
+    "merchant": "Swiggy",
+    "amount": 919,
+    "date": "2026-10-24",
+    "time": "17:34",
+    "role": "other_amount",
+    "txn_id": "TX-198695"
+   },
+   {
+    "merchant": "BookMyShow",
+    "amount": 560,
+    "date": "2026-10-22",
+    "time": "19:40",
+    "role": "filler",
+    "txn_id": "TX-568286"
+   },
+   {
+    "merchant": "Swiggy",
+    "amount": 799,
+    "date": "2026-10-18",
+    "time": "20:34",
+    "role": "earlier",
+    "txn_id": "TX-418139"
+   },
+   {
+    "merchant": "Reliance Digital",
+    "amount": 2499,
+    "date": "2026-10-15",
+    "time": "08:55",
+    "role": "filler",
+    "txn_id": "TX-248682"
+   }
+  ],
+  "dup_amount": 799,
+  "dup_date": "2026-10-24",
+  "cards": [
+   {
+    "card_id": "CC-8125",
+    "type": "credit",
+    "network": "Visa",
+    "last4": "8125",
+    "linked_account": null,
+    "role": "lookalike"
+   },
+   {
+    "card_id": "DC-8152",
+    "type": "debit",
+    "network": "RuPay",
+    "last4": "8152",
+    "linked_account": "ACC-302",
+    "role": "salary_debit"
+   },
+   {
+    "card_id": "DC-8125",
+    "type": "debit",
+    "network": "Visa",
+    "last4": "8125",
+    "linked_account": "ACC-301",
+    "role": "lost"
+   }
+  ],
+  "last4": "8125",
+  "other4": "8152",
+  "block_reason": "lost",
+  "replace_to": "office",
+  "limit": 25000,
+  "window": [
+   12,
+   24
+  ],
+  "schemes": [
+   {
+    "tenure_months": 12,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-551",
+    "name": "Regular FD 12M"
+   },
+   {
+    "tenure_months": 9,
+    "rate": 6.8,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-705",
+    "name": "Regular FD 9M"
+   },
+   {
+    "tenure_months": 24,
+    "rate": 7.55,
+    "premature_withdrawal": true,
+    "role": "answer",
+    "scheme_id": "FDS-962",
+    "name": "Regular FD 24M"
+   },
+   {
+    "tenure_months": 36,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-300",
+    "name": "Regular FD 36M"
+   },
+   {
+    "tenure_months": 18,
+    "rate": 7.3,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-631",
+    "name": "Regular FD 18M"
+   },
+   {
+    "tenure_months": 30,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-339",
+    "name": "Regular FD 30M"
+   },
+   {
+    "tenure_months": 60,
+    "rate": 7.9,
+    "premature_withdrawal": true,
+    "role": "outside_window",
+    "scheme_id": "FDS-755",
+    "name": "Regular FD 60M"
+   },
+   {
+    "tenure_months": 12,
+    "rate": 7.8,
+    "premature_withdrawal": false,
+    "role": "no_withdrawal",
+    "scheme_id": "FDS-401",
+    "name": "Non-Callable FD 12M"
+   },
+   {
+    "tenure_months": 3,
+    "rate": 6.5,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-611",
+    "name": "Regular FD 3M"
+   },
+   {
+    "tenure_months": 6,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-104",
+    "name": "Regular FD 6M"
+   },
+   {
+    "tenure_months": 48,
+    "rate": 7.2,
+    "premature_withdrawal": true,
+    "role": "filler",
+    "scheme_id": "FDS-778",
+    "name": "Regular FD 48M"
+   }
+  ],
+  "fd_amount": 50000,
+  "payout": "cumulative",
+  "fd_id": "FD-69943",
+  "deposits": [
+   {
+    "deposit_id": "FD-69934",
+    "type": "FD",
+    "amount": 40000,
+    "opened": "2025-03-14",
+    "nominee": null
+   },
+   {
+    "deposit_id": "RD-46459",
+    "type": "RD",
+    "amount": 2000,
+    "opened": "2025-08-01",
+    "nominee": "FM-21"
+   }
+  ],
+  "fd_maturity": "2028-10-30",
+  "rd_amount": 7500,
+  "nominee": "mummy",
+  "cheques": [
+   {
+    "cheque_number": "000878",
+    "payee": "Meera Iyer",
+    "amount": 20000,
+    "role": "same_payee"
+   },
+   {
+    "cheque_number": "000880",
+    "payee": "Meena Iyer",
+    "amount": 25000,
+    "role": "lookalike"
+   },
+   {
+    "cheque_number": "000879",
+    "payee": "Meera Iyer",
+    "amount": 25000,
+    "role": "answer"
+   },
+   {
+    "cheque_number": "000881",
+    "payee": "Society Maintenance",
+    "amount": 3500,
+    "role": "filler"
+   }
+  ],
+  "cq_payee": "Meera Iyer",
+  "cq_amount": 25000,
+  "channel": "email",
+  "branch": "andheri_west",
+  "branches": [
+   {
+    "branch_id": "BR-5042",
+    "name": "Andheri East",
+    "ifsc": "HDFC005042"
+   },
+   {
+    "branch_id": "BR-4250",
+    "name": "Andheri West",
+    "ifsc": "HDFC004250"
+   },
+   {
+    "branch_id": "BR-4242",
+    "name": "Andheri Station Road",
+    "ifsc": "HDFC004242"
+   }
+  ]
+ },
+ "requests": {
+  "en": "Please take care of a few things on my net banking, queue them all and submit them together at the end.\nOn 24 October I was charged twice by Swiggy for \u20b9799 on my savings account. Raise a dispute on the second, duplicate charge.\nSend the confirmations by email only and attach the requests to my home branch, Andheri West."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_accounts",
+   "args": {}
+  },
+  {
+   "tool": "list_transactions",
+   "args": {
+    "account_id": "ACC-301"
+   }
+  },
+  {
+   "tool": "raise_dispute",
+   "args": {
+    "txn_id": "TX-931496",
+    "reason": "duplicate"
+   }
+  },
+  {
+   "tool": "get_branches",
+   "args": {
+    "city": "Mumbai"
+   }
+  },
+  {
+   "tool": "request_otp",
+   "args": {}
+  },
+  {
+   "tool": "confirm_requests",
+   "args": {
+    "otp_ref": "OTP-0111",
+    "notify_channel": "email",
+    "branch_id": "BR-4250"
+   }
+  }
+ ],
+ "horizon": 6
+}

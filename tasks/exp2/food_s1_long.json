@@ -1,0 +1,3266 @@
+{
+ "template_id": "food_s1_long",
+ "experiment": "exp2",
+ "domain": "food",
+ "scenario": 1,
+ "format": "long",
+ "stages": [
+  "restaurant",
+  "dish_self",
+  "dish_papa",
+  "dish_mummy",
+  "dish_didi",
+  "sides",
+  "dessert",
+  "offer",
+  "slot",
+  "checkout"
+ ],
+ "anchor_stage": "checkout",
+ "session_date": "2026-11-03",
+ "world": {
+  "seed": 101,
+  "scenario": 1,
+  "session_date": "2026-11-03",
+  "cuisine": "north_indian",
+  "address_key": "home",
+  "card": "4417",
+  "eta_limit": 45,
+  "restaurants": {
+   "R-3289": {
+    "restaurant_id": "R-3289",
+    "name": "Shree Annapurna",
+    "cuisine": "north_indian",
+    "pure_veg": false,
+    "rating": 4.84,
+    "eta_min": {
+     "home": 31,
+     "office": 26,
+     "nani": 35
+    },
+    "role": "top_nonveg"
+   },
+   "R-2785": {
+    "restaurant_id": "R-2785",
+    "name": "Amritsari Haveli",
+    "cuisine": "north_indian",
+    "pure_veg": true,
+    "rating": 4.66,
+    "eta_min": {
+     "home": 65,
+     "office": 23,
+     "nani": 40
+    },
+    "role": "slow"
+   },
+   "R-6825": {
+    "restaurant_id": "R-6825",
+    "name": "Delhi Darbar Veg",
+    "cuisine": "north_indian",
+    "pure_veg": true,
+    "rating": 4.54,
+    "eta_min": {
+     "home": 30,
+     "office": 41,
+     "nani": 28
+    },
+    "role": "gold"
+   },
+   "R-8625": {
+    "restaurant_id": "R-8625",
+    "name": "Punjab Grill House",
+    "cuisine": "north_indian",
+    "pure_veg": true,
+    "rating": 4.2,
+    "eta_min": {
+     "home": 32,
+     "office": 27,
+     "nani": 33
+    },
+    "role": "lookalike"
+   },
+   "R-4926": {
+    "restaurant_id": "R-4926",
+    "name": "Sukh Sagar",
+    "cuisine": "north_indian",
+    "pure_veg": true,
+    "rating": 4.34,
+    "eta_min": {
+     "home": 20,
+     "office": 31,
+     "nani": 42
+    },
+    "role": "alt"
+   },
+   "R-7352": {
+    "restaurant_id": "R-7352",
+    "name": "Rajdhani Rasoi",
+    "cuisine": "north_indian",
+    "pure_veg": true,
+    "rating": 3.96,
+    "eta_min": {
+     "home": 24,
+     "office": 32,
+     "nani": 41
+    },
+    "role": "filler1"
+   },
+   "R-6982": {
+    "restaurant_id": "R-6982",
+    "name": "Bikaner Bhoj",
+    "cuisine": "north_indian",
+    "pure_veg": true,
+    "rating": 3.86,
+    "eta_min": {
+     "home": 41,
+     "office": 42,
+     "nani": 39
+    },
+    "role": "filler2"
+   },
+   "R-9832": {
+    "restaurant_id": "R-9832",
+    "name": "Haldiram Express",
+    "cuisine": "north_indian",
+    "pure_veg": false,
+    "rating": 3.74,
+    "eta_min": {
+     "home": 24,
+     "office": 29,
+     "nani": 30
+    },
+    "role": "filler3"
+   }
+  },
+  "listing": [
+   "R-2785",
+   "R-7352",
+   "R-6982",
+   "R-3289",
+   "R-9832",
+   "R-4926",
+   "R-6825",
+   "R-8625"
+  ],
+  "menus": {
+   "R-3289": [
+    {
+     "dish_id": "D-3872",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 60,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-7531",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5146",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5381",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-5731",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-3149",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-8564",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 40,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-1753",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-2916",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-3614",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-2316",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3194",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-8136",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-5673",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-6148",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-1735",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5941",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-6184",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9243",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-6923",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1459",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-5479",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2918",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-6293",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    }
+   ],
+   "R-2785": [
+    {
+     "dish_id": "D-3796",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6325",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-1623",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-5892",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-2863",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-5913",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 320,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-5478",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-8352",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 30,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5194",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-4653",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 60,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-2375",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-2875",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-8126",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6379",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-1483",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-5862",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-7286",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9173",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 30,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-5982",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-2415",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-2451",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-8754",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-9513",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-8574",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    }
+   ],
+   "R-6825": [
+    {
+     "dish_id": "D-1458",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 60,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-1647",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-6798",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-1578",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-3914",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5379",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-9253",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 210,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-2748",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-6397",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3782",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-4165",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-9138",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-1758",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-9386",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-8734",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-8374",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-4279",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-6593",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-5826",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5743",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-9183",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 30,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-5397",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-2538",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-9836",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    }
+   ],
+   "R-8625": [
+    {
+     "dish_id": "D-5624",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-5946",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-7234",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-1248",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7926",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-9538",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-5643",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-5721",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 50,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6981",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 310,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-4215",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 40,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3276",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-6543",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 230,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-2815",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-2734",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-7194",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-3241",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 350,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-8579",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-3596",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-3214",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9263",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-2547",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-4613",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 30,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-7183",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3267",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    }
+   ],
+   "R-4926": [
+    {
+     "dish_id": "D-9645",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-7965",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 50,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3285",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 60,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-7835",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-6175",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-9465",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-4156",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-4318",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-4851",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-7618",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-4852",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9583",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1549",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 40,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4582",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 370,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-2716",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-2586",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-6971",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-5286",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-4321",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-2981",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-2684",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-2864",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-5983",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-3728",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    }
+   ],
+   "R-7352": [
+    {
+     "dish_id": "D-3487",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5764",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-9876",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-7358",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-9432",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-9324",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 60,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-7894",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-6947",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-4513",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-5413",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-1764",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-5842",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 60,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-6198",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 260,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-6928",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-8637",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-3928",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 30,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-9423",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-9135",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-9628",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-3652",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-1452",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-9153",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-2617",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-1498",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    }
+   ],
+   "R-6982": [
+    {
+     "dish_id": "D-9451",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 460,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-2784",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-5491",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-4897",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-3984",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 220,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-1347",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-9621",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 30,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-4817",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-5123",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 410,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-8953",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 30,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3281",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-9384",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 270,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-8514",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 60,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-5214",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 340,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-3458",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 310,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-7943",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 300,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    },
+    {
+     "dish_id": "D-1437",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-7426",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-7934",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-5918",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-2714",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-3294",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 290,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-4726",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-1279",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    }
+   ],
+   "R-9832": [
+    {
+     "dish_id": "D-4763",
+     "name": "Kulfi",
+     "course": "dessert",
+     "type": "kulfi",
+     "price": 140,
+     "rating": 4.4,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:2"
+    },
+    {
+     "dish_id": "D-1237",
+     "name": "Royal Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 440,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:over"
+    },
+    {
+     "dish_id": "D-8612",
+     "name": "House Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 240,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:lookalike"
+    },
+    {
+     "dish_id": "D-5394",
+     "name": "Gulab Jamun",
+     "course": "dessert",
+     "type": "gulab_jamun",
+     "price": 260,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:0"
+    },
+    {
+     "dish_id": "D-7821",
+     "name": "Rasmalai",
+     "course": "dessert",
+     "type": "rasmalai",
+     "price": 180,
+     "rating": 4.6,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:1"
+    },
+    {
+     "dish_id": "D-2618",
+     "name": "Royal Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 390,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:over"
+    },
+    {
+     "dish_id": "D-7612",
+     "name": "Classic Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 280,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:gold"
+    },
+    {
+     "dish_id": "D-7253",
+     "name": "Home-style Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:filler"
+    },
+    {
+     "dish_id": "D-2487",
+     "name": "Royal Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 490,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:over"
+    },
+    {
+     "dish_id": "D-5167",
+     "name": "Home-style Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 240,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:filler"
+    },
+    {
+     "dish_id": "D-2497",
+     "name": "Home-style Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 190,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:filler"
+    },
+    {
+     "dish_id": "D-7392",
+     "name": "Home-style Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 310,
+     "rating": 3.9,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:filler"
+    },
+    {
+     "dish_id": "D-3981",
+     "name": "Tandoori Roti",
+     "course": "bread",
+     "type": "tandoori_roti",
+     "price": 50,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-3546",
+     "name": "House Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 270,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:lookalike"
+    },
+    {
+     "dish_id": "D-7162",
+     "name": "House Paneer",
+     "course": "main",
+     "type": "paneer",
+     "price": 290,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "didi:lookalike"
+    },
+    {
+     "dish_id": "D-8542",
+     "name": "Garlic Naan",
+     "course": "bread",
+     "type": "garlic_naan",
+     "price": 40,
+     "rating": 4.2,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:other"
+    },
+    {
+     "dish_id": "D-7619",
+     "name": "Phirni",
+     "course": "dessert",
+     "type": "phirni",
+     "price": 120,
+     "rating": 4.0,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "dessert:3"
+    },
+    {
+     "dish_id": "D-6812",
+     "name": "Classic Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 250,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:gold"
+    },
+    {
+     "dish_id": "D-1874",
+     "name": "Royal Biryani",
+     "course": "main",
+     "type": "biryani",
+     "price": 360,
+     "rating": 4.8,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "papa:over"
+    },
+    {
+     "dish_id": "D-3249",
+     "name": "Chef's Special Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 330,
+     "rating": 4.7,
+     "jain_available": false,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:nojain"
+    },
+    {
+     "dish_id": "D-6537",
+     "name": "House Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 340,
+     "rating": 4.1,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:lookalike"
+    },
+    {
+     "dish_id": "D-6851",
+     "name": "Butter Roti",
+     "course": "bread",
+     "type": "butter_roti",
+     "price": 60,
+     "rating": 4.3,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "bread:gold"
+    },
+    {
+     "dish_id": "D-6573",
+     "name": "Classic Dal",
+     "course": "main",
+     "type": "dal",
+     "price": 330,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "self:gold"
+    },
+    {
+     "dish_id": "D-3564",
+     "name": "Classic Kofta",
+     "course": "main",
+     "type": "kofta",
+     "price": 320,
+     "rating": 4.5,
+     "jain_available": true,
+     "spice_levels": [
+      "mild",
+      "medium",
+      "spicy"
+     ],
+     "role": "mummy:gold"
+    }
+   ]
+  },
+  "person_type": {
+   "self": "dal",
+   "papa": "biryani",
+   "mummy": "kofta",
+   "didi": "paneer"
+  },
+  "budgets": {
+   "self": 400,
+   "papa": 300,
+   "mummy": 350,
+   "didi": 350
+  },
+  "bread": "butter_roti",
+  "bread_qty": 8,
+  "slot_time": "21:00",
+  "slots": [
+   {
+    "slot_id": "SL-2100",
+    "start_time": "21:00"
+   },
+   {
+    "slot_id": "SL-2130",
+    "start_time": "21:30"
+   },
+   {
+    "slot_id": "SL-2200",
+    "start_time": "22:00"
+   },
+   {
+    "slot_id": "SL-1930",
+    "start_time": "19:30"
+   },
+   {
+    "slot_id": "SL-2000",
+    "start_time": "20:00"
+   },
+   {
+    "slot_id": "SL-2030",
+    "start_time": "20:30"
+   }
+  ],
+  "offers": [
+   {
+    "code": "FLAT120",
+    "description": "Flat Rs 120 off on orders of Rs 1,200 or more",
+    "kind": "flat",
+    "value": 120,
+    "min_order": 1200,
+    "cap": 120
+   },
+   {
+    "code": "VEG20",
+    "description": "20% off up to Rs 150 on orders of Rs 600 or more",
+    "kind": "pct",
+    "value": 20,
+    "min_order": 600,
+    "cap": 150
+   },
+   {
+    "code": "FEAST15",
+    "description": "15% off up to Rs 300 on orders of Rs 1,500 or more",
+    "kind": "pct",
+    "value": 15,
+    "min_order": 1500,
+    "cap": 300
+   },
+   {
+    "code": "NEWUSER50",
+    "description": "50% off up to Rs 100, first order only",
+    "kind": "pct",
+    "value": 50,
+    "min_order": 0,
+    "cap": 100,
+    "first_order_only": true
+   }
+  ],
+  "total_budget": 1920
+ },
+ "requests": {
+  "en": "Please order dinner for the family tonight on the food delivery app.\nOrder from the highest-rated pure-veg North Indian restaurant that can deliver to my home in Andheri West within 45 minutes.\nFor me: the highest-rated dal under \u20b9400, spice level spicy.\nFor Papa: the highest-rated veg biryani under \u20b9300, spice level mild.\nFor Mummy: the highest-rated kofta curry under \u20b9350 that can be made Jain, and make it Jain.\nFor Didi: the highest-rated paneer curry under \u20b9350, spice level medium.\nAdd 8 butter rotis.\nThen add the highest-rated dessert that keeps the whole order within \u20b91,920 before any offer.\nApply the offer that gives the biggest discount.\nSchedule the delivery for the 21:00 slot.\nDeliver to my home in Andheri West and pay with my HDFC credit card ending 4417."
+ },
+ "verification": {
+  "en": "author"
+ },
+ "gold_steps": [
+  {
+   "tool": "get_saved_addresses",
+   "args": {}
+  },
+  {
+   "tool": "search_restaurants",
+   "args": {
+    "cuisine": "north_indian",
+    "address_id": "ADR-31"
+   }
+  },
+  {
+   "tool": "get_menu",
+   "args": {
+    "restaurant_id": "R-6825"
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-9836"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-9836",
+    "quantity": 1,
+    "spice_level": "spicy",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-5397"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-5397",
+    "quantity": 1,
+    "spice_level": "mild",
+    "jain": false
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-8734"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-8734",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": true
+   }
+  },
+  {
+   "tool": "get_dish_details",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-1578"
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-1578",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": false
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-1458",
+    "quantity": 8,
+    "spice_level": "medium",
+    "jain": false
+   }
+  },
+  {
+   "tool": "add_item",
+   "args": {
+    "restaurant_id": "R-6825",
+    "dish_id": "D-5743",
+    "quantity": 1,
+    "spice_level": "medium",
+    "jain": false
+   }
+  },
+  {
+   "tool": "list_offers",
+   "args": {
+    "restaurant_id": "R-6825"
+   }
+  },
+  {
+   "tool": "apply_offer",
+   "args": {
+    "code": "FEAST15"
+   }
+  },
+  {
+   "tool": "get_delivery_slots",
+   "args": {
+    "restaurant_id": "R-6825",
+    "address_id": "ADR-31"
+   }
+  },
+  {
+   "tool": "get_payment_methods",
+   "args": {}
+  },
+  {
+   "tool": "place_order",
+   "args": {
+    "address_id": "ADR-31",
+    "payment_id": "PM-CC-4417",
+    "slot_id": "SL-2100"
+   }
+  }
+ ],
+ "horizon": 18
+}

@@ -1,0 +1,83 @@
+{
+ "intro": {
+  "en": "Please take care of a few things on my net banking, queue them all and submit them together at the end."
+ },
+ "clauses": {
+  "dispute": {
+   "en": "On {day} October I was charged twice by {merchant} for \u20b9{amt} on my savings account. Raise a dispute on the second, duplicate charge."
+  },
+  "card_block": {
+   "en": "I have {block_reason} my savings account debit card ending {last4}. Block it."
+  },
+  "card_replace": {
+   "en": "Order a replacement for that card, delivered to my {replace_to} address."
+  },
+  "card_limit": {
+   "en": "Set the international online limit on my salary account debit card to \u20b9{limit} a day."
+  },
+  "fd_open": {
+   "en": "Open a fixed deposit of \u20b9{fd_amount} from my savings account, in the scheme with the highest interest rate for a tenure between {lo} and {hi} months that allows premature withdrawal, with {payout} interest payout."
+  },
+  "rd_open": {
+   "en": "Start a recurring deposit of \u20b9{rd_amount} a month from my salary account that matures in the same month as that fixed deposit."
+  },
+  "nominee": {
+   "en": "Add {nominee} as the nominee on the new fixed deposit with a 100% share."
+  },
+  "cheque_stop": {
+   "en": "Stop the cheque for \u20b9{cq_amount} I issued to {cq_payee}; that payment is cancelled."
+  },
+  "submit": {
+   "en": "Send the confirmations by {channel} only and attach the requests to my home branch, {branch}."
+  }
+ },
+ "terms": {
+  "block_reason": {
+   "lost": {
+    "en": "lost"
+   },
+   "stolen": {
+    "en": "had stolen"
+   }
+  },
+  "address": {
+   "office": {
+    "en": "office"
+   },
+   "home": {
+    "en": "home"
+   }
+  },
+  "payout": {
+   "cumulative": {
+    "en": "cumulative"
+   },
+   "monthly": {
+    "en": "monthly"
+   },
+   "quarterly": {
+    "en": "quarterly"
+   }
+  },
+  "relation": {
+   "mummy": {
+    "en": "Mummy"
+   },
+   "papa": {
+    "en": "Papa"
+   }
+  },
+  "channel": {
+   "sms": {
+    "en": "SMS"
+   },
+   "email": {
+    "en": "email"
+   }
+  }
+ },
+ "stage_clause": {},
+ "verification": {
+  "en": "author"
+ }
+}

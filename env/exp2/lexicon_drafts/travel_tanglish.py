@@ -1,0 +1,55 @@
+"""Draft tanglish lexicon for the travel domain (LLM draft). Not loaded by the builder until
+Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
+
+VERIFICATION = "draft: LLM, pending Rishabh"
+
+LEX = {
+    "clauses": {
+        "s1.intro": "Engha Jaipur trip-a plan pannunga: naanum en Appa Amma-vum October 14 anniki Chennai-la irundhu kelambi October 16 anniki thirumbi varom.",
+        "s1.outbound": "Pogumbodhu madhiyam 12 manikku munnadi kelambura cheapest non-stop flight-a edunga.",
+        "s1.return": "Thirumbi varumbodhu saayangalam 6 manikku aprom kelambura first non-stop flight-a edunga.",
+        "s1.budget": "Aaru flight tickets-um serthu \u20b930,000-kulla irukkanum.",
+        "s1.hotel": "Hawa Mahal-la irundhu 3 km-kulla, lift irukkara, pure veg breakfast kudukkara hotels-la rating adhigama irukkara hotel-a book pannunga.",
+        "s1.rooms": "Appa Amma-ku oru double room, enakku oru single room edunga.",
+        "s1.cab": "Naangha Jaipur airport-la land aanadhum engala pick panni hotel-la drop panna oru SUV book pannunga.",
+        "s1.tickets": "15-am thedhi Amber Fort-ku kaalai 9 manikku aprom irukkara first slot-ku tickets vaangunga - Appa Amma-ku senior citizen ticket, enakku adult ticket.",
+        "s1.submit": "Ovvoru flight-layum Appa-ku window seat, Amma-ku aisle seat, enakku middle seat. Saapadu: Appa-ku diabetic, Amma-ku Jain, enakku veg.",
+        "s2.intro": "Engha Jaipur trip-a plan pannunga: naanum en Appa Amma-vum November 6 anniki Bengaluru-la irundhu kelambi November 8 anniki thirumbi varom.",
+        "s2.outbound": "Pogumbodhu kaalai 10 manikku munnadi kelambura last non-stop flight-a edunga.",
+        "s2.return": "Thirumbi varumbodhu raathiri 9 manikku munnadi kelambura last non-stop flight-a edunga.",
+        "s2.budget": "Aaru flight tickets-um serthu \u20b942,000-kulla irukkanum.",
+        "s2.hotel": "Hawa Mahal-la irundhu 2 km-kulla, lift irukkara, rooms oru night-ku \u20b94,000-ku mela illama start aagura hotels-la rating adhigama irukkara hotel-a book pannunga.",
+        "s2.rooms": "Appa Amma-ku oru twin room, enakku oru single room edunga.",
+        "s2.cab": "Naangha Jaipur airport-la land aanadhum engala pick panni hotel-la drop panna oru sedan book pannunga.",
+        "s2.tickets": "7-am thedhi City Palace-ku saayangalam 4 manikku munnadi irukkara last slot-ku tickets vaangunga - Appa Amma-ku senior citizen ticket, enakku adult ticket.",
+        "s2.submit": "Ovvoru flight-layum enakku window seat, Appa Amma rendu perukkum aisle seat. Saapadu: enakkum Appa-kum veg, Amma-ku diabetic.",
+        "s3.intro": "Engha Jaipur trip-a plan pannunga: naanum en Appa Amma-vum November 20 anniki Hyderabad-la irundhu kelambi November 22 anniki thirumbi varom.",
+        "s3.outbound": "Pogumbodhu kaalai 7 manikku aprom kelambura cheapest non-stop flight-a edunga.",
+        "s3.return": "Thirumbi varumbodhu saayangalam 4 manikku aprom kelambura first non-stop flight-a edunga.",
+        "s3.budget": "Aaru flight tickets-um serthu \u20b936,000-kulla irukkanum.",
+        "s3.hotel": "Hawa Mahal-la irundhu 3 km-kulla, rooms oru night-ku \u20b93,500-ku mela illama start aagura hotels-la rating adhigama irukkara hotel-a book pannunga.",
+        "s3.rooms": "Appa Amma-ku oru suite, enakku oru single room edunga.",
+        "s3.cab": "Naangha Jaipur airport-la land aanadhum engala pick panni hotel-la drop panna oru SUV book pannunga.",
+        "s3.tickets": "21-am thedhi Hawa Mahal-ku kaalai 10 manikku aprom irukkara first slot-ku tickets vaangunga - Appa Amma-ku senior citizen ticket, enakku student ticket.",
+        "s3.submit": "Ovvoru flight-layum enakku window seat, Amma-ku middle seat, Appa-ku aisle seat. Saapadu: enakkum Amma-kum Jain, Appa-ku diabetic.",
+        "s4.intro": "Engha Jaipur trip-a plan pannunga: naanum en Appa Amma-vum December 4 anniki Mumbai-la irundhu kelambi December 6 anniki thirumbi varom.",
+        "s4.outbound": "Pogumbodhu kaalai 8 manikku aprom kelambura first non-stop flight-a edunga.",
+        "s4.return": "Thirumbi varumbodhu raathiri 8 manikku munnadi kelambura last non-stop flight-a edunga.",
+        "s4.budget": "Aaru flight tickets-um serthu \u20b933,000-kulla irukkanum.",
+        "s4.hotel": "Hawa Mahal-la irundhu 6 km-kulla, rooms oru night-ku \u20b96,000-ku mela illama start aagura hotels-la rating adhigama irukkara hotel-a book pannunga.",
+        "s4.rooms": "Appa Amma-ku oru double room, enakku oru single room edunga.",
+        "s4.cab": "Engakitta niraiya luggage irukku, adhanaala naangha Jaipur airport-la land aanadhum engala pick panni hotel-la drop panna oru tempo traveller book pannunga.",
+        "s4.tickets": "5-am thedhi Jantar Mantar-ku madhiyam 2 manikku munnadi irukkara last slot-ku tickets vaangunga - Appa Amma-ku senior citizen ticket, enakku adult ticket.",
+        "s4.submit": "Ovvoru flight-layum Appa-ku window seat, Amma-ku aisle seat, enakku middle seat. Saapadu: enakku diabetic, Amma-ku lacto-vegetarian, Appa-ku veg.",
+        "s5.intro": "Engha Jaipur trip-a plan pannunga: naanum en Appa Amma-vum December 18 anniki Kolkata-la irundhu kelambi December 20 anniki thirumbi varom.",
+        "s5.outbound": "Pogumbodhu kaalai 11 manikku munnadi kelambura cheapest non-stop flight-a edunga.",
+        "s5.return": "Thirumbi varumbodhu madhiyam 3 manikku aprom kelambura first non-stop flight-a edunga.",
+        "s5.budget": "Aaru flight tickets-um serthu \u20b939,000-kulla irukkanum.",
+        "s5.hotel": "Hawa Mahal-la irundhu 3 km-kulla, pure veg breakfast kudukkara, rooms oru night-ku \u20b93,500-ku mela illama start aagura hotels-la rating adhigama irukkara hotel-a book pannunga.",
+        "s5.rooms": "Appa Amma-ku oru twin room, enakku oru single room edunga.",
+        "s5.cab": "Naangha Jaipur airport-la land aanadhum engala pick panni hotel-la drop panna oru sedan book pannunga.",
+        "s5.tickets": "19-am thedhi Nahargarh Fort-ku madhiyam 12 manikku aprom irukkara first slot-ku tickets vaangunga - Appa Amma-ku senior citizen ticket, enakku student ticket.",
+        "s5.submit": "Ovvoru flight-layum Appa-kum enakkum window seat, Amma-ku aisle seat. Saapadu: enakku veg, Amma-ku Jain, Appa-ku lacto-vegetarian."
+    },
+    "terms": {}
+}
