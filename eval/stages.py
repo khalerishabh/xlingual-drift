@@ -106,6 +106,55 @@ def load(paths):
     return [r for r in latest_scored(recs) if r.get("experiment") == "exp2" and r.get("policy") != "mock"]
 
 
+def load_first_attempts(paths):
+    """First attempt per episode, including replies cut off at max_tokens
+    (unscored rows); endpoint errors are dropped."""
+    first = {}
+    for p in paths:
+        for line in open(p, encoding="utf-8"):
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            if r.get("experiment") != "exp2" or r.get("policy") == "mock":
+                continue
+            trunc = str(r.get("infra_error", "")).startswith("truncated")
+            if r.get("infra_error") and not trunc:
+                continue
+            first.setdefault(r["episode_key"], dict(r, _truncated=trunc))
+    return list(first.values())
+
+
+EPISODE_OUTCOMES = ("success", "loop", "termination", "tool_calling", "planning", "execution")
+
+
+def episode_outcome(r):
+    """One label per episode. loop: a reply hit max_tokens. Otherwise the
+    stage of the earliest-committed failed constraint, so a wrong value
+    that later constraints depended on is counted once, where it started."""
+    if r.get("_truncated"):
+        return "loop"
+    if r.get("success"):
+        return "success"
+    failed = [n for n, ok in r["constraint_ok"].items() if not ok]
+    first = min(failed, key=lambda n: (r["constraint_commit_step"].get(n) is None, r["constraint_commit_step"].get(n) or 0))
+    return STAGE_OF[label(r, first)]
+
+
+def episode_report(rows):
+    by = defaultdict(Counter)
+    for r in rows:
+        o = episode_outcome(r)
+        for key in ((GROUPS.get(r["language"]), r["format"]), (GROUPS.get(r["language"]), "all"), (r["language"], "all")):
+            by[key][o] += 1
+            by[key]["n"] += 1
+    lines = ["episode outcome (first attempt; loop = reply hit max_tokens)",
+             f"  {'group':<12}{'format':<8}{'n':<5}" + "".join(f"{o:<14}" for o in EPISODE_OUTCOMES)]
+    for key in sorted(by, key=lambda k: (str(k[0]), k[1])):
+        c = by[key]
+        lines.append(f"  {str(key[0]):<12}{key[1]:<8}{c['n']:<5}" + "".join(f"{c[o]:<14}" for o in EPISODE_OUTCOMES))
+    return "\n".join(lines)
+
+
 def table(rs, key, col="stage"):
     by = defaultdict(Counter)
     for x in rs:
@@ -139,6 +188,8 @@ def main():
     ap.add_argument("--rows", help="write one JSON line per constraint here")
     a = ap.parse_args()
     recs = load(a.logs)
+    print(episode_report(load_first_attempts(a.logs)))
+    print()
     print(report(recs))
     if a.rows:
         with open(a.rows, "w", encoding="utf-8") as f:
