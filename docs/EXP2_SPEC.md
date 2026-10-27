@@ -214,7 +214,7 @@ Freezing follows the same practice as every earlier run: design, decision rules 
 4. **Mock smoke test:** scripted policy injects each fault type; each must be caught only in its own class/stage. This tests the harness, not the model.
 5. **Language authoring:** canonical-term table first, then hi/ta/Hinglish/Tanglish by Rishabh; automatic checks; **freeze**.
 6. **Serving check:** one tool call parsed and reasoning separated before the run starts (built into each notebook).
-7. **Main run:** 5 notebooks, one per domain, each 225 episodes; 375 instances x 3 seeds; task-wise order, resumable across Colab sessions. **Early-stop rule (proposed 27 Oct 2026, awaiting approval):** each domain notebook first runs English, seed 1, on all 15 instances (all scenarios and formats; run_grid schedules them first). If their success rate is below 0.3, stop the domain and report it. (The earlier wording, "first 45 episodes", would have covered one scenario only under task-wise order.) Tasks are never simplified in response.
+7. **Main run:** 5 notebooks, one per domain, each 225 episodes; 375 instances x 3 seeds; task-wise order, resumable across Colab sessions. **Early-stop rule (approved by Rishabh 27 Oct 2026, before any Experiment 2 run):** each domain notebook first runs English, seed 1, on all 15 instances (all scenarios and formats; run_grid schedules them first). If their success rate is below 0.3, stop the domain and report it. (The earlier wording, "first 45 episodes", would have covered one scenario only under task-wise order.) Tasks are never simplified in response.
 8. **Verify and derive events:** verifier output + event logs from raw logs; merge the 5 logs (fingerprints checked).
 9. **Analysis, our evaluation:** primary metrics first (as pre-specified), then stage attribution, then secondary metrics.
 10. **Analysis, BabelArena-style evaluation on our tasks:** Pass^1, Pass^3, LC, token ratios, taxonomy mapping (section 6.4).
@@ -244,7 +244,7 @@ Steps 2-4 done; step 5 drafted. Everything below is in the repo and covered by `
 | Payment | bill_1, submit | + bill_2, bill_3, rent | + bill_4-6, pocket, wallet (carried), merchant | 7 / 13 / 25 | processing date, notify contact |
 | Banking | dispute, submit | + card_block, fd_open | + card_replace (carried), card_limit, rd_open (coupled), nominee (carried), cheque_stop | 6 / 10 / 18 | confirmation channel, home branch |
 
-Travel long is 14 calls, below the 17-28 target in section 2, because every travel format uses the shortest trip tool level (English city names, no holds). Moving all three travel formats to the 17-call level adds `resolve_city` and attraction-id lookups (+3 calls each) without changing the request.
+Travel long is 14 calls, below the 17-28 target in section 2, because every travel format uses the shortest trip tool level (English city names, no holds). Moving all three travel formats to the 17-call level adds `resolve_city` and attraction-id lookups (+3 calls each) without changing the request. Decision (Rishabh, 27 Oct 2026): keep 14 calls; report Travel's horizon as shorter than the other domains and analyse format effects within domain.
 
 ### 10.2 Files
 - Environments: `env/exp2/{travel,shopping,food,payment,banking}.py`, shared machinery `env/exp2/core.py`, registry `env/exp2/registry.py`.

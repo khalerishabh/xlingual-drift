@@ -6,7 +6,7 @@ the anchors) and anchor success by domain x format x language group, with
     python -m eval.exp2_summary runs/exp2_*.jsonl
     python -m eval.exp2_summary runs/exp2_food_qwen36_27b_fp8.jsonl --early-stop
 
-Early-stop rule (proposed, not yet approved): once English seed 1 has run
+Early-stop rule (approved 27 Oct 2026): once English seed 1 has run
 on all 15 instances of a domain (run_grid schedules those first), if their
 success rate is below 0.3 that domain stops.
 """
