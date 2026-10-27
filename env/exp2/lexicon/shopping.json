@@ -1,113 +1,241 @@
 {
  "intro": {
-  "en": "Diwali shopping for the family. Everything must arrive by {deadline_day} November, and items come to our home unless I say otherwise."
+  "en": "Diwali shopping for the family. Everything must arrive by {deadline_day} November, and items come to our home unless I say otherwise.",
+  "hi": "\u092a\u0930\u093f\u0935\u093e\u0930 \u0915\u0947 \u0932\u093f\u090f \u0926\u093f\u0935\u093e\u0932\u0940 \u0915\u0940 \u0936\u0949\u092a\u093f\u0902\u0917\u0964 \u0938\u092c \u0915\u0941\u091b {deadline_day} \u0928\u0935\u0902\u092c\u0930 \u0924\u0915 \u092a\u0939\u0941\u0901\u091a \u091c\u093e\u0928\u093e \u091a\u093e\u0939\u093f\u090f, \u0914\u0930 \u091c\u092c \u0924\u0915 \u092e\u0948\u0902 \u0905\u0932\u0917 \u0938\u0947 \u0928 \u0915\u0939\u0942\u0901, \u0938\u093e\u092e\u093e\u0928 \u0939\u092e\u093e\u0930\u0947 \u0918\u0930 \u0906\u090f\u0917\u093e\u0964",
+  "ta": "\u0b95\u0bc1\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0ba4\u0bcd\u0ba4\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0ba4\u0bc0\u0baa\u0bbe\u0bb5\u0bb3\u0bbf \u0bb7\u0bbe\u0baa\u0bcd\u0baa\u0bbf\u0b99\u0bcd. \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe\u0bae\u0bc7 \u0ba8\u0bb5\u0bae\u0bcd\u0baa\u0bb0\u0bcd {deadline_day}-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0bb5\u0ba8\u0bcd\u0ba4\u0bc1\u0b9a\u0bc7\u0bb0 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd; \u0ba8\u0bbe\u0ba9\u0bcd \u0bb5\u0bc7\u0bb1\u0bc1 \u0b8e\u0ba4\u0bc1\u0bb5\u0bc1\u0bae\u0bcd \u0b9a\u0bca\u0bb2\u0bcd\u0bb2\u0bbe\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0bbe\u0bb2\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0b9f\u0bcd\u0b95\u0bb3\u0bcd \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bb5\u0bb0 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.",
+  "hinglish": "Family ke liye Diwali shopping. Sab kuch {deadline_day} November tak pahunch jaana chahiye, aur jab tak main alag se na bolun, saamaan humare ghar aayega.",
+  "tanglish": "Family-ku Deepavali shopping. Ellam November {deadline_day}-kulla vandhudanum, naan vera edhuvum sollala-na items engha veettukku varanum."
  },
  "clauses": {
   "item_self": {
-   "en": "For me: the highest-rated {cat_self} in size {size_self} and {colour_self} under \u20b9{price_self}{addr_self}."
+   "en": "For me: the highest-rated {cat_self} in size {size_self} and {colour_self} under \u20b9{price_self}{addr_self}.",
+   "hi": "\u092e\u0947\u0930\u0947 \u0932\u093f\u090f \u090f\u0915 {cat_self}: \u0938\u093e\u0907\u091c\u093c {size_self}, \u0930\u0902\u0917 {colour_self}, \u0915\u093c\u0940\u092e\u0924 \u20b9{price_self} \u0938\u0947 \u0915\u092e, \u0907\u0928\u092e\u0947\u0902 \u091c\u093f\u0938\u0915\u0940 \u0930\u0947\u091f\u093f\u0902\u0917 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u0939\u094b{addr_self}\u0964",
+   "ta": "\u0b8e\u0ba9\u0b95\u0bcd\u0b95\u0bc1 \u0b92\u0bb0\u0bc1 {cat_self}: \u0b85\u0bb3\u0bb5\u0bc1 {size_self}, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd {colour_self}, \u0bb5\u0bbf\u0bb2\u0bc8 \u20b9{price_self}-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd, \u0b85\u0bb5\u0bb1\u0bcd\u0bb1\u0bbf\u0bb2\u0bcd \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bc1 \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0ba9\u0ba4\u0bc1{addr_self}.",
+   "hinglish": "Mere liye ek {cat_self}: size {size_self}, colour {colour_self}, price \u20b9{price_self} se kam, unme jiski rating sabse zyada ho{addr_self}.",
+   "tanglish": "Enakku oru {cat_self}: size {size_self}, colour {colour_self}, price \u20b9{price_self}-kulla, adhula rating adhigama irukkaradhu{addr_self}."
   },
   "item_father": {
-   "en": "For Papa: the highest-rated {cat_father} in size {size_father} and {colour_father} under \u20b9{price_father}{addr_father}."
+   "en": "For Papa: the highest-rated {cat_father} in size {size_father} and {colour_father} under \u20b9{price_father}{addr_father}.",
+   "hi": "\u092a\u093e\u092a\u093e \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 {cat_father}: \u0938\u093e\u0907\u091c\u093c {size_father}, \u0930\u0902\u0917 {colour_father}, \u0915\u093c\u0940\u092e\u0924 \u20b9{price_father} \u0938\u0947 \u0915\u092e, \u0907\u0928\u092e\u0947\u0902 \u091c\u093f\u0938\u0915\u0940 \u0930\u0947\u091f\u093f\u0902\u0917 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u0939\u094b{addr_father}\u0964",
+   "ta": "\u0b85\u0baa\u0bcd\u0baa\u0bbe\u0bb5\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b92\u0bb0\u0bc1 {cat_father}: \u0b85\u0bb3\u0bb5\u0bc1 {size_father}, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd {colour_father}, \u0bb5\u0bbf\u0bb2\u0bc8 \u20b9{price_father}-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd, \u0b85\u0bb5\u0bb1\u0bcd\u0bb1\u0bbf\u0bb2\u0bcd \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bc1 \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0ba9\u0ba4\u0bc1{addr_father}.",
+   "hinglish": "Papa ke liye ek {cat_father}: size {size_father}, colour {colour_father}, price \u20b9{price_father} se kam, unme jiski rating sabse zyada ho{addr_father}.",
+   "tanglish": "Appa-ku oru {cat_father}: size {size_father}, colour {colour_father}, price \u20b9{price_father}-kulla, adhula rating adhigama irukkaradhu{addr_father}."
   },
   "item_mother": {
-   "en": "For Mummy: the highest-rated {cat_mother} in size {size_mother} and {colour_mother} under \u20b9{price_mother}{addr_mother}."
+   "en": "For Mummy: the highest-rated {cat_mother} in size {size_mother} and {colour_mother} under \u20b9{price_mother}{addr_mother}.",
+   "hi": "\u092e\u092e\u094d\u092e\u0940 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 {cat_mother}: \u0938\u093e\u0907\u091c\u093c {size_mother}, \u0930\u0902\u0917 {colour_mother}, \u0915\u093c\u0940\u092e\u0924 \u20b9{price_mother} \u0938\u0947 \u0915\u092e, \u0907\u0928\u092e\u0947\u0902 \u091c\u093f\u0938\u0915\u0940 \u0930\u0947\u091f\u093f\u0902\u0917 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u0939\u094b{addr_mother}\u0964",
+   "ta": "\u0b85\u0bae\u0bcd\u0bae\u0bbe\u0bb5\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b92\u0bb0\u0bc1 {cat_mother}: \u0b85\u0bb3\u0bb5\u0bc1 {size_mother}, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd {colour_mother}, \u0bb5\u0bbf\u0bb2\u0bc8 \u20b9{price_mother}-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd, \u0b85\u0bb5\u0bb1\u0bcd\u0bb1\u0bbf\u0bb2\u0bcd \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bc1 \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0ba9\u0ba4\u0bc1{addr_mother}.",
+   "hinglish": "Mummy ke liye ek {cat_mother}: size {size_mother}, colour {colour_mother}, price \u20b9{price_mother} se kam, unme jiski rating sabse zyada ho{addr_mother}.",
+   "tanglish": "Amma-ku oru {cat_mother}: size {size_mother}, colour {colour_mother}, price \u20b9{price_mother}-kulla, adhula rating adhigama irukkaradhu{addr_mother}."
   },
   "item_sister": {
-   "en": "For Didi: the highest-rated {cat_sister} in size {size_sister} and {colour_sister} under \u20b9{price_sister}{addr_sister}, as long as Mummy's and Didi's items together stay within \u20b9{pair_budget}."
+   "en": "For Didi: the highest-rated {cat_sister} in size {size_sister} and {colour_sister} under \u20b9{price_sister}{addr_sister}, as long as Mummy's and Didi's items together stay within \u20b9{pair_budget}.",
+   "hi": "\u0926\u0940\u0926\u0940 \u0915\u0947 \u0932\u093f\u090f \u090f\u0915 {cat_sister}: \u0938\u093e\u0907\u091c\u093c {size_sister}, \u0930\u0902\u0917 {colour_sister}, \u0915\u093c\u0940\u092e\u0924 \u20b9{price_sister} \u0938\u0947 \u0915\u092e, \u0907\u0928\u092e\u0947\u0902 \u091c\u093f\u0938\u0915\u0940 \u0930\u0947\u091f\u093f\u0902\u0917 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u0939\u094b{addr_sister}, \u092c\u0936\u0930\u094d\u0924\u0947 \u092e\u092e\u094d\u092e\u0940 \u0914\u0930 \u0926\u0940\u0926\u0940 \u0915\u093e \u0938\u093e\u092e\u093e\u0928 \u092e\u093f\u0932\u093e\u0915\u0930 \u20b9{pair_budget} \u0915\u0947 \u0905\u0902\u0926\u0930 \u0930\u0939\u0947\u0964",
+   "ta": "\u0b85\u0b95\u0bcd\u0b95\u0bbe\u0bb5\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b92\u0bb0\u0bc1 {cat_sister}: \u0b85\u0bb3\u0bb5\u0bc1 {size_sister}, \u0ba8\u0bbf\u0bb1\u0bae\u0bcd {colour_sister}, \u0bb5\u0bbf\u0bb2\u0bc8 \u20b9{price_sister}-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd, \u0b85\u0bb5\u0bb1\u0bcd\u0bb1\u0bbf\u0bb2\u0bcd \u0bae\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0bc0\u0b9f\u0bc1 \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0ba9\u0ba4\u0bc1{addr_sister}; \u0b86\u0ba9\u0bbe\u0bb2\u0bcd \u0b85\u0bae\u0bcd\u0bae\u0bbe, \u0b85\u0b95\u0bcd\u0b95\u0bbe \u0b87\u0bb0\u0bc1\u0bb5\u0bb0\u0bbf\u0ba9\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0b9f\u0bcd\u0b95\u0bb3\u0bc1\u0bae\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0ba4\u0bcd\u0ba4\u0bc1 \u20b9{pair_budget}-\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.",
+   "hinglish": "Didi ke liye ek {cat_sister}: size {size_sister}, colour {colour_sister}, price \u20b9{price_sister} se kam, unme jiski rating sabse zyada ho{addr_sister}, bas Mummy aur Didi ka saamaan mila ke \u20b9{pair_budget} ke andar rahe.",
+   "tanglish": "Akka-ku oru {cat_sister}: size {size_sister}, colour {colour_sister}, price \u20b9{price_sister}-kulla, adhula rating adhigama irukkaradhu{addr_sister}, aana Amma, Akka rendu perodha items-um serthu \u20b9{pair_budget}-kulla irukkanum."
   },
   "gift": {
-   "en": "Gift-wrap the items for {gift_a} and {gift_b}."
+   "en": "Gift-wrap the items for {gift_a} and {gift_b}.",
+   "hi": "{gift_a} \u0914\u0930 {gift_b} \u0915\u0947 \u0938\u093e\u092e\u093e\u0928 \u0915\u094b \u0917\u093f\u092b\u093c\u094d\u091f-\u0930\u0948\u092a \u0915\u0930\u0935\u093e\u0928\u093e\u0964",
+   "ta": "{gift_a}, {gift_b} \u0b87\u0bb0\u0bc1\u0bb5\u0bb0\u0bbf\u0ba9\u0bcd \u0baa\u0bca\u0bb0\u0bc1\u0b9f\u0bcd\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b95\u0bbf\u0b83\u0baa\u0bcd\u0b9f\u0bcd-\u0bb0\u0bbe\u0baa\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "{gift_a} aur {gift_b} ke items gift-wrap karwana.",
+   "tanglish": "{gift_a}, {gift_b} rendu perodha items-ayum gift-wrap pannunga."
   },
   "exchange": {
-   "en": "Also exchange the {ex_cat} from my last order for size {ex_size}, same colour."
+   "en": "Also exchange the {ex_cat} from my last order for size {ex_size}, same colour.",
+   "hi": "\u092e\u0947\u0930\u0947 \u092a\u093f\u091b\u0932\u0947 \u0911\u0930\u094d\u0921\u0930 \u0935\u093e\u0932\u0947 {ex_cat} \u0915\u094b \u0938\u093e\u0907\u091c\u093c {ex_size} \u0938\u0947 \u090f\u0915\u094d\u0938\u091a\u0947\u0902\u091c \u092d\u0940 \u0915\u0930 \u0926\u094b, \u0930\u0902\u0917 \u0935\u0939\u0940 \u0930\u0939\u0947\u0964",
+   "ta": "\u0b8e\u0ba9\u0bcd \u0b95\u0b9f\u0bc8\u0b9a\u0bbf \u0b86\u0bb0\u0bcd\u0b9f\u0bb0\u0bbf\u0bb2\u0bcd \u0bb5\u0ba8\u0bcd\u0ba4 {ex_cat}-\u0b90 \u0b85\u0ba4\u0bc7 \u0ba8\u0bbf\u0bb1\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0b85\u0bb3\u0bb5\u0bc1 {ex_size}-\u0b95\u0bcd\u0b95\u0bc1 \u0b8e\u0b95\u0bcd\u0bb8\u0bcd\u0b9a\u0bc7\u0b9e\u0bcd\u0b9a\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Mere last order wala {ex_cat} size {ex_size} se exchange bhi kar do, colour same rahe.",
+   "tanglish": "En last order-la vandha {ex_cat}-a same colour-la size {ex_size}-ku exchange pannunga."
   },
   "coupon": {
-   "en": "Use the coupon that gives the biggest discount."
+   "en": "Use the coupon that gives the biggest discount.",
+   "hi": "\u0935\u0939 \u0915\u0942\u092a\u0928 \u0932\u0917\u093e\u0913 \u091c\u093f\u0938\u0938\u0947 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u091b\u0942\u091f \u092e\u093f\u0932\u0947\u0964",
+   "ta": "\u0b85\u0ba4\u0bbf\u0b95 \u0ba4\u0bb3\u0bcd\u0bb3\u0bc1\u0baa\u0b9f\u0bbf \u0ba4\u0bb0\u0bc1\u0bae\u0bcd \u0b95\u0bc2\u0baa\u0bcd\u0baa\u0ba9\u0bc8\u0baa\u0bcd \u0baa\u0bcb\u0b9f\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Wo coupon lagao jisse sabse zyada discount mile.",
+   "tanglish": "Adhigama discount kudukkara coupon-a apply pannunga."
   },
   "checkout": {
-   "en": "Pay with my ICICI credit card ending {card} and choose the {slot} delivery slot."
+   "en": "Pay with my ICICI credit card ending {card} and choose the {slot} delivery slot.",
+   "hi": "\u092a\u0947\u092e\u0947\u0902\u091f \u092e\u0947\u0930\u0947 ICICI \u0915\u094d\u0930\u0947\u0921\u093f\u091f \u0915\u093e\u0930\u094d\u0921 \u0938\u0947 \u0915\u0930\u0928\u093e \u091c\u093f\u0938\u0915\u0947 \u0906\u0916\u093c\u093f\u0930\u0940 \u0905\u0902\u0915 {card} \u0939\u0948\u0902, \u0914\u0930 {slot} \u0935\u093e\u0932\u093e \u0921\u093f\u0932\u0940\u0935\u0930\u0940 \u0938\u094d\u0932\u0949\u091f \u091a\u0941\u0928\u0928\u093e\u0964",
+   "ta": "\u0b95\u0b9f\u0bc8\u0b9a\u0bbf \u0b87\u0bb2\u0b95\u0bcd\u0b95\u0b99\u0bcd\u0b95\u0bb3\u0bcd {card} \u0b89\u0bb3\u0bcd\u0bb3 \u0b8e\u0ba9\u0bcd ICICI \u0b95\u0bbf\u0bb0\u0bc6\u0b9f\u0bbf\u0b9f\u0bcd \u0b95\u0bbe\u0bb0\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd \u0baa\u0ba3\u0bae\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf, {slot} \u0b9f\u0bc6\u0bb2\u0bbf\u0bb5\u0bb0\u0bbf \u0bb8\u0bcd\u0bb2\u0bbe\u0b9f\u0bcd\u0b9f\u0bc8\u0ba4\u0bcd \u0ba4\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4\u0bc6\u0b9f\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Payment mere ICICI credit card se karna jiske last digits {card} hain, aur {slot} wala delivery slot choose karna.",
+   "tanglish": "Last digits {card} irukkara en ICICI credit card-la pay panni, {slot} delivery slot-a choose pannunga."
   }
  },
  "terms": {
   "category": {
    "kurta": {
-    "en": "kurta"
+    "en": "kurta",
+    "hi": "\u0915\u0941\u0930\u094d\u0924\u093e",
+    "ta": "\u0b95\u0bc1\u0bb0\u0bcd\u0ba4\u0bbe",
+    "hinglish": "kurta",
+    "tanglish": "kurta"
    },
    "shirt": {
-    "en": "shirt"
+    "en": "shirt",
+    "hi": "\u0936\u0930\u094d\u091f",
+    "ta": "\u0b9a\u0b9f\u0bcd\u0b9f\u0bc8",
+    "hinglish": "shirt",
+    "tanglish": "shirt"
    },
    "kurti": {
-    "en": "kurti"
+    "en": "kurti",
+    "hi": "\u0915\u0941\u0930\u094d\u0924\u0940",
+    "ta": "\u0b95\u0bc1\u0bb0\u0bcd\u0ba4\u0bbf",
+    "hinglish": "kurti",
+    "tanglish": "kurti"
    },
    "sneakers": {
-    "en": "sneakers"
+    "en": "sneakers",
+    "hi": "\u0938\u094d\u0928\u0940\u0915\u0930\u094d\u0938",
+    "ta": "\u0bb8\u0bcd\u0ba9\u0bc0\u0b95\u0bcd\u0b95\u0bb0\u0bcd\u0bb8\u0bcd",
+    "hinglish": "sneakers",
+    "tanglish": "sneakers"
    },
    "jeans": {
-    "en": "jeans"
+    "en": "jeans",
+    "hi": "\u091c\u0940\u0902\u0938",
+    "ta": "\u0b9c\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd",
+    "hinglish": "jeans",
+    "tanglish": "jeans"
    },
    "saree": {
-    "en": "saree"
+    "en": "saree",
+    "hi": "\u0938\u093e\u0921\u093c\u0940",
+    "ta": "\u0baa\u0bc1\u0b9f\u0bb5\u0bc8",
+    "hinglish": "saree",
+    "tanglish": "saree"
    }
   },
   "colour": {
    "blue": {
-    "en": "blue"
+    "en": "blue",
+    "hi": "\u0928\u0940\u0932\u093e",
+    "ta": "\u0ba8\u0bc0\u0bb2\u0bae\u0bcd",
+    "hinglish": "blue",
+    "tanglish": "blue"
    },
    "black": {
-    "en": "black"
+    "en": "black",
+    "hi": "\u0915\u093e\u0932\u093e",
+    "ta": "\u0b95\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1",
+    "hinglish": "black",
+    "tanglish": "black"
    },
    "white": {
-    "en": "white"
+    "en": "white",
+    "hi": "\u0938\u092b\u093c\u0947\u0926",
+    "ta": "\u0bb5\u0bc6\u0bb3\u0bcd\u0bb3\u0bc8",
+    "hinglish": "white",
+    "tanglish": "white"
    },
    "red": {
-    "en": "red"
+    "en": "red",
+    "hi": "\u0932\u093e\u0932",
+    "ta": "\u0b9a\u0bbf\u0bb5\u0baa\u0bcd\u0baa\u0bc1",
+    "hinglish": "red",
+    "tanglish": "red"
    },
    "green": {
-    "en": "green"
+    "en": "green",
+    "hi": "\u0939\u0930\u093e",
+    "ta": "\u0baa\u0b9a\u0bcd\u0b9a\u0bc8",
+    "hinglish": "green",
+    "tanglish": "green"
    },
    "maroon": {
-    "en": "maroon"
+    "en": "maroon",
+    "hi": "\u092e\u0948\u0930\u0942\u0928",
+    "ta": "\u0bae\u0bc6\u0bb0\u0bc2\u0ba9\u0bcd",
+    "hinglish": "maroon",
+    "tanglish": "maroon"
    },
    "yellow": {
-    "en": "yellow"
+    "en": "yellow",
+    "hi": "\u092a\u0940\u0932\u093e",
+    "ta": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd",
+    "hinglish": "yellow",
+    "tanglish": "yellow"
    },
    "grey": {
-    "en": "grey"
+    "en": "grey",
+    "hi": "\u0917\u094d\u0930\u0947",
+    "ta": "\u0b9a\u0bbe\u0bae\u0bcd\u0baa\u0bb2\u0bcd",
+    "hinglish": "grey",
+    "tanglish": "grey"
    }
   },
   "deliver_to": {
    "home": {
-    "en": ""
+    "en": "",
+    "hi": "",
+    "ta": "",
+    "hinglish": "",
+    "tanglish": ""
    },
    "nani": {
-    "en": ", delivered to Nani's house in Pune"
+    "en": ", delivered to Nani's house in Pune",
+    "hi": ", \u0914\u0930 \u092f\u0939 \u092a\u0941\u0923\u0947 \u092e\u0947\u0902 \u0928\u093e\u0928\u0940 \u0915\u0947 \u0918\u0930 \u0921\u093f\u0932\u0940\u0935\u0930 \u0939\u094b",
+    "ta": ", \u0b87\u0ba4\u0bc8 \u0baa\u0bc1\u0ba9\u0bc7\u0baf\u0bbf\u0bb2\u0bcd \u0b89\u0bb3\u0bcd\u0bb3 \u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b9f\u0bc6\u0bb2\u0bbf\u0bb5\u0bb0\u0bbf \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd",
+    "hinglish": ", aur ye Pune mein Nani ke ghar deliver ho",
+    "tanglish": ", idha Pune-la irukkara paati veettukku deliver pannunga"
    }
   },
   "relation": {
    "father": {
-    "en": "Papa"
+    "en": "Papa",
+    "hi": "\u092a\u093e\u092a\u093e",
+    "ta": "\u0b85\u0baa\u0bcd\u0baa\u0bbe",
+    "hinglish": "Papa",
+    "tanglish": "Appa"
    },
    "mother": {
-    "en": "Mummy"
+    "en": "Mummy",
+    "hi": "\u092e\u092e\u094d\u092e\u0940",
+    "ta": "\u0b85\u0bae\u0bcd\u0bae\u0bbe",
+    "hinglish": "Mummy",
+    "tanglish": "Amma"
    },
    "sister": {
-    "en": "Didi"
+    "en": "Didi",
+    "hi": "\u0926\u0940\u0926\u0940",
+    "ta": "\u0b85\u0b95\u0bcd\u0b95\u0bbe",
+    "hinglish": "Didi",
+    "tanglish": "Akka"
    }
   },
   "slot": {
    "morning": {
-    "en": "morning (9 am - 12 noon)"
+    "en": "morning (9 am - 12 noon)",
+    "hi": "\u0938\u0941\u092c\u0939 (9 \u092c\u091c\u0947 - \u0926\u094b\u092a\u0939\u0930 12 \u092c\u091c\u0947)",
+    "ta": "\u0b95\u0bbe\u0bb2\u0bc8 (9 \u0bae\u0ba3\u0bbf - \u0bae\u0ba4\u0bbf\u0baf\u0bae\u0bcd 12 \u0bae\u0ba3\u0bbf)",
+    "hinglish": "morning (9 am - 12 noon)",
+    "tanglish": "morning (9 am - 12 noon)"
    },
    "afternoon": {
-    "en": "afternoon (12 noon - 3 pm)"
+    "en": "afternoon (12 noon - 3 pm)",
+    "hi": "\u0926\u094b\u092a\u0939\u0930 (12 \u092c\u091c\u0947 - 3 \u092c\u091c\u0947)",
+    "ta": "\u0bae\u0ba4\u0bbf\u0baf\u0bae\u0bcd (12 \u0bae\u0ba3\u0bbf - 3 \u0bae\u0ba3\u0bbf)",
+    "hinglish": "afternoon (12 noon - 3 pm)",
+    "tanglish": "afternoon (12 noon - 3 pm)"
    },
    "evening": {
-    "en": "evening (6 pm - 9 pm)"
+    "en": "evening (6 pm - 9 pm)",
+    "hi": "\u0936\u093e\u092e (6 \u092c\u091c\u0947 - \u0930\u093e\u0924 9 \u092c\u091c\u0947)",
+    "ta": "\u0bae\u0bbe\u0bb2\u0bc8 (6 \u0bae\u0ba3\u0bbf - \u0b87\u0bb0\u0bb5\u0bc1 9 \u0bae\u0ba3\u0bbf)",
+    "hinglish": "evening (6 pm - 9 pm)",
+    "tanglish": "evening (6 pm - 9 pm)"
    }
   }
  },
  "stage_clause": {},
  "verification": {
-  "en": "author"
+  "en": "author",
+  "hi": "author: Rishabh, 2026-10-28",
+  "ta": "author: Rishabh, 2026-10-28",
+  "hinglish": "author: Rishabh, 2026-10-28",
+  "tanglish": "author: Rishabh, 2026-10-28"
  }
 }

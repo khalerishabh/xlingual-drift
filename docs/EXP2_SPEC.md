@@ -259,3 +259,6 @@ Travel long is 14 calls, below the 17-28 target in section 2, because every trav
 - Gold succeeds on all 75 instances; each domain has 4 scripted faults and each fails exactly its own constraints (300 fault replays), through the real runner as well as in unit tests.
 - Formats are nested: short request lines are a subset of medium, medium of long, in every language.
 - Never-first and lookalike rules asserted by each domain's `check_rules`; coupled constraints are asserted to change the answer.
+
+### 10.4 Truncation rule (approved by Rishabh 27 Oct 2026, after the Food run, before any Food analysis)
+A model reply that reaches max_tokens (16384) without a tool call or an answer is an outcome, not an infrastructure error: the first attempt of each episode is kept and scored as a failure (stage: termination), and it is never retried (`retry_truncated: false` in every Experiment 2 config). Primary tables use this strict view; the lenient view (finished episodes only) is reported alongside. Food was run before this rule was written, but no Food episode had been retried, so its first attempts are intact. Transcripts of truncated episodes are kept from Shopping onward.

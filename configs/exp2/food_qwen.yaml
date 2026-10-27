@@ -31,6 +31,8 @@ templates:
   - tasks/exp2/food_s5_medium.json
   - tasks/exp2/food_s5_long.json
 max_steps: 60
+# A reply that hits max_tokens is an outcome here (first attempt kept, not retried).
+retry_truncated: false
 horizons: []
 languages: [en, hi, ta, hinglish, tanglish]
 

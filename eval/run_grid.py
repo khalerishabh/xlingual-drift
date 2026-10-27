@@ -121,14 +121,18 @@ def check_log_matches_server(log_path: Path, serving: dict | None) -> None:
         print(f"note: log also has episodes from {sorted(other_gpus)}; this session runs {serving.get('gpu_name')}")
 
 
-def completed_keys(log_path: Path) -> set:
+def completed_keys(log_path: Path, retry_truncated: bool = True) -> set:
+    """Episodes not to run again. With retry_truncated false, an episode
+    whose reply hit max_tokens counts as done: its first attempt is the
+    outcome (Experiment 2), instead of being retried until it fits."""
     if not log_path.exists():
         return set()
     done = set()
     for line in log_path.read_text(encoding="utf-8").splitlines():
         if line.strip():
             rec = json.loads(line)
-            if not rec.get("infra_error") and not is_truncated(rec):
+            trunc = is_truncated(rec) or str(rec.get("infra_error", "")).startswith("truncated")
+            if (not rec.get("infra_error") and not is_truncated(rec)) or (trunc and not retry_truncated):
                 done.add(rec["episode_key"])
     return done
 
@@ -170,7 +174,12 @@ def run_one(cfg: dict, serving, template: dict, horizon: int, language: str, nam
             injector=build_injector(cell), context={"session_date": template["session_date"]}, tools=tools,
         )
     except InfraError as e:
-        return {**base, "infra_error": str(e), "latency_s": round(time.perf_counter() - start, 3)}
+        rec = {**base, "infra_error": str(e), "latency_s": round(time.perf_counter() - start, 3)}
+        if hasattr(policy, "transcript"):
+            rec["transcript"] = policy.transcript()
+            rec["truncated"] = str(e).startswith("truncated")
+            rec["tool_turns_before_error"] = sum(1 for m in rec["transcript"]["messages"] if m.get("role") == "tool")
+        return rec
     record = {
         **base,
         **(EXP2_DOMAINS[domain].verify(traj, template, tools.snapshot()) if exp2
@@ -207,7 +216,7 @@ def main():
         check_cells_match_server(serving, cfg)
     if args.resume:
         check_log_matches_server(log_path, serving)
-    done = completed_keys(log_path) if args.resume else set()
+    done = completed_keys(log_path, cfg.get("retry_truncated", True)) if args.resume else set()
 
     cells = []
     for i, cell in enumerate(cfg["cells"]):

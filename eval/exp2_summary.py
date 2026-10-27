@@ -12,7 +12,8 @@ success rate is below 0.3 that domain stops.
 """
 
 import argparse
-from collections import defaultdict
+import json
+from collections import Counter, defaultdict
 
 from eval.drift import wilson
 from eval.stages import GROUPS, load
@@ -43,13 +44,51 @@ def report(records):
     return "\n".join(lines)
 
 
-def early_stop(records):
-    en = [r for r in records if r["language"] == "en" and r["seed"] == 1]
+def first_attempts(paths):
+    """First logged attempt per episode, in log order, including episodes
+    that ended on a truncated reply (unscored rows). Other infra errors are
+    left out: they say nothing about the agent."""
+    first = {}
+    for p in paths:
+        for line in open(p, encoding="utf-8"):
+            if line.strip():
+                r = json.loads(line)
+                if r.get("experiment") != "exp2" or r.get("policy") == "mock":
+                    continue
+                trunc = str(r.get("infra_error", "")).startswith("truncated")
+                if r.get("infra_error") and not trunc:
+                    continue
+                first.setdefault(r["episode_key"], dict(r, _truncated=trunc))
+    return list(first.values())
+
+
+def strict_report(rows):
+    """Truncation counted as a failure: the reply ran past max_tokens
+    (16384) without a tool call, nearly always a reasoning loop."""
+    by = defaultdict(Counter)
+    for r in rows:
+        for key in ((r["language"], r["format"]), (r["language"], "all"), (GROUPS.get(r["language"]), "all")):
+            c = by[key]
+            c["n"] += 1
+            c["trunc"] += r["_truncated"]
+            c["ok"] += bool(not r["_truncated"] and r.get("success"))
+    lines = [f"{'language':<12}{'format':<8}{'strict success':<28}{'truncated':<26}"]
+    for key in sorted(by, key=lambda k: (str(k[0]), k[1])):
+        c = by[key]
+        lo, hi = wilson(c["ok"], c["n"])
+        tlo, thi = wilson(c["trunc"], c["n"])
+        lines.append(f"{str(key[0]):<12}{key[1]:<8}{c['ok']}/{c['n']}={c['ok'] / c['n']:.2f} [{lo:.2f},{hi:.2f}]".ljust(48)
+                     + f"{c['trunc']}/{c['n']}={c['trunc'] / c['n']:.2f} [{tlo:.2f},{thi:.2f}]")
+    return "\n".join(lines)
+
+
+def early_stop(rows):
+    en = [r for r in rows if r["language"] == "en" and r["seed"] == 1]
     if len(en) < EARLY_N:
         return f"{len(en)}/{EARLY_N} English seed-1 episodes so far; the check runs when all are in"
-    rate = sum(r["success"] for r in en) / len(en)
+    rate = sum(bool(r.get("success")) and not r["_truncated"] for r in en) / len(en)
     verdict = "STOP this domain" if rate < EARLY_MIN else "continue"
-    return f"English seed-1 success: {rate:.2f} over {len(en)} episodes -> {verdict}"
+    return f"English seed-1 success (truncation = failure): {rate:.2f} over {len(en)} episodes -> {verdict}"
 
 
 def main():
@@ -58,7 +97,12 @@ def main():
     ap.add_argument("--early-stop", action="store_true")
     a = ap.parse_args()
     recs = load(a.logs)
-    print(early_stop(recs) if a.early_stop else report(recs))
+    if a.early_stop:
+        print(early_stop(first_attempts(a.logs)))
+        return
+    print(report(recs))
+    print("\nFirst attempt per episode, truncation counted as failure")
+    print(strict_report(first_attempts(a.logs)))
 
 
 if __name__ == "__main__":

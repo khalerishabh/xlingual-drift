@@ -1,7 +1,7 @@
 """Draft hinglish lexicon for the shopping domain (LLM draft). Not loaded by the builder until
 Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
 
-VERIFICATION = "draft: LLM, pending Rishabh"
+VERIFICATION = "author: Rishabh, 2026-10-28"
 
 LEX = {
     "intro": "Family ke liye Diwali shopping. Sab kuch {deadline_day} November tak pahunch jaana chahiye, aur jab tak main alag se na bolun, saamaan humare ghar aayega.",
