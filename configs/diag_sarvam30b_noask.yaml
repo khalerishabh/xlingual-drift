@@ -1,0 +1,35 @@
+# DIAGNOSTIC, not part of the study. Sarvam-30B stopped to ask the user in
+# 99/99 episodes of rq1_long_sarvam30b. This reruns 4 episodes (shop_01, pay_01
+# x en, hi) with one extra system-prompt line telling the agent to look ids up
+# with the tools instead of asking. If it still stops, the floor result is the
+# model's; if it now works, the prompt exit was the trigger. Separate log.
+run_name: diag_sarvam30b_noask
+serving:
+  model: sarvamai/sarvam-30b
+  revision: main
+  engine: sglang
+  tool_call_parser: glm45
+  reasoning_parser: glm45
+  max_model_len: 65536
+  min_vram_gb: 75
+  vllm_version: sglang
+  extra_args: []
+templates:
+- tasks/long/shop_01.json
+- tasks/long/pay_01.json
+max_steps: 80
+horizons: []
+languages:
+- en
+- hi
+seam: S1
+cells:
+- name: sarvam30b_noask
+  policy: openai_compat
+  model: sarvamai/sarvam-30b
+  base_url: http://localhost:8000/v1
+  temperature: 0.6
+  max_tokens: 16384
+  seeds:
+  - 1
+  prompt_version: system_v1_noask

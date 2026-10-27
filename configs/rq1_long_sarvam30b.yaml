@@ -5,6 +5,7 @@
 # default for reasoning is kept (no chat-template switch is sent), since its
 # template differs from Qwen's.
 # revision "main" is resolved at server start and pinned by the log guard.
+# First run (27 Oct 2026) was served by SGLang 0.5.22 on Python 3.12.
 
 run_name: rq1_long_sarvam30b
 
