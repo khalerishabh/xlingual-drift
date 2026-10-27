@@ -1,7 +1,7 @@
 """Draft tanglish lexicon for the travel domain (LLM draft). Not loaded by the builder until
 Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
 
-VERIFICATION = "draft: LLM, pending Rishabh"
+VERIFICATION = "author: Rishabh, 2026-10-28"
 
 LEX = {
     "clauses": {

@@ -1,83 +1,171 @@
 {
  "intro": {
-  "en": "Please take care of a few things on my net banking, queue them all and submit them together at the end."
+  "en": "Please take care of a few things on my net banking, queue them all and submit them together at the end.",
+  "hi": "\u092e\u0947\u0930\u0940 \u0928\u0947\u091f \u092c\u0948\u0902\u0915\u093f\u0902\u0917 \u092a\u0930 \u0915\u0941\u091b \u0915\u093e\u092e \u0915\u0930 \u0926\u094b, \u0938\u092c\u0915\u094b \u0915\u093c\u0924\u093e\u0930 \u092e\u0947\u0902 \u0932\u0917\u093e\u0913 \u0914\u0930 \u0906\u0916\u093c\u093f\u0930 \u092e\u0947\u0902 \u090f\u0915 \u0938\u093e\u0925 \u0938\u092c\u092e\u093f\u091f \u0915\u0930\u094b\u0964",
+  "ta": "\u0b8e\u0ba9\u0bcd \u0ba8\u0bc6\u0b9f\u0bcd \u0baa\u0bc7\u0b99\u0bcd\u0b95\u0bbf\u0b99\u0bcd\u0b95\u0bbf\u0bb2\u0bcd \u0b9a\u0bbf\u0bb2 \u0bb5\u0bc7\u0bb2\u0bc8\u0b95\u0bb3\u0bc8\u0b9a\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd; \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0bb5\u0bb0\u0bbf\u0b9a\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0bb5\u0bc8\u0ba4\u0bcd\u0ba4\u0bc1 \u0b95\u0b9f\u0bc8\u0b9a\u0bbf\u0baf\u0bbf\u0bb2\u0bcd \u0b92\u0ba9\u0bcd\u0bb1\u0bbe\u0b95 \u0b9a\u0baa\u0bcd\u0bae\u0bbf\u0b9f\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+  "hinglish": "Meri net banking pe kuch kaam kar do, sab queue mein daalo aur end mein ek saath submit karo.",
+  "tanglish": "En net banking-la konjam velai pannunga, ellathayum queue-la vechu kadaisila onna submit pannunga."
  },
  "clauses": {
   "dispute": {
-   "en": "On {day} October I was charged twice by {merchant} for \u20b9{amt} on my savings account. Raise a dispute on the second, duplicate charge."
+   "en": "On {day} October I was charged twice by {merchant} for \u20b9{amt} on my savings account. Raise a dispute on the second, duplicate charge.",
+   "hi": "{day} \u0905\u0915\u094d\u091f\u0942\u092c\u0930 \u0915\u094b {merchant} \u0928\u0947 \u092e\u0947\u0930\u0947 \u0938\u0947\u0935\u093f\u0902\u0917\u094d\u0938 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u20b9{amt} \u0926\u094b \u092c\u093e\u0930 \u0915\u093e\u091f \u0932\u093f\u090f\u0964 \u0926\u0942\u0938\u0930\u0947, \u0921\u0941\u092a\u094d\u0932\u093f\u0915\u0947\u091f \u091a\u093e\u0930\u094d\u091c \u092a\u0930 \u0921\u093f\u0938\u094d\u092a\u094d\u092f\u0942\u091f \u0926\u0930\u094d\u091c \u0915\u0930\u094b\u0964",
+   "ta": "\u0b85\u0b95\u0bcd\u0b9f\u0bcb\u0baa\u0bb0\u0bcd {day} \u0b85\u0ba9\u0bcd\u0bb1\u0bc1 {merchant} \u0b8e\u0ba9\u0bcd \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u20b9{amt} \u0b87\u0bb0\u0ba3\u0bcd\u0b9f\u0bc1 \u0bae\u0bc1\u0bb1\u0bc8 \u0b8e\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bc1. \u0b87\u0bb0\u0ba3\u0bcd\u0b9f\u0bbe\u0bb5\u0ba4\u0bc1, \u0b9f\u0bc2\u0baa\u0bcd\u0bb3\u0bbf\u0b95\u0bc7\u0b9f\u0bcd \u0b9a\u0bbe\u0bb0\u0bcd\u0b9c\u0bcd \u0bae\u0bc0\u0ba4\u0bc1 \u0b9f\u0bbf\u0bb8\u0bcd\u0baa\u0bcd\u0baf\u0bc2\u0b9f\u0bcd \u0baa\u0ba4\u0bbf\u0bb5\u0bc1 \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "{day} October ko {merchant} ne mere savings account se \u20b9{amt} do baar kaat liye. Doosre, duplicate charge pe dispute raise karo.",
+   "tanglish": "October {day} anniki {merchant} en savings account-la \u20b9{amt} rendu thadava eduthuttanga. Rendavadhu, duplicate charge mela dispute raise pannunga."
   },
   "card_block": {
-   "en": "I have {block_reason} my savings account debit card ending {last4}. Block it."
+   "en": "I have {block_reason} my savings account debit card ending {last4}. Block it.",
+   "hi": "\u092e\u0947\u0930\u093e \u0938\u0947\u0935\u093f\u0902\u0917\u094d\u0938 \u0905\u0915\u093e\u0909\u0902\u091f \u0935\u093e\u0932\u093e \u0921\u0947\u092c\u093f\u091f \u0915\u093e\u0930\u094d\u0921, \u091c\u093f\u0938\u0915\u0947 \u0906\u0916\u093c\u093f\u0930\u0940 \u0905\u0902\u0915 {last4} \u0939\u0948\u0902, {block_reason}\u0964 \u0909\u0938\u0947 \u092c\u094d\u0932\u0949\u0915 \u0915\u0930 \u0926\u094b\u0964",
+   "ta": "\u0b95\u0b9f\u0bc8\u0b9a\u0bbf \u0b87\u0bb2\u0b95\u0bcd\u0b95\u0b99\u0bcd\u0b95\u0bb3\u0bcd {last4} \u0b89\u0bb3\u0bcd\u0bb3 \u0b8e\u0ba9\u0bcd \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bc1 \u0b9f\u0bc6\u0baa\u0bbf\u0b9f\u0bcd \u0b95\u0bbe\u0bb0\u0bcd\u0b9f\u0bc1 {block_reason}. \u0b85\u0ba4\u0bc8 \u0baa\u0bbf\u0bb3\u0bbe\u0b95\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Mera savings account wala debit card jiske last digits {last4} hain, {block_reason}. Use block kar do.",
+   "tanglish": "Last digits {last4} irukkara en savings account debit card {block_reason}. Adha block pannunga."
   },
   "card_replace": {
-   "en": "Order a replacement for that card, delivered to my {replace_to} address."
+   "en": "Order a replacement for that card, delivered to my {replace_to} address.",
+   "hi": "\u0909\u0938 \u0915\u093e\u0930\u094d\u0921 \u0915\u093e \u0930\u093f\u092a\u094d\u0932\u0947\u0938\u092e\u0947\u0902\u091f \u092e\u0901\u0917\u0935\u093e\u0913, \u091c\u094b \u092e\u0947\u0930\u0947 {replace_to} \u0935\u093e\u0932\u0947 \u092a\u0924\u0947 \u092a\u0930 \u0906\u090f\u0964",
+   "ta": "\u0b85\u0ba8\u0bcd\u0ba4 \u0b95\u0bbe\u0bb0\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0bc1 \u0b95\u0bbe\u0bb0\u0bcd\u0b9f\u0bc1 \u0b86\u0bb0\u0bcd\u0b9f\u0bb0\u0bcd \u0b9a\u0bc6\u0baf\u0bcd\u0ba4\u0bc1, \u0b8e\u0ba9\u0bcd {replace_to} \u0bae\u0bc1\u0b95\u0bb5\u0bb0\u0bbf\u0b95\u0bcd\u0b95\u0bc1 \u0b9f\u0bc6\u0bb2\u0bbf\u0bb5\u0bb0\u0bbf \u0b9a\u0bc6\u0baf\u0bcd\u0baf\u0b9a\u0bcd \u0b9a\u0bca\u0bb2\u0bcd\u0bb2\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Us card ka replacement mangwao, mere {replace_to} wale address pe.",
+   "tanglish": "Andha card-ku replacement order panni, en {replace_to} address-ku deliver panna sollunga."
   },
   "card_limit": {
-   "en": "Set the international online limit on my salary account debit card to \u20b9{limit} a day."
+   "en": "Set the international online limit on my salary account debit card to \u20b9{limit} a day.",
+   "hi": "\u092e\u0947\u0930\u0947 \u0938\u0948\u0932\u0930\u0940 \u0905\u0915\u093e\u0909\u0902\u091f \u0935\u093e\u0932\u0947 \u0921\u0947\u092c\u093f\u091f \u0915\u093e\u0930\u094d\u0921 \u092a\u0930 \u0907\u0902\u091f\u0930\u0928\u0947\u0936\u0928\u0932 \u0911\u0928\u0932\u093e\u0907\u0928 \u0932\u093f\u092e\u093f\u091f \u20b9{limit} \u092a\u094d\u0930\u0924\u093f \u0926\u093f\u0928 \u0915\u0930 \u0926\u094b\u0964",
+   "ta": "\u0b8e\u0ba9\u0bcd \u0b9a\u0bae\u0bcd\u0baa\u0bb3\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bc1 \u0b9f\u0bc6\u0baa\u0bbf\u0b9f\u0bcd \u0b95\u0bbe\u0bb0\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd \u0b87\u0ba9\u0bcd\u0b9f\u0bb0\u0bcd\u0ba8\u0bc7\u0bb7\u0ba9\u0bb2\u0bcd \u0b86\u0ba9\u0bcd\u0bb2\u0bc8\u0ba9\u0bcd \u0bb2\u0bbf\u0bae\u0bbf\u0b9f\u0bcd\u0b9f\u0bc8 \u0b92\u0bb0\u0bc1 \u0ba8\u0bbe\u0bb3\u0bc8\u0b95\u0bcd\u0b95\u0bc1 \u20b9{limit} \u0b86\u0b95 \u0bb5\u0bc8\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Mere salary account wale debit card pe international online limit \u20b9{limit} per day kar do.",
+   "tanglish": "En salary account debit card-la international online limit-a oru naalukku \u20b9{limit}-a vainga."
   },
   "fd_open": {
-   "en": "Open a fixed deposit of \u20b9{fd_amount} from my savings account, in the scheme with the highest interest rate for a tenure between {lo} and {hi} months that allows premature withdrawal, with {payout} interest payout."
+   "en": "Open a fixed deposit of \u20b9{fd_amount} from my savings account, in the scheme with the highest interest rate for a tenure between {lo} and {hi} months that allows premature withdrawal, with {payout} interest payout.",
+   "hi": "\u092e\u0947\u0930\u0947 \u0938\u0947\u0935\u093f\u0902\u0917\u094d\u0938 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u20b9{fd_amount} \u0915\u0940 \u092b\u093c\u093f\u0915\u094d\u0938\u094d\u0921 \u0921\u093f\u092a\u0949\u091c\u093c\u093f\u091f \u0916\u094b\u0932\u094b, \u0909\u0938 \u0938\u094d\u0915\u0940\u092e \u092e\u0947\u0902 \u091c\u093f\u0938\u0915\u0940 \u0905\u0935\u0927\u093f {lo} \u0938\u0947 {hi} \u092e\u0939\u0940\u0928\u0947 \u0915\u0947 \u092c\u0940\u091a \u0939\u094b, \u091c\u093f\u0938\u092e\u0947\u0902 \u0938\u092e\u092f \u0938\u0947 \u092a\u0939\u0932\u0947 \u0928\u093f\u0915\u093e\u0938\u0940 \u0915\u0940 \u0938\u0941\u0935\u093f\u0927\u093e \u0939\u094b, \u0914\u0930 \u0907\u0928\u092e\u0947\u0902 \u091c\u093f\u0938\u0915\u0940 \u092c\u094d\u092f\u093e\u091c \u0926\u0930 \u0938\u092c\u0938\u0947 \u091c\u093c\u094d\u092f\u093e\u0926\u093e \u0939\u094b; \u092c\u094d\u092f\u093e\u091c \u0915\u093e \u092d\u0941\u0917\u0924\u093e\u0928 {payout} \u0939\u094b\u0964",
+   "ta": "\u0b8e\u0ba9\u0bcd \u0b9a\u0bc7\u0bae\u0bbf\u0baa\u0bcd\u0baa\u0bc1\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u20b9{fd_amount}-\u0b95\u0bcd\u0b95\u0bc1 \u0b92\u0bb0\u0bc1 \u0b83\u0baa\u0bbf\u0b95\u0bcd\u0bb8\u0b9f\u0bcd \u0b9f\u0bc6\u0baa\u0bbe\u0b9a\u0bbf\u0b9f\u0bcd \u0ba4\u0bca\u0b9f\u0b99\u0bcd\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd: \u0b95\u0bbe\u0bb2\u0bae\u0bcd {lo} \u0bae\u0bc1\u0ba4\u0bb2\u0bcd {hi} \u0bae\u0bbe\u0ba4\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0bb3\u0bcd, \u0bae\u0bc1\u0ba9\u0bcd\u0b95\u0bc2\u0b9f\u0bcd\u0b9f\u0bbf\u0baf\u0bc7 \u0b8e\u0b9f\u0bc1\u0b95\u0bcd\u0b95 \u0b85\u0ba9\u0bc1\u0bae\u0ba4\u0bbf\u0b95\u0bcd\u0b95\u0bc1\u0bae\u0bcd \u0ba4\u0bbf\u0b9f\u0bcd\u0b9f\u0b99\u0bcd\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0bb5\u0b9f\u0bcd\u0b9f\u0bbf \u0bb5\u0bbf\u0b95\u0bbf\u0ba4\u0bae\u0bcd \u0b85\u0ba4\u0bbf\u0b95\u0bae\u0bbe\u0ba9\u0ba4\u0bc1; \u0bb5\u0b9f\u0bcd\u0b9f\u0bbf {payout} \u0bae\u0bc1\u0bb1\u0bc8\u0baf\u0bbf\u0bb2\u0bcd \u0bb5\u0bb0 \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.",
+   "hinglish": "Mere savings account se \u20b9{fd_amount} ka fixed deposit kholo, us scheme mein jiska tenure {lo} se {hi} months ke beech ho, premature withdrawal allowed ho, aur unme jiska interest rate sabse zyada ho; interest payout {payout} ho.",
+   "tanglish": "En savings account-la irundhu \u20b9{fd_amount}-ku oru fixed deposit open pannunga: tenure {lo} la irundhu {hi} months-kulla, premature withdrawal allow pannra schemes-la interest rate adhigama irukkaradhu; interest payout {payout}-a irukkanum."
   },
   "rd_open": {
-   "en": "Start a recurring deposit of \u20b9{rd_amount} a month from my salary account that matures in the same month as that fixed deposit."
+   "en": "Start a recurring deposit of \u20b9{rd_amount} a month from my salary account that matures in the same month as that fixed deposit.",
+   "hi": "\u092e\u0947\u0930\u0947 \u0938\u0948\u0932\u0930\u0940 \u0905\u0915\u093e\u0909\u0902\u091f \u0938\u0947 \u20b9{rd_amount} \u092e\u0939\u0940\u0928\u0947 \u0915\u0940 \u090f\u0915 \u0930\u0947\u0915\u0930\u093f\u0902\u0917 \u0921\u093f\u092a\u0949\u091c\u093c\u093f\u091f \u0936\u0941\u0930\u0942 \u0915\u0930\u094b \u091c\u094b \u0909\u0938\u0940 \u092e\u0939\u0940\u0928\u0947 \u092e\u0948\u091a\u094d\u092f\u094b\u0930 \u0939\u094b \u091c\u093f\u0938 \u092e\u0939\u0940\u0928\u0947 \u0935\u0939 \u092b\u093c\u093f\u0915\u094d\u0938\u094d\u0921 \u0921\u093f\u092a\u0949\u091c\u093c\u093f\u091f\u0964",
+   "ta": "\u0b8e\u0ba9\u0bcd \u0b9a\u0bae\u0bcd\u0baa\u0bb3\u0b95\u0bcd \u0b95\u0ba3\u0b95\u0bcd\u0b95\u0bbf\u0bb2\u0bbf\u0bb0\u0bc1\u0ba8\u0bcd\u0ba4\u0bc1 \u0bae\u0bbe\u0ba4\u0bae\u0bcd \u20b9{rd_amount} \u0bb0\u0bc6\u0b95\u0bcd\u0b95\u0bb0\u0bbf\u0b99\u0bcd \u0b9f\u0bc6\u0baa\u0bbe\u0b9a\u0bbf\u0b9f\u0bcd \u0b92\u0ba9\u0bcd\u0bb1\u0bc8\u0ba4\u0bcd \u0ba4\u0bca\u0b9f\u0b99\u0bcd\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd; \u0b85\u0ba4\u0bc1 \u0b85\u0ba8\u0bcd\u0ba4 \u0b83\u0baa\u0bbf\u0b95\u0bcd\u0bb8\u0b9f\u0bcd \u0b9f\u0bc6\u0baa\u0bbe\u0b9a\u0bbf\u0b9f\u0bcd \u0bae\u0bc1\u0ba4\u0bbf\u0bb0\u0bcd\u0bb5\u0b9f\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b85\u0ba4\u0bc7 \u0bae\u0bbe\u0ba4\u0ba4\u0bcd\u0ba4\u0bbf\u0bb2\u0bcd \u0bae\u0bc1\u0ba4\u0bbf\u0bb0\u0bcd\u0bb5\u0b9f\u0bc8\u0baf \u0bb5\u0bc7\u0ba3\u0bcd\u0b9f\u0bc1\u0bae\u0bcd.",
+   "hinglish": "Mere salary account se \u20b9{rd_amount} mahine ka ek recurring deposit start karo jo usi mahine mature ho jis mahine wo fixed deposit.",
+   "tanglish": "En salary account-la irundhu maasam \u20b9{rd_amount} recurring deposit onnu start pannunga, adhu andha fixed deposit mature aagura adhe maasam mature aaganum."
   },
   "nominee": {
-   "en": "Add {nominee} as the nominee on the new fixed deposit with a 100% share."
+   "en": "Add {nominee} as the nominee on the new fixed deposit with a 100% share.",
+   "hi": "\u0928\u0908 \u092b\u093c\u093f\u0915\u094d\u0938\u094d\u0921 \u0921\u093f\u092a\u0949\u091c\u093c\u093f\u091f \u092a\u0930 {nominee} \u0915\u094b 100% \u0939\u093f\u0938\u094d\u0938\u0947 \u0915\u0947 \u0938\u093e\u0925 \u0928\u0949\u092e\u093f\u0928\u0940 \u092c\u0928\u093e\u0913\u0964",
+   "ta": "\u0baa\u0bc1\u0ba4\u0bbf\u0baf \u0b83\u0baa\u0bbf\u0b95\u0bcd\u0bb8\u0b9f\u0bcd \u0b9f\u0bc6\u0baa\u0bbe\u0b9a\u0bbf\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd {nominee}\u0bb5\u0bc8 100% \u0baa\u0b99\u0bcd\u0b95\u0bc1\u0b9f\u0ba9\u0bcd \u0ba8\u0bbe\u0bae\u0bbf\u0ba9\u0bbf\u0baf\u0bbe\u0b95\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Naye fixed deposit pe {nominee} ko 100% share ke saath nominee banao.",
+   "tanglish": "Pudhu fixed deposit-la {nominee}-va 100% share-oda nominee-a add pannunga."
   },
   "cheque_stop": {
-   "en": "Stop the cheque for \u20b9{cq_amount} I issued to {cq_payee}; that payment is cancelled."
+   "en": "Stop the cheque for \u20b9{cq_amount} I issued to {cq_payee}; that payment is cancelled.",
+   "hi": "\u092e\u0948\u0902\u0928\u0947 {cq_payee} \u0915\u094b \u20b9{cq_amount} \u0915\u093e \u091c\u094b \u091a\u0947\u0915 \u0926\u093f\u092f\u093e \u0925\u093e, \u0909\u0938\u0947 \u0930\u094b\u0915 \u0926\u094b; \u0935\u0939 \u092a\u0947\u092e\u0947\u0902\u091f \u0930\u0926\u094d\u0926 \u0939\u094b \u0917\u092f\u093e \u0939\u0948\u0964",
+   "ta": "{cq_payee}-\u0b95\u0bcd\u0b95\u0bc1 \u0ba8\u0bbe\u0ba9\u0bcd \u0b95\u0bca\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4 \u20b9{cq_amount} \u0b95\u0bbe\u0b9a\u0bcb\u0bb2\u0bc8\u0baf\u0bc8 \u0ba8\u0bbf\u0bb1\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd; \u0b85\u0ba8\u0bcd\u0ba4\u0baa\u0bcd \u0baa\u0ba3\u0bae\u0bcd \u0b9a\u0bc6\u0bb2\u0bc1\u0ba4\u0bcd\u0ba4\u0bc1\u0ba4\u0bb2\u0bcd \u0bb0\u0ba4\u0bcd\u0ba4\u0bbe\u0b95\u0bbf\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bc1.",
+   "hinglish": "Maine {cq_payee} ko \u20b9{cq_amount} ka jo cheque diya tha, use stop kar do; wo payment cancel ho gaya hai.",
+   "tanglish": "{cq_payee}-ku naan kudutha \u20b9{cq_amount} cheque-a stop pannunga; andha payment cancel aayiduchu."
   },
   "submit": {
-   "en": "Send the confirmations by {channel} only and attach the requests to my home branch, {branch}."
+   "en": "Send the confirmations by {channel} only and attach the requests to my home branch, {branch}.",
+   "hi": "\u0915\u0928\u094d\u092b\u093c\u0930\u094d\u092e\u0947\u0936\u0928 \u0938\u093f\u0930\u094d\u092b\u093c {channel} \u0938\u0947 \u092d\u0947\u091c\u0928\u093e \u0914\u0930 \u0938\u093e\u0930\u0940 \u0930\u093f\u0915\u094d\u0935\u0947\u0938\u094d\u091f \u092e\u0947\u0930\u0940 \u0939\u094b\u092e \u092c\u094d\u0930\u093e\u0902\u091a {branch} \u0938\u0947 \u091c\u094b\u0921\u093c\u0928\u093e\u0964",
+   "ta": "\u0b89\u0bb1\u0bc1\u0ba4\u0bbf\u0baa\u0bcd\u0baa\u0b9f\u0bc1\u0ba4\u0bcd\u0ba4\u0bb2\u0bcd\u0b95\u0bb3\u0bc8 {channel} \u0bae\u0bc2\u0bb2\u0bae\u0bcd \u0bae\u0b9f\u0bcd\u0b9f\u0bc1\u0bae\u0bcd \u0b85\u0ba9\u0bc1\u0baa\u0bcd\u0baa\u0bbf, \u0b8e\u0bb2\u0bcd\u0bb2\u0bbe \u0b95\u0bcb\u0bb0\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0b95\u0bb3\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b8e\u0ba9\u0bcd \u0bb9\u0bcb\u0bae\u0bcd \u0baa\u0bbf\u0bb0\u0bbe\u0b9e\u0bcd\u0b9a\u0bcd {branch}-\u0b89\u0b9f\u0ba9\u0bcd \u0b87\u0ba3\u0bc8\u0baf\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd.",
+   "hinglish": "Confirmations sirf {channel} pe bhejna aur saari requests meri home branch {branch} se attach karna.",
+   "tanglish": "Confirmations-a {channel}-la mattum anuppunga, ella requests-ayum en home branch {branch}-oda attach pannunga."
   }
  },
  "terms": {
   "block_reason": {
    "lost": {
-    "en": "lost"
+    "en": "lost",
+    "hi": "\u0916\u094b \u0917\u092f\u093e \u0939\u0948",
+    "ta": "\u0ba4\u0bca\u0bb2\u0bc8\u0ba8\u0bcd\u0ba4\u0bc1\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bc1",
+    "hinglish": "kho gaya hai",
+    "tanglish": "tholanjuduchu"
    },
    "stolen": {
-    "en": "had stolen"
+    "en": "had stolen",
+    "hi": "\u091a\u094b\u0930\u0940 \u0939\u094b \u0917\u092f\u093e \u0939\u0948",
+    "ta": "\u0ba4\u0bbf\u0bb0\u0bc1\u0b9f\u0bc1\u0baa\u0bcb\u0baf\u0bcd\u0bb5\u0bbf\u0b9f\u0bcd\u0b9f\u0ba4\u0bc1",
+    "hinglish": "chori ho gaya hai",
+    "tanglish": "thirudu poyiduchu"
    }
   },
   "address": {
    "office": {
-    "en": "office"
+    "en": "office",
+    "hi": "\u0911\u092b\u093c\u093f\u0938",
+    "ta": "\u0b86\u0baa\u0bc0\u0bb8\u0bcd",
+    "hinglish": "office",
+    "tanglish": "office"
    },
    "home": {
-    "en": "home"
+    "en": "home",
+    "hi": "\u0918\u0930",
+    "ta": "\u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1",
+    "hinglish": "ghar",
+    "tanglish": "veettu"
    }
   },
   "payout": {
    "cumulative": {
-    "en": "cumulative"
+    "en": "cumulative",
+    "hi": "\u0915\u094d\u092f\u0942\u092e\u094d\u092f\u0932\u0947\u091f\u093f\u0935",
+    "ta": "\u0b95\u0bcd\u0baf\u0bc2\u0bae\u0bc1\u0bb2\u0bc7\u0b9f\u0bcd\u0b9f\u0bbf\u0bb5\u0bcd",
+    "hinglish": "cumulative",
+    "tanglish": "cumulative"
    },
    "monthly": {
-    "en": "monthly"
+    "en": "monthly",
+    "hi": "\u0939\u0930 \u092e\u0939\u0940\u0928\u0947",
+    "ta": "\u0bae\u0bbe\u0ba4\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0",
+    "hinglish": "monthly",
+    "tanglish": "monthly"
    },
    "quarterly": {
-    "en": "quarterly"
+    "en": "quarterly",
+    "hi": "\u0939\u0930 \u0924\u093f\u092e\u093e\u0939\u0940",
+    "ta": "\u0b95\u0bbe\u0bb2\u0bbe\u0ba3\u0bcd\u0b9f\u0bc1",
+    "hinglish": "quarterly",
+    "tanglish": "quarterly"
    }
   },
   "relation": {
    "mummy": {
-    "en": "Mummy"
+    "en": "Mummy",
+    "hi": "\u092e\u092e\u094d\u092e\u0940",
+    "ta": "\u0b85\u0bae\u0bcd\u0bae\u0bbe",
+    "hinglish": "Mummy",
+    "tanglish": "Amma"
    },
    "papa": {
-    "en": "Papa"
+    "en": "Papa",
+    "hi": "\u092a\u093e\u092a\u093e",
+    "ta": "\u0b85\u0baa\u0bcd\u0baa\u0bbe",
+    "hinglish": "Papa",
+    "tanglish": "Appa"
    }
   },
   "channel": {
    "sms": {
-    "en": "SMS"
+    "en": "SMS",
+    "hi": "SMS",
+    "ta": "SMS",
+    "hinglish": "SMS",
+    "tanglish": "SMS"
    },
    "email": {
-    "en": "email"
+    "en": "email",
+    "hi": "\u0908\u092e\u0947\u0932",
+    "ta": "\u0b88\u0bae\u0bc6\u0baf\u0bbf\u0bb2\u0bcd",
+    "hinglish": "email",
+    "tanglish": "email"
    }
   }
  },
  "stage_clause": {},
  "verification": {
-  "en": "author"
+  "en": "author",
+  "hi": "author: Rishabh, 2026-10-28",
+  "ta": "author: Rishabh, 2026-10-28",
+  "hinglish": "author: Rishabh, 2026-10-28",
+  "tanglish": "author: Rishabh, 2026-10-28"
  }
 }

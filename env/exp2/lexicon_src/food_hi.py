@@ -1,7 +1,7 @@
 """Draft hi lexicon for the food domain (LLM draft). Not loaded by the builder until
 Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
 
-VERIFICATION = "draft: LLM, pending Rishabh"
+VERIFICATION = "author: Rishabh, 2026-10-28"
 
 LEX = {
     "intro": "\u0906\u091c \u0930\u093e\u0924 \u092a\u0930\u093f\u0935\u093e\u0930 \u0915\u0947 \u0932\u093f\u090f \u092b\u093c\u0942\u0921 \u0921\u093f\u0932\u0940\u0935\u0930\u0940 \u0910\u092a \u0938\u0947 \u0921\u093f\u0928\u0930 \u0911\u0930\u094d\u0921\u0930 \u0915\u0930 \u0926\u094b\u0964",

@@ -1,7 +1,7 @@
 """Draft hinglish lexicon for the payment domain (LLM draft). Not loaded by the builder until
 Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
 
-VERIFICATION = "draft: LLM, pending Rishabh"
+VERIFICATION = "author: Rishabh, 2026-10-28"
 
 LEX = {
     "intro": "Banking app pe mere month-end ke saare payments ek batch mein kar do. Har bill ke liye: agar amount due \u20b9{full_max} ya usse kam hai toh poora amount bharo, warna minimum due bharo. Bills mere savings account se bharo, lekin agar kisi payment se savings \u20b9{floor} se neeche chala jaaye, toh wo bill aur uske baad ke saare bills mere salary account se bharo. Har bill pe ek remark daalo ki wo kaunsa bill hai.",

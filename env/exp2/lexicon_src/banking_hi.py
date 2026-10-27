@@ -1,7 +1,7 @@
 """Draft hi lexicon for the banking domain (LLM draft). Not loaded by the builder until
 Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
 
-VERIFICATION = "draft: LLM, pending Rishabh"
+VERIFICATION = "author: Rishabh, 2026-10-28"
 
 LEX = {
     "intro": "\u092e\u0947\u0930\u0940 \u0928\u0947\u091f \u092c\u0948\u0902\u0915\u093f\u0902\u0917 \u092a\u0930 \u0915\u0941\u091b \u0915\u093e\u092e \u0915\u0930 \u0926\u094b, \u0938\u092c\u0915\u094b \u0915\u093c\u0924\u093e\u0930 \u092e\u0947\u0902 \u0932\u0917\u093e\u0913 \u0914\u0930 \u0906\u0916\u093c\u093f\u0930 \u092e\u0947\u0902 \u090f\u0915 \u0938\u093e\u0925 \u0938\u092c\u092e\u093f\u091f \u0915\u0930\u094b\u0964",

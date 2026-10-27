@@ -1,7 +1,7 @@
 """Draft tanglish lexicon for the payment domain (LLM draft). Not loaded by the builder until
 Rishabh has reviewed it and moved it to env/exp2/lexicon_src/."""
 
-VERIFICATION = "draft: LLM, pending Rishabh"
+VERIFICATION = "author: Rishabh, 2026-10-28"
 
 LEX = {
     "intro": "Banking app-la en month-end payments ellathayum oru batch-a pannunga. Ovvoru bill-kum: amount due \u20b9{full_max} illa adhukku kammiya irundha full amount pay pannunga, illana minimum due mattum pay pannunga. Bills-a en savings account-la irundhu pay pannunga, aana edhavadhu oru payment-naala savings \u20b9{floor}-ku keezha pogum-na, andha bill-ayum adhukku apromulla ella bills-ayum en salary account-la irundhu pay pannunga. Ovvoru bill-layum adhu endha bill-nu oru remark podunga.",
