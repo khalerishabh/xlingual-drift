@@ -1,0 +1,1791 @@
+{
+ "episodes": 675,
+ "domains": [
+  "food",
+  "payment",
+  "shopping"
+ ],
+ "unit": "first attempt per episode; loop (reply hit max_tokens) counted as failure",
+ "rq1": {
+  "success_group_format": {
+   "native|short": {
+    "k": 44,
+    "n": 45,
+    "rate": 0.9778,
+    "ci": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "native|medium": {
+    "k": 44,
+    "n": 45,
+    "rate": 0.9778,
+    "ci": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "native|long": {
+    "k": 38,
+    "n": 45,
+    "rate": 0.8444,
+    "ci": [
+     0.7122,
+     0.9225
+    ]
+   },
+   "non_native|short": {
+    "k": 87,
+    "n": 90,
+    "rate": 0.9667,
+    "ci": [
+     0.9065,
+     0.9886
+    ]
+   },
+   "non_native|medium": {
+    "k": 87,
+    "n": 90,
+    "rate": 0.9667,
+    "ci": [
+     0.9065,
+     0.9886
+    ]
+   },
+   "non_native|long": {
+    "k": 64,
+    "n": 90,
+    "rate": 0.7111,
+    "ci": [
+     0.6104,
+     0.7946
+    ]
+   },
+   "code_mixed|short": {
+    "k": 87,
+    "n": 90,
+    "rate": 0.9667,
+    "ci": [
+     0.9065,
+     0.9886
+    ]
+   },
+   "code_mixed|medium": {
+    "k": 85,
+    "n": 90,
+    "rate": 0.9444,
+    "ci": [
+     0.8765,
+     0.976
+    ]
+   },
+   "code_mixed|long": {
+    "k": 66,
+    "n": 90,
+    "rate": 0.7333,
+    "ci": [
+     0.6338,
+     0.8138
+    ]
+   }
+  },
+  "success_language_format": {
+   "en|short": {
+    "k": 44,
+    "n": 45,
+    "rate": 0.9778,
+    "ci": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "en|medium": {
+    "k": 44,
+    "n": 45,
+    "rate": 0.9778,
+    "ci": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "en|long": {
+    "k": 38,
+    "n": 45,
+    "rate": 0.8444,
+    "ci": [
+     0.7122,
+     0.9225
+    ]
+   },
+   "en|all": {
+    "k": 126,
+    "n": 135,
+    "rate": 0.9333,
+    "ci": [
+     0.8782,
+     0.9645
+    ]
+   },
+   "hi|short": {
+    "k": 45,
+    "n": 45,
+    "rate": 1.0,
+    "ci": [
+     0.9213,
+     1.0
+    ]
+   },
+   "hi|medium": {
+    "k": 45,
+    "n": 45,
+    "rate": 1.0,
+    "ci": [
+     0.9213,
+     1.0
+    ]
+   },
+   "hi|long": {
+    "k": 30,
+    "n": 45,
+    "rate": 0.6667,
+    "ci": [
+     0.5207,
+     0.7864
+    ]
+   },
+   "hi|all": {
+    "k": 120,
+    "n": 135,
+    "rate": 0.8889,
+    "ci": [
+     0.8248,
+     0.9315
+    ]
+   },
+   "ta|short": {
+    "k": 42,
+    "n": 45,
+    "rate": 0.9333,
+    "ci": [
+     0.8214,
+     0.9771
+    ]
+   },
+   "ta|medium": {
+    "k": 42,
+    "n": 45,
+    "rate": 0.9333,
+    "ci": [
+     0.8214,
+     0.9771
+    ]
+   },
+   "ta|long": {
+    "k": 34,
+    "n": 45,
+    "rate": 0.7556,
+    "ci": [
+     0.6133,
+     0.8576
+    ]
+   },
+   "ta|all": {
+    "k": 118,
+    "n": 135,
+    "rate": 0.8741,
+    "ci": [
+     0.8076,
+     0.9199
+    ]
+   },
+   "hinglish|short": {
+    "k": 45,
+    "n": 45,
+    "rate": 1.0,
+    "ci": [
+     0.9213,
+     1.0
+    ]
+   },
+   "hinglish|medium": {
+    "k": 44,
+    "n": 45,
+    "rate": 0.9778,
+    "ci": [
+     0.8843,
+     0.9961
+    ]
+   },
+   "hinglish|long": {
+    "k": 37,
+    "n": 45,
+    "rate": 0.8222,
+    "ci": [
+     0.6867,
+     0.9071
+    ]
+   },
+   "hinglish|all": {
+    "k": 126,
+    "n": 135,
+    "rate": 0.9333,
+    "ci": [
+     0.8782,
+     0.9645
+    ]
+   },
+   "tanglish|short": {
+    "k": 42,
+    "n": 45,
+    "rate": 0.9333,
+    "ci": [
+     0.8214,
+     0.9771
+    ]
+   },
+   "tanglish|medium": {
+    "k": 41,
+    "n": 45,
+    "rate": 0.9111,
+    "ci": [
+     0.7927,
+     0.9649
+    ]
+   },
+   "tanglish|long": {
+    "k": 29,
+    "n": 45,
+    "rate": 0.6444,
+    "ci": [
+     0.4984,
+     0.7678
+    ]
+   },
+   "tanglish|all": {
+    "k": 112,
+    "n": 135,
+    "rate": 0.8296,
+    "ci": [
+     0.7573,
+     0.8837
+    ]
+   }
+  },
+  "success_domain_group_format": {
+   "food|native|short": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci": [
+     0.7961,
+     1.0
+    ]
+   },
+   "food|native|medium": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci": [
+     0.7961,
+     1.0
+    ]
+   },
+   "food|native|long": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci": [
+     0.7961,
+     1.0
+    ]
+   },
+   "food|non_native|short": {
+    "k": 30,
+    "n": 30,
+    "rate": 1.0,
+    "ci": [
+     0.8865,
+     1.0
+    ]
+   },
+   "food|non_native|medium": {
+    "k": 28,
+    "n": 30,
+    "rate": 0.9333,
+    "ci": [
+     0.7868,
+     0.9815
+    ]
+   },
+   "food|non_native|long": {
+    "k": 24,
+    "n": 30,
+    "rate": 0.8,
+    "ci": [
+     0.6269,
+     0.905
+    ]
+   },
+   "food|code_mixed|short": {
+    "k": 30,
+    "n": 30,
+    "rate": 1.0,
+    "ci": [
+     0.8865,
+     1.0
+    ]
+   },
+   "food|code_mixed|medium": {
+    "k": 26,
+    "n": 30,
+    "rate": 0.8667,
+    "ci": [
+     0.7032,
+     0.9469
+    ]
+   },
+   "food|code_mixed|long": {
+    "k": 19,
+    "n": 30,
+    "rate": 0.6333,
+    "ci": [
+     0.4551,
+     0.7813
+    ]
+   },
+   "payment|native|short": {
+    "k": 14,
+    "n": 15,
+    "rate": 0.9333,
+    "ci": [
+     0.7018,
+     0.9881
+    ]
+   },
+   "payment|native|medium": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci": [
+     0.7961,
+     1.0
+    ]
+   },
+   "payment|native|long": {
+    "k": 13,
+    "n": 15,
+    "rate": 0.8667,
+    "ci": [
+     0.6212,
+     0.9626
+    ]
+   },
+   "payment|non_native|short": {
+    "k": 27,
+    "n": 30,
+    "rate": 0.9,
+    "ci": [
+     0.7438,
+     0.9654
+    ]
+   },
+   "payment|non_native|medium": {
+    "k": 30,
+    "n": 30,
+    "rate": 1.0,
+    "ci": [
+     0.8865,
+     1.0
+    ]
+   },
+   "payment|non_native|long": {
+    "k": 20,
+    "n": 30,
+    "rate": 0.6667,
+    "ci": [
+     0.4878,
+     0.8077
+    ]
+   },
+   "payment|code_mixed|short": {
+    "k": 27,
+    "n": 30,
+    "rate": 0.9,
+    "ci": [
+     0.7438,
+     0.9654
+    ]
+   },
+   "payment|code_mixed|medium": {
+    "k": 30,
+    "n": 30,
+    "rate": 1.0,
+    "ci": [
+     0.8865,
+     1.0
+    ]
+   },
+   "payment|code_mixed|long": {
+    "k": 25,
+    "n": 30,
+    "rate": 0.8333,
+    "ci": [
+     0.6644,
+     0.9266
+    ]
+   },
+   "shopping|native|short": {
+    "k": 15,
+    "n": 15,
+    "rate": 1.0,
+    "ci": [
+     0.7961,
+     1.0
+    ]
+   },
+   "shopping|native|medium": {
+    "k": 14,
+    "n": 15,
+    "rate": 0.9333,
+    "ci": [
+     0.7018,
+     0.9881
+    ]
+   },
+   "shopping|native|long": {
+    "k": 10,
+    "n": 15,
+    "rate": 0.6667,
+    "ci": [
+     0.4171,
+     0.8482
+    ]
+   },
+   "shopping|non_native|short": {
+    "k": 30,
+    "n": 30,
+    "rate": 1.0,
+    "ci": [
+     0.8865,
+     1.0
+    ]
+   },
+   "shopping|non_native|medium": {
+    "k": 29,
+    "n": 30,
+    "rate": 0.9667,
+    "ci": [
+     0.8333,
+     0.9941
+    ]
+   },
+   "shopping|non_native|long": {
+    "k": 20,
+    "n": 30,
+    "rate": 0.6667,
+    "ci": [
+     0.4878,
+     0.8077
+    ]
+   },
+   "shopping|code_mixed|short": {
+    "k": 30,
+    "n": 30,
+    "rate": 1.0,
+    "ci": [
+     0.8865,
+     1.0
+    ]
+   },
+   "shopping|code_mixed|medium": {
+    "k": 29,
+    "n": 30,
+    "rate": 0.9667,
+    "ci": [
+     0.8333,
+     0.9941
+    ]
+   },
+   "shopping|code_mixed|long": {
+    "k": 22,
+    "n": 30,
+    "rate": 0.7333,
+    "ci": [
+     0.5555,
+     0.8582
+    ]
+   }
+  },
+  "outcomes_group_format": {
+   "('code_mixed', 'long')": {
+    "success": 66,
+    "loop": 17,
+    "execution": 7
+   },
+   "('code_mixed', 'medium')": {
+    "success": 85,
+    "loop": 4,
+    "execution": 1
+   },
+   "('code_mixed', 'short')": {
+    "success": 87,
+    "execution": 1,
+    "loop": 2
+   },
+   "('native', 'long')": {
+    "success": 38,
+    "loop": 6,
+    "execution": 1
+   },
+   "('native', 'medium')": {
+    "success": 44,
+    "loop": 1
+   },
+   "('native', 'short')": {
+    "success": 44,
+    "loop": 1
+   },
+   "('non_native', 'long')": {
+    "success": 64,
+    "loop": 8,
+    "execution": 18
+   },
+   "('non_native', 'medium')": {
+    "success": 87,
+    "loop": 2,
+    "execution": 1
+   },
+   "('non_native', 'short')": {
+    "success": 87,
+    "loop": 3
+   }
+  },
+  "outcomes_language": {
+   "en": {
+    "success": 126,
+    "loop": 8,
+    "execution": 1
+   },
+   "hi": {
+    "success": 120,
+    "loop": 5,
+    "execution": 10
+   },
+   "hinglish": {
+    "success": 126,
+    "loop": 5,
+    "execution": 4
+   },
+   "ta": {
+    "success": 118,
+    "loop": 8,
+    "execution": 9
+   },
+   "tanglish": {
+    "success": 112,
+    "loop": 18,
+    "execution": 5
+   }
+  },
+  "logistic": {
+   "group": {
+    "Intercept": {
+     "coef": 2.944,
+     "se": 0.608,
+     "p": 0.0,
+     "odds_ratio": 18.997
+    },
+    "C(group, Treatment('native'))[T.code_mixed]": {
+     "coef": -1.052,
+     "se": 0.718,
+     "p": 0.1429,
+     "odds_ratio": 0.349
+    },
+    "C(group, Treatment('native'))[T.non_native]": {
+     "coef": -0.749,
+     "se": 0.676,
+     "p": 0.268,
+     "odds_ratio": 0.473
+    },
+    "C(domain)[T.payment]": {
+     "coef": 0.774,
+     "se": 0.569,
+     "p": 0.1738,
+     "odds_ratio": 2.168
+    },
+    "C(domain)[T.shopping]": {
+     "coef": 0.507,
+     "se": 0.412,
+     "p": 0.2184,
+     "odds_ratio": 1.661
+    },
+    "hc": {
+     "coef": -2.053,
+     "se": 0.973,
+     "p": 0.0349,
+     "odds_ratio": 0.128
+    },
+    "C(group, Treatment('native'))[T.code_mixed]:hc": {
+     "coef": 0.666,
+     "se": 0.919,
+     "p": 0.4687,
+     "odds_ratio": 1.947
+    },
+    "C(group, Treatment('native'))[T.non_native]:hc": {
+     "coef": 0.057,
+     "se": 0.85,
+     "p": 0.9461,
+     "odds_ratio": 1.059
+    }
+   },
+   "language": {
+    "Intercept": {
+     "coef": 2.915,
+     "se": 0.622,
+     "p": 0.0,
+     "odds_ratio": 18.453
+    },
+    "C(language, Treatment('en'))[T.hi]": {
+     "coef": -0.091,
+     "se": 0.819,
+     "p": 0.9115,
+     "odds_ratio": 0.913
+    },
+    "C(language, Treatment('en'))[T.hinglish]": {
+     "coef": 0.131,
+     "se": 0.884,
+     "p": 0.8822,
+     "odds_ratio": 1.14
+    },
+    "C(language, Treatment('en'))[T.ta]": {
+     "coef": -1.098,
+     "se": 0.706,
+     "p": 0.12,
+     "odds_ratio": 0.334
+    },
+    "C(language, Treatment('en'))[T.tanglish]": {
+     "coef": -1.608,
+     "se": 0.755,
+     "p": 0.0333,
+     "odds_ratio": 0.2
+    },
+    "C(domain)[T.payment]": {
+     "coef": 0.86,
+     "se": 0.578,
+     "p": 0.1367,
+     "odds_ratio": 2.363
+    },
+    "C(domain)[T.shopping]": {
+     "coef": 0.576,
+     "se": 0.424,
+     "p": 0.1743,
+     "odds_ratio": 1.779
+    },
+    "hc": {
+     "coef": -2.092,
+     "se": 1.0,
+     "p": 0.0365,
+     "odds_ratio": 0.123
+    },
+    "C(language, Treatment('en'))[T.hi]:hc": {
+     "coef": -0.789,
+     "se": 0.994,
+     "p": 0.4276,
+     "odds_ratio": 0.454
+    },
+    "C(language, Treatment('en'))[T.hinglish]:hc": {
+     "coef": -0.191,
+     "se": 1.072,
+     "p": 0.8583,
+     "odds_ratio": 0.826
+    },
+    "C(language, Treatment('en'))[T.ta]:hc": {
+     "coef": 0.589,
+     "se": 0.91,
+     "p": 0.5175,
+     "odds_ratio": 1.802
+    },
+    "C(language, Treatment('en'))[T.tanglish]:hc": {
+     "coef": 0.926,
+     "se": 0.965,
+     "p": 0.337,
+     "odds_ratio": 2.526
+    }
+   },
+   "note": "hc = gold tool calls, centred, per 10 calls; SE clustered by task (template); domain fixed effect"
+  },
+  "gap_vs_english": {
+   "non_native|short": 0.0111,
+   "code_mixed|short": 0.0111,
+   "non_native|medium": 0.0111,
+   "code_mixed|medium": 0.0333,
+   "non_native|long": 0.1333,
+   "code_mixed|long": 0.1111
+  },
+  "anchor_survival_completed": {
+   "native|short": {
+    "k": 88,
+    "n": 88,
+    "rate": 1.0,
+    "ci": [
+     0.9582,
+     1.0
+    ]
+   },
+   "native|medium": {
+    "k": 88,
+    "n": 88,
+    "rate": 1.0,
+    "ci": [
+     0.9582,
+     1.0
+    ]
+   },
+   "native|long": {
+    "k": 78,
+    "n": 78,
+    "rate": 1.0,
+    "ci": [
+     0.9531,
+     1.0
+    ]
+   },
+   "non_native|short": {
+    "k": 174,
+    "n": 174,
+    "rate": 1.0,
+    "ci": [
+     0.9784,
+     1.0
+    ]
+   },
+   "non_native|medium": {
+    "k": 176,
+    "n": 176,
+    "rate": 1.0,
+    "ci": [
+     0.9786,
+     1.0
+    ]
+   },
+   "non_native|long": {
+    "k": 162,
+    "n": 162,
+    "rate": 1.0,
+    "ci": [
+     0.9768,
+     1.0
+    ]
+   },
+   "code_mixed|short": {
+    "k": 176,
+    "n": 176,
+    "rate": 1.0,
+    "ci": [
+     0.9786,
+     1.0
+    ]
+   },
+   "code_mixed|medium": {
+    "k": 172,
+    "n": 172,
+    "rate": 1.0,
+    "ci": [
+     0.9782,
+     1.0
+    ]
+   },
+   "code_mixed|long": {
+    "k": 146,
+    "n": 146,
+    "rate": 1.0,
+    "ci": [
+     0.9744,
+     1.0
+    ]
+   }
+  },
+  "pass_hat_3": {
+   "native|short": {
+    "k": 14,
+    "n": 15,
+    "rate": 0.9333,
+    "ci": [
+     0.7018,
+     0.9881
+    ]
+   },
+   "native|medium": {
+    "k": 14,
+    "n": 15,
+    "rate": 0.9333,
+    "ci": [
+     0.7018,
+     0.9881
+    ]
+   },
+   "native|long": {
+    "k": 10,
+    "n": 15,
+    "rate": 0.6667,
+    "ci": [
+     0.4171,
+     0.8482
+    ]
+   },
+   "non_native|short": {
+    "k": 28,
+    "n": 30,
+    "rate": 0.9333,
+    "ci": [
+     0.7868,
+     0.9815
+    ]
+   },
+   "non_native|medium": {
+    "k": 27,
+    "n": 30,
+    "rate": 0.9,
+    "ci": [
+     0.7438,
+     0.9654
+    ]
+   },
+   "non_native|long": {
+    "k": 12,
+    "n": 30,
+    "rate": 0.4,
+    "ci": [
+     0.2459,
+     0.5768
+    ]
+   },
+   "code_mixed|short": {
+    "k": 27,
+    "n": 30,
+    "rate": 0.9,
+    "ci": [
+     0.7438,
+     0.9654
+    ]
+   },
+   "code_mixed|medium": {
+    "k": 26,
+    "n": 30,
+    "rate": 0.8667,
+    "ci": [
+     0.7032,
+     0.9469
+    ]
+   },
+   "code_mixed|long": {
+    "k": 12,
+    "n": 30,
+    "rate": 0.4,
+    "ci": [
+     0.2459,
+     0.5768
+    ]
+   }
+  },
+  "cost_finished": {
+   "en|long": {
+    "completion_tokens": 22315.72,
+    "extra_steps": 3.59
+   },
+   "en|medium": {
+    "completion_tokens": 8569.11,
+    "extra_steps": 3.02
+   },
+   "en|short": {
+    "completion_tokens": 7054.77,
+    "extra_steps": 4.57
+   },
+   "hinglish|long": {
+    "completion_tokens": 26940.05,
+    "extra_steps": 5.1
+   },
+   "hinglish|medium": {
+    "completion_tokens": 8490.89,
+    "extra_steps": 2.87
+   },
+   "hinglish|short": {
+    "completion_tokens": 6292.69,
+    "extra_steps": 4.69
+   },
+   "hi|long": {
+    "completion_tokens": 26793.9,
+    "extra_steps": 6.62
+   },
+   "hi|medium": {
+    "completion_tokens": 8908.78,
+    "extra_steps": 3.4
+   },
+   "hi|short": {
+    "completion_tokens": 6100.67,
+    "extra_steps": 4.8
+   },
+   "tanglish|long": {
+    "completion_tokens": 30834.76,
+    "extra_steps": 5.55
+   },
+   "tanglish|medium": {
+    "completion_tokens": 10613.12,
+    "extra_steps": 3.76
+   },
+   "tanglish|short": {
+    "completion_tokens": 8088.09,
+    "extra_steps": 4.44
+   },
+   "ta|long": {
+    "completion_tokens": 24841.64,
+    "extra_steps": 5.48
+   },
+   "ta|medium": {
+    "completion_tokens": 8539.44,
+    "extra_steps": 3.33
+   },
+   "ta|short": {
+    "completion_tokens": 6055.29,
+    "extra_steps": 4.21
+   }
+  },
+  "reasoning_script_share": {
+   "hi": 0.0636,
+   "ta": 0.0596
+  }
+ },
+ "rq2": {
+  "first_failure_label_by_group": {
+   "native": {
+    "loop": 8,
+    "E3": 1
+   },
+   "non_native": {
+    "loop": 13,
+    "E1B": 2,
+    "E2": 4,
+    "E3": 8,
+    "E1A": 5
+   },
+   "code_mixed": {
+    "loop": 23,
+    "E2": 1,
+    "E3": 2,
+    "E1A": 6
+   }
+  },
+  "relative_position_mean": {
+   "code_mixed|loop": 1.296,
+   "code_mixed|wrong_value": 1.116,
+   "native|loop": 0.816,
+   "native|wrong_value": 1.16,
+   "non_native|loop": 1.233,
+   "non_native|wrong_value": 1.099
+  },
+  "constraint_failure_by_class": {
+   "all|anchor": {
+    "k": 2,
+    "n": 1262,
+    "rate": 0.0016,
+    "ci": [
+     0.0004,
+     0.0058
+    ]
+   },
+   "all|attribute": {
+    "k": 10,
+    "n": 3978,
+    "rate": 0.0025,
+    "ci": [
+     0.0014,
+     0.0046
+    ]
+   },
+   "all|binding": {
+    "k": 2,
+    "n": 727,
+    "rate": 0.0028,
+    "ci": [
+     0.0008,
+     0.01
+    ]
+   },
+   "all|carried": {
+    "k": 10,
+    "n": 857,
+    "rate": 0.0117,
+    "ci": [
+     0.0064,
+     0.0213
+    ]
+   },
+   "all|coupled": {
+    "k": 3,
+    "n": 244,
+    "rate": 0.0123,
+    "ci": [
+     0.0042,
+     0.0355
+    ]
+   },
+   "all|global": {
+    "k": 15,
+    "n": 827,
+    "rate": 0.0181,
+    "ci": [
+     0.011,
+     0.0297
+    ]
+   },
+   "all|selection": {
+    "k": 8,
+    "n": 5211,
+    "rate": 0.0015,
+    "ci": [
+     0.0008,
+     0.003
+    ]
+   },
+   "code_mixed|anchor": {
+    "k": 0,
+    "n": 494,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0077
+    ]
+   },
+   "code_mixed|attribute": {
+    "k": 2,
+    "n": 1579,
+    "rate": 0.0013,
+    "ci": [
+     0.0003,
+     0.0046
+    ]
+   },
+   "code_mixed|binding": {
+    "k": 0,
+    "n": 282,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0134
+    ]
+   },
+   "code_mixed|carried": {
+    "k": 4,
+    "n": 347,
+    "rate": 0.0115,
+    "ci": [
+     0.0045,
+     0.0293
+    ]
+   },
+   "code_mixed|coupled": {
+    "k": 0,
+    "n": 86,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0428
+    ]
+   },
+   "code_mixed|global": {
+    "k": 3,
+    "n": 318,
+    "rate": 0.0094,
+    "ci": [
+     0.0032,
+     0.0274
+    ]
+   },
+   "code_mixed|selection": {
+    "k": 0,
+    "n": 1988,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0019
+    ]
+   },
+   "native|anchor": {
+    "k": 0,
+    "n": 254,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0149
+    ]
+   },
+   "native|attribute": {
+    "k": 2,
+    "n": 778,
+    "rate": 0.0026,
+    "ci": [
+     0.0007,
+     0.0093
+    ]
+   },
+   "native|binding": {
+    "k": 0,
+    "n": 123,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0303
+    ]
+   },
+   "native|carried": {
+    "k": 1,
+    "n": 172,
+    "rate": 0.0058,
+    "ci": [
+     0.001,
+     0.0322
+    ]
+   },
+   "native|coupled": {
+    "k": 0,
+    "n": 50,
+    "rate": 0.0,
+    "ci": [
+     0.0,
+     0.0714
+    ]
+   },
+   "native|global": {
+    "k": 1,
+    "n": 167,
+    "rate": 0.006,
+    "ci": [
+     0.0011,
+     0.0331
+    ]
+   },
+   "native|selection": {
+    "k": 1,
+    "n": 1056,
+    "rate": 0.0009,
+    "ci": [
+     0.0002,
+     0.0053
+    ]
+   },
+   "non_native|anchor": {
+    "k": 2,
+    "n": 514,
+    "rate": 0.0039,
+    "ci": [
+     0.0011,
+     0.0141
+    ]
+   },
+   "non_native|attribute": {
+    "k": 6,
+    "n": 1621,
+    "rate": 0.0037,
+    "ci": [
+     0.0017,
+     0.0081
+    ]
+   },
+   "non_native|binding": {
+    "k": 2,
+    "n": 322,
+    "rate": 0.0062,
+    "ci": [
+     0.0017,
+     0.0224
+    ]
+   },
+   "non_native|carried": {
+    "k": 5,
+    "n": 338,
+    "rate": 0.0148,
+    "ci": [
+     0.0063,
+     0.0342
+    ]
+   },
+   "non_native|coupled": {
+    "k": 3,
+    "n": 108,
+    "rate": 0.0278,
+    "ci": [
+     0.0095,
+     0.0785
+    ]
+   },
+   "non_native|global": {
+    "k": 11,
+    "n": 342,
+    "rate": 0.0322,
+    "ci": [
+     0.0181,
+     0.0567
+    ]
+   },
+   "non_native|selection": {
+    "k": 7,
+    "n": 2167,
+    "rate": 0.0032,
+    "ci": [
+     0.0016,
+     0.0067
+    ]
+   }
+  },
+  "cases": [
+   {
+    "episode": "food_s1_long|h18|hi|qwen36_27b_fp8_think|s2",
+    "domain": "food",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "dish_self.best",
+    "class": "selection",
+    "label": "E1B",
+    "expected": "D-9836",
+    "got": "D-1647",
+    "decoy_hit": false,
+    "all_failed": [
+     "dish_self.best"
+    ]
+   },
+   {
+    "episode": "shopping_s2_long|h24|hi|qwen36_27b_fp8_think|s1",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E2",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s4_medium|h12|ta|qwen36_27b_fp8_think|s1",
+    "domain": "shopping",
+    "format": "medium",
+    "language": "ta",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E2",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s3_long|h24|hinglish|qwen36_27b_fp8_think|s1",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hinglish",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E2",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s2_long|h24|hinglish|qwen36_27b_fp8_think|s1",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hinglish",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E3",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s1_long|h24|hi|qwen36_27b_fp8_think|s2",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E3",
+    "expected": "STYLE15",
+    "got": "FEST20",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s2_long|h24|hi|qwen36_27b_fp8_think|s2",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E3",
+    "expected": "STYLE15",
+    "got": "FEST20",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s2_long|h24|ta|qwen36_27b_fp8_think|s2",
+    "domain": "shopping",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E3",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s5_long|h24|ta|qwen36_27b_fp8_think|s2",
+    "domain": "shopping",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E2",
+    "expected": "STYLE15",
+    "got": "FEST20",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s3_long|h24|hi|qwen36_27b_fp8_think|s2",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E2",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s3_long|h24|ta|qwen36_27b_fp8_think|s2",
+    "domain": "shopping",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "item_mother.best",
+    "class": "selection",
+    "label": "E1A",
+    "expected": "P-37069",
+    "got": "P-59762",
+    "decoy_hit": false,
+    "all_failed": [
+     "item_mother.best",
+     "item_sister.best"
+    ]
+   },
+   {
+    "episode": "shopping_s2_long|h24|hi|qwen36_27b_fp8_think|s3",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E3",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s4_medium|h12|hinglish|qwen36_27b_fp8_think|s3",
+    "domain": "shopping",
+    "format": "medium",
+    "language": "hinglish",
+    "first_failed": "coupon.best",
+    "class": "global",
+    "label": "E3",
+    "expected": "STYLE15",
+    "got": "DIWALI500",
+    "decoy_hit": false,
+    "all_failed": [
+     "coupon.best"
+    ]
+   },
+   {
+    "episode": "shopping_s1_long|h24|hi|qwen36_27b_fp8_think|s3",
+    "domain": "shopping",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "gift.sister",
+    "class": "binding",
+    "label": "E3",
+    "expected": "True",
+    "got": "False",
+    "decoy_hit": false,
+    "all_failed": [
+     "item_sister.present",
+     "item_sister.price",
+     "item_sister.best",
+     "item_sister.size",
+     "item_sister.colour",
+     "item_sister.address",
+     "item_sister.delivery",
+     "item_sister.pair_budget",
+     "gift.sister",
+     "coupon.best",
+     "cart.no_extra_lines",
+     "checkout.payment",
+     "checkout.slot"
+    ]
+   },
+   {
+    "episode": "payment_s3_long|h25|ta|qwen36_27b_fp8_think|s1",
+    "domain": "payment",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "bill_5.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_5.account"
+    ]
+   },
+   {
+    "episode": "payment_s2_long|h25|hi|qwen36_27b_fp8_think|s1",
+    "domain": "payment",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "bill_5.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_5.account"
+    ]
+   },
+   {
+    "episode": "payment_s2_long|h25|ta|qwen36_27b_fp8_think|s1",
+    "domain": "payment",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "bill_5.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_5.account"
+    ]
+   },
+   {
+    "episode": "payment_s4_long|h25|tanglish|qwen36_27b_fp8_think|s1",
+    "domain": "payment",
+    "format": "long",
+    "language": "tanglish",
+    "first_failed": "bill_6.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_6.account"
+    ]
+   },
+   {
+    "episode": "payment_s5_long|h25|tanglish|qwen36_27b_fp8_think|s1",
+    "domain": "payment",
+    "format": "long",
+    "language": "tanglish",
+    "first_failed": "pocket.account",
+    "class": "attribute",
+    "label": "E1A",
+    "expected": "ACC-202",
+    "got": "ACC-201",
+    "decoy_hit": false,
+    "all_failed": [
+     "pocket.account"
+    ]
+   },
+   {
+    "episode": "payment_s5_long|h25|ta|qwen36_27b_fp8_think|s1",
+    "domain": "payment",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "bill_6.amount",
+    "class": "attribute",
+    "label": "E3",
+    "expected": "870",
+    "got": "2900",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_6.amount"
+    ]
+   },
+   {
+    "episode": "payment_s2_short|h7|tanglish|qwen36_27b_fp8_think|s2",
+    "domain": "payment",
+    "format": "short",
+    "language": "tanglish",
+    "first_failed": "bill_1.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-202",
+    "got": "ACC-201",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_1.account"
+    ]
+   },
+   {
+    "episode": "payment_s2_long|h25|tanglish|qwen36_27b_fp8_think|s2",
+    "domain": "payment",
+    "format": "long",
+    "language": "tanglish",
+    "first_failed": "bill_5.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_5.account"
+    ]
+   },
+   {
+    "episode": "payment_s4_long|h25|tanglish|qwen36_27b_fp8_think|s2",
+    "domain": "payment",
+    "format": "long",
+    "language": "tanglish",
+    "first_failed": "pocket.account",
+    "class": "attribute",
+    "label": "E1A",
+    "expected": "ACC-202",
+    "got": "ACC-201",
+    "decoy_hit": false,
+    "all_failed": [
+     "pocket.account"
+    ]
+   },
+   {
+    "episode": "payment_s5_long|h25|ta|qwen36_27b_fp8_think|s2",
+    "domain": "payment",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "bill_5.amount",
+    "class": "attribute",
+    "label": "E3",
+    "expected": "900",
+    "got": "270",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_5.amount"
+    ]
+   },
+   {
+    "episode": "payment_s3_long|h25|en|qwen36_27b_fp8_think|s3",
+    "domain": "payment",
+    "format": "long",
+    "language": "en",
+    "first_failed": "batch.no_extra",
+    "class": "global",
+    "label": "E3",
+    "expected": "10",
+    "got": "11",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_4.paid",
+     "bill_4.amount",
+     "bill_4.account",
+     "bill_4.remark",
+     "batch.no_extra"
+    ]
+   },
+   {
+    "episode": "payment_s2_long|h25|hi|qwen36_27b_fp8_think|s3",
+    "domain": "payment",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "pocket.payee",
+    "class": "selection",
+    "label": "E1B",
+    "expected": "PY-3321",
+    "got": "PY-3365",
+    "decoy_hit": true,
+    "all_failed": [
+     "pocket.payee"
+    ]
+   },
+   {
+    "episode": "payment_s3_long|h25|ta|qwen36_27b_fp8_think|s3",
+    "domain": "payment",
+    "format": "long",
+    "language": "ta",
+    "first_failed": "batch.no_extra",
+    "class": "global",
+    "label": "E3",
+    "expected": "10",
+    "got": "11",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_5.paid",
+     "bill_5.amount",
+     "bill_5.account",
+     "bill_5.remark",
+     "batch.no_extra"
+    ]
+   },
+   {
+    "episode": "payment_s4_long|h25|hi|qwen36_27b_fp8_think|s3",
+    "domain": "payment",
+    "format": "long",
+    "language": "hi",
+    "first_failed": "bill_6.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_6.account"
+    ]
+   },
+   {
+    "episode": "payment_s4_long|h25|hinglish|qwen36_27b_fp8_think|s3",
+    "domain": "payment",
+    "format": "long",
+    "language": "hinglish",
+    "first_failed": "bill_6.account",
+    "class": "carried",
+    "label": "E1A",
+    "expected": "ACC-201",
+    "got": "ACC-202",
+    "decoy_hit": false,
+    "all_failed": [
+     "bill_6.account"
+    ]
+   }
+  ],
+  "decoy_hits_in_cases": 1,
+  "tool_call_error_rate_per_call": {
+   "en": {
+    "k": 4,
+    "n": 2200,
+    "rate": 0.0018,
+    "ci": [
+     0.0007,
+     0.0047
+    ]
+   },
+   "hi": {
+    "k": 6,
+    "n": 2427,
+    "rate": 0.0025,
+    "ci": [
+     0.0011,
+     0.0054
+    ]
+   },
+   "ta": {
+    "k": 11,
+    "n": 2326,
+    "rate": 0.0047,
+    "ci": [
+     0.0026,
+     0.0084
+    ]
+   },
+   "hinglish": {
+    "k": 6,
+    "n": 2326,
+    "rate": 0.0026,
+    "ci": [
+     0.0012,
+     0.0056
+    ]
+   },
+   "tanglish": {
+    "k": 9,
+    "n": 2118,
+    "rate": 0.0042,
+    "ci": [
+     0.0022,
+     0.0081
+    ]
+   }
+  },
+  "long_wrong_value_en_vs_other": {
+   "en": {
+    "k": 1,
+    "n": 39,
+    "rate": 0.0256,
+    "ci": [
+     0.0045,
+     0.1318
+    ]
+   },
+   "other": {
+    "k": 25,
+    "n": 155,
+    "rate": 0.1613,
+    "ci": [
+     0.1117,
+     0.2273
+    ]
+   },
+   "fisher_p": 0.0323,
+   "note": "exploratory: pooled across domains after the data were seen"
+  },
+  "long_loop_en_vs_other": {
+   "en": {
+    "k": 6,
+    "n": 45,
+    "rate": 0.1333,
+    "ci": [
+     0.0626,
+     0.2618
+    ]
+   },
+   "other": {
+    "k": 25,
+    "n": 180,
+    "rate": 0.1389,
+    "ci": [
+     0.0959,
+     0.197
+    ]
+   },
+   "fisher_p": 1.0
+  }
+ }
+}

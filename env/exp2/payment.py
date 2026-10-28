@@ -30,7 +30,8 @@ from env.long import pay as base
 DOMAIN = "payment"
 SALARY, SAVINGS = base.SALARY, base.SAVINGS
 REMARK_KEYS = {
-    "elec_home": ["home", "andheri", "ghar", "veedu", "veetu", "\u0918\u0930", "\u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1"],
+    "elec_home": ["home", "andheri", "ghar", "veedu", "veetu", "veettu", "\u0905\u0902\u0927\u0947\u0930\u0940",
+                  "\u0b85\u0ba8\u0bcd\u0ba4\u0bc7\u0bb0\u0bbf", "\u0918\u0930", "\u0bb5\u0bc0\u0b9f\u0bcd\u0b9f\u0bc1"],
     "elec_nani": ["nani", "pune", "paati", "patti", "\u0928\u093e\u0928\u0940", "\u092a\u0941\u0923\u0947",
                   "\u0baa\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf", "\u0baa\u0bc1\u0ba9\u0bc7"],
     "gas": ["gas", "\u0917\u0948\u0938", "\u0b8e\u0bb0\u0bbf\u0bb5\u0bbe\u0baf\u0bc1", "\u0b95\u0bc7\u0bb8\u0bcd"],
@@ -326,8 +327,14 @@ class Tools(Exp2Tools):
         return {"items": [dict(x) for x in self.batch], "confirmed": self.done}
 
 
+_EXCLUDES = {"elec_home": "elec_nani", "mobile_father": "mobile_mother", "mobile_mother": "mobile_father"}
+
+
 def _remark_ok(bill, remark):
     text = (remark or "").lower()
+    other = _EXCLUDES.get(bill)
+    if other and any(k in text for k in REMARK_KEYS[other]):
+        return False
     return any(k in text for k in REMARK_KEYS[bill])
 
 

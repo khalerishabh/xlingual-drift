@@ -262,3 +262,9 @@ Travel long is 14 calls, below the 17-28 target in section 2, because every trav
 
 ### 10.4 Truncation rule (approved by Rishabh 27 Oct 2026, after the Food run, before any Food analysis)
 A model reply that reaches max_tokens (16384) without a tool call or an answer is an outcome, not an infrastructure error: the first attempt of each episode is kept and scored as a failure (stage: termination), and it is never retried (`retry_truncated: false` in every Experiment 2 config). Primary tables use this strict view; the lenient view (finished episodes only) is reported alongside. Food was run before this rule was written, but no Food episode had been retried, so its first attempts are intact. Transcripts of truncated episodes are kept from Shopping onward.
+
+### 10.5 Scope change and evaluation (Rishabh, 28 Oct 2026)
+- Main run stopped after Food, Shopping and Payment (675 episodes); Travel and Banking were not run. Decided after those three had finished and before any RQ1/RQ2 analysis; no frozen task was changed.
+- Payment short: the request says "for every bill" and names one, so the agent paid all six (67/69). The `batch.no_extra` check is waived for that format in every language (`eval/rescore_exp2.py --waive payment:short:batch.no_extra`); the unwaived scores are reported alongside.
+- Payment remark keywords extended (veettu, Andheri in Hindi and Tamil script; a home-bill remark naming Nani's house fails); every episode rescored by deterministic replay.
+- Evaluation: `eval/exp2_report.py` -> `results/exp2_rq1_rq2.json`; written up in the Claude Doc "Experiment 2 Evaluation: RQ1 and RQ2".
